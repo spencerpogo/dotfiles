@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-if [ ! $(command -v pyenv) ]; then
+if [ ! -d ~/.pyenv ]; then
   echo "🐍 Installing pyenv..."
   curl https://pyenv.run | bash
   # These are in .zshrc but have to run now to get `pyenv` command
