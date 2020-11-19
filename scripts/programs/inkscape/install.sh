@@ -1,5 +1,5 @@
 #!/bin/bash
 
 if [ ! $(command -v inkscape) ]; then
-  sudo apt install inkscape
+  aptinst inkscape
 fi

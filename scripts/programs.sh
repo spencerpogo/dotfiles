@@ -3,6 +3,9 @@
 set -euo pipefail
 shopt -s inherit_errexit
 
+# Shorthand
+alias aptinst="sudo apt install -y"
+
 # Usage: if [ $(needpkg <package>) ]; then <install it>; fi
 needpkg () {
   set +e
@@ -15,7 +18,7 @@ needpkg () {
 }
 
 # Add essential packages before getting ppas
-sudo apt update && sudo apt install -y curl gnupg
+sudo apt update && aptinst curl gnupg
 
 # Add PPAs
 echo "Adding PPAs..."
@@ -47,7 +50,7 @@ function install {
 # Essentials
 install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev git curl
 install libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev
-install libffi-dev liblzma-dev openssl python-openssl gnupg
+install libffi-dev liblzma-dev openssl python-openssl gnupg gettext
 
 # Only for really old apt
 # install apt-transport-https
@@ -56,7 +59,7 @@ install libffi-dev liblzma-dev openssl python-openssl gnupg
 install zsh gdb chrome-gnome-shell chromium-browser dialog exfat-utils file htop nmap
 install openvpn tree vim wget git-lfs ncdu wine winetricks golang xxd bat gimp flatpak
 install jpegoptim optipng openjdk-11-jre openjdk-11-jdk obs-studio gnome-tweaks
-install brave-browser libimage-exiftool-perl
+install brave-browser libimage-exiftool-perl docker-ce docker-ce-cli containerd.io
 
 # Fun stuff
 install figlet lolcat cowsay
