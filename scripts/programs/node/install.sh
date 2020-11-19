@@ -11,7 +11,9 @@ if [ ! -d ~/.nvm ]; then
   )
 fi
 
+set +u
 . "$NVM_DIR/nvm.sh"
+set -u
 
 # Always run this to stay fresh
 nvm install node
