@@ -3,27 +3,15 @@
 set -euo pipefail
 shopt -s inherit_errexit
 
-# Shorthand
-alias aptinst="sudo apt install -y"
-
-# Usage: if [ $(needpkg <package>) ]; then <install it>; fi
-needpkg () {
-  set +e
-  dpkg -s "$1" 2>1 >/dev/null
-  r=$?
-  set -e
-  if [ $r -ne 0 ]; then
-    echo "Missing"
-  fi
-}
-
 # Add essential packages before getting ppas
-sudo apt update && aptinst curl gnupg
+echo "Installing inital packages..."
+sudo apt update
+aptinst apt-transport-https ca-certificates curl gnupg gnupg-agent software-properties-common
 
 # Add PPAs
 echo "Adding PPAs..."
 for i in ./scripts/programs/*/addppa.sh; do
-  source $i
+  bash ./scripts/runprog.sh $i
 done
 
 # Update Ubuntu and get standard repository programs
@@ -73,7 +61,7 @@ sudo apt install -y $pkgs
 echo "Installing programs..."
 for f in ./scripts/programs/*/install.sh; do
   # Run scripts in same process so they can access utility functions and have fail-fast
-  source "$f"
+  bash ./scripts/runprog.sh "$f"
 done
 
 # Get all upgrades

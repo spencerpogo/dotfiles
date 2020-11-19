@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if [ ! -f /etc/apt/sources.list.d/gitlfs.list ]; then
+addpkgcloudkey () {
+  echo "Adding packagecloud key..."
   curl -L https://packagecloud.io/github/git-lfs/gpgkey | sudo apt-key add -
-  echo "deb https://packagecloud.io/github/git-lfs/ubuntu/ focal main" | sudo tee /etc/apt/sources.list.d/gitlfs.list
-fi
+}
+
+addrepo "deb https://packagecloud.io/github/git-lfs/ubuntu/ $(lsb_release -cs) main" addpkgcloudkey
