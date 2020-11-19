@@ -54,7 +54,7 @@ install libffi-dev liblzma-dev openssl python-openssl gnupg
 
 # Various programs (wrapping to obey max line length of 88)
 install zsh gdb chrome-gnome-shell chromium-browser dialog exfat-utils file htop nmap
-install openvpn tree vim wget git-lfs ncdu wine wine-tricks go libimage-exiftool-perl
+install openvpn tree vim wget git-lfs ncdu wine winetricks go libimage-exiftool-perl
 install gimp jpegoptim optipng xxd bat openjdk-11-jre openjdk-11-jdk flatpak obs-studio
 install gnome-tweaks brave-browser
 
