@@ -19,12 +19,10 @@ fi
 if [ ! -d ~/.pyenv/versions/3.7.7 ]; then
   pyenv install 3.7.7
 fi
-set -u
 
 # Global python packages, always run to keep it fresh
 echo "Installing python packages..."
 pip install --upgrade requests flask aiohttp black numpy scipy pandas jupyter pwntools
 
-set +u
 pyenv local 3.8.6 3.7.7
 set -u
