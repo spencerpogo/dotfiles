@@ -13,7 +13,7 @@ grep '^deb \[arch=amd64\] https://download.docker.com/linux/ubuntu focal stablez
 if [ "$?" -ne 0 ]; then
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
   # -n = don't run apt update (aptinstall will later)
-  sudo add-apt-repository -n\
+  sudo add-apt-repository -yn\
     "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
     $(lsb_release -cs) \
     stable"
