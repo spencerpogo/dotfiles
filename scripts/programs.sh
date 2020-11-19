@@ -6,7 +6,7 @@ shopt -s inherit_errexit
 # Add essential packages before getting ppas
 echo "Installing inital packages..."
 sudo apt update
-aptinst apt-transport-https ca-certificates curl gnupg gnupg-agent software-properties-common
+sudo apt install -y apt-transport-https ca-certificates curl gnupg gnupg-agent software-properties-common
 
 # Add PPAs
 echo "Adding PPAs..."
