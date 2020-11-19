@@ -7,7 +7,10 @@ if [ $# -le 1 ]; then
   echo "Usage: $0 <programs/xxx/addppa.sh>" 1>2
 fi
 # Shorthand
-alias aptinst="sudo apt install -y"
+aptinst () {
+  sudo apt install -y $@
+}
+export -f aptinst
 
 # Usage: if [ $(needpkg <package>) ]; then <install it>; fi
 needpkg () {
