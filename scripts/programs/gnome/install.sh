@@ -13,3 +13,5 @@ if [ $r -ne 0 ]; then
   rm -rf panel
   gnome-extensions enable dash-to-panel
 fi
+
+# Dconf settings are loaded in Makefile.
