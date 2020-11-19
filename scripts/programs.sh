@@ -15,7 +15,7 @@ needpkg () {
 }
 
 # Add essential packages before getting ppas
-sudo apt update && sudo apt install curl gnupg
+sudo apt update && sudo apt install -y curl gnupg
 
 # Add PPAs
 echo "Adding PPAs..."
@@ -64,7 +64,7 @@ install figlet lolcat cowsay
 # Actually do the install
 echo "Installing packages (this will take a while)..."
 # Not double-quoting so it will expand as multiple arguments
-sudo apt install $pkgs
+sudo apt install -y $pkgs
 
 # Run all scripts in programs/
 echo "Installing programs..."
