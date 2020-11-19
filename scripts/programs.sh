@@ -68,7 +68,7 @@ sudo apt install -y $pkgs
 
 # Run all scripts in programs/
 echo "Installing programs..."
-for f in ./programs/*.sh; do
+for f in ./scripts/programs/*.sh; do
   # Run scripts in same process so they can access utility functions and have fail-fast
   source "$f"
 done
