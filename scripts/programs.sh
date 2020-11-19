@@ -46,7 +46,7 @@ install libffi-dev liblzma-dev openssl python-openssl gnupg gettext
 # Various programs (wrapping to obey max line length of 88)
 install zsh gdb chrome-gnome-shell chromium-browser dialog exfat-utils file htop nmap
 install openvpn tree vim wget git-lfs ncdu wine winetricks golang xxd bat gimp flatpak
-install jpegoptim optipng openjdk-11-jre openjdk-11-jdk obs-studio gnome-tweaks
+install jpegoptim optipng openjdk-11-jre openjdk-11-jdk obs-studio gnome-tweaks xclip
 install brave-browser libimage-exiftool-perl docker-ce docker-ce-cli containerd.io
 
 # Fun stuff
