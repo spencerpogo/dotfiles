@@ -81,10 +81,3 @@ brave-browser 'https://extensions.gnome.org/extension/1160/dash-to-panel/'
 
 # Fun hello
 figlet "Hello!" | lolcat
-
-# https://github.com/victoriadrake/dotfiles/blob/ubuntu-19.10/scripts/desktop.sh
-# gnome-extensions enable dash-to-panel
-# killall -SIGQUIT gnome-shell
-# Refactor into separate files
-
-# https://zoom.us/client/latest/zoom_amd64.deb
