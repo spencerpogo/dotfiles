@@ -8,10 +8,10 @@ fi
 
 # These are in .zshrc but have to run now to get `pyenv` command
 export PATH="$HOME/.pyenv/bin:$PATH"
+set +u
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-set +u
 echo "🐍 Building python versions..."
 if [ ! -d ~/.pyenv/versions/3.8.6 ]; then
   pyenv install 3.8.6
