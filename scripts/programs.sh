@@ -1,6 +1,18 @@
 #!/bin/bash
 
-set -e
+set -euo pipefail
+shopt -s inherit_errexit
+
+# Usage: if [ $(needpkg <package>) ]; then <install it>; fi
+needpkg () {
+  set +e
+  dpkg -s "$1" 2>1 >/dev/null
+  r=$?
+  set -e
+  if [ $r -ne 0 ]; then
+    echo "Missing"
+  fi
+}
 
 # Update Ubuntu and get standard repository programs
 echo "Updating ubuntu..."
@@ -30,10 +42,10 @@ function install {
   pkgs="${pkgs} ${@}"
 }
 
-# Esstenials
-install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev
+# Essentials
+install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev git curl
 install libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev
-install libffi-dev liblzma-dev openssl python-openssl git curl gnupg
+install libffi-dev liblzma-dev openssl python-openssl gnupg
 
 # Only for really old apt
 # install apt-transport-https
@@ -42,6 +54,7 @@ install libffi-dev liblzma-dev openssl python-openssl git curl gnupg
 install zsh gdb chrome-gnome-shell chromium-browser dialog exfat-utils file htop nmap
 install openvpn tree vim wget git-lfs ncdu wine wine-tricks go libimage-exiftool-perl
 install gimp jpegoptim optipng xxd bat openjdk-11-jre openjdk-11-jdk flatpak obs-studio
+install gnome-tweaks brave-browser
 
 # Fun stuff
 install figlet lolcat cowsay
@@ -53,7 +66,10 @@ sudo apt install $pkgs
 
 # Run all scripts in programs/
 echo "Installing programs..."
-for f in programs/*.sh; do bash "$f" -H; done
+for f in programs/*.sh; do
+  # Run scripts in same process so they can access utility functions and have fail-fast
+  source "$f"
+done
 
 # Get all upgrades
 sudo apt upgrade -y

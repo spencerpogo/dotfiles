@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -euo pipefail
+shopt -s inherit_errexit
+
 dotfilesDir=$(pwd)
 
 function linkDotfile {

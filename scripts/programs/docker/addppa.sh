@@ -8,9 +8,12 @@ sudo apt-get install -y \
     gnupg-agent \
     software-properties-common
 
+set +e
 grep '^deb \[arch=amd64\] https://download.docker.com/linux/ubuntu focal stablez$' /etc/apt/sources.list >/dev/null
+r=$?
+set -e
 
-if [ "$?" -ne 0 ]; then
+if [ $r -ne 0 ]; then
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
   # -n = don't run apt update (aptinstall will later)
   sudo add-apt-repository -yn\
