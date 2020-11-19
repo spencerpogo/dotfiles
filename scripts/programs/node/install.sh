@@ -13,11 +13,11 @@ fi
 
 set +u
 . "$NVM_DIR/nvm.sh"
-set -u
 
 # Always run this to stay fresh
 nvm install node
 nvm install-latest-npm
+set -u
 
 # 
 echo "📦 Installing NPM packages..."
