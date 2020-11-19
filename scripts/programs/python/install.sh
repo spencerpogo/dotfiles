@@ -4,11 +4,12 @@
 if [ ! -d ~/.pyenv ]; then
   echo "🐍 Installing pyenv..."
   curl https://pyenv.run | bash
-  # These are in .zshrc but have to run now to get `pyenv` command
-  export PATH="$HOME/.pyenv/bin:$PATH"
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
 fi
+
+# These are in .zshrc but have to run now to get `pyenv` command
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 echo "🐍 Building python versions..."
 if [ ! -d ~/.pyenv/versions/3.8.6 ]; then
