@@ -1,0 +1,75 @@
+{
+  "workbench.colorTheme": "Andromeda Italic",
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "python.analysis.logLevel": "Trace",
+  "python.languageServer": "Microsoft",
+  "python.autoComplete.extraPaths": [
+    ".",
+    "/home/scoder12/.pyenv/versions/3.8.2/lib/python3.8"
+  ],
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "editor.fontFamily": "Fira Code",
+  "python.formatting.provider": "black",
+  "workbench.iconTheme": "material-icon-theme",
+  "git.enableSmartCommit": true,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true,
+    "**/.next": true
+  },
+  "vim.debug.loggingLevelForConsole": "debug",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.confirmDelete": false,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.maxTokenizationLineLength": 200,
+  "java.semanticHighlighting.enabled": true,
+  "vim.handleKeys": {
+    "<C-c>": false,
+    "<C-v>": false,
+    "<C-x>": false,
+    "<C-z>": false,
+    "<C-s>": false,
+    "<C-o>": false,
+    "<C-a>": false,
+    "<C-n>": false,
+    "<G-g>": false
+  },
+  "keyboard.dispatch": "keyCode",
+  "sync.gist": "665751bedebc73213a2d67684a37a1c1",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "go.formatTool": "goimports",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "processing.path": "/opt/processing-3.5.4/processing-java",
+  "go.lintOnSave": "workspace",
+  "stories.username": "raw_asp",
+  "editor.tabSize": 2,
+  "explorer.confirmDragAndDrop": false
+}
