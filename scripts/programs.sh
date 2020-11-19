@@ -14,9 +14,14 @@ needpkg () {
   fi
 }
 
+# Add essential packages before getting ppas
+sudo apt update && sudo apt install curl gnupg
+
 # Add PPAs
 echo "Adding PPAs..."
-for i in ./scripts/programs/*/addppa.sh; do bash $i; done
+for i in ./scripts/programs/*/addppa.sh; do
+  source $i
+done
 
 # Update Ubuntu and get standard repository programs
 echo "Updating ubuntu..."
