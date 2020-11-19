@@ -14,16 +14,13 @@ needpkg () {
   fi
 }
 
+# Add PPAs
+echo "Adding PPAs..."
+for i in ./scripts/programs/*/addppa.sh; do bash $i; done
+
 # Update Ubuntu and get standard repository programs
 echo "Updating ubuntu..."
 sudo apt update && sudo apt full-upgrade -y
-
-# Add PPAs
-echo "Adding PPAs..."
-for i in programs/*/addppa.sh; do bash $i; done
-
-echo "Updating from APT repos..."
-sudo apt update
 
 pkgs=
 
@@ -66,7 +63,7 @@ sudo apt install $pkgs
 
 # Run all scripts in programs/
 echo "Installing programs..."
-for f in programs/*.sh; do
+for f in ./programs/*.sh; do
   # Run scripts in same process so they can access utility functions and have fail-fast
   source "$f"
 done
