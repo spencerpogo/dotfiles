@@ -14,6 +14,7 @@ installvscext () {
   echo "Installing..."
   codium --install-extension "$vsix" --force
 }
+export -f installvscext
 
 echo "Installing extensions..."
 set +e
