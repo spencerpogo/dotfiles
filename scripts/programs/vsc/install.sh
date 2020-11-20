@@ -10,7 +10,7 @@ installvscext () {
   vsix="$HOME/Downloads/$1.vsix"
 
   echo "Downloading $url..."
-  wget -O "$vsix" "$url"
+  curl --compressed --output "$vsix" "$url"
   echo "Installing..."
   codium --install-extension "$vsix" --force
 }
