@@ -1,5 +1,4 @@
 amatiasq.sort-imports
-benawad.stories
 bungcip.better-toml
 CoenraadS.bracket-pair-colorizer-2
 dbaeumer.vscode-eslint
