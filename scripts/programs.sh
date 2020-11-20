@@ -69,7 +69,7 @@ done
 sudo apt upgrade -y
 sudo apt autoremove -y
 
-brave-browser 'https://extensions.gnome.org/extension/1160/dash-to-panel/'
+brave-browser 'https://extensions.gnome.org/extension/1160/dash-to-panel/' &
 
 # Fun hello
 figlet "Hello!" | lolcat
