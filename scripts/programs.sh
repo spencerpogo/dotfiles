@@ -69,7 +69,10 @@ done
 sudo apt upgrade -y
 sudo apt autoremove -y
 
-brave-browser 'https://extensions.gnome.org/extension/1160/dash-to-panel/' &
+echo "Opening extensions in browser..."
+<extensions.txt xargs -n1 -I {} bash -c \
+  'brave-browser https://chrome.google.com/webstore/detail/{} >/dev/null 2>&1  &'
+# brave-browser 'https://extensions.gnome.org/extension/1160/dash-to-panel/' >/dev/null &
 
 # Fun hello
-figlet "Hello!" | lolcat
+figlet "All done!" | lolcat
