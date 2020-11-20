@@ -9,8 +9,20 @@ installvscext () {
   url="https://marketplace.visualstudio.com/_apis/public/gallery/publishers/$exturlpart/$version/vspackage"
   vsix="$HOME/Downloads/$1.vsix"
 
-  echo "Downloading $url..."
-  curl --compressed --output "$vsix" "$url"
+  dlfinished=
+  while [ ! $dlfinished ]; do
+    echo "Downloading $url..."
+    curl --compressed --output "$vsix" "$url"
+    file "$vsix" | grep 'Zip' >/dev/null
+    if [ $? -eq 0 ]; then
+      dlfinished=yes
+    else
+      file "$vsix"
+      echo "Bad zip, waiting then retrying..."
+      sleep 5
+    fi
+  done
+
   echo "Installing..."
   codium --install-extension "$vsix" --force
 }
