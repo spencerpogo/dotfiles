@@ -4,7 +4,8 @@ installvscext () {
   echo "Finding version for $1..."
   version=$(curl -s "https://marketplace.visualstudio.com/items?itemName=$1" | sed -ne 's/^.*"version":[ ]*"\([^"]*\)".*$/\1/p')
   echo "Got version: $version"
-  # This is just terrible
+  # This is a pretty bad way of doing this. Need to split $1 into two parts by . and
+  #  put /vsextensions/ in the middle. This is an awk hack for that:
   exturlpart=$(echo "$1./vsextensions/" | awk -F '.' '{ print $1 $3 $2 }')
   url="https://marketplace.visualstudio.com/_apis/public/gallery/publishers/$exturlpart/$version/vspackage"
   vsix="$HOME/Downloads/$1.vsix"
