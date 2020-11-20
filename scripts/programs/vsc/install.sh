@@ -18,7 +18,7 @@ installvscext () {
       dlfinished=yes
     else
       file "$vsix"
-      echo "Bad zip, waiting then retrying..."
+      echo "Bad zip, we are probably ratelimited, will retry in 5s..."
       sleep 5
     fi
   done
