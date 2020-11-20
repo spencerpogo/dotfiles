@@ -24,6 +24,6 @@ pyenv local 3.8.6 3.7.7
 
 # Global python packages, always run to keep it fresh
 echo "Installing python packages..."
-pip install --upgrade requests flask aiohttp black numpy scipy pandas jupyter pwntools
+pip install --upgrade wheel requests flask aiohttp black numpy scipy pandas jupyter pwntools
 
 set -u
