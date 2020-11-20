@@ -29,7 +29,7 @@ echo "Installing/Updating zsh-autosuggestions..."
 autos_dir=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 if [ ~d "$autos_dir" ]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions "$autos_dir"
+  git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions "$autos_dir"
 fi
 
 cd "$autos_dir"
@@ -43,7 +43,7 @@ echo "Installing/Updating powerlevel10k..."
 zsh_synhi_dir=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 if [ ! -d "$zsh_synhi_dir" ]; then
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$zsh_synhi_dir"
+  git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git "$zsh_synhi_dir"
 fi
 
 cd "$zsh_synhi_dir"
