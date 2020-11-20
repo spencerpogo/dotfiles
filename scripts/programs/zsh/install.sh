@@ -25,7 +25,7 @@ git pull
 echo "Installing/Updating zsh-autosuggestions..."
 autos_dir=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-if [ ~d "$autos_dir" ]; then
+if [ -d "$autos_dir" ]; then
   git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions "$autos_dir"
 fi
 
