@@ -12,7 +12,8 @@ if [ $r -ne 0 ]; then
   cd ..
   rm -rf panel
   gnome-extensions enable dash-to-panel
-  killall -SIGQUIT gnome-shell
 fi
 
-# Dconf settings are loaded in Makefile.
+dconf load /org/gnome/ < .config/dconf/settings.dconf
+echo "Restarting gnome..."
+killall -SIGQUIT gnome-shell

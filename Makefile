@@ -32,30 +32,22 @@ save-all: ## Run all save-* actions
 
 # Installation section
 
-install-programs: ## Installs all APT packages and programs under ./scripts/programs
-	./scripts/programs.sh
-
-install-dconf: ## Loads dconf settings
-	dconf load /org/gnome < .config/dconf/settings.dconf
-
 install-symlinks: ## Symlinks dotfiles
 	./scripts/symlink.sh
+
+install-dotconfig: ## Copy .config files
+	cp -r .config ~
 
 install-fonts: ## Copy fonts and refresh font cache
 	cp -r .fonts ~
 	fc-cache -f -v
 
-install-dotconfig: ## Copy .config files
-	cp -r .config ~
+install-programs: ## Installs all APT packages and programs under ./scripts/programs
+	./scripts/programs.sh
 
-install-backup: ## Decrypts and extracts the backup
-	openssl enc -d -aes-256-cbc -md sha512 -pbkdf2 -iter 100000 -salt -in "./files/backup.tar.gz.enc" -out "./files/backup.tar.gz"
-	tar -C ~ -xzf "./files/backup.tar.gz"
-	rm -rf "./files/backup.tar.gz"
+install-all: install-symlinks install-dotconfig install-fonts install-programs
+install-all: ## Install everything	
 
 update: ## Do apt upgrade and autoremove
 	sudo apt update && sudo apt upgrade -y --fix-missing
 	sudo apt autoremove -y
-
-install-all: install-symlinks install-dotconfig install-programs install-dconf
-install-all: install-fonts install-backup ## Install everything	
