@@ -167,23 +167,23 @@ if [ -d ~/.nvm ]; then
 fi
 
 # .local/bin (python tools and stuff)
-[[ ! -d ~/.local/bin ]] || export PATH="$HOME/.local/bin:$PATH"
+[[ -d ~/.local/bin ]] && export PATH="$HOME/.local/bin:$PATH"
 
 # Ruby tools
-[[ ! -d ~/.gem/ruby/2.7.0/bin ]] || export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
+[[ -d ~/.gem/ruby/2.7.0/bin ]] && export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
 
 # Go tools
-[[ ! -d ~/go/bin ]] || export PATH="$HOME/go/bin:$PATH"
+[[ -d ~/go/bin ]] && export PATH="$HOME/go/bin:$PATH"
 
 # Scripts
-[[ ! -d ~/scripts ]] || export PATH="$HOME/scripts:$PATH"
+[[ -d ~/scripts ]] && export PATH="$HOME/scripts:$PATH"
 
 # processing
-[[ ! -d /opt/processing-3.5.4/ ]] || export PATH="/opt/processing-3.5.4:$PATH"
+[[ -d /opt/processing-3.5.4/ ]] && export PATH="/opt/processing-3.5.4:$PATH"
 
 # stderred
-STDERRED_SO='/opt/stderred/lib64/libstderred.so'
-[[ ! -f $STDERRED_SO ]] || export LD_PRELOAD="$STDERRED_SO${LD_PRELOAD:+:$LD_PRELOAD}"
+STDERRED_SO="$HOME/.stderred/build/libstderred.so"
+[[ -f $STDERRED_SO ]] && export LD_PRELOAD="$STDERRED_SO${LD_PRELOAD:+:$LD_PRELOAD}"
 
 ############
 # ALIASES #
