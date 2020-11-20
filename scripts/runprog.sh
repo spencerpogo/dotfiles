@@ -3,8 +3,9 @@
 set -euo pipefail
 shopt -s inherit_errexit
 
-if [ $# -le 1 ]; then
-  echo "Usage: $0 <programs/xxx/addppa.sh>" 1>2
+if [ $# -lt 1 ]; then
+  echo "Usage: $0 <programs/xxx/addppa.sh>" >&2
+  exit 1
 fi
 # Shorthand
 aptinst () {
