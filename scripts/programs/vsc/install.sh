@@ -18,5 +18,5 @@ export -f installvscext
 
 echo "Installing extensions..."
 set +e
-<~/.config/VSCodium/User/extensions.txt xargs -n1 installvscext
+<~/.config/VSCodium/User/extensions.txt xargs -I {} bash -c 'installvscext "$@"' _ {}
 set -e
