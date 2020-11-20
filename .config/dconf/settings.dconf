@@ -204,7 +204,7 @@ background-color='rgb(0,0,0)'
 use-background-color=true
 
 [evince/default]
-window-ratio=(0.93137254901960786, 0.62612869499097035)
+window-ratio=(1.6209150326797386, 0.98465412390725959)
 
 [evolution-data-server]
 migrated=true
@@ -232,7 +232,7 @@ active-plugins=['spell', 'filebrowser', 'docinfo', 'time', 'modelines']
 [gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///home/scoder12/.cache/.fr-X2jjzu'
+virtual-root='file:///home/scoder12/Downloads'
 
 [gedit/preferences/ui]
 show-tabs-mode='auto'
@@ -297,7 +297,7 @@ sleep-inactive-ac-timeout=3600
 sleep-inactive-ac-type='nothing'
 
 [shell]
-app-picker-view=uint32 0
+app-picker-view=uint32 1
 command-history=['r']
 disabled-extensions=@as []
 enabled-extensions=['dash-to-panel@jderose9.github.com', 'dash-to-panel']

@@ -19,15 +19,7 @@ save-fonts:
 	rm -rf ./.fonts
 	cp -r ~/.fonts .
 
-save-zshrc: ## Saves .zshrc into the repo
-	cp ~/.zshrc ./.zshrc
-
-save-vimrc: ## Saves .vimrc into the repo
-	cp ~/.vimrc ./.vimrc
-
-save-dotfiles: save-zshrc save-vimrc ## Saves all dotfiles into the repo
-
-save-all: save-dconf save-vsc-settings save-vsce save-dotfiles save-fonts
+save-all: save-dconf save-vsc-settings save-vsce save-fonts
 save-all: ## Run all save-* actions
 
 # Installation section

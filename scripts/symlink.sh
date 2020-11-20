@@ -33,3 +33,4 @@ linkDotfile .vimrc
 linkDotfile .gitmessage
 linkDotfile .zshrc
 linkDotfile .speedswapper
+linkDotfile .p10k.zsh
