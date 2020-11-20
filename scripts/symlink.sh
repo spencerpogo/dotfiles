@@ -31,5 +31,5 @@ function linkDotfile {
 
 linkDotfile .vimrc
 linkDotfile .gitmessage
-linkDotfiles .zshrc
-linkDotfiles .speedswapper
+linkDotfile .zshrc
+linkDotfile .speedswapper
