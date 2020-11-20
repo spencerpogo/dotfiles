@@ -36,7 +36,7 @@ install-programs: ## Installs all APT packages and programs under ./scripts/prog
 	./scripts/programs.sh
 
 install-dconf: ## Loads dconf settings
-	dconf load /org/gnome < ./config/dconf/settings.dconf
+	dconf load /org/gnome < .config/dconf/settings.dconf
 
 install-symlinks: ## Symlinks dotfiles
 	./scripts/symlink.sh
