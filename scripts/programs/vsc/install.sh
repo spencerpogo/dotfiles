@@ -5,8 +5,8 @@ installvscext () {
   version=$(curl -s "https://marketplace.visualstudio.com/items?itemName=$1" | sed -ne 's/^.*"version":[ ]*"\([^"]*\)".*$/\1/p')
   echo "Got version: $version"
   # This is just terrible
-  path=$(echo "$1./vsextensions/" | awk -F '.' '{ print $1 $3 $2 }')
-  url="https://marketplace.visualstudio.com/_apis/public/gallery/publishers/$path/$version/vspackage"
+  exturlpart=$(echo "$1./vsextensions/" | awk -F '.' '{ print $1 $3 $2 }')
+  url="https://marketplace.visualstudio.com/_apis/public/gallery/publishers/$exturlpart/$version/vspackage"
   vsix="$HOME/Downloads/$1.vsix"
 
   echo "Downloading $url..."
