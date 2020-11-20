@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# This script isn't part of the installation. It's just a utility that cleans up the
+#  extensions copied from brave://system into the extensions.txt format, and removes
+#  the stuff that isn't from the webstore
+
 set -euo pipefail
 shopt -s inherit_errexit
 
