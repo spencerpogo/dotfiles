@@ -7,7 +7,7 @@ if [ ! -d ~/.oh-my-zsh ]; then
   if [ ! "$(basename -- "$SHELL")" = "zsh" ]; then
     sudo chsh -s "zsh"
   fi
-  sudo RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  sudo RUNZSH=no KEEP_ZSHRC=yes ZSH=$HOME/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
 cd ~/.oh-my-zsh
