@@ -2,7 +2,7 @@
 
 installvscext () {
   echo "Finding version for $1..."
-  version=$(curl -s https://marketplace.visualstudio.com/items\?itemName\=EliverLara.andromeda | sed -ne 's/^.*"version":[ ]*"\([^"]*\)".*$/\1/p')
+  version=$(curl -s "https://marketplace.visualstudio.com/items\?itemName\=$1" | sed -ne 's/^.*"version":[ ]*"\([^"]*\)".*$/\1/p')
   echo "Got version: $version"
   # This is just terrible
   path=$(echo "$1./vsextensions/" | awk -F '.' '{ print $1 $3 $2 }')
