@@ -57,5 +57,5 @@ update: ## Do apt upgrade and autoremove
 	sudo apt update && sudo apt upgrade -y --fix-missing
 	sudo apt autoremove -y
 
-install-all: install-programs install-dconf install-symlinks install-fonts
-install-all: install-dotconfig install-backup ## Install everything	
+install-all: install-symlinks install-dotconfig install-programs install-dconf
+install-all: install-fonts install-backup ## Install everything	
