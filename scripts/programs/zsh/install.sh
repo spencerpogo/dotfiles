@@ -4,7 +4,7 @@ orig_dir=$(pwd)
 
 if [ ! -d ~/.oh-my-zsh ]; then
   echo "Installing oh-my-zsh..."
-  sudo RUNZSH=no KEEP_ZSHRC=yes ZSH=$HOME/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  RUNZSH=no KEEP_ZSHRC=yes ZSH=$HOME/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
 cd ~/.oh-my-zsh
