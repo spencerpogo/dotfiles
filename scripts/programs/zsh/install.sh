@@ -46,5 +46,9 @@ fi
 cd "$zsh_synhi_dir"
 git pull
 
+echo "Exporting gh completions..."
+mkdir -p ~/.oh-my-zsh/custom/plugins/gh/
+gh completion --shell zsh > ~/.oh-my-zsh/custom/plugins/gh/gh.plugin.zsh
+
 # Finally...
 cd "$orig_dir"
