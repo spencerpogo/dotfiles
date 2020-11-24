@@ -58,9 +58,10 @@ clock-show-date=true
 clock-show-seconds=false
 gtk-im-module='ibus'
 gtk-theme='Yaru-dark'
+text-scaling-factor=1.0
 
 [desktop/notifications]
-application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc']
+application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit']
 show-banners=true
 show-in-lock-screen=false
 
@@ -75,6 +76,9 @@ application-id='brave-browser.desktop'
 
 [desktop/notifications/application/chromium-chromium]
 application-id='chromium_chromium.desktop'
+
+[desktop/notifications/application/clipit]
+application-id='clipit.desktop'
 
 [desktop/notifications/application/codium]
 application-id='codium.desktop'
@@ -232,7 +236,7 @@ active-plugins=['spell', 'filebrowser', 'docinfo', 'time', 'modelines']
 [gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///home/scoder12/Downloads'
+virtual-root='file:///home/scoder12/.cache/.fr-pBmhGv'
 
 [gedit/preferences/ui]
 show-tabs-mode='auto'
@@ -242,7 +246,12 @@ bottom-panel-size=140
 side-panel-active-page='GeditWindowDocumentsPanel'
 side-panel-size=200
 size=(900, 700)
-state=87168
+state=87040
+
+[gnome-screenshot]
+border-effect='none'
+include-border=true
+include-pointer=false
 
 [gnome-system-monitor]
 current-tab='processes'
@@ -296,6 +305,9 @@ ignore-phase2-ca-cert=false
 sleep-inactive-ac-timeout=3600
 sleep-inactive-ac-type='nothing'
 
+[settings-daemon/plugins/xsettings]
+hinting='slight'
+
 [shell]
 app-picker-view=uint32 1
 command-history=['r']
@@ -342,7 +354,7 @@ save-directory='/home/scoder12/Documents'
 selected-device='escl:http://192.168.1.79:8080'
 
 [software]
-check-timestamp=int64 1605889379
+check-timestamp=int64 1606163974
 online-updates-timestamp=int64 1605889375
 
 [system/location]

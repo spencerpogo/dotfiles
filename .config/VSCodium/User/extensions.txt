@@ -1,4 +1,3 @@
-amatiasq.sort-imports
 bungcip.better-toml
 CoenraadS.bracket-pair-colorizer-2
 dbaeumer.vscode-eslint
@@ -7,6 +6,7 @@ EliverLara.andromeda
 esbenp.prettier-vscode
 golang.go
 icrawl.discord-vscode
+mike-co.import-sorter
 millennIumAMbiguity.processing-formatter
 ms-python.python
 ms-python.vscode-pylance
@@ -15,7 +15,6 @@ njpwerner.autodocstring
 PKief.material-icon-theme
 redhat.java
 ritwickdey.LiveServer
-Shan.code-settings-sync
 Tobiah.language-pde
 vscodevim.vim
 WakaTime.vscode-wakatime
