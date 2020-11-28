@@ -354,7 +354,7 @@ save-directory='/home/scoder12/Documents'
 selected-device='escl:http://192.168.1.79:8080'
 
 [software]
-check-timestamp=int64 1606163974
+check-timestamp=int64 1606502341
 online-updates-timestamp=int64 1605889375
 
 [system/location]
