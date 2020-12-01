@@ -37,8 +37,11 @@ install-fonts: ## Copy fonts and refresh font cache
 install-programs: ## Installs all APT packages and programs under ./scripts/programs
 	./scripts/programs.sh
 
+install-repos: ## Clones github repos
+	mkdir -p ~/code && cd ~/code && <ghrepos.txt xargs -n1 git clone
+
 install-all: install-symlinks install-dotconfig install-fonts install-programs
-install-all: ## Install everything	
+install-all: install-repos ## Install everything	
 
 update: ## Do apt upgrade and autoremove
 	sudo apt update && sudo apt upgrade -y --fix-missing

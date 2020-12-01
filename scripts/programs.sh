@@ -75,13 +75,6 @@ done
 sudo apt upgrade -y
 sudo apt autoremove -y
 
-log "Cloning github repos..."
-oldcwd=$(pwd)
-mkdir -p ~/code
-cd ~/code
-<ghrepos.txt xargs -n1 git clone
-cd "$oldcwd"
-
 log "Opening extensions in browser..."
 <extensions.txt xargs -n1 -I {} bash -c \
   'brave-browser https://chrome.google.com/webstore/detail/{} >/dev/null 2>&1  &'
