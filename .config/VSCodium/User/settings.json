@@ -50,7 +50,6 @@
     "<G-g>": false
   },
   "keyboard.dispatch": "keyCode",
-  "sync.gist": "665751bedebc73213a2d67684a37a1c1",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
@@ -69,7 +68,6 @@
   },
   "processing.path": "/opt/processing-3.5.4/processing-java",
   "go.lintOnSave": "workspace",
-  "stories.username": "raw_asp",
   "editor.tabSize": 2,
   "explorer.confirmDragAndDrop": false
 }
