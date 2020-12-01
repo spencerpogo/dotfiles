@@ -7,6 +7,7 @@ if [ $# -lt 1 ]; then
   echo "Usage: $0 <programs/xxx/addppa.sh>" >&2
   exit 1
 fi
+
 # Shorthand
 aptinst () {
   sudo apt install -y $@
@@ -41,6 +42,10 @@ addrepo () {
   else
     echo "Skipping repository:" "$1"
   fi
+}
+
+log () {
+  echo ${LOG_PREFIX:-"=======>"} $@
 }
 
 source "$1"
