@@ -47,8 +47,8 @@ install libffi-dev liblzma-dev openssl python-openssl gnupg gettext
 install zsh gdb chrome-gnome-shell chromium-browser dialog exfat-utils file htop nmap
 install openvpn tree vim wget git-lfs ncdu wine winetricks golang xxd bat gimp flatpak
 install jpegoptim optipng openjdk-11-jre openjdk-11-jdk obs-studio gnome-tweaks xclip
-install brave-browser libimage-exiftool-perl docker-ce docker-ce-cli containerd.io
-install codium gh libxtst6:i386 libgtk-3-0:i386 jq clipit haskell-platform
+install brave-browser libimage-exiftool-perl docker-ce docker-ce-cli containerd.io jq
+install codium gh libxtst6:i386 libgtk-3-0:i386 clipit haskell-platform pandoc texlive
 
 # Fun stuff
 install figlet lolcat cowsay
