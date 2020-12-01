@@ -2,7 +2,7 @@
 
 
 if [ ! -d ~/.pyenv ]; then
-  echo "🐍 Installing pyenv..."
+  log "🐍 Installing pyenv..."
   curl https://pyenv.run | bash
 fi
 
@@ -12,7 +12,7 @@ set +u
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-echo "🐍 Building python versions..."
+log "🐍 Building python versions..."
 if [ ! -d ~/.pyenv/versions/3.8.6 ]; then
   pyenv install 3.8.6
 fi
@@ -23,7 +23,7 @@ fi
 pyenv local 3.8.6 3.7.7
 
 # Global python packages, always run to keep it fresh
-echo "Installing python packages..."
+log "Updating python packages..."
 pip install --upgrade pip wheel
 pip install --upgrade requests flask aiohttp black numpy scipy pandas jupyter pwntools
 

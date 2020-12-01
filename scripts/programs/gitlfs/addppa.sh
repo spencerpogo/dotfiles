@@ -1,7 +1,7 @@
 #!/bin/bash
 
 addpkgcloudkey () {
-  echo "Adding packagecloud key..."
+  log "Adding git LFS packagecloud key..."
   curl -L https://packagecloud.io/github/git-lfs/gpgkey | sudo apt-key add -
 }
 

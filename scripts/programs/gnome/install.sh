@@ -6,7 +6,7 @@ r=$?
 set -e
 
 if [ $r -ne 0 ]; then
-  echo "Installing dash-to-panel..."
+  log "Installing dash-to-panel..."
   git clone https://github.com/home-sweet-gnome/dash-to-panel.git panel
   cd panel && make install
   cd ..
@@ -14,6 +14,7 @@ if [ $r -ne 0 ]; then
   gnome-extensions enable dash-to-panel
 fi
 
+log "Loading dconf settings..."
 dconf load /org/gnome/ < .config/dconf/settings.dconf
-echo "Restarting gnome..."
+log "Restarting gnome..."
 killall -SIGQUIT gnome-shell

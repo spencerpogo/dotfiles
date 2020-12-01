@@ -1,7 +1,7 @@
 #!/bin/bash
 
 addcodiumkey () {
-  echo "Adding VSCodium key..."
+  log "Adding VSCodium key..."
   wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/etc/apt/trusted.gpg.d/vscodium.gpg
 }
 

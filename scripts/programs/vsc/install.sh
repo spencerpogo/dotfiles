@@ -1,7 +1,9 @@
 #!/bin/bash
 
 installvscext () {
+  log "Installing VSCodium extension:" "$1"
   echo "Finding version for $1..."
+  # Regex go brrrr
   version=$(curl -s "https://marketplace.visualstudio.com/items?itemName=$1" | sed -ne 's/^.*"version":[ ]*"\([^"]*\)".*$/\1/p')
   echo "Got version: $version"
   # This is a pretty bad way of doing this. Need to split $1 into two parts by . and

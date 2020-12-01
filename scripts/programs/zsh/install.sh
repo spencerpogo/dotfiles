@@ -3,7 +3,7 @@
 orig_dir=$(pwd)
 
 if [ ! -d ~/.oh-my-zsh ]; then
-  echo "Installing oh-my-zsh..."
+  log "Installing oh-my-zsh..."
   CHSH=yes RUNZSH=no KEEP_ZSHRC=yes ZSH=$HOME/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
@@ -11,7 +11,7 @@ cd ~/.oh-my-zsh
 git pull
 
 # Powerlevel10k
-echo "Installing/Updating powerlevel10k..."
+log "Installing/Updating powerlevel10k..."
 p10k_dir=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 if [ ! -d "$p10k_dir" ]; then
@@ -22,7 +22,7 @@ cd "$p10k_dir"
 git pull
 
 # Autosuggestions
-echo "Installing/Updating zsh-autosuggestions..."
+log "Installing/Updating zsh-autosuggestions..."
 autos_dir=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 if [ ! -d "$autos_dir" ]; then
@@ -35,7 +35,7 @@ git pull
 # zsh-syntax-highlighting
 # technically this can be installed through apt. But I think putting it with the other
 #  plugins keeps things more organized
-echo "Installing/Updating powerlevel10k..."
+log "Installing/Updating powerlevel10k..."
 
 zsh_synhi_dir=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
@@ -46,7 +46,7 @@ fi
 cd "$zsh_synhi_dir"
 git pull
 
-echo "Exporting gh completions..."
+log "Exporting gh completions..."
 mkdir -p ~/.oh-my-zsh/custom/plugins/gh/
 gh completion --shell zsh > ~/.oh-my-zsh/custom/plugins/gh/gh.plugin.zsh
 

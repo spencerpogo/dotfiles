@@ -3,7 +3,7 @@
 export NVM_DIR="$HOME/.nvm"
 
 if [ ! -d ~/.nvm ]; then
-  echo "📦 Installing nvm"
+  log "📦 Installing nvm"
   (
     git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
     cd "$NVM_DIR"
@@ -15,11 +15,12 @@ set +u
 . "$NVM_DIR/nvm.sh"
 
 # Always run this to stay fresh
+log "Installing latest node..."
 nvm install node
+log "Installing latest npm..."
 nvm install-latest-npm
 set -u
 
-# 
-echo "📦 Installing NPM packages..."
+log "📦 Installing NPM packages..."
 npm i -g replit eslint gitmoji-cli tcp-over-websockets nodemon instant-markdown-d 
 npm update -g
