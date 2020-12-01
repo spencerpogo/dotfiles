@@ -3,19 +3,23 @@
 set -euo pipefail
 shopt -s inherit_errexit
 
-# Add essential packages before getting ppas
-echo "Installing inital packages..."
+log () {
+  echo ${LOG_PREFIX:-"=======>"} $@
+}
+
+# Add essential packages needed to add PPAs
+log "Installing inital packages..."
 sudo apt update
 sudo apt install -y apt-transport-https ca-certificates curl gnupg gnupg-agent software-properties-common
 
 # Add PPAs
-echo "Adding PPAs..."
+log "Adding PPAs..."
 for i in ./scripts/programs/*/addppa.sh; do
   bash ./scripts/runprog.sh $i
 done
 
 # Update Ubuntu and get standard repository programs
-echo "Updating ubuntu..."
+log "Updating ubuntu..."
 sudo apt update && sudo apt full-upgrade -y
 
 pkgs=
@@ -54,12 +58,13 @@ install codium gh libxtst6:i386 libgtk-3-0:i386 clipit haskell-platform pandoc t
 install figlet lolcat cowsay
 
 # Actually do the install
-echo "Installing packages (this will take a while)..."
+pkgcount=$(echo $pkgs | sed 's/ /\n/g' | sed '/^$/d' | wc -l)
+log "Installing $pkgcount packages and their dependencies (this will take a while)..."
 # Not double-quoting so it will expand as multiple arguments
 sudo apt install -y $pkgs
 
 # Run all scripts in programs/
-echo "Installing programs..."
+log "Installing programs..."
 for f in ./scripts/programs/*/install.sh; do
   # Run scripts in same process so they can access utility functions and have fail-fast
   bash ./scripts/runprog.sh "$f"
@@ -69,14 +74,14 @@ done
 sudo apt upgrade -y
 sudo apt autoremove -y
 
-echo "Cloning github repos..."
+log "Cloning github repos..."
 oldcwd=$(pwd)
 mkdir -p ~/code
 cd ~/code
 <ghrepos.txt xargs -n1 git clone
 cd "$oldcwd"
 
-echo "Opening extensions in browser..."
+log "Opening extensions in browser..."
 <extensions.txt xargs -n1 -I {} bash -c \
   'brave-browser https://chrome.google.com/webstore/detail/{} >/dev/null 2>&1  &'
 # brave-browser 'https://extensions.gnome.org/extension/1160/dash-to-panel/' >/dev/null &
