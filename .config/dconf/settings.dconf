@@ -18,7 +18,7 @@ video-x-resolution=640
 video-y-resolution=480
 
 [control-center]
-last-panel='sound'
+last-panel='region'
 
 [deja-dup]
 backend='google'
@@ -49,8 +49,8 @@ primary-color='#2c001e'
 secondary-color='#2c001e'
 
 [desktop/input-sources]
-mru-sources=[('xkb', 'us'), ('ibus', 'pinyin')]
-sources=[('xkb', 'us'), ('ibus', 'pinyin')]
+mru-sources=[('xkb', 'us'), ('xkb', 'es+deadtilde'), ('ibus', 'pinyin')]
+sources=[('xkb', 'us'), ('ibus', 'pinyin'), ('xkb', 'es+deadtilde')]
 xkb-options=@as []
 
 [desktop/interface]
@@ -61,7 +61,7 @@ gtk-theme='Yaru-dark'
 text-scaling-factor=1.0
 
 [desktop/notifications]
-application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit']
+application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit', 'gnome-language-selector']
 show-banners=true
 show-in-lock-screen=false
 
@@ -100,6 +100,9 @@ application-id='gimp_gimp.desktop'
 
 [desktop/notifications/application/gnome-control-center]
 application-id='gnome-control-center.desktop'
+
+[desktop/notifications/application/gnome-language-selector]
+application-id='gnome-language-selector.desktop'
 
 [desktop/notifications/application/gnome-network-panel]
 application-id='gnome-network-panel.desktop'
@@ -208,7 +211,7 @@ background-color='rgb(0,0,0)'
 use-background-color=true
 
 [evince/default]
-window-ratio=(1.6209150326797386, 0.98465412390725959)
+window-ratio=(0.97058823529411764, 0.6262626262626263)
 
 [evolution-data-server]
 migrated=true
@@ -354,8 +357,8 @@ save-directory='/home/scoder12/Documents'
 selected-device='escl:http://192.168.1.79:8080'
 
 [software]
-check-timestamp=int64 1606839461
-online-updates-timestamp=int64 1606839463
+check-timestamp=int64 1607013052
+online-updates-timestamp=int64 1606927460
 
 [system/location]
 enabled=false
