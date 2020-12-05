@@ -65,7 +65,8 @@
     "<C-v>": false,
     "<C-x>": false,
     "<C-z>": false,
-    "<G-g>": false
+    "<G-g>": false,
+    "<C-f>": false
   },
   "workbench.colorTheme": "Andromeda Italic",
   "workbench.iconTheme": "material-icon-theme"
