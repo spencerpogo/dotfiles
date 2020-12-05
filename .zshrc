@@ -80,9 +80,6 @@ COMPLETION_WAITING_DOTS="true"
 # NOTE: zsh-syntax-highlighting must be last so it can properly hook zle.
 plugins=(git gh python zsh-autosuggestions colored-man-pages zsh-syntax-highlighting)
 
-# gh plugin only works if I run this here...
-compdef _gh gh
-
 [[ ! -f $ZSH/oh-my-zsh.sh ]] || source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -343,3 +340,5 @@ dec2cmd () {
   dec "$1" -k "$var" | eval "$2"
 }
 
+# gh plugin only works if I run this here...
+compdef _gh gh
