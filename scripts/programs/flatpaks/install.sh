@@ -8,7 +8,10 @@ installflatpak () {
   log "Installing flatpak:" "$1"
   #set -e
   sudo flatpak install -y flathub "$1"
-  # install .desktop file, if it exists
+  # install .desktop file, if it exists.
+  # (just in case flatpak isn't in XDG_DATA_DIRS). 
+  # On my system, I have /etc/profile.d/flatpak.sh
+  # which sets it for me, but not sure how it got there.
   if [ -f /var/lib/flatpak/exports/share/applications/$1.desktop ]; then
     sudo cp /var/lib/flatpak/exports/share/applications/$1.desktop /usr/share/applications
   fi
@@ -16,6 +19,7 @@ installflatpak () {
 
 # Authenticator
 installflatpak com.github.bilelmoussaoui.Authenticator
+installflatpak com.uploadedlobster.peek
 
 log "Updating flatpaks..."
 sudo flatpak update -y
