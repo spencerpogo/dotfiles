@@ -17,7 +17,7 @@ export -f aptinst
 # Usage: if [ $(needpkg <package>) ]; then <install it>; fi
 needpkg () {
   set +e
-  dpkg -s "$1" 2>1 >/dev/null
+  dpkg -s "$1" >/dev/null 2>&1
   r=$?
   set -e
   if [ $r -ne 0 ]; then

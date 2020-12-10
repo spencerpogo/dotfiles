@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! $(command -v discord) ]; then 
+if [ ! $(needpkg discord) ]; then 
   log "Installing discord..."
   wget -O ~/Downloads/discord.deb https://discord.com/api/download\?platform\=linux\&format\=deb
   aptinst ~/Downloads/discord.deb
