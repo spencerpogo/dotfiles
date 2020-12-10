@@ -55,7 +55,8 @@ install jpegoptim optipng openjdk-11-jre openjdk-11-jdk obs-studio gnome-tweaks 
 install brave-browser libimage-exiftool-perl docker-ce docker-ce-cli containerd.io jq
 install codium gh libxtst6:i386 libgtk-3-0:i386 clipit haskell-platform pandoc texlive
 install inkscape dconf-cli uuid-runtime audacity pstoedit gir1.2-gtksource-3.0
-install python3-gi gir1.2-gtk-3.0 flatpak ffmpeg obs-studio
+install python3-gi gir1.2-gtk-3.0 flatpak ffmpeg obs-studio virtualbox virtualbox-qt
+install virtualbox-dkms
 
 # Fun stuff
 install figlet lolcat cowsay
