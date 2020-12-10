@@ -55,5 +55,6 @@ instdeb () {
 log () {
   echo ${LOG_PREFIX:-"=======>"} $@
 }
+export -f log
 
 source "$1"
