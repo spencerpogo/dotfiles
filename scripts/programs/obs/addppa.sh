@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $(needspkg obs-studio) ]; then
+if [ $(needpkg obs-studio) ]; then
   log "Adding OBS PPA..."
   addrepo ppa:obsproject/obs-studio
 fi
