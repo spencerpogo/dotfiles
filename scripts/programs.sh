@@ -53,7 +53,8 @@ install openvpn tree vim wget git-lfs ncdu wine winetricks golang xxd bat gimp f
 install jpegoptim optipng openjdk-11-jre openjdk-11-jdk obs-studio gnome-tweaks xclip
 install brave-browser libimage-exiftool-perl docker-ce docker-ce-cli containerd.io jq
 install codium gh libxtst6:i386 libgtk-3-0:i386 clipit haskell-platform pandoc texlive
-install inkscape dconf-cli uuid-runtime audacity pstoedit 
+install inkscape dconf-cli uuid-runtime audacity pstoedit gir1.2-gtksource-3.0
+install python3-gi gir1.2-gtk-3.0
 
 # Fun stuff
 install figlet lolcat cowsay

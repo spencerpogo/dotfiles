@@ -49,7 +49,7 @@ primary-color='#2c001e'
 secondary-color='#2c001e'
 
 [desktop/input-sources]
-mru-sources=[('xkb', 'us'), ('ibus', 'pinyin'), ('xkb', 'es+deadtilde')]
+mru-sources=[('xkb', 'us'), ('xkb', 'es+deadtilde'), ('ibus', 'pinyin')]
 sources=[('xkb', 'us'), ('ibus', 'pinyin'), ('xkb', 'es+deadtilde')]
 xkb-options=@as []
 
