@@ -1,11 +1,41 @@
 #!/bin/bash
 
+verlte() {
+  if [  "$1" = "`echo -e "$1\n$2" | sort -V | head -n1`" ]; then
+    echo yes
+  fi
+}
+export -f verlte
+
+getextversion () {
+  set +e
+  ext=$(codium --list-extensions --show-versions | grep -F "$1" 2>/dev/null)
+  set -e
+  if [ "$ext" ]; then
+    echo "$ext" | awk -F@ '{ print $2 }'
+  fi
+}
+export -f getextversion
+
 installvscext () {
+  #set -euo pipefail
+  #shopt -s inherit_errexit
+
   log "Installing VSCodium extension:" "$1"
   echo "Finding version for $1..."
   # Regex go brrrr
-  version=$(curl -s "https://marketplace.visualstudio.com/items?itemName=$1" | sed -ne 's/^.*"version":[ ]*"\([^"]*\)".*$/\1/p')
-  echo "Got version: $version"
+  version=$(curl -s "https://marketplace.visualstudio.com/items?itemName=$1" |
+    sed -ne 's/<script class="jiContent" defer="defer" type="application\/json">\(.*\)<\/script>/\1/p' |
+    jq -r '.Versions[0]["version"]')
+  echo "Got online version: $version"
+
+  installed=$(getextversion "$1")
+  echo "Installed version: $installed"
+  if [ $(verlte "$version" "$installed") ]; then
+    echo "Installed is newer, skipping."
+    exit 0
+  fi
+
   # This is a pretty bad way of doing this. Need to split $1 into two parts by . and
   #  put /vsextensions/ in the middle. This is an awk hack for that:
   exturlpart=$(echo "$1./vsextensions/" | awk -F '.' '{ print $1 $3 $2 }')
