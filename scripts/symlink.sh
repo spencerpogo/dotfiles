@@ -34,3 +34,5 @@ linkDotfile .gitmessage
 linkDotfile .zshrc
 linkDotfile .speedswapper
 linkDotfile .p10k.zsh
+linkDotfile .bashrc
+linkDotfile .bash_profile

@@ -1,3 +1,7 @@
+# This file is unmodified from the repo I originally forked it from due to the fact
+#  that I use zsh. I would delete it but its better than nothing. 
+# -Scoder12
+
 # History control
 # don't use duplicate lines or lines starting with space
 HISTCONTROL=ignoreboth
