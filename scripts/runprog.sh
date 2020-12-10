@@ -44,6 +44,14 @@ addrepo () {
   fi
 }
 
+# Usage: instdeb <filenamename> <url>
+instdeb () {
+  fname=$HOME/Downloads/$1.deb
+  wget -O "$fname" "$2"
+  aptinst "$fname"
+  rm "$fname"
+}
+
 log () {
   echo ${LOG_PREFIX:-"=======>"} $@
 }
