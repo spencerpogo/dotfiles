@@ -18,7 +18,7 @@ video-x-resolution=640
 video-y-resolution=480
 
 [control-center]
-last-panel='sound'
+last-panel='info-overview'
 
 [deja-dup]
 backend='google'
@@ -49,7 +49,7 @@ primary-color='#2c001e'
 secondary-color='#2c001e'
 
 [desktop/input-sources]
-mru-sources=[('xkb', 'us'), ('xkb', 'es+deadtilde'), ('ibus', 'pinyin')]
+mru-sources=[('xkb', 'us'), ('ibus', 'pinyin'), ('xkb', 'es+deadtilde')]
 sources=[('xkb', 'us'), ('ibus', 'pinyin'), ('xkb', 'es+deadtilde')]
 xkb-options=@as []
 
@@ -61,7 +61,7 @@ gtk-theme='Yaru-dark'
 text-scaling-factor=1.0
 
 [desktop/notifications]
-application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit', 'gnome-language-selector']
+application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit', 'gnome-language-selector', 'zoom']
 show-banners=true
 show-in-lock-screen=false
 
@@ -172,6 +172,9 @@ application-id='wireshark.desktop'
 
 [desktop/notifications/application/xdg-desktop-portal-gtk]
 application-id='xdg-desktop-portal-gtk.desktop'
+
+[desktop/notifications/application/zoom]
+application-id='Zoom.desktop'
 
 [desktop/peripherals/keyboard]
 numlock-state=true
@@ -313,7 +316,7 @@ hinting='slight'
 
 [shell]
 app-picker-view=uint32 1
-command-history=['r']
+command-history=['software-properties-gtk', 'r']
 disabled-extensions=@as []
 enabled-extensions=['dash-to-panel@jderose9.github.com', 'dash-to-panel']
 favorite-apps=['brave-browser.desktop', 'chromium_chromium.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop', 'discord.desktop', 'slack.desktop', 'org.gnome.Terminal.desktop', 'codium.desktop']
@@ -357,7 +360,7 @@ save-directory='/home/scoder12/Documents'
 selected-device='escl:http://192.168.1.79:8080'
 
 [software]
-check-timestamp=int64 1607357508
+check-timestamp=int64 1607617883
 online-updates-timestamp=int64 1607287285
 
 [system/location]
