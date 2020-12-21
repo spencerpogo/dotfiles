@@ -10,7 +10,7 @@ save-dconf: ## Save dconf settings into the repo
 	dconf dump /org/gnome/ > ./.config/dconf/settings.dconf
 
 save-vsc-settings: ## Save VS Code configuration files into the repo
-	cp ~/.config/VSCodium/User/{settings.json,extensions.txt,keybindings.json} ./.config/VSCodium/User
+	cp -r ~/.config/VSCodium/User/{settings.json,keybindings.json,snippets} ./.config/VSCodium/User
 
 save-vsce: ## Save a list of VSC extensions into the repo
 	codium --list-extensions > ./.config/VSCodium/User/extensions.txt

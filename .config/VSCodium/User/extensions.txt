@@ -16,9 +16,11 @@ ms-python.python
 ms-python.vscode-pylance
 ms-vsliveshare.vsliveshare
 njpwerner.autodocstring
+Orta.vscode-jest
 PKief.material-icon-theme
 redhat.java
 ritwickdey.LiveServer
+rust-lang.rust
 Tobiah.language-pde
 vscodevim.vim
 vscodevim.vim
