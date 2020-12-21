@@ -12,13 +12,14 @@ subtitle-encoding='UTF-8'
 [cheese]
 burst-delay=1000
 camera='HK 2M CAM: HK 2M CAM'
+countdown=false
 photo-x-resolution=640
 photo-y-resolution=480
 video-x-resolution=640
 video-y-resolution=480
 
 [control-center]
-last-panel='info-overview'
+last-panel='sound'
 
 [deja-dup]
 backend='google'
@@ -61,7 +62,7 @@ gtk-theme='Yaru-dark'
 text-scaling-factor=1.0
 
 [desktop/notifications]
-application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit', 'gnome-language-selector', 'zoom']
+application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit', 'gnome-language-selector', 'zoom', 'blender']
 show-banners=true
 show-in-lock-screen=false
 
@@ -70,6 +71,9 @@ application-id='apport-gtk.desktop'
 
 [desktop/notifications/application/autokey-gtk]
 application-id='autokey-gtk.desktop'
+
+[desktop/notifications/application/blender]
+application-id='blender.desktop'
 
 [desktop/notifications/application/brave-browser]
 application-id='brave-browser.desktop'
@@ -360,7 +364,7 @@ save-directory='/home/scoder12/Documents'
 selected-device='escl:http://192.168.1.79:8080'
 
 [software]
-check-timestamp=int64 1607617883
+check-timestamp=int64 1608576859
 online-updates-timestamp=int64 1607287285
 
 [system/location]

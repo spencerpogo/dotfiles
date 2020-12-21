@@ -19,7 +19,7 @@
       "",
       "export interface ${2:$TM_FILENAME_BASE}Props {};",
       "",
-      "const ${2:$TM_FILENAME_BASE}: FC<${2:$TM_FILENAME_BASE}Props> = ({}: ${2:$TM_FILENAME_BASE}Props) => {",
+      "export const ${2:$TM_FILENAME_BASE}: FC<${2:$TM_FILENAME_BASE}Props> = ({}: ${2:$TM_FILENAME_BASE}Props) => {",
       "  return ${0:<></>};",
       "};",
       "",
