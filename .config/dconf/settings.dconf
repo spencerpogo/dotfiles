@@ -19,7 +19,7 @@ video-x-resolution=640
 video-y-resolution=480
 
 [control-center]
-last-panel='sound'
+last-panel='printers'
 
 [deja-dup]
 backend='google'
@@ -62,7 +62,7 @@ gtk-theme='Yaru-dark'
 text-scaling-factor=1.0
 
 [desktop/notifications]
-application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit', 'gnome-language-selector', 'zoom', 'blender']
+application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit', 'gnome-language-selector', 'zoom', 'blender', 'com-toggl-toggldesktop', 'rhythmbox']
 show-banners=true
 show-in-lock-screen=false
 
@@ -86,6 +86,9 @@ application-id='clipit.desktop'
 
 [desktop/notifications/application/codium]
 application-id='codium.desktop'
+
+[desktop/notifications/application/com-toggl-toggldesktop]
+application-id='com.toggl.TogglDesktop.desktop'
 
 [desktop/notifications/application/com-uploadedlobster-peek]
 application-id='com.uploadedlobster.peek.desktop'
@@ -159,6 +162,9 @@ application-id='org.gnome.Terminal.desktop'
 [desktop/notifications/application/org-inkscape-inkscape]
 application-id='org.inkscape.Inkscape.desktop'
 
+[desktop/notifications/application/rhythmbox]
+application-id='rhythmbox.desktop'
+
 [desktop/notifications/application/slack]
 application-id='slack.desktop'
 
@@ -210,7 +216,7 @@ sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gn
 idle-delay=uint32 300
 
 [desktop/sound]
-allow-volume-above-100-percent=false
+allow-volume-above-100-percent=true
 event-sounds=true
 
 [eog/view]
@@ -311,6 +317,40 @@ ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
+[rhythmbox]
+position=(0, 0)
+
+[rhythmbox/library/source]
+show-browser=true
+
+[rhythmbox/player]
+volume=1.0
+
+[rhythmbox/plugins]
+active-plugins=['generic-player', 'power-manager', 'daap', 'audiocd', 'ipod', 'notification', 'dbus-media-server', 'mmkeys', 'mtpdevice', 'mpris', 'iradio', 'audioscrobbler', 'rb', 'alternative-toolbar', 'android', 'artsearch']
+seen-plugins=['fmradio', 'pythonconsole', 'daap', 'ipod', 'notification', 'dbus-media-server', 'mtpdevice', 'mpris', 'rblirc', 'audioscrobbler', 'grilo', 'rb', 'alternative-toolbar', 'replaygain', 'soundcloud', 'magnatune', 'webremote', 'lyrics', 'im-status', 'listenbrainz', 'artsearch']
+
+[rhythmbox/plugins/alternative_toolbar]
+show-source-toolbar=false
+
+[rhythmbox/plugins/audioscrobbler/Last.fm]
+scrobbling-enabled=true
+
+[rhythmbox/plugins/audioscrobbler/Libre.fm]
+scrobbling-enabled=true
+
+[rhythmbox/plugins/iradio]
+initial-stations-loaded=true
+
+[rhythmbox/plugins/iradio/source]
+show-browser=true
+
+[rhythmbox/podcast/source]
+show-browser=true
+
+[rhythmbox/rhythmdb]
+locations=['file:///home/scoder12/Music']
+
 [settings-daemon/plugins/power]
 sleep-inactive-ac-timeout=3600
 sleep-inactive-ac-type='nothing'
@@ -364,8 +404,8 @@ save-directory='/home/scoder12/Documents'
 selected-device='escl:http://192.168.1.79:8080'
 
 [software]
-check-timestamp=int64 1608576859
-online-updates-timestamp=int64 1607287285
+check-timestamp=int64 1610832744
+online-updates-timestamp=int64 1610240914
 
 [system/location]
 enabled=false
