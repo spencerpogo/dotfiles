@@ -118,6 +118,9 @@ else
   export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 fi
 
+# Fix colors when using tmux.
+export TERM=xterm-256color
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
