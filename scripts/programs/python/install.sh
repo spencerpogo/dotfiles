@@ -24,7 +24,7 @@ pyenv global 3.8.6 3.7.7
 
 # Global python packages, always run to keep it fresh
 log "Updating python packages..."
-pip install --upgrade pip wheel
+pip install --upgrade pip wheel pipx
 pip install --upgrade requests flask aiohttp black numpy scipy pandas jupyter pwntools
 
 set -u
