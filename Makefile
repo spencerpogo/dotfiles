@@ -8,6 +8,7 @@ help: ## Show this help
 
 save-dconf: ## Save dconf settings into the repo
 	dconf dump /org/gnome/ > ./.config/dconf/settings.dconf
+	cp ~/.config/pulse/daemon.conf ./.config/pulse/daemon.conf
 
 save-vsc-settings: ## Save VS Code configuration files into the repo
 	cp -r ~/.config/VSCodium/User/{settings.json,keybindings.json,snippets} ./.config/VSCodium/User
