@@ -152,6 +152,11 @@ export TERM=xterm-256color
 # PATH #
 ########
 
+# Cargo
+if [ -d ~/.cargo/bin ]; then
+  export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 # Pyenv
 if [ -d ~/.pyenv/bin ]; then
   export PATH="$HOME/.pyenv/bin:$PATH"
