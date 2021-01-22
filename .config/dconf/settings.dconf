@@ -62,7 +62,7 @@ gtk-theme='Yaru-dark'
 text-scaling-factor=1.0
 
 [desktop/notifications]
-application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit', 'gnome-language-selector', 'zoom', 'blender', 'com-toggl-toggldesktop', 'rhythmbox']
+application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit', 'gnome-language-selector', 'zoom', 'blender', 'com-toggl-toggldesktop', 'rhythmbox', 'org-gnome-pomodoro']
 show-banners=true
 show-in-lock-screen=false
 
@@ -155,6 +155,9 @@ application-id='org.gnome.gedit.desktop'
 
 [desktop/notifications/application/org-gnome-nautilus]
 application-id='org.gnome.Nautilus.desktop'
+
+[desktop/notifications/application/org-gnome-pomodoro]
+application-id='org.gnome.Pomodoro.desktop'
 
 [desktop/notifications/application/org-gnome-terminal]
 application-id='org.gnome.Terminal.desktop'
@@ -316,6 +319,33 @@ ignore-phase2-ca-cert=false
 [nm-applet/eap/b3cc9b04-7c7f-4107-acef-9637bf848562]
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
+
+[pomodoro/plugins/actions]
+actions-list=['/org/gnome/pomodoro/plugins/actions/action0/', '/org/gnome/pomodoro/plugins/actions/action1/']
+
+[pomodoro/plugins/actions/action0]
+command='/bin/bash -c "kill -SIGQUIT $(pgrep -o Discord)"'
+name='Close discord'
+states=['pomodoro']
+triggers=['start', 'resume']
+
+[pomodoro/plugins/actions/action1]
+command='/bin/bash -c "kill -SIGQUIT $(pgrep -o slack)"'
+name='Close Slack'
+states=['pomodoro']
+triggers=['start', 'resume']
+
+[pomodoro/preferences]
+enabled-plugins=['sounds', 'actions', 'dark-theme']
+
+[pomodoro/state]
+timer-date='2021-01-22T02:10:58+0000'
+timer-elapsed=39.043349981307983
+timer-paused=true
+timer-score=0.0
+timer-state='pomodoro'
+timer-state-date='2021-01-22T01:58:35+0000'
+timer-state-duration=1500.0
 
 [rhythmbox]
 position=(0, 0)
