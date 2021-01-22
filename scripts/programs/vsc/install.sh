@@ -1,5 +1,7 @@
 #!/bin/bash
 
+EXTDIR=$HOME/.vscode-oss/extensions
+
 verlte() {
   if [  "$1" = "`echo -e "$1\n$2" | sort -V | head -n1`" ]; then
     echo yes
@@ -17,9 +19,59 @@ getextversion () {
 }
 export -f getextversion
 
+findextwithname () {
+  for ext in $(ls -1 ~/.vscode-oss/extensions); do
+    manifest=$EXTDIR/$ext/package.json
+    name=$(<$manifest jq -r '.displayName')
+    if [ "$name" = "$1" ]; then
+      # output extension ID
+      <$manifest jq -r '.publisher + "." + .name'
+      return 0
+    fi
+  done
+}
+
+uninstallext () {
+  code=0
+  errs=
+  while [ "$code" -eq 0 ]; do
+    echo "Uninstalling $1"
+
+    set +e
+    errs=$(codium --uninstall-extension "$1" 2>&1 1>/dev/null)
+    code=$?
+    set -e
+
+    echo "errs: $errs"
+    if [ "$errs" ]; then
+      dep=$(echo "$errs" | tail -n1 | sed -ne "s/Cannot uninstall '\(.*\)' extension. '\(.*\)' extension depends on this./\2/p")
+      if [ "$dep" ]; then
+        echo "Tried to uninstall $1 but the '$dep' extension depends on it. "
+  
+        while true; do
+          echo "Searching for extension with name $dep"
+          depid=$(findextwithname "$dep")
+          if [ ! "$depid" ]; then
+            echo "No more matches for $dep"
+            break
+          fi
+
+          echo "Found ID for the '$dep' extension: $depid, will recursively uninstall it..."
+          uninstallext "$depid"
+        done
+
+        echo "Handled dependent extension $dep"
+        # can potentially cause infinite loop but whatever
+        code=0
+      fi
+    fi
+  done
+}
+export -f uninstallext
+
 installvscext () {
-  #set -euo pipefail
-  #shopt -s inherit_errexit
+  set -euo pipefail
+  shopt -s inherit_errexit
 
   log "Installing VSCodium extension:" "$1"
   echo "Finding version for $1..."
@@ -32,9 +84,11 @@ installvscext () {
   installed=$(getextversion "$1")
   echo "Installed version: $installed"
   if [ $(verlte "$version" "$installed") ]; then
-    echo "Installed is newer, skipping."
-    exit 0
+    echo "Extension is up to date."
+    return 0
   fi
+  
+  uninstallext "$1"
 
   # This is a pretty bad way of doing this. Need to split $1 into two parts by . and
   #  put /vsextensions/ in the middle. This is an awk hack for that:
@@ -62,6 +116,6 @@ installvscext () {
 export -f installvscext
 
 echo "Installing extensions..."
-set +e
-<~/.config/VSCodium/User/extensions.txt xargs -I {} bash -c 'installvscext "$@"' _ {}
-set -e
+while read i; do
+ installvscext "$i"
+done <~/.config/VSCodium/User/extensions.txt
