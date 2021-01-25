@@ -339,13 +339,13 @@ triggers=['start', 'resume']
 enabled-plugins=['sounds', 'actions', 'dark-theme']
 
 [pomodoro/state]
-timer-date='2021-01-22T02:10:58+0000'
-timer-elapsed=39.043349981307983
-timer-paused=true
-timer-score=0.0
-timer-state='pomodoro'
-timer-state-date='2021-01-22T01:58:35+0000'
-timer-state-duration=1500.0
+timer-date='2021-01-25T01:24:52+0000'
+timer-elapsed=0.0
+timer-paused=false
+timer-score=3.9265461945533753
+timer-state='null'
+timer-state-date='2021-01-25T01:24:52+0000'
+timer-state-duration=0.0
 
 [rhythmbox]
 position=(0, 0)
@@ -434,7 +434,7 @@ save-directory='/home/scoder12/Documents'
 selected-device='escl:http://192.168.1.79:8080'
 
 [software]
-check-timestamp=int64 1611005841
+check-timestamp=int64 1611591581
 online-updates-timestamp=int64 1610240914
 
 [system/location]
