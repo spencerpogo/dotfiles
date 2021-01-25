@@ -22,5 +22,5 @@ nvm install-latest-npm
 set -u
 
 log "📦 Installing NPM packages..."
-npm i -g replit eslint gitmoji-cli tcp-over-websockets nodemon instant-markdown-d 
+npm i -g replit eslint gitmoji-cli tcp-over-websockets nodemon instant-markdown-d yarn
 npm update -g
