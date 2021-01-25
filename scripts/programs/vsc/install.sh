@@ -112,6 +112,7 @@ installvscext () {
 
   echo "Installing..."
   codium --install-extension "$vsix" --force
+  rm -rf "$vsix"
 }
 export -f installvscext
 
