@@ -1,5 +1,6 @@
 benawad.VSinder
 bungcip.better-toml
+chenglou92.rescript-vscode
 CoenraadS.bracket-pair-colorizer-2
 dbaeumer.vscode-eslint
 eamodio.gitlens

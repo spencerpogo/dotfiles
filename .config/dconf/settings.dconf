@@ -62,7 +62,7 @@ gtk-theme='Yaru-dark'
 text-scaling-factor=1.0
 
 [desktop/notifications]
-application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit', 'gnome-language-selector', 'zoom', 'blender', 'com-toggl-toggldesktop', 'rhythmbox', 'org-gnome-pomodoro']
+application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit', 'gnome-language-selector', 'zoom', 'blender', 'com-toggl-toggldesktop', 'rhythmbox', 'org-gnome-pomodoro', 'us-zoom-zoom']
 show-banners=true
 show-in-lock-screen=false
 
@@ -179,6 +179,9 @@ application-id='steam.desktop'
 
 [desktop/notifications/application/update-manager]
 application-id='update-manager.desktop'
+
+[desktop/notifications/application/us-zoom-zoom]
+application-id='us.zoom.Zoom.desktop'
 
 [desktop/notifications/application/wireshark]
 application-id='wireshark.desktop'
@@ -335,17 +338,20 @@ name='Close Slack'
 states=['pomodoro']
 triggers=['start', 'resume']
 
+[pomodoro/plugins/gnome]
+hide-system-notifications=true
+
 [pomodoro/preferences]
 enabled-plugins=['sounds', 'actions', 'dark-theme']
 
 [pomodoro/state]
-timer-date='2021-01-25T01:24:52+0000'
+timer-date='2021-01-27T18:01:54+0000'
 timer-elapsed=0.0
 timer-paused=false
-timer-score=3.9265461945533753
-timer-state='null'
-timer-state-date='2021-01-25T01:24:52+0000'
-timer-state-duration=0.0
+timer-score=0.0
+timer-state='pomodoro'
+timer-state-date='2021-01-27T18:01:54+0000'
+timer-state-duration=1500.0
 
 [rhythmbox]
 position=(0, 0)
@@ -434,7 +440,7 @@ save-directory='/home/scoder12/Documents'
 selected-device='escl:http://192.168.1.79:8080'
 
 [software]
-check-timestamp=int64 1611591581
+check-timestamp=int64 1611766634
 online-updates-timestamp=int64 1610240914
 
 [system/location]
