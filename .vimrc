@@ -64,14 +64,14 @@ set showmode
 set showcmd
 
 " Searching
-nnoremap / /\v
-vnoremap / /\v
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set showmatch
-map <leader><space> :let @/=''<cr> " clear search
+"nnoremap / /\v
+"vnoremap / /\v
+"set hlsearch
+"set incsearch
+"set ignorecase
+"set smartcase
+"set showmatch
+"map <leader><space> :let @/=''<cr> " clear search
 
 " Remap help key.
 inoremap <F1> <ESC>:set invfullscreen<CR>a
