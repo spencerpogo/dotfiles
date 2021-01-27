@@ -230,6 +230,13 @@ alias gd="git diff HEAD --"
 
 # Functions
 
+# Usage: ls -1 folder_with_long_filenames | nowrap
+nowrap () {
+  tput rmam
+  <&0 cat
+  tput smam
+}
+
 cl () {
   # Show the amount of commits in repo
   # e.g. cl # all branches
