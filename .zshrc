@@ -195,7 +195,13 @@ STDERRED_SO="$HOME/.stderred/build/libstderred.so"
 ###########
 
 # Misc
-alias sudo="sudo env \"PATH=$PATH\""
+sudo () {
+   /usr/bin/sudo "PATH=$PATH" "$@"
+}
+docker () {
+  sudo docker "$@"
+}
+
 alias lsa="ls -a"
 alias bat="batcat"
 # For when my headphones don't work, I run this command a few times until it says
