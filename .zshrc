@@ -201,6 +201,7 @@ sudo () {
 docker () {
   sudo docker "$@"
 }
+alias psql="sudo -u postgres psql"
 
 alias lsa="ls -a"
 alias bat="batcat"
