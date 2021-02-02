@@ -7,6 +7,7 @@ eamodio.gitlens
 EliverLara.andromeda
 esbenp.prettier-vscode
 golang.go
+GraphQL.vscode-graphql
 icrawl.discord-vscode
 mike-co.import-sorter
 millennIumAMbiguity.processing-formatter

@@ -222,7 +222,7 @@ sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gn
 idle-delay=uint32 300
 
 [desktop/sound]
-allow-volume-above-100-percent=true
+allow-volume-above-100-percent=false
 event-sounds=true
 
 [eog/view]
@@ -230,7 +230,7 @@ background-color='rgb(0,0,0)'
 use-background-color=true
 
 [evince/default]
-window-ratio=(2.0265151515151514, 1.3872549019607843)
+window-ratio=(2.0261437908496731, 1.2436868686868687)
 
 [evolution-data-server]
 migrated=true
@@ -345,12 +345,12 @@ hide-system-notifications=true
 enabled-plugins=['sounds', 'actions', 'dark-theme']
 
 [pomodoro/state]
-timer-date='2021-01-27T18:01:54+0000'
+timer-date='2021-01-28T02:59:51+0000'
 timer-elapsed=0.0
 timer-paused=false
-timer-score=0.0
+timer-score=14.48779037253062
 timer-state='pomodoro'
-timer-state-date='2021-01-27T18:01:54+0000'
+timer-state-date='2021-01-28T02:59:51+0000'
 timer-state-duration=1500.0
 
 [rhythmbox]
@@ -440,8 +440,8 @@ save-directory='/home/scoder12/Documents'
 selected-device='escl:http://192.168.1.79:8080'
 
 [software]
-check-timestamp=int64 1611766634
-online-updates-timestamp=int64 1610240914
+check-timestamp=int64 1612282843
+online-updates-timestamp=int64 1612128023
 
 [system/location]
 enabled=false
