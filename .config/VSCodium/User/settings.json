@@ -34,6 +34,13 @@
     "editor.wordBasedSuggestions": false,
     "editor.tabSize": 4
   },
+  "emmet.excludeLanguages": [
+    "markdown",
+    "typescript",
+    "typescriptreact",
+    "javascript",
+    "javascriptreact"
+  ],
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.fontFamily": "Fira Code",
