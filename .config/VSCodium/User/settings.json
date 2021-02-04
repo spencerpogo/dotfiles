@@ -26,7 +26,15 @@
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.acceptSuggestionOnCommitCaracter": false,
+  "[rust]": {
+    "editor.tabSize": 4
+  },
+  "[python]": {
+    "gitlens.codeLens.symbolScopes": ["!Module"],
+    "editor.wordBasedSuggestions": false,
+    "editor.tabSize": 4
+  },
+  "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
