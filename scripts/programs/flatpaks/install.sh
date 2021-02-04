@@ -18,7 +18,7 @@ installflatpak () {
 }
 
 # Authenticator
-installflatpak com.github.bilelmoussaoui.Authenticator
+installflatpak com.belmoussaoui.Authenticator
 installflatpak com.uploadedlobster.peek
 
 log "Updating flatpaks..."
