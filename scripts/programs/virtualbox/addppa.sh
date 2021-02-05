@@ -6,4 +6,4 @@ addvirtualboxkey () {
   wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
 }
 
-addrepo "deb https://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" addvirtualboxkey
+addrepo vbox "deb https://download.virtualbox.org/virtualbox/debian $(codename) contrib" addvirtualboxkey

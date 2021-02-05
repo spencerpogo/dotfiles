@@ -25,20 +25,24 @@ needpkg () {
   fi
 }
 
-# Usage: addrepo <full deb string> [key function]
+codename () {
+  echo ${CODENAME:-$(lsb_release -cs)}
+}
+
+# Usage: addrepo <full deb string> <name> [key function]
 addrepo () {
   set +e
-  grep -F "$1" /etc/apt/sources.list >/dev/null
+  grep -F "$1" /etc/apt/sources.list $(find /etc/apt/sources.list.d -type f -name "*.list" 2>/dev/null) >/dev/null
   r=$?
   set -e
 
   if [ $r -ne 0 ]; then
     echo "Adding repository:" "$1"
-    if [ $# -ge 2 ]; then
+    if [ $# -ge 3 ]; then
       eval "$2"
     fi
 
-    sudo apt-add-repository -yn "$1"
+    echo "$2" | sudo tee /etc/apt/sources.list.d/$1.list
   else
     echo "Skipping repository:" "$1"
   fi
