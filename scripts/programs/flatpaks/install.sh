@@ -23,6 +23,8 @@ installflatpak com.belmoussaoui.Authenticator
 installflatpak com.uploadedlobster.peek
 # Inkscape
 installflatpak org.inkscape.Inkscape
+# Obsidian
+installflatpak md.obsidian.Obsidian
 
 log "Updating flatpaks..."
 sudo flatpak update -y
