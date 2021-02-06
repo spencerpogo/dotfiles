@@ -6,7 +6,7 @@ r=$?
 set -e
 
 restart () {
-  if [[ -z "${NO_GNOME_RESTART}" ]]; then
+  if [[ -z "${NO_GNOME_RESTART:-}" ]]; then
     log "Restarting gnome..."
     busctl --user call "org.gnome.Shell" "/org/gnome/Shell" "org.gnome.Shell" "Eval" "s" 'Meta.restart("Restarting…")'
   fi
