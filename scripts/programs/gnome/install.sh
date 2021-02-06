@@ -17,4 +17,4 @@ fi
 log "Loading dconf settings..."
 dconf load /org/gnome/ < .config/dconf/settings.dconf
 log "Restarting gnome..."
-killall -SIGQUIT gnome-shell
+busctl --user call "org.gnome.Shell" "/org/gnome/Shell" "org.gnome.Shell" "Eval" "s" 'Meta.restart("Restarting…")';
