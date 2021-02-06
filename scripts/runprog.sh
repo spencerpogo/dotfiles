@@ -39,7 +39,7 @@ addrepo () {
   if [ $r -ne 0 ]; then
     echo "Adding repository:" "$1"
     if [ $# -ge 3 ]; then
-      eval "$2"
+      eval "$3"
     fi
 
     echo "$2" | sudo tee /etc/apt/sources.list.d/$1.list
