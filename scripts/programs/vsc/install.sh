@@ -74,7 +74,7 @@ installvscext () {
   shopt -s inherit_errexit
 
   log "Installing VSCodium extension:" "$1"
-  if [ "$1" -eq "esbenp.prettier-vscode" ]; then
+  if [ "$1" == "esbenp.prettier-vscode" ]; then
     version=5.8.0
   else
     echo "Finding version for $1..."
