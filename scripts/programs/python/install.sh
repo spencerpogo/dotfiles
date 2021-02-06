@@ -6,6 +6,11 @@ if [ ! -d ~/.pyenv ]; then
   curl https://pyenv.run | bash
 fi
 
+WD=$(pwd)
+cd ~/.pyenv
+git pull
+cd $WD
+
 # These are in .zshrc but have to run now to get `pyenv` command
 export PATH="$HOME/.pyenv/bin:$PATH"
 set +u
