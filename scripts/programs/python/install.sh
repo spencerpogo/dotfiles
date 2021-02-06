@@ -18,14 +18,14 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 log "🐍 Building python versions..."
+if [ ! -d ~/.pyenv/versions/3.9.1 ]; then
+  pyenv install 3.9.1
+fi
 if [ ! -d ~/.pyenv/versions/3.8.6 ]; then
   pyenv install 3.8.6
 fi
-if [ ! -d ~/.pyenv/versions/3.7.7 ]; then
-  pyenv install 3.7.7
-fi
 
-pyenv global 3.8.6 3.7.7
+pyenv global 3.9.1 3.8.6
 
 # Global python packages, always run to keep it fresh
 log "Updating python packages..."
