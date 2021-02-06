@@ -19,7 +19,7 @@ video-x-resolution=640
 video-y-resolution=480
 
 [control-center]
-last-panel='sound'
+last-panel='ubuntu'
 
 [deja-dup]
 backend='google'
@@ -396,7 +396,7 @@ hinting='slight'
 
 [shell]
 app-picker-view=uint32 1
-command-history=['software-properties-gtk', 'r']
+command-history=['software-properties-gtk', 'r', 'xterm']
 disabled-extensions=@as []
 enabled-extensions=['dash-to-panel@jderose9.github.com', 'dash-to-panel']
 favorite-apps=['brave-browser.desktop', 'chromium_chromium.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop', 'discord.desktop', 'slack.desktop', 'org.gnome.Terminal.desktop', 'codium.desktop']
@@ -405,6 +405,8 @@ favorite-apps=['brave-browser.desktop', 'chromium_chromium.desktop', 'org.gnome.
 click-action='minimize'
 dash-max-icon-size=28
 dock-position='BOTTOM'
+multi-monitor=true
+preferred-monitor=0
 
 [shell/extensions/dash-to-panel]
 appicon-margin=4
@@ -440,7 +442,7 @@ save-directory='/home/scoder12/Documents'
 selected-device='escl:http://192.168.1.79:8080'
 
 [software]
-check-timestamp=int64 1612465740
+check-timestamp=int64 1612542667
 online-updates-timestamp=int64 1612128023
 
 [system/location]
@@ -460,6 +462,7 @@ font='MesloLGS NF 12'
 palette=['rgb(46,52,54)', 'rgb(204,0,0)', 'rgb(78,154,6)', 'rgb(196,160,0)', 'rgb(52,101,164)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(238,238,236)']
 use-system-font=false
 use-theme-colors=false
+use-theme-transparency=false
 visible-name='Main'
 
 [todo]
