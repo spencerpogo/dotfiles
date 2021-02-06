@@ -41,7 +41,7 @@ install-programs: ## Installs all APT packages and programs under ./scripts/prog
 install-repos: ## Clones github repos
 	./scripts/repos.sh
 
-install-all: install-symlinks install-dotconfig install-fonts install-programs
+install-all: install-programs install-symlinks install-dotconfig install-fonts
 install-all: install-repos ## Install everything	
 
 update: ## Do apt upgrade and autoremove
