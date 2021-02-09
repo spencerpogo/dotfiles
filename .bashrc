@@ -2,6 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# Note(Scoder12): This is here so that bash is sane but ZSH is my primary shell so
+#  this isn't used much. 
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
