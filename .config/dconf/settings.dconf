@@ -9,6 +9,10 @@ window-width=600
 active-plugins=['apple-trailers', 'save-file', 'autoload-subtitles', 'screensaver', 'vimeo', 'rotation', 'skipto', 'recent', 'open-directory', 'screenshot', 'movie-properties', 'variable-rate', 'media-player-keys']
 subtitle-encoding='UTF-8'
 
+[baobab/ui]
+window-size=(960, 600)
+window-state=87168
+
 [cheese]
 burst-delay=1000
 camera='HK 2M CAM: HK 2M CAM'
@@ -129,6 +133,9 @@ application-id='install4j_1hlc608-BurpSuiteCommunity.desktop'
 [desktop/notifications/application/manictime]
 application-id='manictime.desktop'
 
+[desktop/notifications/application/md-obsidian-obsidian]
+application-id='md.obsidian.Obsidian.desktop'
+
 [desktop/notifications/application/minecraft-launcher]
 application-id='minecraft-launcher.desktop'
 
@@ -137,6 +144,9 @@ application-id='multimc.desktop'
 
 [desktop/notifications/application/obs-studio-obs-studio]
 application-id='obs-studio_obs-studio.desktop'
+
+[desktop/notifications/application/org-gnome-baobab]
+application-id='org.gnome.baobab.desktop'
 
 [desktop/notifications/application/org-gnome-chromegnomeshell]
 application-id='org.gnome.ChromeGnomeShell.desktop'
@@ -442,7 +452,7 @@ save-directory='/home/scoder12/Documents'
 selected-device='escl:http://192.168.1.79:8080'
 
 [software]
-check-timestamp=int64 1612542667
+check-timestamp=int64 1612897548
 online-updates-timestamp=int64 1612128023
 
 [system/location]
