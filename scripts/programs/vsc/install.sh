@@ -74,22 +74,18 @@ installvscext () {
   shopt -s inherit_errexit
 
   log "Installing VSCodium extension:" "$1"
-  if [ "$1" == "esbenp.prettier-vscode" ]; then
-    version=5.8.0
-  else
-    echo "Finding version for $1..."
-    # Regex go brrrr
-    version=$(curl -s "https://marketplace.visualstudio.com/items?itemName=$1" |
-      sed -ne 's/<script class="jiContent" defer="defer" type="application\/json">\(.*\)<\/script>/\1/p' |
-      jq -r '.Versions[0]["version"]')
-    echo "Got online version: $version"
+  echo "Finding version for $1..."
+  # Regex go brrrr
+  version=$(curl -s "https://marketplace.visualstudio.com/items?itemName=$1" |
+    sed -ne 's/<script class="jiContent" defer="defer" type="application\/json">\(.*\)<\/script>/\1/p' |
+    jq -r '.Versions[0]["version"]')
+  echo "Got online version: $version"
 
-    installed=$(getextversion "$1")
-    echo "Installed version: $installed"
-    if [ $(verlte "$version" "$installed") ]; then
-      echo "Extension is up to date."
-      return 0
-    fi
+  installed=$(getextversion "$1")
+  echo "Installed version: $installed"
+  if [ $(verlte "$version" "$installed") ]; then
+    echo "Extension is up to date."
+    return 0
   fi
   
   uninstallext "$1"
