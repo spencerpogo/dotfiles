@@ -1,28 +1,5 @@
 #!/bin/bash
 
-set -euo pipefail
-shopt -s inherit_errexit
-
-log () {
-  echo ${LOG_PREFIX:-"=======>"} $@
-}
-
-# Add essential packages needed to add PPAs
-log "Installing inital packages..."
-sudo apt update
-sudo apt install -y apt-transport-https ca-certificates curl gnupg gnupg-agent \
-  software-properties-common
-
-# Add PPAs
-log "Adding PPAs..."
-for i in ./scripts/programs/*/addppa.sh; do
-  bash ./scripts/runprog.sh $i
-done
-
-# Update Ubuntu and get standard repository programs
-log "Updating ubuntu..."
-sudo apt update && sudo apt full-upgrade -y
-
 pkgs=
 
 #function install {
