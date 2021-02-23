@@ -78,7 +78,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # NOTE: zsh-syntax-highlighting must be last so it can properly hook zle.
-plugins=(git gh python zsh-autosuggestions colored-man-pages fast-syntax-highlighting)
+plugins=(git gh python zsh-autosuggestions colored-man-pages docker docker-compose fast-syntax-highlighting)
 
 [[ ! -f $ZSH/oh-my-zsh.sh ]] || source $ZSH/oh-my-zsh.sh
 
