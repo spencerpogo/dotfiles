@@ -50,6 +50,7 @@ install-apt-repos: ## Adds the APT repos for all the tools. Depends on the insta
 	bash ./scripts/runprog.sh ./scripts/programs/obs/addppa.sh
 	bash ./scripts/runprog.sh ./scripts/programs/virtualbox/addppa.sh
 	bash ./scripts/runprog.sh ./scripts/programs/vsc/addppa.sh
+	sudo apt update
 
 install-apt: ## Installs all APT packages. Depends on the install-apt-repos target
 	bash ./scripts/runprog.sh ./scripts/apt.sh
