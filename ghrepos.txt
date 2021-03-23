@@ -1,4 +1,4 @@
 https://github.com/Scoder12/blog.git
 https://github.com/Scoder12/murdermystery.git
-https://github.com/Scoder12/replit.git
+https://github.com/replit/replit-py.git
 https://github.com/Scoder12/vidgen.git
