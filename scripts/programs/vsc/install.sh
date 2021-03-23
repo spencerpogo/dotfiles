@@ -99,10 +99,10 @@ installvscext () {
   dlfinished=
   while [ ! $dlfinished ]; do
     echo "Downloading $url..."
-    set +e
     curl -L --compressed --output "$vsix" "$url"
-    set -e
+    set +e
     file "$vsix" | grep 'Zip' >/dev/null
+    set -e
     if [ $? -eq 0 ]; then
       dlfinished=yes
     else
