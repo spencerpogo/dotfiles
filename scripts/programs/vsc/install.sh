@@ -76,7 +76,7 @@ installvscext () {
   log "Installing VSCodium extension:" "$1"
   echo "Finding version for $1..."
   # Regex go brrrr
-  version=$(curl -s "https://marketplace.visualstudio.com/items?itemName=$1" |
+  version=$(curl -sSL "https://marketplace.visualstudio.com/items?itemName=$1" |
     sed -ne 's/<script class="jiContent" defer="defer" type="application\/json">\(.*\)<\/script>/\1/p' |
     jq -r '.Versions[0]["version"]')
   echo "Got online version: $version"
@@ -99,7 +99,9 @@ installvscext () {
   dlfinished=
   while [ ! $dlfinished ]; do
     echo "Downloading $url..."
-    curl --compressed --output "$vsix" "$url"
+    set +e
+    curl -L --compressed --output "$vsix" "$url"
+    set -e
     file "$vsix" | grep 'Zip' >/dev/null
     if [ $? -eq 0 ]; then
       dlfinished=yes
