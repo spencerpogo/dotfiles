@@ -74,8 +74,9 @@ install-programs: ## Installs all programs. Some programs depend on the install-
 install-repos: ## Clones github repos
 	./scripts/repos.sh
 
-install-all: install-initial-apt install-apt-repos install-apt install-programs
-install-all: install-symlinks install-dotconfig install-fonts install-repos ## Install everything	
+install-all: install-initial-apt install-apt-repos install-apt install-dotconfig
+install-all: install-programs install-symlinks install-fonts
+install-all: install-repos ## Install everything	
 
 update: ## Do apt upgrade and autoremove
 	sudo apt update && sudo apt upgrade -y --fix-missing
