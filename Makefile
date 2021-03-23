@@ -47,7 +47,6 @@ install-apt-repos: ## Adds the APT repos for all the tools. Depends on the insta
 	bash ./scripts/runprog.sh ./scripts/programs/docker/addppa.sh
 	bash ./scripts/runprog.sh ./scripts/programs/githubcli/addppa.sh
 	bash ./scripts/runprog.sh ./scripts/programs/obs/addppa.sh
-	bash ./scripts/runprog.sh ./scripts/programs/virtualbox/addppa.sh
 	bash ./scripts/runprog.sh ./scripts/programs/vsc/addppa.sh
 	sudo apt update
 
