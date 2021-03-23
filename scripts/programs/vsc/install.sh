@@ -102,8 +102,9 @@ installvscext () {
     curl -L --compressed --output "$vsix" "$url"
     set +e
     file "$vsix" | grep 'Zip' >/dev/null
+    e=$?
     set -e
-    if [ $? -eq 0 ]; then
+    if [ $e -eq 0 ]; then
       dlfinished=yes
     else
       file "$vsix"
