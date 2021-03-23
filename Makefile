@@ -35,9 +35,11 @@ install-fonts: ## Copy fonts and refresh font cache
 	cp -r .fonts ~
 	fc-cache -f -v
 
+INITIALPKGS = apt-transport-https ca-certificates curl gnupg gnupg-agent\
+software-properties-common
+
 install-initial-apt: ## Installs the APT packages necessary for adding PPAs
-	sudo apt update && sudo apt install -y apt-transport-https ca-certificates curl \ 
-		gnupg gnupg-agent software-properties-common
+	sudo apt update && sudo apt install -y $(INITIALPKGS)
 
 install-apt-repos: ## Adds the APT repos for all the tools. Depends on the install-initial-apt target
 	# Generate with for i in ./scripts/programs/*/addppa.sh; do echo "bash ./scripts/runprog.sh $i"; done
