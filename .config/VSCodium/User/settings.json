@@ -43,6 +43,8 @@
   ],
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "off",
+  "editor.tabCompletion": "on",
+  "editor.snippetSuggestions": "top",
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
@@ -86,5 +88,6 @@
     "<C-f>": false
   },
   "workbench.colorTheme": "Andromeda Italic",
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  "gitlens.codeLens.enabled": false
 }

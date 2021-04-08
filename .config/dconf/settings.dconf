@@ -23,7 +23,7 @@ video-x-resolution=640
 video-y-resolution=480
 
 [control-center]
-last-panel='ubuntu'
+last-panel='keyboard'
 
 [deja-dup]
 backend='google'
@@ -31,6 +31,9 @@ prompt-check='2020-06-26T19:56:33+00'
 
 [deja-dup/file]
 migrated=true
+
+[desktop/a11y/magnifier]
+mag-factor=1.0
 
 [desktop/app-folders]
 folder-children=['Utilities', 'YaST']
@@ -64,14 +67,15 @@ translate=true
 [desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/warty-final-ubuntu.png'
-primary-color='#2c001e'
-secondary-color='#2c001e'
+picture-uri='file:///usr/share/backgrounds/pop/kate-hazen-pop-retro2.png'
+primary-color='#000000'
+secondary-color='#000000'
 
 [desktop/input-sources]
 current=uint32 0
-mru-sources=[('xkb', 'us'), ('ibus', 'pinyin'), ('xkb', 'es+deadtilde')]
-sources=[('xkb', 'us'), ('ibus', 'pinyin'), ('xkb', 'es+deadtilde')]
+mru-sources=[('xkb', 'us'), ('ibus', 'libpinyin'), ('xkb', 'es')]
+per-window=false
+sources=[('xkb', 'us'), ('ibus', 'libpinyin'), ('xkb', 'es')]
 xkb-options=@as []
 
 [desktop/interface]
@@ -82,7 +86,7 @@ gtk-theme='Yaru-dark'
 text-scaling-factor=1.0
 
 [desktop/notifications]
-application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit', 'gnome-language-selector', 'zoom', 'blender', 'com-toggl-toggldesktop', 'rhythmbox', 'org-gnome-pomodoro', 'us-zoom-zoom', 'io-elementary-appcenter']
+application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit', 'gnome-language-selector', 'zoom', 'blender', 'com-toggl-toggldesktop', 'rhythmbox', 'org-gnome-pomodoro', 'us-zoom-zoom', 'io-elementary-appcenter', 'com-belmoussaoui-authenticator', 'com-github-donadigo-eddy']
 show-banners=true
 show-in-lock-screen=false
 
@@ -109,6 +113,9 @@ application-id='codium.desktop'
 
 [desktop/notifications/application/com-belmoussaoui-authenticator]
 application-id='com.belmoussaoui.Authenticator.desktop'
+
+[desktop/notifications/application/com-github-donadigo-eddy]
+application-id='com.github.donadigo.eddy.desktop'
 
 [desktop/notifications/application/com-toggl-toggldesktop]
 application-id='com.toggl.TogglDesktop.desktop'
@@ -228,6 +235,7 @@ application-id='Zoom.desktop'
 numlock-state=true
 
 [desktop/peripherals/mouse]
+natural-scroll=false
 speed=0.41911764705882359
 
 [desktop/peripherals/touchpad]
@@ -243,9 +251,9 @@ color-shading-type='solid'
 lock-delay=uint32 30
 lock-enabled=false
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/warty-final-ubuntu.png'
-primary-color='#2c001e'
-secondary-color='#2c001e'
+picture-uri='file:///usr/share/backgrounds/pop/kate-hazen-pop-retro2.png'
+primary-color='#000000'
+secondary-color='#000000'
 
 [desktop/search-providers]
 sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
@@ -256,6 +264,10 @@ idle-delay=uint32 300
 [desktop/sound]
 allow-volume-above-100-percent=false
 event-sounds=true
+
+[desktop/wm/keybindings]
+minimize=['<Super>h']
+show-desktop=['<Super>d']
 
 [eog/view]
 background-color='rgb(0,0,0)'
@@ -285,12 +297,12 @@ window-height=545
 window-width=1001
 
 [gedit/plugins]
-active-plugins=['spell', 'filebrowser', 'docinfo', 'time', 'modelines']
+active-plugins=['modelines', 'spell', 'time', 'docinfo', 'filebrowser']
 
 [gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///home/scoder12/.cache/.fr-pBmhGv'
+virtual-root='file:///media/scoder12/FreeAgentExt41'
 
 [gedit/preferences/ui]
 show-tabs-mode='auto'
@@ -300,7 +312,7 @@ bottom-panel-size=140
 side-panel-active-page='GeditWindowDocumentsPanel'
 side-panel-size=200
 size=(900, 700)
-state=87040
+state=87168
 
 [gnome-screenshot]
 border-effect='none'
@@ -377,12 +389,12 @@ hide-system-notifications=true
 enabled-plugins=['sounds', 'actions', 'dark-theme']
 
 [pomodoro/state]
-timer-date='2021-01-28T02:59:51+0000'
+timer-date='2021-03-25T01:57:56+0000'
 timer-elapsed=0.0
 timer-paused=false
-timer-score=14.48779037253062
+timer-score=2.6120801699956258
 timer-state='pomodoro'
-timer-state-date='2021-01-28T02:59:51+0000'
+timer-state-date='2021-03-25T01:57:56+0000'
 timer-state-duration=1500.0
 
 [rhythmbox]
@@ -428,13 +440,15 @@ hinting='slight'
 
 [shell]
 app-picker-view=uint32 1
-command-history=['software-properties-gtk', 'r', 'xterm']
-disabled-extensions=@as []
-enabled-extensions=['dash-to-panel@jderose9.github.com', 'dash-to-panel']
-favorite-apps=['brave-browser.desktop', 'chromium_chromium.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop', 'discord.desktop', 'slack.desktop', 'org.gnome.Terminal.desktop', 'codium.desktop']
+command-history=['software-properties-gtk', 'xterm', 'r']
+disabled-extensions=['dash-to-dock@micxgx.gmail.com', 'dash-to-panel@jderose9.github.com']
+enabled-extensions=['dash-to-panel']
+favorite-apps=['brave-browser.desktop', 'org.chromium.Chromium.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop', 'discord.desktop', 'slack.desktop', 'org.gnome.Terminal.desktop', 'codium.desktop']
 
 [shell/extensions/dash-to-dock]
+apply-custom-theme=true
 click-action='minimize'
+custom-theme-shrink=true
 dash-max-icon-size=28
 dock-position='BOTTOM'
 multi-monitor=true
@@ -467,6 +481,15 @@ window-preview-animation-time=200
 window-preview-size=130
 window-preview-title-font-color='#dddddd'
 window-preview-title-position='BOTTOM'
+
+[shell/extensions/pop-shell]
+active-hint=true
+focus-left=['<Super>Left', '<Super>KP_Left']
+gap-inner=uint32 0
+gap-outer=uint32 0
+hint-color-rgba='rgb(108,164,251)'
+show-title=false
+tile-by-default=true
 
 [simple-scan]
 document-type='photo'
