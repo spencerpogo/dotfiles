@@ -89,5 +89,9 @@
   },
   "workbench.colorTheme": "Andromeda Italic",
   "workbench.iconTheme": "material-icon-theme",
-  "gitlens.codeLens.enabled": false
+  "gitlens.codeLens.enabled": false,
+  "coboleditor.enable_tabstop": false,
+  "coboleditor.format_on_return": "uppercase",
+  "coboleditor.intellisense_include_uppercase": true,
+  "coboleditor.intellisense_include_unchanged": false
 }

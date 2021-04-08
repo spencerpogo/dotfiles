@@ -1,5 +1,6 @@
 benawad.VSinder
 bitlang.cobol
+BroadcomMFD.cobol-language-support
 bungcip.better-toml
 chenglou92.rescript-vscode
 CoenraadS.bracket-pair-colorizer-2
