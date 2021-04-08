@@ -82,7 +82,7 @@ plugins=(git python zsh-autosuggestions docker docker-compose colored-man-pages)
 if [ -d ~/.oh-my-zsh/custom/plugins/gh ]; then
   plugins=($plugins gh)
 fi
-plugins=($plugins fast-syntax-highlighting)
+plugins=($plugins fast-syntax-highlighting vi-mode)
 
 [[ ! -f $ZSH/oh-my-zsh.sh ]] || source $ZSH/oh-my-zsh.sh
 
