@@ -23,7 +23,7 @@ video-x-resolution=640
 video-y-resolution=480
 
 [control-center]
-last-panel='keyboard'
+last-panel='sound'
 
 [deja-dup]
 backend='google'

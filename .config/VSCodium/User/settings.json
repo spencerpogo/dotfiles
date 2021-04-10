@@ -93,5 +93,6 @@
   "coboleditor.enable_tabstop": false,
   "coboleditor.format_on_return": "uppercase",
   "coboleditor.intellisense_include_uppercase": true,
-  "coboleditor.intellisense_include_unchanged": false
+  "coboleditor.intellisense_include_unchanged": false,
+  "python.dataScience.sendSelectionToInteractiveWindow": false
 }
