@@ -58,7 +58,7 @@ install-programs: ## Installs all programs. Some programs depend on the install-
 	bash ./scripts/runprog.sh ./scripts/programs/discord/install.sh
 	bash ./scripts/runprog.sh ./scripts/programs/flatpaks/install.sh
 	# GNOME extensions installer is not enabled by default. Edit Makefile to enable.
-	#bash ./scripts/runprog.sh ./scripts/programs/gnome/install.sh
+	# bash ./scripts/runprog.sh ./scripts/programs/gnome/install.sh
 	bash ./scripts/runprog.sh ./scripts/programs/insomnia/install.sh
 	bash ./scripts/runprog.sh ./scripts/programs/multimc/install.sh
 	bash ./scripts/runprog.sh ./scripts/programs/node/install.sh

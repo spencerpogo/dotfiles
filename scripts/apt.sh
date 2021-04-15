@@ -44,13 +44,6 @@ log "Installing $pkgcount packages and their dependencies (this will take a whil
 # Not double-quoting so it will expand as multiple arguments
 sudo apt install -y $pkgs
 
-# Run all scripts in programs/
-log "Installing programs..."
-for f in ./scripts/programs/*/install.sh; do
-  # Run scripts in same process so they can access utility functions and have fail-fast
-  bash ./scripts/runprog.sh "$f"
-done
-
 # Get all upgrades
 sudo apt upgrade -y
 sudo apt autoremove -y
