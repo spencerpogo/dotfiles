@@ -195,7 +195,7 @@ STDERRED_SO="$HOME/.stderred/build/libstderred.so"
 [[ -f $STDERRED_SO ]] && export LD_PRELOAD="$STDERRED_SO${LD_PRELOAD:+:$LD_PRELOAD}"
 
 # Brew
-[[ -d /home/linuxbrew ]] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+[[ -d /home/linuxbrew/.linuxbrew/bin ]] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 ############
 # ALIASES #
