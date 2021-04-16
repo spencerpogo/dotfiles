@@ -23,7 +23,7 @@ video-x-resolution=640
 video-y-resolution=480
 
 [control-center]
-last-panel='sound'
+last-panel='keyboard'
 
 [deja-dup]
 backend='google'
@@ -76,7 +76,7 @@ current=uint32 0
 mru-sources=[('xkb', 'us'), ('ibus', 'libpinyin'), ('xkb', 'es')]
 per-window=false
 sources=[('xkb', 'us'), ('ibus', 'libpinyin'), ('xkb', 'es')]
-xkb-options=@as []
+xkb-options=['caps:escape_shifted_capslock']
 
 [desktop/interface]
 clock-show-date=true
@@ -451,6 +451,7 @@ sleep-inactive-ac-timeout=3600
 sleep-inactive-ac-type='nothing'
 
 [settings-daemon/plugins/xsettings]
+antialiasing='grayscale'
 hinting='slight'
 
 [shell]
