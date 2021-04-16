@@ -33,7 +33,7 @@ install brave-browser libimage-exiftool-perl docker-ce docker-ce-cli containerd.
 install codium gh diodon haskell-platform pandoc texlive
 install inkscape dconf-cli uuid-runtime audacity pstoedit gir1.2-gtksource-3.0
 install python3-gi gir1.2-gtk-3.0 flatpak ffmpeg obs-studio virtualbox virtualbox-qt
-install virtualbox-dkms ripgrep gnome-shell-pomodoro git-lfs
+install virtualbox-dkms ripgrep gnome-shell-pomodoro git-lfs imwheel
 
 # Fun stuff
 install figlet lolcat cowsay
