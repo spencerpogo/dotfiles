@@ -23,7 +23,7 @@ video-x-resolution=640
 video-y-resolution=480
 
 [control-center]
-last-panel='keyboard'
+last-panel='sound'
 
 [deja-dup]
 backend='google'
@@ -86,7 +86,7 @@ gtk-theme='Yaru-dark'
 text-scaling-factor=1.0
 
 [desktop/notifications]
-application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit', 'gnome-language-selector', 'zoom', 'blender', 'com-toggl-toggldesktop', 'rhythmbox', 'org-gnome-pomodoro', 'us-zoom-zoom', 'io-elementary-appcenter', 'com-belmoussaoui-authenticator', 'com-github-donadigo-eddy', 'flameshot']
+application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit', 'gnome-language-selector', 'zoom', 'blender', 'com-toggl-toggldesktop', 'rhythmbox', 'org-gnome-pomodoro', 'us-zoom-zoom', 'io-elementary-appcenter', 'com-belmoussaoui-authenticator', 'com-github-donadigo-eddy', 'flameshot', 'com-obsproject-studio', 'org-gnome-totem', 'vlc']
 show-banners=true
 show-in-lock-screen=false
 
@@ -116,6 +116,9 @@ application-id='com.belmoussaoui.Authenticator.desktop'
 
 [desktop/notifications/application/com-github-donadigo-eddy]
 application-id='com.github.donadigo.eddy.desktop'
+
+[desktop/notifications/application/com-obsproject-studio]
+application-id='com.obsproject.Studio.desktop'
 
 [desktop/notifications/application/com-toggl-toggldesktop]
 application-id='com.toggl.TogglDesktop.desktop'
@@ -204,6 +207,9 @@ application-id='org.gnome.Pomodoro.desktop'
 [desktop/notifications/application/org-gnome-terminal]
 application-id='org.gnome.Terminal.desktop'
 
+[desktop/notifications/application/org-gnome-totem]
+application-id='org.gnome.Totem.desktop'
+
 [desktop/notifications/application/org-inkscape-inkscape]
 application-id='org.inkscape.Inkscape.desktop'
 
@@ -224,6 +230,9 @@ application-id='update-manager.desktop'
 
 [desktop/notifications/application/us-zoom-zoom]
 application-id='us.zoom.Zoom.desktop'
+
+[desktop/notifications/application/vlc]
+application-id='vlc.desktop'
 
 [desktop/notifications/application/wireshark]
 application-id='wireshark.desktop'
@@ -305,7 +314,7 @@ active-plugins=['modelines', 'spell', 'time', 'docinfo', 'filebrowser']
 [gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///media/scoder12/FreeAgentExt41'
+virtual-root='file:///home/scoder12/Documents'
 
 [gedit/preferences/ui]
 show-tabs-mode='auto'
@@ -327,7 +336,7 @@ current-tab='processes'
 maximized=false
 show-dependencies=false
 show-whose-processes='user'
-window-state=(1269, 500, 545, 207)
+window-state=(1269, 500, 327, 277)
 
 [gnome-system-monitor/disktreenew]
 col-0-visible=true
@@ -339,7 +348,7 @@ col-6-width=0
 
 [gnome-system-monitor/proctree]
 columns-order=[0, 1, 2, 3, 4, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
-sort-col=8
+sort-col=15
 sort-order=0
 
 [libgnomekbd/preview]
@@ -349,12 +358,12 @@ x=240
 y=135
 
 [nautilus/preferences]
-default-folder-viewer='icon-view'
+default-folder-viewer='list-view'
 search-filter-time-type='last_modified'
 search-view='list-view'
 
 [nautilus/window-state]
-initial-size=(890, 550)
+initial-size=(890, 671)
 maximized=false
 sidebar-width=241
 
@@ -392,13 +401,13 @@ hide-system-notifications=true
 enabled-plugins=['sounds', 'actions', 'dark-theme']
 
 [pomodoro/state]
-timer-date='2021-03-25T01:57:56+0000'
-timer-elapsed=0.0
-timer-paused=false
-timer-score=2.6120801699956258
-timer-state='pomodoro'
-timer-state-date='2021-03-25T01:57:56+0000'
-timer-state-duration=1500.0
+timer-date='2021-04-21T22:26:34+0000'
+timer-elapsed=265.14741396903992
+timer-paused=true
+timer-score=3.0
+timer-state='short-break'
+timer-state-date='2021-04-21T22:22:10+0000'
+timer-state-duration=300.0
 
 [rhythmbox]
 position=(0, 0)
@@ -460,6 +469,7 @@ command-history=['software-properties-gtk', 'xterm', 'r']
 disabled-extensions=['dash-to-dock@micxgx.gmail.com', 'dash-to-panel@jderose9.github.com']
 enabled-extensions=['dash-to-panel']
 favorite-apps=['brave-browser.desktop', 'org.chromium.Chromium.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop', 'discord.desktop', 'slack.desktop', 'org.gnome.Terminal.desktop', 'codium.desktop']
+remember-mount-password=false
 
 [shell/extensions/dash-to-dock]
 apply-custom-theme=true

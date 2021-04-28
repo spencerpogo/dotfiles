@@ -2,7 +2,6 @@ benawad.VSinder
 bitlang.cobol
 BroadcomMFD.cobol-language-support
 bungcip.better-toml
-chenglou92.rescript-vscode
 CoenraadS.bracket-pair-colorizer-2
 dbaeumer.vscode-eslint
 eamodio.gitlens
@@ -14,6 +13,7 @@ icrawl.discord-vscode
 mike-co.import-sorter
 millennIumAMbiguity.processing-formatter
 ms-python.python
+ms-vscode.cpptools
 ms-vsliveshare.vsliveshare
 njpwerner.autodocstring
 Orta.vscode-jest
