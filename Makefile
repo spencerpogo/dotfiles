@@ -66,6 +66,7 @@ install-programs: ## Installs all programs. Some programs depend on the install-
 	bash ./scripts/runprog.sh ./scripts/programs/rust/install.sh
 	bash ./scripts/runprog.sh ./scripts/programs/slack/install.sh
 	bash ./scripts/runprog.sh ./scripts/programs/stderred/install.sh
+	bash ./scripts/runprog.sh ./scripts/programs/steam/install.sh
 	bash ./scripts/runprog.sh ./scripts/programs/vsc/install.sh
 	bash ./scripts/runprog.sh ./scripts/programs/zoom/install.sh
 	bash ./scripts/runprog.sh ./scripts/programs/zsh/install.sh
