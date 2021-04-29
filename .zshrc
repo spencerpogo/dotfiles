@@ -204,9 +204,15 @@ STDERRED_SO="$HOME/.stderred/build/libstderred.so"
 sudo () {
    /usr/bin/sudo "PATH=$PATH" "$@"
 }
-docker () {
-  sudo docker "$@"
-}
+if id -nG | grep -qw docker; then
+  # we have the docker group
+else
+  # we do not have the docker group, use 'sudo' to run docker
+  docker () {
+    sudo docker "$@"
+  }
+fi
+
 alias psql="sudo -u postgres psql"
 
 alias lsa="ls -a"
