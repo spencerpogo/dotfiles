@@ -88,9 +88,6 @@ plugins=($plugins fast-syntax-highlighting)
 
 # User configuration
 
-# Make vim the default editor.
-export EDITOR='vim';
-
 # Enable persistent REPL history for `node`.
 export NODE_REPL_HISTORY=~/.node_history;
 # Allow 32³ entries; the default is 1000.
