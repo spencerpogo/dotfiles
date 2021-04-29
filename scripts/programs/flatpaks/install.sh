@@ -25,6 +25,8 @@ installflatpak com.uploadedlobster.peek
 installflatpak org.inkscape.Inkscape
 # Obsidian
 installflatpak md.obsidian.Obsidian
+# Steam
+installflatpak com.valvesoftware.Steam
 
 log "Updating flatpaks..."
 sudo flatpak update -y
