@@ -9,6 +9,8 @@ fi
 export EDITOR="vim"
 # I would use vim mode, but I'm already used to emacs mode and it doesn't have ctrl+r
 bindkey -e
+# Use ZSH extended globs
+setopt extended_glob
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
