@@ -34,6 +34,11 @@
     "editor.wordBasedSuggestions": false,
     "editor.tabSize": 4
   },
+  "[c]": {
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": false
+  },
   "emmet.excludeLanguages": [
     "markdown",
     "typescript",

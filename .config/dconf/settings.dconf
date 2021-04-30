@@ -23,7 +23,7 @@ video-x-resolution=640
 video-y-resolution=480
 
 [control-center]
-last-panel='sound'
+last-panel='user-accounts'
 
 [deja-dup]
 backend='google'
@@ -73,7 +73,7 @@ secondary-color='#000000'
 
 [desktop/input-sources]
 current=uint32 0
-mru-sources=[('xkb', 'us'), ('ibus', 'libpinyin'), ('xkb', 'es')]
+mru-sources=[('xkb', 'us'), ('xkb', 'es'), ('ibus', 'libpinyin')]
 per-window=false
 sources=[('xkb', 'us'), ('ibus', 'libpinyin'), ('xkb', 'es')]
 xkb-options=['caps:escape_shifted_capslock']
@@ -86,7 +86,7 @@ gtk-theme='Yaru-dark'
 text-scaling-factor=1.0
 
 [desktop/notifications]
-application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit', 'gnome-language-selector', 'zoom', 'blender', 'com-toggl-toggldesktop', 'rhythmbox', 'org-gnome-pomodoro', 'us-zoom-zoom', 'io-elementary-appcenter', 'com-belmoussaoui-authenticator', 'com-github-donadigo-eddy', 'flameshot', 'com-obsproject-studio', 'org-gnome-totem', 'vlc']
+application-children=['gnome-printers-panel', 'snap-store-ubuntu-software', 'update-manager', 'org-gnome-terminal', 'steam', 'apport-gtk', 'org-gnome-nautilus', 'brave-browser', 'gnome-control-center', 'com-uploadedlobster-peek', 'install4j-1hlc608-burpsuitecommunity', 'discord-discord', 'slack', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell', 'minecraft-launcher', 'xdg-desktop-portal-gtk', 'autokey-gtk', 'firefox', 'gimp-gimp', 'org-gnome-fileroller', 'gnome-network-panel', 'discord', 'inkscape-inkscape', 'org-inkscape-inkscape', 'org-gnome-eog', 'chromium-chromium', 'org-gnome-gedit', 'wireshark', 'hyper', 'manictime', 'obs-studio-obs-studio', 'codium', 'multimc', 'clipit', 'gnome-language-selector', 'zoom', 'blender', 'com-toggl-toggldesktop', 'rhythmbox', 'org-gnome-pomodoro', 'us-zoom-zoom', 'io-elementary-appcenter', 'com-belmoussaoui-authenticator', 'com-github-donadigo-eddy', 'flameshot', 'com-obsproject-studio', 'org-gnome-totem', 'vlc', 'com-valvesoftware-steam']
 show-banners=true
 show-in-lock-screen=false
 
@@ -125,6 +125,9 @@ application-id='com.toggl.TogglDesktop.desktop'
 
 [desktop/notifications/application/com-uploadedlobster-peek]
 application-id='com.uploadedlobster.peek.desktop'
+
+[desktop/notifications/application/com-valvesoftware-steam]
+application-id='com.valvesoftware.Steam.desktop'
 
 [desktop/notifications/application/discord-discord]
 application-id='discord_discord.desktop'
@@ -314,7 +317,7 @@ active-plugins=['modelines', 'spell', 'time', 'docinfo', 'filebrowser']
 [gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///home/scoder12/Documents'
+virtual-root='file:///home/scoder12/.local/share/applications'
 
 [gedit/preferences/ui]
 show-tabs-mode='auto'
@@ -324,7 +327,7 @@ bottom-panel-size=140
 side-panel-active-page='GeditWindowDocumentsPanel'
 side-panel-size=200
 size=(900, 700)
-state=87168
+state=87040
 
 [gnome-screenshot]
 border-effect='none'
@@ -348,7 +351,7 @@ col-6-width=0
 
 [gnome-system-monitor/proctree]
 columns-order=[0, 1, 2, 3, 4, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
-sort-col=15
+sort-col=0
 sort-order=0
 
 [libgnomekbd/preview]
