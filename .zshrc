@@ -231,6 +231,9 @@ alias paste="xclip -o -sel c"
 #  use any of them for wine
 alias wine="LD_PRELOAD= wine"
 
+# jq is awesome
+alias tojson='jq -Rr tojson'
+
 # Git
 alias ga="git commit -am" # Commit everything (a stands for all ig)
 alias gc="git commit"
