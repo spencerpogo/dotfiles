@@ -74,11 +74,13 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  # I keep system packages light and install everything with home-manager
   environment.systemPackages = with pkgs; [
     # Some essentials
     vim
     curl
     wget
+    git
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
