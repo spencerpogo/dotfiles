@@ -32,5 +32,18 @@
       }
     ];
     initExtraBeforeCompInit = "source ${config.xdg.configHome}/.p10k.zsh";
+    initExtra = ''
+      # oh-my-zsh completion waiting dots
+      expand-or-complete-with-dots() {
+      print -Pn "%F{red}…%f"
+        zle expand-or-complete
+        zle redisplay
+      }
+      zle -N expand-or-complete-with-dots
+      # Set the function as the default tab completion widget
+      bindkey -M emacs "^I" expand-or-complete-with-dots
+      bindkey -M viins "^I" expand-or-complete-with-dots
+      bindkey -M vicmd "^I" expand-or-complete-with-dots
+    '';
   };
 }
