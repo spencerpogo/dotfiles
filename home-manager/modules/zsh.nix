@@ -1,7 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ zsh zsh-powerlevel10k ];
+  home.packages = with pkgs; [
+    zsh
+    zsh-powerlevel10k
+    zsh-fast-syntax-highlighting
+  ];
 
   xdg.configFile.".p10k.zsh".source = ../configs/p10k.zsh;
 
@@ -15,9 +19,18 @@
         source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
       fi
     '';
-    initExtraBeforeCompInit = ''
-      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      source ${config.xdg.configHome}/.p10k.zsh
-    '';
+    plugins = [
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+      {
+        name = "fast-syntax-highlighting";
+        src = pkgs.zsh-fast-syntax-highlighting;
+        file = "share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh";
+      }
+    ];
+    initExtraBeforeCompInit = "source ${config.xdg.configHome}/.p10k.zsh";
   };
 }
