@@ -24,8 +24,8 @@
   networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
   # Time zone
-  # time.timeZone = "America/Los_Angeles";
-  services.localtime.enable = true;
+  time.timeZone = "America/Los_Angeles";
+  # services.localtime.enable = true;
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
