@@ -5,6 +5,7 @@
     zsh
     zsh-powerlevel10k
     zsh-fast-syntax-highlighting
+    bat
   ];
 
   xdg.configFile.".p10k.zsh".source = ../configs/p10k.zsh;
@@ -44,6 +45,9 @@
       bindkey -M emacs "^I" expand-or-complete-with-dots
       bindkey -M viins "^I" expand-or-complete-with-dots
       bindkey -M vicmd "^I" expand-or-complete-with-dots
+
+      # Pretty manpages with bat
+      export MANPAGER="sh -c 'col -bx | ${pkgs.bat}/bin/bat -l man -p'"
     '';
   };
 }
