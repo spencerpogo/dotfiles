@@ -70,7 +70,10 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.scoder12 = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel" # Enable ‘sudo’ for the user.
+      "docker" # Use docker without sudo
+    ]; 
   };
 
   # List packages installed in system profile. To search, run:
