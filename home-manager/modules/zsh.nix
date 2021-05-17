@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
-{
+let 
+  HIST_SIZE = 32768; # 32**3
+in {
   home.packages = with pkgs; [
     zsh
     zsh-powerlevel10k
@@ -12,6 +14,11 @@
 
   programs.zsh = {
     enable = true;
+    history = {
+      size = HIST_SIZE;
+      save = HIST_SIZE;
+      ignoreSpace = true;
+    };
     initExtraFirst = ''
       # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
       # Initialization code that may require console input (password prompts, [y/n]
