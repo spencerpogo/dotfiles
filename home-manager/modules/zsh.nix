@@ -52,6 +52,7 @@ in {
       bindkey -M emacs "^I" expand-or-complete-with-dots
       bindkey -M viins "^I" expand-or-complete-with-dots
       bindkey -M vicmd "^I" expand-or-complete-with-dots
+      # end oh-my-zsh completion waiting dots
 
       # Pretty manpages with bat
       export MANPAGER="sh -c 'col -bx | ${pkgs.bat}/bin/bat -l man -p'"
