@@ -7,6 +7,7 @@ in {
     zsh
     zsh-powerlevel10k
     zsh-fast-syntax-highlighting
+    zsh-autosuggestions
     bat
   ];
 
@@ -26,6 +27,10 @@ in {
       if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
         source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
       fi
+
+      # Autosuggestions
+      ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=80
+      ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history completion)
     '';
     plugins = [
       {
@@ -37,6 +42,11 @@ in {
         name = "fast-syntax-highlighting";
         src = pkgs.zsh-fast-syntax-highlighting;
         file = "share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh";
+      }
+      {
+        name = "autosuggestions";
+        src = pkgs.zsh-autosuggestions;
+        file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
       }
     ];
     initExtraBeforeCompInit = "source ${config.xdg.configHome}/.p10k.zsh";
