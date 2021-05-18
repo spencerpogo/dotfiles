@@ -67,6 +67,11 @@ in {
 
       # Pretty manpages with bat
       export MANPAGER="sh -c 'col -bx | ${pkgs.bat}/bin/bat -l man -p'"
+
+      # Functions
+      tc () { # transform clipboard
+        paste | eval "$*" | copy
+      }
     '';
     shellAliases = {
       # Clipboard
@@ -74,6 +79,15 @@ in {
       c = "copy";
       paste = "xclip -o -sel c";
       p = "paste";
+      # Traversal
+      ".." = "cd ..";
+      "..." = "cd ../..";
+      "...." = "cd ../../..";
+      # Text mainpulation
+      sl = "tr -d \\n";
+      tjson = "jq -Rr tojson";
+      bse = "base64 -w 0";
+      bsd = "base64 -d";
     };
   };
 }
