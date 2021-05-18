@@ -67,5 +67,12 @@ in {
       # Pretty manpages with bat
       export MANPAGER="sh -c 'col -bx | ${pkgs.bat}/bin/bat -l man -p'"
     '';
+    shellAliases = {
+      # Clipboard
+      copy = "xclip -sel c";
+      c = "copy";
+      paste = "xclip -o -sel c";
+      p = "paste";
+    };
   };
 }
