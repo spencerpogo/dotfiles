@@ -11,7 +11,7 @@ in {
     bat
   ];
 
-  xdg.configFile.".p10k.zsh".source = ../configs/p10k.zsh;
+  home.file.".p10k.zsh".source = ../configs/p10k.zsh;
 
   programs.zsh = {
     enable = true;
@@ -49,7 +49,8 @@ in {
         file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
       }
     ];
-    initExtraBeforeCompInit = "source ${config.xdg.configHome}/.p10k.zsh";
+    # apply p10k config
+    initExtraBeforeCompInit = "source \"$HOME/.p10k.zsh\"";
     initExtra = ''
       # oh-my-zsh completion waiting dots
       expand-or-complete-with-dots() {
