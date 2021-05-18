@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./modules/bash.nix
     ./modules/zsh.nix
   ];
 
