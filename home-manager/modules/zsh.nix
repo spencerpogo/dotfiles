@@ -15,6 +15,7 @@ in {
 
   programs.zsh = {
     enable = true;
+    # enableVteIntegration = true;
     history = {
       size = HIST_SIZE;
       save = HIST_SIZE;
