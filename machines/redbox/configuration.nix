@@ -72,7 +72,6 @@
     isNormalUser = true;
     extraGroups = [
       "wheel" # Enable ‘sudo’ for the user.
-      "docker" # Use docker without sudo
     ]; 
   };
 
