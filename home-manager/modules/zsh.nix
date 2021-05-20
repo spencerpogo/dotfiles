@@ -53,7 +53,7 @@ in {
     initExtra = ''
       # oh-my-zsh completion waiting dots
       expand-or-complete-with-dots() {
-      print -Pn "%F{red}…%f"
+        print -Pn "%F{red}…%f"
         zle expand-or-complete
         zle redisplay
       }
