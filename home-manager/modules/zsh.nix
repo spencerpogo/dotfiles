@@ -11,8 +11,6 @@ in {
     zsh-autosuggestions
   ];
 
-  home.file.".p10k.zsh".source = ../configs/p10k.zsh;
-
   programs.zsh = {
     enable = true;
     # enableVteIntegration = true;
@@ -51,7 +49,7 @@ in {
       }
     ];
     # apply p10k config
-    initExtraBeforeCompInit = "source \"$HOME/.p10k.zsh\"";
+    initExtraBeforeCompInit = "source ${../configs/p10k.zsh}";
     initExtra = ''
       # oh-my-zsh completion waiting dots
       expand-or-complete-with-dots() {
