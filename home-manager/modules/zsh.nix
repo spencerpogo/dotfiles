@@ -33,6 +33,11 @@ in {
     '';
     plugins = [
       {
+        name = "p10k-config";
+        src = lib.cleanSource ../p10k-config;
+        file = "p10k.zsh";
+      }
+      {
         name = "powerlevel10k";
         src = pkgs.zsh-powerlevel10k;
         file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
@@ -48,8 +53,6 @@ in {
         file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
       }
     ];
-    # apply p10k config
-    initExtraBeforeCompInit = "source ${../configs/p10k.zsh}";
     initExtra = ''
       # oh-my-zsh completion waiting dots
       expand-or-complete-with-dots() {
