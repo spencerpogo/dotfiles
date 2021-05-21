@@ -13,7 +13,6 @@ in {
 
   programs.zsh = {
     enable = true;
-    # enableVteIntegration = true;
     history = {
       size = HIST_SIZE;
       save = HIST_SIZE;
@@ -68,7 +67,7 @@ in {
       # end oh-my-zsh completion waiting dots
 
       # Pretty manpages with bat
-      ${if config.programs.bat.enable then "" else "#"}export MANPAGER="sh -c 'col -bx | ${pkgs.bat}/bin/bat -l man -p'"
+      ${if config.programs.bat.enable then "" else "# "}export MANPAGER="sh -c 'col -bx | ${pkgs.bat}/bin/bat -l man -p'"
 
       # Functions
       tc () { # transform clipboard
