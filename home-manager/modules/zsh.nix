@@ -13,6 +13,20 @@ in {
 
   programs.zsh = {
     enable = true;
+    oh-my-zsh = {
+      # I have a mixed relationship with oh-my-zsh. On the one hand it slows
+      #  down startup quite a bit, but on the other hand it *just works*. It
+      #  has a lot of QoL fixes that are actively being maintainedm, such as
+      #  xterm title support, git aliases, and ls colors. 
+      # As long as I keep plugins light the couple seconds extra startup time is
+      #  well worth the time it would take to configure manually.
+      enable = true;
+      plugins = [ "git" "sudo" ];
+      extraConfig = ''
+        DISABLE_UPDATE_PROMPT="true"
+        COMPLETION_WAITING_DOTS="true"
+      '';
+    };
     history = {
       size = HIST_SIZE;
       save = HIST_SIZE;
@@ -53,19 +67,6 @@ in {
       }
     ];
     initExtra = ''
-      # oh-my-zsh completion waiting dots
-      expand-or-complete-with-dots() {
-        print -Pn "%F{red}…%f"
-        zle expand-or-complete
-        zle redisplay
-      }
-      zle -N expand-or-complete-with-dots
-      # Set the function as the default tab completion widget
-      bindkey -M emacs "^I" expand-or-complete-with-dots
-      bindkey -M viins "^I" expand-or-complete-with-dots
-      bindkey -M vicmd "^I" expand-or-complete-with-dots
-      # end oh-my-zsh completion waiting dots
-
       # Pretty manpages with bat
       ${if config.programs.bat.enable then "" else "# "}export MANPAGER="sh -c 'col -bx | ${pkgs.bat}/bin/bat -l man -p'"
 
