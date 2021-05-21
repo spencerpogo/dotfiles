@@ -2,8 +2,7 @@
 
 with lib;
 
-let 
-  HIST_SIZE = 32768; # 32**3
+let HIST_SIZE = 32768; # 32**3
 in {
   home.packages = with pkgs; [
     zsh-powerlevel10k
@@ -68,7 +67,9 @@ in {
     ];
     initExtra = ''
       # Pretty manpages with bat
-      ${if config.programs.bat.enable then "" else "# "}export MANPAGER="sh -c 'col -bx | ${pkgs.bat}/bin/bat -l man -p'"
+      ${
+        if config.programs.bat.enable then "" else "# "
+      }export MANPAGER="sh -c 'col -bx | ${pkgs.bat}/bin/bat -l man -p'"
 
       # Functions
       tc () { # transform clipboard

@@ -3,12 +3,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ../common.nix
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ../common.nix
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # TODO: Boot related settings for when I actually install nix
   # Use the GRUB 2 boot loader.
@@ -21,7 +20,8 @@
   # boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
 
   networking.hostName = "redbox"; # Define your hostname.
-  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable =
+    true; # Enables wireless support via wpa_supplicant.
 
   # Time zone
   time.timeZone = "America/Los_Angeles";
@@ -47,11 +47,9 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-
   # Enable the Plasma 5 Desktop Environment (for now, will figure out GNOME later).
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-
 
   # Configure keymap in X11
   services.xserver.layout = "us";
@@ -72,7 +70,7 @@
     isNormalUser = true;
     extraGroups = [
       "wheel" # Enable ‘sudo’ for the user.
-    ]; 
+    ];
   };
 
   # List packages installed in system profile. To search, run:

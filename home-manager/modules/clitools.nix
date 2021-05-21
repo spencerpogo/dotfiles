@@ -1,9 +1,10 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    xclip # for copying from command line
-  ];
+  home.packages = with pkgs;
+    [
+      xclip # for copying from command line
+    ];
 
   programs = {
     bat.enable = true;
