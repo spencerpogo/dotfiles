@@ -94,7 +94,7 @@ in {
       g = "git";
       gc = "git commit";
       gca = "git commit -a";
-      gcam = "git commit -am";
+      gcam = "git commit -a -m";
       ga = "git add";
       gp = "git push";
       gl = "git pull";
