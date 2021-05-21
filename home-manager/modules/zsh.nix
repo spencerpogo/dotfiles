@@ -87,6 +87,14 @@ in {
       tjson = "jq -Rr tojson";
       bse = "base64 -w 0";
       bsd = "base64 -d";
+      # Git
+      g = "git";
+      gc = "git commit";
+      gca = "git commit -a";
+      gcam = "git commit -am";
+      ga = "git add";
+      gp = "git push";
+      gl = "git pull";
     };
   };
 }
