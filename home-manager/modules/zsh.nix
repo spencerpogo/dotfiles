@@ -75,6 +75,9 @@ in {
       tc () { # transform clipboard
         paste | eval "$*" | copy
       }
+
+      # Temp for non-nixos
+      source /etc/profile.d/nix.sh && export NIX_PATH=$HOME/.nix-defexpr/channels''${NIX_PATH:+:}$NIX_PATH
     '';
     shellAliases = {
       # Clipboard
