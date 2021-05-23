@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports = [
@@ -11,4 +11,8 @@
   ];
 
   programs.home-manager.enable = true;
+
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg)
+    [ "vscode-extension-MS-python-vscode-pylance" ];
 }
