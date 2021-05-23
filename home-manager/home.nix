@@ -8,6 +8,7 @@
     ./modules/clitools.nix
     # GUI
     ./modules/vscode.nix
+    ./modules/firefox.nix
   ];
 
   programs.home-manager.enable = true;
