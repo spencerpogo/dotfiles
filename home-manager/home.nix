@@ -9,6 +9,7 @@
     # GUI
     ./modules/vscode.nix
     ./modules/firefox.nix
+    ./modules/fonts.nix
   ];
 
   programs.home-manager.enable = true;
