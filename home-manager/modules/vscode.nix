@@ -187,13 +187,13 @@
         "editor.codeActionsOnSave"."source.organizeImports" = true;
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
-      "[rust]"."editor.tabSize" = "4";
+      "[rust]"."editor.tabSize" = 4;
       "[python]" = {
         "gitlens.codeLens.symbolScopes" = [
           "!Module"
         ];
         "editor.wordBasedSuggestions" = false;
-        "editor.tabSize" = "4";
+        "editor.tabSize" = 4;
       };
       "[c]" = {
         "editor.formatOnSave" = false;
@@ -216,7 +216,7 @@
       "editor.formatOnSave" = true;
       "editor.formatOnType" = true;
       "editor.maxTokenizationLineLength" = "200";
-      "editor.tabSize" = "2";
+      "editor.tabSize" = 2;
       "explorer.confirmDelete" = false;
       "explorer.confirmDragAndDrop" = false;
       "files.exclude" = {
