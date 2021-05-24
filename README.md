@@ -1,6 +1,6 @@
 # Scoder12 NixOS Dotfiles
 
-### home-manager setup
+### home-manager setup (non-nixos)
 
 1. Install [home-manager](https://github.com/nix-community/home-manager).
 2. Edit `home-manager/home.nix` if neccessary
@@ -18,4 +18,4 @@
   # --snip--
 ```
 
-3. Rebuild home-manager config
+3. Rebuild home-manager config: `home-manager switch`
