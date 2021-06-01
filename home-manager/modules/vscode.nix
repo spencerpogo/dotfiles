@@ -12,6 +12,10 @@
     extensions = (with pkgs.vscode-extensions; [
       WakaTime.vscode-wakatime
       ms-python.vscode-pylance
+      ms-vscode.cpptools
+      ms-python.python
+      ms-vsliveshare.vsliveshare
+      vscodevim.vim
     ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "Nix";
@@ -92,24 +96,6 @@
         sha256 = "0fksfpf9b8x4mbl2d69hpii1105751s62dfmg30bv48aiabh6278";
       }
       {
-        name = "python";
-        publisher = "ms-python";
-        version = "2021.5.842923320";
-        sha256 = "183ram995n9dqg7d9g3bn30a1mg7nkkg4knr814f4j9lqzsai22r";
-      }
-      {
-        name = "cpptools";
-        publisher = "ms-vscode";
-        version = "1.3.1";
-        sha256 = "1qjvc2xkydgs606k94dfzs0m3lplrgwxln5rnngjrhgk9pxll945";
-      }
-      {
-        name = "vsliveshare";
-        publisher = "ms-vsliveshare";
-        version = "1.0.4272";
-        sha256 = "0dhs9lkprz2q79kpkj2d22d09lvhl77n38vj0rsz80g9vj41jzwh";
-      }
-      {
         name = "material-icon-theme";
         publisher = "PKief";
         version = "4.6.0";
@@ -126,12 +112,6 @@
         publisher = "Tobiah";
         version = "1.4.6";
         sha256 = "1v2gwwllk269hba2mc22scfr0bizwndgg7zm9wsxffm52pwfjqp9";
-      }
-      {
-        name = "vim";
-        publisher = "vscodevim";
-        version = "1.20.3";
-        sha256 = "0za138wvp60dhz9abb0j4ida8jk7mzzpj8wga9ihc1cfxp8ad8an";
       }
       {
         name = "vscode-proto3";
