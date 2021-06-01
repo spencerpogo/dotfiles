@@ -14,6 +14,9 @@
 
   programs.home-manager.enable = true;
 
+  # FIXME non-nixos only
+  targets.genericLinux.enable = true;
+
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg)
     [ "vscode-extension-MS-python-vscode-pylance" ];
