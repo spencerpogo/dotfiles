@@ -6,6 +6,8 @@
     ./modules/bash.nix
     ./modules/zsh.nix
     ./modules/clitools.nix
+    # CLI - Languages
+    ./modules/rust.nix
     # GUI
     ./modules/vscode.nix
     ./modules/firefox.nix
