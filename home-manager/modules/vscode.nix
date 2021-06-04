@@ -192,7 +192,7 @@
       "editor.fontLigatures" = true;
       "editor.formatOnSave" = true;
       "editor.formatOnType" = true;
-      "editor.maxTokenizationLineLength" = "200";
+      "editor.maxTokenizationLineLength" = 200;
       "editor.tabSize" = 2;
       "explorer.confirmDelete" = false;
       "explorer.confirmDragAndDrop" = false;
