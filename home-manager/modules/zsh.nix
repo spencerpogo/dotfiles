@@ -41,7 +41,7 @@ in {
 
       # Autosuggestions
       ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=80
-      ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history completion)
+      ZSH_AUTOSUGGEST_STRATEGY=(history)
     '';
     plugins = [
       {
