@@ -12,6 +12,7 @@
     package = pkgs.vscodium;
 
     extensions = (with pkgs.vscode-extensions; [
+      matklad.rust-analyzer
       WakaTime.vscode-wakatime
       ms-python.vscode-pylance
       ms-vscode.cpptools
