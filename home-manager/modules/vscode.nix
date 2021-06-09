@@ -1,8 +1,10 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs;
-    [ (nerdfonts.override { fonts = [ "FiraCode" "Meslo" ]; }) ];
+  home.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "Meslo" ]; })
+    rls
+  ];
 
   programs.vscode = {
     enable = true;
