@@ -242,6 +242,7 @@
         "viewType" = "jupyter.notebook.ipynb";
         "filenamePattern" = "*.ipynb";
       }];
+      "rust-analyzer.diagnostics.disabled" = ["unresolved-macro-call"];
     };
   };
 }
