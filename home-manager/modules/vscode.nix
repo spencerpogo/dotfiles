@@ -125,8 +125,14 @@
       {
         name = "haskell";
         publisher = "haskell";
-        version= "1.4.0";
+        version = "1.4.0";
         sha256 = "1jk702fd0b0aqfryixpiy6sc8njzd1brd0lbkdhcifp0qlbdwki0";
+      }
+      {
+        name = "language-haskell";
+        publisher = "justusadam";
+        version = "3.4.0";
+        sha256 = "0ab7m5jzxakjxaiwmg0jcck53vnn183589bbxh3iiylkpicrv67y";
       }
     ];
 
@@ -248,7 +254,7 @@
         "viewType" = "jupyter.notebook.ipynb";
         "filenamePattern" = "*.ipynb";
       }];
-      "rust-analyzer.diagnostics.disabled" = ["unresolved-macro-call"];
+      "rust-analyzer.diagnostics.disabled" = [ "unresolved-macro-call" ];
     };
   };
 }
