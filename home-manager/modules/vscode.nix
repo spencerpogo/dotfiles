@@ -122,6 +122,12 @@
         version = "0.5.4";
         sha256 = "08dfl5h1k6s542qw5qx2czm1wb37ck9w2vpjz44kp2az352nmksb";
       }
+      {
+        name = "haskell";
+        publisher = "haskell";
+        version= "1.4.0";
+        sha256 = "1jk702fd0b0aqfryixpiy6sc8njzd1brd0lbkdhcifp0qlbdwki0";
+      }
     ];
 
     keybindings = [
