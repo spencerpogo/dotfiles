@@ -8,6 +8,7 @@
     ./modules/clitools.nix
     # CLI - Languages
     ./modules/rust.nix
+    ./modules/python.nix
     # GUI
     ./modules/vscode.nix
     ./modules/firefox.nix
