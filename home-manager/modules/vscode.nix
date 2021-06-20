@@ -203,7 +203,7 @@
       "editor.acceptSuggestionOnEnter" = "off";
       "editor.tabCompletion" = "on";
       "editor.snippetSuggestions" = "top";
-      "editor.fontFamily" = "Fira Code";
+      "editor.fontFamily" = "FiraCode Nerd Font";
       "editor.fontLigatures" = true;
       "editor.formatOnSave" = true;
       "editor.formatOnType" = true;
