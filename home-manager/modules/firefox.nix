@@ -57,7 +57,7 @@
           "device.sensors.proximity.enabled" = false;
           "dom.battery.enabled" = false;
           "dom.event.clipboardevents.enabled" = false;
-          "dom.storage.enabled" = false;
+          #"dom.storage.enabled" = false;
           "dom.webaudio.enabled" = false;
           "experiments.activeExperiment" = false;
           "experiments.enabled" = false;
