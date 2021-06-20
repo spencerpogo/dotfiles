@@ -118,6 +118,7 @@
           "toolkit.telemetry.updatePing.enabled" = false;
           "webgl.renderer-string-override" = " ";
           "webgl.vendor-string-override" = " ";
+          "browser.tabs.warnOnClose" = false;
         };
       };
     };
