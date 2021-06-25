@@ -3,10 +3,10 @@
 ## My setup
 
 - Full-stack development, browsing, light gaming
-- Pop! OS 20.10 
+- Pop! OS 20.10
   - Tried to use NixOS, installation was painful and never ended up
     getting it to work how I wanted
-  - Pop is ubuntu but with many quality of life fixes and better theming. 
+  - Pop is ubuntu but with many quality of life fixes and better theming.
   - Ubuntu/debian has great community, documentation, and support, plus I have a lot of
     experience with it
 - Use nix package manager for everything, keep apt use to the bare minimum utilities
@@ -22,9 +22,10 @@
   and sometimes vim with default config
 
 ## Installation
+
 ### home-manager setup (non-nixos)
 
-1. [Install nix package manager](https://nixos.org/guides/install-nix.html) (multi-user setup recommended). 
+1. [Install nix package manager](https://nixos.org/guides/install-nix.html) (multi-user setup recommended).
 2. Install [home-manager](https://github.com/nix-community/home-manager).
 3. Clone this repository and edit `home-manager/home.nix` to enable/disable modules to
    your liking. By default, it will install several GUI programs.
@@ -43,4 +44,11 @@
 ```
 
 3. Rebuild home-manager config: `home-manager switch`. Repeat this step after any
-   change to this repository. 
+   change to this repository.
+
+4. Set your login shell to zsh:
+
+```sh
+command -v zsh | sudo tee -a /etc/shells
+sudo chsh -s "$(command -v zsh)" "$(whoami)"
+```
