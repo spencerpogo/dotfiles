@@ -1,8 +1,7 @@
 { ... }:
 
 {
-  imports =
-    [ ./modules/vscode.nix ./modules/firefox.nix ];
+  imports = [ ./modules/vscode.nix ./modules/firefox.nix ];
 
   dconf.enable = true;
 
