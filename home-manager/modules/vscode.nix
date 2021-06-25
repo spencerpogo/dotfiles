@@ -250,10 +250,7 @@
       "coboleditor.intellisense_include_uppercase" = true;
       "coboleditor.intellisense_include_unchanged" = false;
       "python.dataScience.sendSelectionToInteractiveWindow" = false;
-      "workbench.editorAssociations" = [{
-        "viewType" = "jupyter.notebook.ipynb";
-        "filenamePattern" = "*.ipynb";
-      }];
+      "workbench.editorAssociations"."*.ipynb" = "jupyter.notebook.ipynb";
       "rust-analyzer.diagnostics.disabled" = [ "unresolved-macro-call" ];
     };
   };
