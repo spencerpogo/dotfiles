@@ -14,5 +14,8 @@
       "vscode-extension-ms-vscode-cpptools"
       "vscode-extension-ms-toolsai-jupyter"
       "vscode-extension-ms-vsliveshare-vsliveshare"
+      "steam"
+      "steam-original"
+      "steam-runtime"
     ];
 }
