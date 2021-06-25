@@ -1,7 +1,7 @@
 { lib, pkgs, ... }:
 
 {
-  imports = [ ./cli.nix ./gui.nix ];
+  imports = [ ./cli.nix ./gui.nix ./langs.nix ];
 
   programs.home-manager.enable = true;
 
