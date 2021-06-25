@@ -1,19 +1,7 @@
 { lib, pkgs, ... }:
 
 {
-  imports = [
-    # CLI
-    ./modules/bash.nix
-    ./modules/zsh.nix
-    ./modules/clitools.nix
-    # CLI - Languages
-    ./modules/rust.nix
-    ./modules/python.nix
-    # GUI
-    ./modules/vscode.nix
-    ./modules/firefox.nix
-    ./modules/miscgui.nix
-  ];
+  imports = [ ./cli.nix ./gui.nix ];
 
   programs.home-manager.enable = true;
 

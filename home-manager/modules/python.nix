@@ -1,7 +1,5 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 
 {
-  home.packages = [
-    pkgs.python39
-  ];
+  home.packages = [ pkgs.python39 ];
 }
