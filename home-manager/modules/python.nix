@@ -1,5 +1,5 @@
 { pkgs, ... }:
 
 {
-  home.packages = [ pkgs.python39 ];
+  home.packages = with pkgs.python39Packages; [ pkgs.python39 black ];
 }
