@@ -1,7 +1,11 @@
 { ... }:
 
 {
-  imports = [ ./modules/vscode.nix ./modules/firefox.nix ];
+  imports = [
+    ./modules/vscode.nix
+    ./modules/firefox.nix
+    ./modules/ungoogled-chromium.nix
+  ];
 
   dconf.enable = true;
 
