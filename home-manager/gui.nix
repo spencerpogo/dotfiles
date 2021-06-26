@@ -5,6 +5,7 @@
     ./modules/vscode.nix
     ./modules/firefox.nix
     ./modules/ungoogled-chromium.nix
+    ./modules/xcolor.nix
   ];
 
   dconf.enable = true;
