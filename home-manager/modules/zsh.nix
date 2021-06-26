@@ -174,7 +174,7 @@ in {
       bse = "base64 -w 0";
       bsd = "base64 -d";
       # Tasks
-      nf = "find . -type f -name '*.nix' -exec nixfmt {} \;";
+      nf = "find . -type f -name '*.nix' -exec nixfmt {} \\;";
     };
   };
 }
