@@ -6,6 +6,7 @@
     ./modules/firefox.nix
     ./modules/ungoogled-chromium.nix
     ./modules/xcolor.nix
+    ./modules/gnome-terminal.nix
   ];
 
   dconf.enable = true;

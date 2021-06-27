@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "Meslo" ]; })
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
     rls
   ];
 
