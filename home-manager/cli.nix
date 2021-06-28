@@ -7,6 +7,7 @@
     xclip # for copying from command line
     ripgrep
     nixfmt
+    vim
   ];
 
   programs = {
