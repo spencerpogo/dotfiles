@@ -44,4 +44,15 @@
       };
     };
   };
+
+  # Non-nixos: Don't install gnome-terminal with nix
+  # https://github.com/nix-community/home-manager/issues/2143#issuecomment-869095788
+  nixpkgs.overlays = [
+    (self: super: {
+      gnome = super.gnome // {
+        gnome-terminal = super.writeShellScriptBin "dummy-gnome-terminal"
+          "exec /usr/bin/env gnome-terminal";
+      };
+    })
+  ];
 }
