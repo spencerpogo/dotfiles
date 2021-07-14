@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.packages = [
@@ -41,6 +41,7 @@
             foreground = "#ffffff";
           };
         };
+        customCommand = if config.programs.zsh.enable then "${pkgs.zsh}/bin/zsh -i" else null;
       };
     };
   };

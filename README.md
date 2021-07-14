@@ -45,10 +45,3 @@
 
 3. Rebuild home-manager config: `home-manager switch`. Repeat this step after any
    change to this repository.
-
-4. Set your login shell to zsh:
-
-```sh
-command -v zsh | sudo tee -a /etc/shells
-sudo chsh -s "$(command -v zsh)" "$(whoami)"
-```
