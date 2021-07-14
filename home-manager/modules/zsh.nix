@@ -154,9 +154,6 @@ in {
         var=$(python -c 'import getpass;print(getpass.getpass("Enter pwd:"))')
         dec "$1" -k "$var" | eval "$2"
       }
-
-      # Temp for non-nixos
-      source /etc/profile.d/nix.sh && export NIX_PATH=$HOME/.nix-defexpr/channels''${NIX_PATH:+:}$NIX_PATH
     '';
     shellAliases = {
       # Clipboard
