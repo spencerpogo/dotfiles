@@ -18,6 +18,7 @@
       ms-vscode.cpptools
       ms-python.python
       ms-vsliveshare.vsliveshare
+      ms-toolsai.jupyter
       vscodevim.vim
     ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
