@@ -9,9 +9,7 @@
     ./modules/obsidian.nix
   ];
 
-  home.packages = [
-    pkgs.xcolor
-  ];
+  home.packages = [ pkgs.xcolor ];
 
   dconf.enable = true;
 
