@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -10,7 +10,7 @@
   ];
 
   home.packages = [
-    packages.xcolor
+    pkgs.xcolor
   ];
 
   dconf.enable = true;
