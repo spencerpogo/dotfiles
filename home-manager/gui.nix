@@ -7,6 +7,7 @@
     ./modules/ungoogled-chromium.nix
     ./modules/xcolor.nix
     ./modules/gnome-terminal.nix
+    ./modules/obsidian.nix
   ];
 
   dconf.enable = true;
