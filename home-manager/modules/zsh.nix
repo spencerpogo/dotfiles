@@ -81,66 +81,6 @@ in {
         cd "$1"
       }
 
-      # apologies for the formatting here. It would break the heredocs so I didn't indent 
-      scrollspeed () {
-        #!/bin/bash
-      # Version 0.1 Tuesday, 07 May 2013
-      # Comments and complaints http://www.nicknorton.net
-      # GUI for mouse wheel speed using imwheel in Gnome
-      # imwheel needs to be installed for this script to work
-      # sudo apt-get install imwheel
-      # Pretty much hard wired to only use a mouse with
-      # left, right and wheel in the middle.
-      # If you have a mouse with complications or special needs,
-      # use the command xev to find what your wheel does.
-      #
-      ### see if imwheel config exists, if not create it ###
-      if [ ! -f ~/.imwheelrc ]
-      then
-
-      cat >~/.imwheelrc<<EOF
-      ".*"
-      None,      Up,   Button4, 1
-      None,      Down, Button5, 1
-      Control_L, Up,   Control_L|Button4
-      Control_L, Down, Control_L|Button5
-      Shift_L,   Up,   Shift_L|Button4
-      Shift_L,   Down, Shift_L|Button5
-      EOF
-
-      fi
-      ##########################################################
-
-      CURRENT_VALUE=$(awk -F 'Button4,' '{print $2}' ~/.imwheelrc)
-
-      NEW_VALUE=$(zenity --scale --window-icon=info --ok-label=Apply --title="Scrollspeed" --text "Mouse wheel speed:" --min-value=1 --max-value=100 --value="$CURRENT_VALUE" --step 1)
-
-      if [ "$NEW_VALUE" = "" ]; then return 0; fi
-
-      sed -i "s/\($TARGET_KEY *Button4, *\).*/\1$NEW_VALUE/" ~/.imwheelrc # find the string Button4, and write new value.
-      sed -i "s/\($TARGET_KEY *Button5, *\).*/\1$NEW_VALUE/" ~/.imwheelrc # find the string Button5, and write new value.
-
-      cat ~/.imwheelrc
-      imwheel -kill
-      }
-
-      whennet () {
-        # My internet sucks sometimes, so when its down I run this command. It uses a simple
-        #  'ping google.com' to check if internet is working and sends an ubuntu notification
-        #  when the ping succeeeds with code 0
-        while [ true ]; do
-          ping -c 1 google.com
-          c=$?
-          echo "[-] Exit code $c"
-          if [ $c -eq 0 ]; then
-            echo "[!] Success!"
-            notify-send 'YOOOOO INTERNET IS BACK!!!'
-            break
-          fi
-          sleep 3
-        done
-      }
-
       ENC_ITS=100000
 
       enc () {
