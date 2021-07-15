@@ -5,9 +5,12 @@
     ./modules/vscode.nix
     ./modules/firefox.nix
     ./modules/ungoogled-chromium.nix
-    ./modules/xcolor.nix
     ./modules/gnome-terminal.nix
     ./modules/obsidian.nix
+  ];
+
+  home.packages = [
+    packages.xcolor
   ];
 
   dconf.enable = true;
