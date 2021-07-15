@@ -1,0 +1,5 @@
+{ ... }:
+
+{
+  imports = [ ./gnome-terminal.nix ];
+}

@@ -4,7 +4,8 @@
   imports = [
     ./modules/vscode.nix
     ./modules/firefox.nix
-    ./modules/gnome-terminal.nix
+    # GNOME specific packages and settings
+    ./modules/gnome.nix
   ];
 
   home.packages = with pkgs; [ xcolor obsidian ungoogled-chromium ];
