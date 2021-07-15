@@ -6,10 +6,9 @@
     ./modules/firefox.nix
     ./modules/ungoogled-chromium.nix
     ./modules/gnome-terminal.nix
-    ./modules/obsidian.nix
   ];
 
-  home.packages = [ pkgs.xcolor ];
+  home.packages = with pkgs; [ xcolor obsidian ];
 
   dconf.enable = true;
 
