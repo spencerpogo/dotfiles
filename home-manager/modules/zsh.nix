@@ -82,14 +82,12 @@ in {
       }
 
       ENC_ITS=100000
-
       enc () {
         openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter "$ENC_ITS" -salt -in "$1" -out "$1.enc"
       }
       dec () {
         openssl enc -d -aes-256-cbc -md sha512 -pbkdf2 -iter "$ENC_ITS" -salt -in "$@"
       }
-
       dec2cmd () {
         local var=$(python -c 'import getpass;print(getpass.getpass("Enter pwd:"))')
         dec "$1" -k "$var" | eval "$2"
