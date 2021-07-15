@@ -151,7 +151,7 @@ in {
       }
 
       dec2cmd () {
-        var=$(python -c 'import getpass;print(getpass.getpass("Enter pwd:"))')
+        local var=$(python -c 'import getpass;print(getpass.getpass("Enter pwd:"))')
         dec "$1" -k "$var" | eval "$2"
       }
     '';
