@@ -50,36 +50,37 @@
         version = "5.6.3";
         sha256 = "0z7niql0ax31mm03rkdknzm90s7ayqpz474cqx482iwdyi68ccfh";
       }
-      /*{
-        name = "import-sorter";
-        publisher = "mike-co";
-        version = "3.3.1";
-        sha256 = "0z6biw0a06as63nb0pbxpk5j3dxwk7n1v14f4dk7f9hh7j69qp2s";
-      }
-      {
-        name = "processing-formatter";
-        publisher = "millennIumAMbiguity";
-        version = "0.4.4";
-        sha256 = "0fksfpf9b8x4mbl2d69hpii1105751s62dfmg30bv48aiabh6278";
-      }
-      {
-        name = "LiveServer";
-        publisher = "ritwickdey";
-        version = "5.6.1";
-        sha256 = "077arf3hsn1yb8xdhlrax5gf93ljww78irv4gm8ffmsqvcr1kws0";
-      }
-      {
-        name = "language-pde";
-        publisher = "Tobiah";
-        version = "1.4.6";
-        sha256 = "1v2gwwllk269hba2mc22scfr0bizwndgg7zm9wsxffm52pwfjqp9";
-      }
-      {
-        name = "vscode-proto3";
-        publisher = "zxh404";
-        version = "0.5.4";
-        sha256 = "08dfl5h1k6s542qw5qx2czm1wb37ck9w2vpjz44kp2az352nmksb";
-      }*/
+      /* {
+           name = "import-sorter";
+           publisher = "mike-co";
+           version = "3.3.1";
+           sha256 = "0z6biw0a06as63nb0pbxpk5j3dxwk7n1v14f4dk7f9hh7j69qp2s";
+         }
+         {
+           name = "processing-formatter";
+           publisher = "millennIumAMbiguity";
+           version = "0.4.4";
+           sha256 = "0fksfpf9b8x4mbl2d69hpii1105751s62dfmg30bv48aiabh6278";
+         }
+         {
+           name = "LiveServer";
+           publisher = "ritwickdey";
+           version = "5.6.1";
+           sha256 = "077arf3hsn1yb8xdhlrax5gf93ljww78irv4gm8ffmsqvcr1kws0";
+         }
+         {
+           name = "language-pde";
+           publisher = "Tobiah";
+           version = "1.4.6";
+           sha256 = "1v2gwwllk269hba2mc22scfr0bizwndgg7zm9wsxffm52pwfjqp9";
+         }
+         {
+           name = "vscode-proto3";
+           publisher = "zxh404";
+           version = "0.5.4";
+           sha256 = "08dfl5h1k6s542qw5qx2czm1wb37ck9w2vpjz44kp2az352nmksb";
+         }
+      */
     ];
 
     keybindings = [

@@ -41,7 +41,8 @@
             foreground = "#ffffff";
           };
         };
-        customCommand = if config.programs.zsh.enable then "${pkgs.zsh}/bin/zsh -i" else null;
+        customCommand =
+          if config.programs.zsh.enable then "${pkgs.zsh}/bin/zsh -i" else null;
       };
     };
   };
