@@ -72,6 +72,21 @@ in {
       }export MANPAGER="sh -c 'col -bx | ${pkgs.bat}/bin/bat -l man -p'"
 
       # Functions
+      copy () {
+        # Command substitution removes trailing newlines, perfect for
+        #  copying to clipboard
+        local text
+        if [ $# -ge 1 ]; then
+          # read file given by first argument
+          text=$(<$1)
+        else
+          # read from stdin
+          text=$(<&0)
+        fi
+        # copy the text to the clipboard
+        echo -n "$text" | xclip -sel c
+      }
+
       tc () { # transform clipboard
         paste | eval "$*" | copy
       }
@@ -95,7 +110,6 @@ in {
     '';
     shellAliases = {
       # Clipboard
-      copy = "xclip -sel c";
       c = "copy";
       paste = "xclip -o -sel c";
       p = "paste";
