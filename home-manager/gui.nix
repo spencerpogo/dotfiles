@@ -8,7 +8,7 @@
     ./modules/gnome.nix
   ];
 
-  home.packages = with pkgs; [ xcolor obsidian ungoogled-chromium ];
+  home.packages = with pkgs; [ xcolor obsidian ungoogled-chromium discord ];
 
   fonts.fontconfig.enable = true;
 
@@ -24,5 +24,6 @@
       "steam-original"
       "steam-runtime"
       "obsidian"
+      "discord"
     ];
 }
