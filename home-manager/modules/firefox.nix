@@ -1,11 +1,10 @@
 { pkgs, ... }:
 
 let
-  nur = import (builtins.fetchTarball {
-    url =
-      "https://github.com/nix-community/NUR/archive/b9011a49aa87f14763ae8a10649127ea27185382.tar.gz";
-    sha256 = "0vd1b1z3hmwhjcd1grb1cah8pcxn3i1pfrcbnrbnzp3xrcfvcdli";
-  }) { inherit pkgs; };
+  nur = import (builtins.fetchTarball
+    "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+      inherit pkgs;
+    };
 in {
   programs.firefox = {
     enable = true;
