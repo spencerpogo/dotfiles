@@ -13,5 +13,10 @@
     #  option, unlike if I chose "caps lock is an additional esc"
     "org/gnome/desktop/input-sources"."xkb-options" =
       [ "caps:escape_shifted_capslock" ];
+    # Disable title bars in Pop! shell. Fullscreen games don't work if this is
+    #  enabled. Sadly, disabling it so there is no way to close certain windows
+    #  with the GUI and super+q must be used.
+    "org/gnome/shell/extensions/pop-shell"."show-title" = false;
+    # I don't do any theming because I think that Pop! looks great by default.
   };
 }
