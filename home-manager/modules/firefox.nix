@@ -10,7 +10,6 @@ in {
     enable = true;
 
     extensions = with nur.repos.rycee.firefox-addons; [
-      bypass-paywalls
       canvasblocker
       clearurls
       react-devtools
