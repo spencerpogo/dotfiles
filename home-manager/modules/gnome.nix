@@ -18,5 +18,11 @@
     #  with the GUI and super+q must be used.
     "org/gnome/shell/extensions/pop-shell"."show-title" = false;
     # I don't do any theming because I think that Pop! looks great by default.
+
+    # Shortcut bindings
+    "org/gnome/desktop/wm/keybindings" = {
+      minimize = [ "<Super>w" ];
+      show-desktop = [ "<Super>d" ];
+    };
   };
 }
