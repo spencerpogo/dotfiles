@@ -8,7 +8,13 @@
     ./modules/gnome.nix
   ];
 
-  home.packages = with pkgs; [ xcolor obsidian ungoogled-chromium discord ];
+  home.packages = with pkgs; [
+    xcolor
+    obsidian
+    ungoogled-chromium
+    discord
+    xclip # for copying from command line
+  ];
 
   fonts.fontconfig.enable = true;
 
