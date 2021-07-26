@@ -13,6 +13,5 @@
   programs = {
     bat.enable = true;
     jq.enable = true;
-    htop.enable = true;
   };
 }
