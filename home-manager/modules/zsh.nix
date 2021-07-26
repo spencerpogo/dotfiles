@@ -124,6 +124,8 @@ in {
       bsd = "base64 -d";
       # Tasks
       nf = "find . -type f -name '*.nix' -exec nixfmt {} \\;";
+      # misc
+      cmdv = "command -v";
     };
   };
 }
