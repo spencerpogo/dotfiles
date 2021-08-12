@@ -1,5 +1,6 @@
 { ... }:
 
+# GNOME specific settings: gnome-terminal, dconf
 {
   imports = [ ./gnome-terminal.nix ];
 

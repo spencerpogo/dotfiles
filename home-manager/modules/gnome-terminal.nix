@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 
+# gnome-terminal configuration
 {
   home.packages = [
     # powerlevel10k recommended font
@@ -12,12 +13,17 @@
       "ab99b254-6e47-4d5c-affb-4b757409a868" = {
         visibleName = "Main";
         default = true;
+        # recommended by powerlevel10k
         font = "MesloLGS Nerd Font 12";
+        # block is overrated imo. Can shave off the milliseconds of wondering
+        #  "where exactly is the cursor, before or after?"
         cursorShape = "ibeam";
         cursorBlinkMode = "on";
         colors = {
+          # background is the same as my vscode theme
           backgroundColor = "#23262e";
           foregroundColor = "#f2f2f2";
+          # I forgot where I got these but they look pretty nice
           palette = [
             "#333333"
             "#cc0000"
@@ -41,6 +47,8 @@
             foreground = "#ffffff";
           };
         };
+        # set shell here rather than in /etc/passwd so that bash will be used by dumb
+        #  terminals where my fancy prompt looks bad
         customCommand =
           if config.programs.zsh.enable then "${pkgs.zsh}/bin/zsh -i" else null;
       };

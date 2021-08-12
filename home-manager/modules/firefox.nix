@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
+# Privacy-focused firefox settings and extensions.
 let
+  # TODO: flakes/niv
   nur = import (builtins.fetchTarball
     "https://github.com/nix-community/NUR/archive/master.tar.gz") {
       inherit pkgs;

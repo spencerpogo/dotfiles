@@ -1,5 +1,6 @@
 { config, lib, pkgs, ... }:
 
+# my zsh config with powerlevel10k
 with lib;
 
 let HIST_SIZE = 32768; # 32**3

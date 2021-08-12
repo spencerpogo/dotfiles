@@ -1,5 +1,6 @@
 { lib, pkgs, ... }:
 
+# Shared configuration for all profiles.
 {
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [

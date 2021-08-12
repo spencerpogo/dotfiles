@@ -1,5 +1,7 @@
 { pkgs, ... }:
 
+# A basic bash configuration inspired by ubuntu defaults. I keep this light
+#  as most configuration is done in zsh.
 {
   # I don't use bash much but it is a good fallback in case zsh is having issues
   programs.bash = {
@@ -54,7 +56,8 @@
           alias egrep='egrep --color=auto'
       fi
 
-      # colored GCC warnings and errors
+      # colored GCC warnings and errors. this isn't needed in my experience but is
+      #  nice to have
       #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
       # some more ls aliases

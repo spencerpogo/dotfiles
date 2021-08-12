@@ -1,5 +1,6 @@
 { pkgs, ... }:
 
+# Basic git info
 {
   programs.git = {
     enable = true;

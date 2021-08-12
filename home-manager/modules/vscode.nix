@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
+# VS Codium (not code) config
 {
+  # essential coding font. there might be better ones but this is fine for me.
+  # Ligature are awesome, my favorite is !=
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     rls
@@ -11,6 +14,9 @@
     # no tracking for me thanks
     package = pkgs.vscodium;
 
+    # a couple of extensions
+    # (I like a lot of different programming languages)
+    # VS Code's extensibility is a major strength
     extensions = (with pkgs.vscode-extensions; [
       matklad.rust-analyzer
       WakaTime.vscode-wakatime
