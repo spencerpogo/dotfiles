@@ -3,7 +3,6 @@
 {
   imports = [
     ./modules/cli.nix
-    ./modules/gui.nix
     ./modules/rust.nix
     ./modules/python.nix
     ./modules/vscode.nix
