@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./modules/bash.nix ./modules/zsh.nix ./modules/git.nix ];
+  imports = [ ./bash.nix ./zsh.nix ./git.nix ];
 
   home.packages = with pkgs; [ ripgrep nixfmt vim ];
 
