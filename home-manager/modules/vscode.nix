@@ -20,13 +20,13 @@
       ms-vsliveshare.vsliveshare
       ms-toolsai.jupyter
       vscodevim.vim
-      bbenoist.Nix
+      bbenoist.nix
       coenraads.bracket-pair-colorizer-2
       dbaeumer.vscode-eslint
       eamodio.gitlens
       editorconfig.editorconfig
       esbenp.prettier-vscode
-      golang.Go
+      golang.go
       graphql.vscode-graphql
       pkief.material-icon-theme
       haskell.haskell
