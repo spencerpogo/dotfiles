@@ -29,15 +29,17 @@
 2. Install [home-manager](https://github.com/nix-community/home-manager).
 3. Clone this repository and edit `home-manager/home.nix` to enable/disable modules to
    your liking. By default, it will install several GUI programs.
-4. At the top of `~/.config/nixpkgs/home.nix`, import the `home-manager/home.nix` file
-   from this repository, editing the path as necessary:
+4. Pick an existing profile from `home-manager/*.nix`, or create a new one.
+5. At the top of `~/.config/nixpkgs/home.nix`, import your desired profile from this
+   repository, editing the path as necessary. For example, to use the `redbox` profile
+   after cloning the repository to `/home/scoder12/github/dotfiles`, write:
 
 ```nix
 { config, pkgs, ... }:
 
 {
   imports = [
-    /home/scoder12/github/dotfiles/home-manager/home.nix
+    /home/scoder12/github/dotfiles/home-manager/redbox.nix
   ];
 
   # --snip--

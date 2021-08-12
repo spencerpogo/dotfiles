@@ -1,6 +1,8 @@
 { lib, pkgs, ... }:
 
 {
+  # My desktop PC
+
   imports = [
     ./base.nix
     ./modules/cli.nix
