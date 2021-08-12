@@ -18,10 +18,16 @@
     # (I like a lot of different programming languages)
     # VS Code's extensibility is a major strength
     extensions = (with pkgs.vscode-extensions; [
+      # Rust
       matklad.rust-analyzer
+      # Code time tracking
       WakaTime.vscode-wakatime
+      # unfree microsoft python shit
       ms-python.vscode-pylance
+      # I don't know why this is here I don't do C++
       ms-vscode.cpptools
+      # python (essential)
+      # too stupid to pick up on nix-installed black sadly
       ms-python.python
       ms-vsliveshare.vsliveshare
       ms-toolsai.jupyter
