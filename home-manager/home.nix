@@ -5,6 +5,6 @@
 
   programs.home-manager.enable = true;
 
-  # FIXME non-nixos only
+  # enable non-nixos
   targets.genericLinux.enable = true;
 }
