@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 
 # Utitilities that are only useful on a GUI system
 {
