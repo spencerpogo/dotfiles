@@ -4,7 +4,7 @@
   # My desktop PC
 
   imports = [
-    ./base.nix
+    ./modules/base.nix
     ./modules/cli.nix
     ./modules/rust.nix
     ./modules/python.nix
