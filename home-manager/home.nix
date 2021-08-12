@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./base.nix
     ./modules/cli.nix
     ./modules/rust.nix
     ./modules/python.nix
