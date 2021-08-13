@@ -14,9 +14,4 @@
     # GNOME specific packages and settings
     ./modules/gnome.nix
   ];
-
-  programs.home-manager.enable = true;
-
-  # enable non-nixos
-  targets.genericLinux.enable = true;
 }
