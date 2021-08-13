@@ -2,15 +2,21 @@
 
 ## My setup
 
-- Full-stack development, browsing, light gaming
-- Pop! OS 20.10
+- Usecase: Full-stack development, browsing, light gaming
+- OS: Pop! OS 20.10
   - Tried to use NixOS, installation was painful and never ended up
     getting it to work how I wanted
   - Pop is ubuntu but with many quality of life fixes and better theming.
   - Ubuntu/debian has great community, documentation, and support, plus I have a lot of
     experience with it
+  - it is nice to have apt in a pinch
 - Use nix package manager for everything, keep apt use to the bare minimum utilities
 - Install everything using `home-manager`, never `nix-env`.
+  - Ensures that everything I install is saved in my dotfiles
+  - Don't use two tools for the same purpose
+- Always use `nix-shell -p` instead of home-manager except for everyday essentials
+  - allows faster iteration
+  - avoids bloating base dotfiles install
 - Shell: zsh
   - oh-my-zsh because it has a lot of quality of life fixes and a great git plugin
   - nerdfont complete powerlevel10k theme
@@ -20,6 +26,7 @@
     characters)
 - Editor: VS Codium (open source, telemetry free VS Code) with vscode-vim extension
   and sometimes vim with default config
+- See comments in `home-manager/modules/*.nix` for more information
 
 ## Installation
 
