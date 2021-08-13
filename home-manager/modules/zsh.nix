@@ -88,6 +88,11 @@ in {
         echo -n "$text" | xclip -sel c
       }
 
+      nsh () {
+        nix-shell -p "$@" --run zsh
+        return "$?"
+      }
+
       tc () { # transform clipboard
         paste | eval "$*" | copy
       }
@@ -127,6 +132,8 @@ in {
       nf = "find . -type f -name '*.nix' -exec nixfmt {} \\;";
       # misc
       cmdv = "command -v";
+      ns = "nix-shell -p";
+      rf = "readlink -f";
     };
   };
 }
