@@ -14,4 +14,15 @@
     # GNOME specific packages and settings
     ./modules/gnome.nix
   ];
+
+  home.packages = [
+    # command-line color picker
+    xcolor
+    # note-taking
+    obsidian
+    # secondary browser, for school and WebGL stuff
+    ungoogled-chromium
+    # chat
+    discord
+  ];
 }

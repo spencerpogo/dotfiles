@@ -3,14 +3,6 @@
 # Utitilities that are only useful on a GUI system
 {
   home.packages = with pkgs; [
-    # command-line color picker
-    xcolor
-    # note-taking
-    obsidian
-    # secondary browser, for school and WebGL stuff
-    ungoogled-chromium
-    # chat
-    discord
     # for copying from command line. extremely useful
     xclip
   ];
