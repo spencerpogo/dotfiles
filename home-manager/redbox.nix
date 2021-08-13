@@ -1,7 +1,9 @@
 { lib, pkgs, ... }:
 
 {
-  # My desktop PC
+  # My desktop PC, running Pop! OS
+  # Rationale: it is nice to have apt in a pinch or in a time-sensitive situation where
+  #  I can't afford to waste time fighting with nix
 
   imports = [
     ./modules/base.nix
