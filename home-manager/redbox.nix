@@ -15,7 +15,7 @@
     ./modules/gnome.nix
   ];
 
-  home.packages = [
+  home.packages = with pkgs; [
     # command-line color picker
     xcolor
     # note-taking
