@@ -85,7 +85,7 @@ in {
           text=$(<&0)
         fi
         # copy the text to the clipboard
-        echo -n "$text" | xclip -sel c
+        printf "%s" "$text" | xclip -sel c
       }
 
       nsh () {
