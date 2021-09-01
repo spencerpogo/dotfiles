@@ -79,13 +79,12 @@ in {
         local text
         if [ $# -ge 1 ]; then
           # read file given by first argument
-          text=$(<$1)
+          # -sel c is short for -selection clipboard
+          xclip -sel c "$1"
         else
           # read from stdin
-          text=$(<&0)
+          <&0 xclip -sel c
         fi
-        # copy the text to the clipboard
-        printf "%s" "$text" | xclip -sel c
       }
 
       nsh () {
