@@ -211,6 +211,7 @@
       "python.dataScience.sendSelectionToInteractiveWindow" = false;
       "workbench.editorAssociations"."*.ipynb" = "jupyter.notebook.ipynb";
       "rust-analyzer.diagnostics.disabled" = [ "unresolved-macro-call" ];
+      "rust-analyzer.inlayHints.maxLength" = 10;
     };
   };
 }
