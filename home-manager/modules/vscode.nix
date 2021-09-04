@@ -212,6 +212,8 @@
       "workbench.editorAssociations"."*.ipynb" = "jupyter.notebook.ipynb";
       "rust-analyzer.diagnostics.disabled" = [ "unresolved-macro-call" ];
       "rust-analyzer.inlayHints.maxLength" = 10;
+      "typescript.preferences.importModuleSpecifier" = "relative";
+      "javascript.preferences.importModuleSpecifier" = "relative";
     };
   };
 }
