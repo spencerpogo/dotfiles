@@ -10,5 +10,6 @@
     ./modules/vscode.nix
     ./modules/firefox.nix
     ./modules/guiutils.nix
+    ./modules/tmux.nix
   ];
 }
