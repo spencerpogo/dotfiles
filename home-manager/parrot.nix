@@ -11,5 +11,6 @@
     ./modules/firefox.nix
     ./modules/guiutils.nix
     ./modules/tmux.nix
+    ./modules/gnome-terminal.nix
   ];
 }
