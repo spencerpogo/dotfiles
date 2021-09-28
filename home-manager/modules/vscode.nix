@@ -28,7 +28,9 @@
       ms-vscode.cpptools
       # python (essential)
       # too stupid to pick up on nix-installed black sadly
-      ms-python.python
+      # EDIT: python ext is broken, currently waiting on fix
+      # https://github.com/NixOS/nixpkgs/issues/139813
+      # ms-python.python
       ms-vsliveshare.vsliveshare
       ms-toolsai.jupyter
       vscodevim.vim
