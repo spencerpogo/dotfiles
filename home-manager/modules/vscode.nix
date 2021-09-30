@@ -35,7 +35,6 @@
       ms-toolsai.jupyter
       vscodevim.vim
       bbenoist.nix
-      coenraads.bracket-pair-colorizer-2
       dbaeumer.vscode-eslint
       eamodio.gitlens
       editorconfig.editorconfig
@@ -216,6 +215,7 @@
       "rust-analyzer.inlayHints.maxLength" = 10;
       "typescript.preferences.importModuleSpecifier" = "relative";
       "javascript.preferences.importModuleSpecifier" = "relative";
+      "editor.bracketPairColorization.enabled" = true;
     };
   };
 }
