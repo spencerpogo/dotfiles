@@ -10,6 +10,16 @@ in {
       keybindings = lib.mkOptionDefault {
         "${mod}+n" = "move workspace to output left";
         "${mod}+m" = "move workspace to output right";
+
+        # why are these not default?
+        "${mod}+j" = "focus left";
+        "${mod}+k" = "focus down";
+        "${mod}+l" = "focus up";
+        "${mod}+semicolon" = "focus right";
+        "${mod}+Shift+j" = "move left";
+        "${mod}+Shift+k" = "move down";
+        "${mod}+Shift+l" = "move up";
+        "${mod}+Shift+semicolon" = "move right";
       };
       startup = [{
         command =
