@@ -17,6 +17,7 @@
     ./modules/tmux.nix
     # GNOME specific packages and settings
     ./modules/gnome.nix
+    ./modules/pentesting.nix
   ];
 
   home.packages = with pkgs; [

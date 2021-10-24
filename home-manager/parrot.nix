@@ -12,5 +12,6 @@
     ./modules/guiutils.nix
     ./modules/tmux.nix
     ./modules/gnome-terminal.nix
+    ./modules/pentesting.nix
   ];
 }
