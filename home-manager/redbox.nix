@@ -21,6 +21,8 @@
     ./modules/pentesting.nix
   ];
 
+  programs.alacritty.enable = true;
+
   home.packages = with pkgs; [
     # command-line color picker
     xcolor
