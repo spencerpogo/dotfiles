@@ -6,6 +6,7 @@
   # I don't use bash much but it is a good fallback in case zsh is having issues
   programs.bash = {
     enable = true;
+    enableVteIntegration = true;
     initExtra = ''
       # set a fancy prompt (non-color, unless we know we "want" color)
       case "$TERM" in
