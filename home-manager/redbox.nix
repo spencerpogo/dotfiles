@@ -17,6 +17,7 @@
     # TODO: test this and add to cli.nix or parrot.nix
     ./modules/tmux.nix
     ./modules/pentesting.nix
+    ./modules/gtk.nix
   ];
 
   programs.alacritty.enable = true;
