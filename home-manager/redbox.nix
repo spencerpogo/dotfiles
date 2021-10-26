@@ -31,6 +31,8 @@
     ungoogled-chromium
     # chat
     discord
+    # gaming
+    steam
     # meetings
     zoom-us
   ];
