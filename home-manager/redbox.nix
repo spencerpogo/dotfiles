@@ -30,5 +30,7 @@
     ungoogled-chromium
     # chat
     discord
+    # meetings
+    zoom-us
   ];
 }

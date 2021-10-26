@@ -13,6 +13,7 @@
       "steam-runtime"
       "obsidian"
       "discord"
+      "zoom"
     ];
 
   programs.home-manager.enable = true;
