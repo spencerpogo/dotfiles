@@ -45,6 +45,10 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+  i18n.inputMethod = {
+    enabled = "ibus";
+    ibus.engines = [ pkgs.ibus-engines.libpinyin ];
+  };
   # console = {
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";
