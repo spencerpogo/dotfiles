@@ -12,14 +12,14 @@ in {
         "${mod}+m" = "move workspace to output right";
 
         # why are these not default?
-        "${mod}+j" = "focus left";
-        "${mod}+k" = "focus down";
-        "${mod}+l" = "focus up";
-        "${mod}+semicolon" = "focus right";
-        "${mod}+Shift+j" = "move left";
-        "${mod}+Shift+k" = "move down";
-        "${mod}+Shift+l" = "move up";
-        "${mod}+Shift+semicolon" = "move right";
+        "${mod}+h" = "focus left";
+        "${mod}+j" = "focus down";
+        "${mod}+k" = "focus up";
+        "${mod}+l" = "focus right";
+        "${mod}+Shift+h" = "move left";
+        "${mod}+Shift+j" = "move down";
+        "${mod}+Shift+k" = "move up";
+        "${mod}+Shift+l" = "move right";
       };
       startup = [{
         command =
