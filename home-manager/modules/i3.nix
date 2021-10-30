@@ -2,7 +2,15 @@
 
 let mod = "Mod4";
 in {
-  xsession.enable = true;
+  # Start i3 from home-manager
+  # https://discourse.nixos.org/t/opening-i3-from-home-manager-automatically/4849/8
+  xsession = {
+    enable = true;
+    scriptPath = ".hm-xsession";
+  };
+
+  home.packages = [ pkgs.dmenu pkgs.i3status pkgs.i3lock ];
+
   xsession.windowManager.i3 = {
     enable = true;
     config = {

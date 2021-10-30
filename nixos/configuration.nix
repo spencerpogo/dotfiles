@@ -75,32 +75,20 @@
     layout = "us";
     xkbOptions = "caps:escape_shifted_capslock";
 
-    desktopManager = {
-      xterm.enable = false;
-      xfce = {
-        enable = true;
-        noDesktop = true;
-        enableXfwm = false;
-      };
-    };
-
     displayManager = {
-      defaultSession = "xfce+i3";
       autoLogin = {
         enable = true;
         user = "spencer";
       };
-    };
-
-    windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [
-        # TODO actually configure this
-        dmenu # application launcher most people use
-        i3status # gives you the default i3 status bar
-        i3lock # default i3 screen locker
-        #i3blocks # if you are planning on using i3blocks over i3status
-      ];
+      session = [{
+        name = "home-manager";
+        manage = "window";
+        start = ''
+          ${pkgs.runtimeShell} $HOME/.hm-xsession &
+          waitPID=$!
+        '';
+      }];
+      defaultSession = "none+home-manager";
     };
   };
 
