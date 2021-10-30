@@ -17,16 +17,19 @@
   boot.kernelParams = [ "amd_iommu=on" ];
 
   fileSystems."/boot" = {
-    device = "/dev/nvme0n1p1";
+    device = "/dev/disk/by-partuuid/11a82a3d-bf69-46a4-9441-b8e22e9eaac4";
     fsType = "vfat";
   };
+
   boot.initrd.luks.devices = {
     root = {
-      device = "/dev/nvme0n1p5";
+      device = "/dev/disk/by-partuuid/60d2ef2f-5a20-4758-b16a-fad73b7600c9";
       preLVM = true;
     };
   };
-  swapDevices = [{ device = "/dev/mapper/vglinux-swap"; }];
+
+  # like /, swap partition is part of luks group
+  swapDevices = [{ device = "/dev/disk/by-uuid/f0a3b235-96e1-4ad7-81ce-024e5e8f7cb1"; }];
 
   networking.hostName = "redbox12"; # Define your hostname.
   networking.wireless.enable =
