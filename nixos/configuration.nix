@@ -29,7 +29,8 @@
   };
 
   # like /, swap partition is part of luks group
-  swapDevices = [{ device = "/dev/disk/by-uuid/f0a3b235-96e1-4ad7-81ce-024e5e8f7cb1"; }];
+  swapDevices =
+    [{ device = "/dev/disk/by-uuid/f0a3b235-96e1-4ad7-81ce-024e5e8f7cb1"; }];
 
   networking.hostName = "redbox12"; # Define your hostname.
   networking.wireless.enable =
