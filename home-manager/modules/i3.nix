@@ -8,7 +8,8 @@ in {
     enable = true;
     scriptPath = ".hm-xsession";
     # https://github.com/flameshot-org/flameshot/issues/168#issuecomment-377851744
-    command = "${pkgs.dbus}/bin/dbus-launch ${config.windowManager.i3.package}/bin/i3";
+    windowManager.command = lib.mkForce
+      "${pkgs.dbus}/bin/dbus-launch ${config.xsession.windowManager.i3.package}/bin/i3";
   };
 
   home.packages = [ pkgs.dmenu pkgs.i3status pkgs.i3lock ];
