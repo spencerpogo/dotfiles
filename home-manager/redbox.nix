@@ -18,6 +18,7 @@
     ./modules/tmux.nix
     ./modules/pentesting.nix
     ./modules/gtk.nix
+    ./modules/flameshot.nix
   ];
 
   programs.alacritty.enable = true;

@@ -22,7 +22,7 @@ in {
         "${mod}+n" = "move workspace to output left";
         "${mod}+m" = "move workspace to output right";
 
-        # why are these not default?
+        # vim keybindings
         "${mod}+h" = "focus left";
         "${mod}+j" = "focus down";
         "${mod}+k" = "focus up";
@@ -31,6 +31,8 @@ in {
         "${mod}+Shift+j" = "move down";
         "${mod}+Shift+k" = "move up";
         "${mod}+Shift+l" = "move right";
+
+        "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui";
       };
       startup = [{
         command =
