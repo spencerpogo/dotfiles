@@ -12,7 +12,7 @@ in {
       "${pkgs.dbus}/bin/dbus-launch ${config.xsession.windowManager.i3.package}/bin/i3";
   };
 
-  home.packages = [ pkgs.dmenu pkgs.i3status pkgs.i3lock ];
+  home.packages = [ pkgs.dmenu pkgs.i3status pkgs.i3lock pkgs.feh ];
 
   xsession.windowManager.i3 = {
     enable = true;
@@ -34,10 +34,20 @@ in {
 
         "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui";
       };
-      startup = [{
-        command =
-          "xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --primary --mode 1920x1080 --pos 1440x0 --rotate normal --output DVI-D-0 --mode 1440x900 --pos 0x180 --rotate normal";
-      }];
+      startup = [
+        # Setup monitors
+        {
+          command =
+            "xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --primary --mode 1920x1080 --pos 1440x0 --rotate normal --output DVI-D-0 --mode 1440x900 --pos 0x180 --rotate normal";
+        }
+        # Set background properly
+        # its set by lightdm but glitches when i3 starts
+        {
+          always = true;
+          command =
+            "${pkgs.feh}/bin/feh --bg-fill ${pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom.gnomeFilePath}";
+        }
+      ];
       window.hideEdgeBorders = "both";
       workspaceAutoBackAndForth = true;
       terminal = if config.programs.alacritty.enable then
