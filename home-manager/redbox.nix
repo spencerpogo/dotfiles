@@ -36,5 +36,7 @@
     steam
     # meetings
     zoom-us
+    # screen recording
+    obs-studio
   ];
 }
