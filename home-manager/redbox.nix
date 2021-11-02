@@ -36,6 +36,8 @@
     steam
     # meetings
     zoom-us
+    # screenshots
+    flameshot
     # screen recording
     obs-studio
   ];

@@ -47,6 +47,9 @@ in {
           command =
             "${pkgs.feh}/bin/feh --bg-fill ${pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom.gnomeFilePath}";
         }
+        {
+          command = "${pkgs.flameshot}/bin/flameshot";
+        }
       ];
       window.hideEdgeBorders = "both";
       workspaceAutoBackAndForth = true;
