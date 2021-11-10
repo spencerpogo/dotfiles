@@ -2,12 +2,8 @@
 
 # VS Codium (not code) config
 {
-  # essential coding font. there might be better ones but this is fine for me.
-  # Ligature are awesome, my favorite is !=
-  home.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
-    rls
-  ];
+
+  home.packages = [ pkgs.rls ];
 
   programs.vscode = {
     enable = true;
@@ -19,7 +15,7 @@
     # VS Code's extensibility is a major strength
     extensions = (with pkgs.vscode-extensions; [
       # Rust
-      matklad.rust-analyzer
+      #matklad.rust-analyzer
       # Code time tracking
       WakaTime.vscode-wakatime
       # unfree microsoft python shit
@@ -187,7 +183,7 @@
         [ "." "/home/scoder12/.pyenv/versions/3.8.2/lib/python3.8" ];
       "python.formatting.provider" = "black";
       "python.languageServer" = "Pylance";
-      "terminal.integrated.fontFamily" = "MesloLGS NF";
+      "terminal.integrated.fontFamily" = "MesloLGS Nerd Font 12";
       "vim.handleKeys" = {
         "<C-a>" = false;
         "<C-c>" = false;

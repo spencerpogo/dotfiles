@@ -19,9 +19,9 @@
     ./modules/pentesting.nix
     ./modules/gtk.nix
     ./modules/flameshot.nix
+    ./modules/fonts.nix
+    ./modules/alacritty.nix
   ];
-
-  programs.alacritty.enable = true;
 
   home.packages = with pkgs; [
     # command-line color picker
