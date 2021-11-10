@@ -96,7 +96,7 @@ in {
         "i3-sensible-terminal";
     };
     extraConfig = ''
-      strip_workspace_numbers yes
+      #strip_workspace_numbers yes
       # Set default workspaces
       exec --no-startup-id i3-msg workspace ${ws1}
       exec --no-startup-id i3-msg workspace ${ws2}
