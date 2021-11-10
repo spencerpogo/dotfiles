@@ -126,6 +126,7 @@
     curl
     wget
     file
+    psmisc # fuser, killall and pstree
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
