@@ -15,7 +15,7 @@
     # VS Code's extensibility is a major strength
     extensions = (with pkgs.vscode-extensions; [
       # Rust
-      #matklad.rust-analyzer
+      matklad.rust-analyzer
       # Code time tracking
       WakaTime.vscode-wakatime
       # unfree microsoft python shit
