@@ -14,5 +14,6 @@
         "Meslo"
       ];
     })
+    pkgs.font-awesome_5
   ];
 }

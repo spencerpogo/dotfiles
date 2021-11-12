@@ -3,10 +3,10 @@
 let
   mod = "Mod4";
   esc = v: ''"${v}"'';
-  ws1 = esc "1:discord";
-  ws2 = esc "2:firefox";
-  ws3 = esc "3:terminals";
-  ws4 = esc "4:editor";
+  ws1 = esc "1:"; # discord
+  ws2 = esc "2:"; # firefox
+  ws3 = esc "3:"; # terminals
+  ws4 = esc "4:"; # editor
   ws5 = esc "5";
   ws6 = esc "6";
   ws7 = esc "7";
@@ -124,10 +124,10 @@ in {
         hiddenState = "hide";
         position = "bottom";
         workspaceButtons = true;
-        workspaceNumbers = true;
+        workspaceNumbers = false;
         statusCommand = "${pkgs.i3status}/bin/i3status";
         fonts = {
-          names = [ "monospace" ];
+          names = [ "Font Awesome 5 Brands" ];
           size = 8.0;
         };
         trayOutput = "primary";
