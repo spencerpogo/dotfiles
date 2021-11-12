@@ -196,7 +196,7 @@
         "<C-g>" = false;
         "<C-f>" = false;
       };
-      "workbench.colorTheme" = "Andromeda Italic";
+      "workbench.colorTheme" = "Andromeda Italic Bordered";
       "workbench.iconTheme" = "material-icon-theme";
       "gitlens.codeLens.enabled" = false;
       "coboleditor.enable_tabstop" = false;
