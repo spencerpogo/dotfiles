@@ -35,6 +35,7 @@ in {
     enable = true;
     config = {
       modifier = mod; # super
+
       keybindings = lib.mkOptionDefault {
         "${mod}+n" = "move workspace to output left";
         "${mod}+m" = "move workspace to output right";
@@ -73,14 +74,11 @@ in {
 
         "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui";
       };
+
       assigns = builtins.listToAttrs [
         {
           name = ws1;
           value = [{ class = "^discord$"; }];
-        }
-        {
-          name = ws2;
-          value = [{ class = "^Firefox$"; }];
         }
         {
           name = ws3;
@@ -91,6 +89,7 @@ in {
           value = [{ class = "^VSCodium$"; }];
         }
       ];
+
       startup = [
         # Setup monitors
         {
@@ -108,19 +107,24 @@ in {
         { command = "${pkgs.discord}/bin/discord"; }
         { command = "${pkgs.firefox}/bin/firefox"; }
       ];
+
       defaultWorkspace = "workspace number ${ws2}";
+
       window.hideEdgeBorders = "both";
+
       workspaceAutoBackAndForth = true;
+
       terminal = if config.programs.alacritty.enable then
         "${config.programs.alacritty.package}/bin/alacritty"
       else
         "i3-sensible-terminal";
+
     };
     extraConfig = ''
-      #strip_workspace_numbers yes
-      # Set default workspaces
-      #exec --no-startup-id i3-msg workspace ${ws1}
-      #exec --no-startup-id i3-msg workspace ${ws2}
+      workspace ${ws1} output DVI-D-0
+      workspace ${ws3} layout tabbed
+
+      for_window [class="^Firefox$"] move to workspace ${ws2}
     '';
   };
 }
