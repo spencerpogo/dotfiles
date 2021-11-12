@@ -3,16 +3,16 @@
 let
   mod = "Mod4";
   esc = v: ''"${v}"'';
-  ws1 = esc "1:one";
-  ws2 = esc "2:two";
-  ws3 = esc "3";
-  ws4 = esc "4";
+  ws1 = esc "1:discord";
+  ws2 = esc "2:firefox";
+  ws3 = esc "3:terminals";
+  ws4 = esc "4:editor";
   ws5 = esc "5";
   ws6 = esc "6";
   ws7 = esc "7";
   ws8 = esc "8";
   ws9 = esc "9";
-  ws10 = esc "10";
+  ws0 = esc "0";
 in {
   # Start i3 from home-manager
   # https://discourse.nixos.org/t/opening-i3-from-home-manager-automatically/4849/8
@@ -48,7 +48,7 @@ in {
         "${mod}+7" = "workspace number ${ws7}";
         "${mod}+8" = "workspace number ${ws8}";
         "${mod}+9" = "workspace number ${ws9}";
-        "${mod}+0" = "workspace number ${ws10}";
+        "${mod}+0" = "workspace number ${ws0}";
 
         "${mod}+Shift+1" = "move container to workspace number ${ws1}";
         "${mod}+Shift+2" = "move container to workspace number ${ws2}";
@@ -59,7 +59,7 @@ in {
         "${mod}+Shift+7" = "move container to workspace number ${ws7}";
         "${mod}+Shift+8" = "move container to workspace number ${ws8}";
         "${mod}+Shift+9" = "move container to workspace number ${ws9}";
-        "${mod}+Shift+0" = "move container to workspace number ${ws9}";
+        "${mod}+Shift+0" = "move container to workspace number ${ws0}";
 
         # vim keybindings
         "${mod}+h" = "focus left";
@@ -73,6 +73,24 @@ in {
 
         "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui";
       };
+      assigns = builtins.listToAttrs [
+        {
+          name = ws1;
+          value = [{ class = "^discord$"; }];
+        }
+        {
+          name = ws2;
+          value = [{ class = "^Firefox$"; }];
+        }
+        {
+          name = ws3;
+          value = [{ class = "^Alacritty$"; }];
+        }
+        {
+          name = ws4;
+          value = [{ class = "^VSCodium$"; }];
+        }
+      ];
       startup = [
         # Setup monitors
         {
@@ -87,7 +105,10 @@ in {
             "${pkgs.feh}/bin/feh --bg-fill ${pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom.gnomeFilePath}";
         }
         { command = "${pkgs.flameshot}/bin/flameshot"; }
+        { command = "${pkgs.discord}/bin/discord"; }
+        { command = "${pkgs.firefox}/bin/firefox"; }
       ];
+      defaultWorkspace = "workspace number ${ws2}";
       window.hideEdgeBorders = "both";
       workspaceAutoBackAndForth = true;
       terminal = if config.programs.alacritty.enable then
@@ -98,8 +119,8 @@ in {
     extraConfig = ''
       #strip_workspace_numbers yes
       # Set default workspaces
-      exec --no-startup-id i3-msg workspace ${ws1}
-      exec --no-startup-id i3-msg workspace ${ws2}
+      #exec --no-startup-id i3-msg workspace ${ws1}
+      #exec --no-startup-id i3-msg workspace ${ws2}
     '';
   };
 }

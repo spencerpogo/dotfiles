@@ -14,7 +14,7 @@ in {
       };
       cursor = {
         style = "Beam";
-        thickness = 0.20;
+        thickness = 0.2;
       };
       shell.program = "${pkgs.zsh}/bin/zsh";
     };
