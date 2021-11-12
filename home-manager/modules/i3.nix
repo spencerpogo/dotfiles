@@ -122,7 +122,7 @@ in {
     };
     extraConfig = ''
       workspace ${ws1} output DVI-D-0
-      workspace ${ws3} layout tabbed
+      workspace ${ws3} output HDMI-A-0 layout tabbed
 
       for_window [class="^Firefox$"] move to workspace ${ws2}
     '';
