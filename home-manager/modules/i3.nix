@@ -11,8 +11,8 @@ let
   ws6 = esc "6";
   ws7 = esc "7";
   ws8 = esc "8";
-  ws9 = esc "9";
-  ws0 = esc "0";
+  ws9 = esc "9:"; # steam
+  ws0 = esc "0:"; # game
 in {
   # Start i3 from home-manager
   # https://discourse.nixos.org/t/opening-i3-from-home-manager-automatically/4849/8
@@ -87,6 +87,14 @@ in {
         {
           name = ws4;
           value = [{ class = "^VSCodium$"; }];
+        }
+        {
+          name = ws9;
+          value = [{ class = "^Steam$"; }];
+        }
+        {
+          name = ws0;
+          value = [{ class = "^csgo_linux64$"; }];
         }
       ];
 
@@ -167,6 +175,7 @@ in {
     };
     extraConfig = ''
       workspace ${ws1} output DVI-D-0
+      workspace ${ws2} output HDMI-A-0
       workspace ${ws3} output HDMI-A-0 layout tabbed
 
       for_window [class="^Firefox$"] move to workspace ${ws2}
