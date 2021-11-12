@@ -127,8 +127,10 @@ in {
         workspaceNumbers = false;
         statusCommand = "${pkgs.i3status}/bin/i3status";
         fonts = {
-          names = [ "Font Awesome 5 Brands" ];
-          size = 8.0;
+          # Monospace still makes fontwawesome fonts work
+          # putting fontawesome as the font face makes colons off-center
+          names = [ "monospace" ];
+          size = 10.0;
         };
         trayOutput = "primary";
         colors = {
