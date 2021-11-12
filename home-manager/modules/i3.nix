@@ -3,16 +3,17 @@
 let
   mod = "Mod4";
   esc = v: ''"${v}"'';
-  ws1 = esc "1:"; # discord
-  ws2 = esc "2:"; # firefox
-  ws3 = esc "3:"; # terminals
-  ws4 = esc "4:"; # editor
+
+  ws0 = esc "0:"; # discord
+  ws1 = esc "1:"; # firefox
+  ws2 = esc "2:"; # terminals
+  ws3 = esc "3:"; # editor
+  ws4 = esc "4"; 
   ws5 = esc "5";
   ws6 = esc "6";
   ws7 = esc "7";
-  ws8 = esc "8";
-  ws9 = esc "9:"; # steam
-  ws0 = esc "0:"; # game
+  ws8 = esc "8:"; # steam
+  ws9 = esc "9:"; # game
 in {
   # Start i3 from home-manager
   # https://discourse.nixos.org/t/opening-i3-from-home-manager-automatically/4849/8
@@ -40,6 +41,7 @@ in {
         "${mod}+n" = "move workspace to output left";
         "${mod}+m" = "move workspace to output right";
 
+        "${mod}+0" = "workspace number ${ws0}";
         "${mod}+1" = "workspace number ${ws1}";
         "${mod}+2" = "workspace number ${ws2}";
         "${mod}+3" = "workspace number ${ws3}";
@@ -49,7 +51,6 @@ in {
         "${mod}+7" = "workspace number ${ws7}";
         "${mod}+8" = "workspace number ${ws8}";
         "${mod}+9" = "workspace number ${ws9}";
-        "${mod}+0" = "workspace number ${ws0}";
 
         "${mod}+Shift+1" = "move container to workspace number ${ws1}";
         "${mod}+Shift+2" = "move container to workspace number ${ws2}";
@@ -77,23 +78,23 @@ in {
 
       assigns = builtins.listToAttrs [
         {
-          name = ws1;
+          name = ws0;
           value = [{ class = "^discord$"; }];
         }
         {
-          name = ws3;
+          name = ws2;
           value = [{ class = "^Alacritty$"; }];
         }
         {
-          name = ws4;
+          name = ws3;
           value = [{ class = "^VSCodium$"; }];
         }
         {
-          name = ws9;
+          name = ws8;
           value = [{ class = "^Steam$"; }];
         }
         {
-          name = ws0;
+          name = ws9;
           value = [{ class = "^csgo_linux64$"; }];
         }
       ];
@@ -174,11 +175,11 @@ in {
       }];
     };
     extraConfig = ''
-      workspace ${ws1} output DVI-D-0
-      workspace ${ws2} output HDMI-A-0
-      workspace ${ws3} output HDMI-A-0 layout tabbed
+      workspace ${ws0} output DVI-D-0
+      workspace ${ws1} output HDMI-A-0
+      workspace ${ws2} output HDMI-A-0 layout tabbed
 
-      for_window [class="^Firefox$"] move to workspace ${ws2}
+      for_window [class="^Firefox$"] move to workspace ${ws1}
     '';
   };
 }
