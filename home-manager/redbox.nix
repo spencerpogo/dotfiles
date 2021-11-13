@@ -40,5 +40,7 @@
     flameshot
     # screen recording
     obs-studio
+    # volume
+    pavucontrol
   ];
 }
