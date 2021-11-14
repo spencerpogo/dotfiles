@@ -73,6 +73,8 @@ in {
         "${mod}+Shift+k" = "move up";
         "${mod}+Shift+l" = "move right";
 
+        "${mod}+Shift+p" = "exec --no-startup-id ${pkgs.i3lock}/bin/i3lock";
+
         "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui";
       };
 
