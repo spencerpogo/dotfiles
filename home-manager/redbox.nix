@@ -23,12 +23,6 @@
     ./modules/alacritty.nix
   ];
 
-  dconf.settings."desktop/ibus" = {
-    "general/preload-engines" = [ "xkb:us::eng" "libpinyin" ];
-    # i3 already uses Super+space
-    "hotkey/triggers" = [ "<Super><Shift>space" ];
-  };
-
   home.packages = with pkgs; [
     # command-line color picker
     xcolor
