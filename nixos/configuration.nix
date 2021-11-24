@@ -53,8 +53,8 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.inputMethod = {
-    enabled = "ibus";
-    ibus.engines = [ pkgs.ibus-engines.libpinyin ];
+    enabled = "fcitx5";
+    fcitx5.addons = [ pkgs.fcitx-engines.libpinyin ];
   };
 
   fonts.fonts = [ pkgs.noto-fonts-cjk ];
@@ -129,6 +129,7 @@
     curl
     wget
     file
+    fcitx5
     psmisc # fuser, killall and pstree
   ];
 
