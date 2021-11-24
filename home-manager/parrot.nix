@@ -14,4 +14,7 @@
     ./modules/gnome-terminal.nix
     ./modules/pentesting.nix
   ];
+
+  # enable non-nixos
+  targets.genericLinux.enable = true;
 }
