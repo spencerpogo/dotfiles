@@ -21,6 +21,7 @@
     ./modules/flameshot.nix
     ./modules/fonts.nix
     ./modules/alacritty.nix
+    ./modules/fcitx.nix
   ];
 
   home.packages = with pkgs; [
