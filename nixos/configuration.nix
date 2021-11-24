@@ -119,7 +119,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.spencer = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "vboxusers" ]; # Enable ‘sudo’ for the user.
   };
 
   # List packages installed in system profile. To search, run:
@@ -145,6 +145,7 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+  virtualisation.virtualbox.host.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
