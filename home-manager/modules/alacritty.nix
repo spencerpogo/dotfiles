@@ -16,7 +16,10 @@ in {
         style = "Beam";
         thickness = 0.2;
       };
-      shell.program = config.home.sessionVariables.SHELL;
+      shell.program = if config.programs.tmux.enable then
+        "${pkgs.tmux}/bin/tmux"
+      else
+        config.home.sessionVariables.SHELL;
     };
   };
 }
