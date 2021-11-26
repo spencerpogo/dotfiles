@@ -19,6 +19,11 @@
     ./modules/alacritty.nix
   ];
 
+  home.sessionVariables = {
+    EDITOR = "vim";
+    SHELL = "zsh";
+  };
+
   # enable non-nixos
   targets.genericLinux.enable = true;
 

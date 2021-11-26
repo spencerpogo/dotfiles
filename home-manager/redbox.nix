@@ -23,6 +23,11 @@
     ./modules/alacritty.nix
   ];
 
+  home.sessionVariables = {
+    EDITOR = "vim";
+    SHELL = "zsh";
+  };
+
   home.packages = with pkgs; [
     # command-line color picker
     xcolor
