@@ -25,7 +25,7 @@
 
   home.sessionVariables = {
     EDITOR = "vim";
-    SHELL = "zsh";
+    SHELL = "${pkgs.zsh}/bin/zsh";
   };
 
   home.packages = with pkgs; [
