@@ -3,7 +3,7 @@
 {
   programs.tmux = {
     enable = true;
-    shell = if config.programs.zsh.enable then "${pkgs.zsh}/bin/zsh" else null;
+    shell = config.home.sessionVariables.SHELL;
     # Must be (screen|tmux)(-256color)?
     terminal = "screen-256color";
     keyMode = "vi";

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 let termfont = { family = "MesloLGS Nerd Font"; };
 in {
@@ -16,7 +16,7 @@ in {
         style = "Beam";
         thickness = 0.2;
       };
-      shell.program = "${pkgs.zsh}/bin/zsh";
+      shell.program = config.home.sessionVariables.SHELL;
     };
   };
 }
