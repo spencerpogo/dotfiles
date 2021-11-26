@@ -72,6 +72,9 @@ in {
         if config.programs.bat.enable then "" else "# "
       }export MANPAGER="sh -c 'col -bx | ${pkgs.bat}/bin/bat -l man -p'"
 
+      # Rust executables
+      export PATH=$HOME/.cargo/bin:$PATH
+
       # Functions
       copy () {
         # Command substitution removes trailing newlines, perfect for
