@@ -7,7 +7,6 @@
     ./modules/base.nix
     ./modules/cli.nix
     ./modules/rust.nix
-    ./modules/python.nix
     ./modules/vscode.nix
     ./modules/firefox.nix
     ./modules/guiutils.nix
