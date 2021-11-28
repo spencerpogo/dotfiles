@@ -42,7 +42,5 @@
     obs-studio
     # volume
     pavucontrol
-    # VMs
-    virtualbox
   ];
 }
