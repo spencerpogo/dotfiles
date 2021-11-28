@@ -45,5 +45,7 @@
     obs-studio
     # volume
     pavucontrol
+    # compile
+    gcc
   ];
 }
