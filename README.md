@@ -69,3 +69,7 @@ manpage for details).
 
 3. Rebuild home-manager config: `home-manager switch`. Repeat this step after any
    change to this repository.
+
+Note: Nix's libGL doesn't work very well, so on non-nixos
+[install alacritty's dependencies](https://github.com/alacritty/alacritty/blob/master/INSTALL.md#dependencies)
+using the system package manager them `cargo install alacritty`

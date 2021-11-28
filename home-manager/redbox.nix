@@ -23,6 +23,11 @@
     ./modules/alacritty.nix
   ];
 
+  home.sessionVariables = {
+    EDITOR = "vim";
+    SHELL = "${pkgs.zsh}/bin/zsh";
+  };
+
   home.packages = with pkgs; [
     # command-line color picker
     xcolor
@@ -36,8 +41,6 @@
     steam
     # meetings
     zoom-us
-    # screenshots
-    flameshot
     # screen recording
     obs-studio
     # volume
