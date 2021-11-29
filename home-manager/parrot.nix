@@ -10,7 +10,6 @@
     ./modules/vscode.nix
     ./modules/firefox.nix
     ./modules/guiutils.nix
-    # TODO: test this and add to cli.nix or parrot.nix
     ./modules/tmux.nix
     ./modules/flameshot.nix
     ./modules/fonts.nix

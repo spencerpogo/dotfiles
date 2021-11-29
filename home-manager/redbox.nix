@@ -14,7 +14,6 @@
     ./modules/firefox.nix
     ./modules/i3.nix
     ./modules/guiutils.nix
-    # TODO: test this and add to cli.nix or parrot.nix
     ./modules/tmux.nix
     ./modules/gtk.nix
     ./modules/flameshot.nix
