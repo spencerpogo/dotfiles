@@ -54,7 +54,8 @@
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.inputMethod = {
     enabled = "fcitx";
-    fcitx.engines = [ pkgs.fcitx-engines.libpinyin ];
+    fcitx.engines =
+      [ pkgs.fcitx-engines.libpinyin pkgs.fcitx-engines.cloudpinyin ];
   };
 
   fonts.fonts = [ pkgs.noto-fonts-cjk ];

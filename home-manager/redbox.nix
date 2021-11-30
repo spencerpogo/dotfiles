@@ -24,7 +24,7 @@
   home.sessionVariables = {
     EDITOR = "vim";
     SHELL = "${pkgs.zsh}/bin/zsh";
-    BROWSER = "${pkgs.firefox}/bin/firefox"
+    BROWSER = "${pkgs.firefox}/bin/firefox";
   };
 
   home.packages = with pkgs; [
