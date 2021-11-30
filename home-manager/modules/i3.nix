@@ -133,6 +133,10 @@ in {
           value = [{ class = "^VSCodium$"; }];
         }
         {
+          name = ws4;
+          value = [{ class = "^zoom$"; }];
+        }
+        {
           name = ws8;
           value = [{ class = "^Steam$"; }];
         }
