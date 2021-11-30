@@ -66,8 +66,8 @@ in {
         { block = "sound"; }
         {
           block = "time";
-          interval = 1;
-          format = "%a %m/%d %R";
+          interval = 5;
+          format = "%a %m/%d %r";
         }
       ];
     };
