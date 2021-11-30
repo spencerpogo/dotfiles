@@ -53,20 +53,21 @@ in {
           display_type = "memory";
           format_mem = "{mem_used_percents}";
           format_swap = "{swap_used_percents}";
+          interval = 5;
         }
         {
           block = "cpu";
-          interval = 1;
+          interval = 5;
         }
         {
           block = "load";
-          interval = 1;
+          interval = 5;
           format = "{1m}";
         }
         { block = "sound"; }
         {
           block = "time";
-          interval = 5;
+          interval = 1;
           format = "%a %m/%d %r";
         }
       ];
