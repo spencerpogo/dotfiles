@@ -46,5 +46,7 @@
     pavucontrol
     # compile
     gcc
+    # seriously?
+    unzip
   ];
 }
