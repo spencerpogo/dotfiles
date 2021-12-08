@@ -65,6 +65,11 @@ in {
         src = pkgs.zsh-autosuggestions;
         file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
       }
+      {
+        name = "quick-nix-shell";
+        src = lib.cleanSource ../zsh-quick-nix-shell;
+        file = "zsh-quick-nix-shell.zsh";
+      }
     ];
     initExtra = ''
       # Pretty manpages with bat
