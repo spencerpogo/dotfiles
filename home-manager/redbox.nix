@@ -48,5 +48,7 @@
     gcc
     # seriously?
     unzip
+    # reverse engineering
+    ghidra-bin
   ];
 }
