@@ -38,6 +38,7 @@
       pkief.material-icon-theme
       haskell.haskell
       justusadam.language-haskell
+      kamikillerto.vscode-colorize
     ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "better-toml";
@@ -210,6 +211,7 @@
       "typescript.preferences.importModuleSpecifier" = "relative";
       "javascript.preferences.importModuleSpecifier" = "relative";
       "editor.bracketPairColorization.enabled" = true;
+      "colorize.languages" = [ "nix" ];
     };
   };
 }
