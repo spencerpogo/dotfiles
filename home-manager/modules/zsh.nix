@@ -140,7 +140,6 @@ in {
       nf = "find . -type f -name '*.nix' -exec nixfmt {} \\;";
       # misc
       cmdv = "command -v";
-      ns = "nix-shell -p";
       rf = "readlink -f";
     };
   };
