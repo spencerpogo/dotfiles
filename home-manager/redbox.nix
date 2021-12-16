@@ -37,7 +37,7 @@
     # chat
     discord
     # gaming
-    steam
+    # steam
     # meetings
     zoom-us
     # screen recording

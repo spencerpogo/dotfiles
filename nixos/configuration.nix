@@ -146,6 +146,9 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+
+  programs.steam.enable = true;
+
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
 
@@ -156,7 +159,12 @@
   # networking.firewall.enable = false;
 
   nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [ "Oracle_VM_VirtualBox_Extension_Pack" ];
+    builtins.elem (lib.getName pkg) [
+      "Oracle_VM_VirtualBox_Extension_Pack"
+      "steam"
+      "steam-original"
+      "steam-runtime"
+    ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
