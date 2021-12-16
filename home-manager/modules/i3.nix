@@ -143,7 +143,7 @@ in {
         }
         {
           name = ws9;
-          value = [{ class = "^csgo_linux64$"; }];
+          value = [ { class = "^csgo_linux64$"; } { class = "^factorio$"; } ];
         }
       ];
 
