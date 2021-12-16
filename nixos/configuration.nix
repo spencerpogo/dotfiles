@@ -147,6 +147,7 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
+  # Enable steam games
   programs.steam.enable = true;
 
   virtualisation.virtualbox.host.enable = true;
