@@ -58,6 +58,12 @@
         version = "5.6.3";
         sha256 = "0z7niql0ax31mm03rkdknzm90s7ayqpz474cqx482iwdyi68ccfh";
       }
+      {
+        name = "prisma";
+        publisher = "Prisma";
+        version = "3.6.0";
+        sha256 = "08rw0xnzmx3ssl73p3br82rysm13nw3vyy24lxga64n8xndsllk1";
+      }
       /* {
            name = "import-sorter";
            publisher = "mike-co";
