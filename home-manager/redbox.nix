@@ -50,5 +50,9 @@
     unzip
     # reverse engineering
     ghidra-bin
+    # git GUI
+    lazygit
+    # video player
+    mpv
   ];
 }
