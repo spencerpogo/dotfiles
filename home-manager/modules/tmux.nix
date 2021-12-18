@@ -7,11 +7,9 @@
     # Must be (screen|tmux)(-256color)?
     terminal = "screen-256color";
     keyMode = "vi";
-    plugins = [ 
-      {
-        plugin = pkgs.tmuxPlugins.power-theme; 
-        extraConfig = "set -g @tmux_power_theme 'redwine'";
-      }
-    ];
+    plugins = [{
+      plugin = pkgs.tmuxPlugins.power-theme;
+      extraConfig = "set -g @tmux_power_theme 'redwine'";
+    }];
   };
 }
