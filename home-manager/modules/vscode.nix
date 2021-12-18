@@ -216,6 +216,8 @@
       "rust-analyzer.inlayHints.maxLength" = 10;
       "typescript.preferences.importModuleSpecifier" = "relative";
       "javascript.preferences.importModuleSpecifier" = "relative";
+      "typescript.preferences.importModuleSpecifierEnding" = "js";
+      "javascript.preferences.importModuleSpecifierEnding" = "js";
       "editor.bracketPairColorization.enabled" = true;
       "colorize.languages" = [ "nix" ];
     };
