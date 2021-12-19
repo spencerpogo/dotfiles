@@ -28,7 +28,6 @@ in {
   home.packages = [
     pkgs.i3
     pkgs.dmenu
-    pkgs.i3status
     pkgs.i3lock
     pkgs.feh
     pkgs.xorg.xrandr
