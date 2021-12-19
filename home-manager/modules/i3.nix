@@ -4,6 +4,9 @@ let
   mod = "Mod4";
   esc = v: ''"${v}"'';
 
+  lmonitor = "DVI-D-0";
+  rmonitor = "HDMI-A-0";
+
   ws0 = esc "0:"; # discord
   ws1 = esc "1:"; # firefox
   ws2 = esc "2:"; # terminals
@@ -224,9 +227,9 @@ in {
       }];
     };
     extraConfig = ''
-      workspace ${ws0} output DVI-D-0
-      workspace ${ws1} output HDMI-A-0
-      workspace ${ws2} output HDMI-A-0 layout tabbed
+      workspace ${ws0} output ${lmonitor}
+      workspace ${ws1} output ${rmonitor}
+      workspace ${ws2} output ${rmonitor} layout tabbed
 
       for_window [class="^Firefox$"] move to workspace ${ws1}
     '';
