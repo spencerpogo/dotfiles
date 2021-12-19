@@ -230,6 +230,8 @@ in {
       workspace ${ws0} output ${lmonitor}
       workspace ${ws1} output ${rmonitor}
       workspace ${ws2} output ${rmonitor} layout tabbed
+      workspace ${ws8} output ${rmonitor}
+      workspace ${ws9} output ${rmonitor}
 
       for_window [class="^Firefox$"] move to workspace ${ws1}
     '';
