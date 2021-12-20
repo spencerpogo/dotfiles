@@ -25,14 +25,8 @@ in {
     scriptPath = ".hm-xsession";
   };
 
-  home.packages = [
-    pkgs.i3
-    pkgs.dmenu
-    pkgs.i3lock
-    pkgs.feh
-    pkgs.xorg.xrandr
-    pkgs.flameshot
-  ];
+  home.packages =
+    [ pkgs.i3 pkgs.dmenu pkgs.i3lock pkgs.feh pkgs.xorg.xrandr pkgs.flameshot ];
 
   programs.i3status-rust = {
     enable = true;
