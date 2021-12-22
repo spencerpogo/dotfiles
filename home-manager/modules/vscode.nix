@@ -163,7 +163,7 @@
       "editor.acceptSuggestionOnCommitCharacter" = false;
       "editor.acceptSuggestionOnEnter" = "off";
       "editor.tabCompletion" = "on";
-      "editor.snippetSuggestions" = "top";
+      "editor.snippetSuggestions" = "inline";
       "editor.fontFamily" = "FiraCode Nerd Font";
       "editor.fontLigatures" = true;
       "editor.formatOnSave" = true;
