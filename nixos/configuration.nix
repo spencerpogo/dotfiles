@@ -111,7 +111,7 @@
   sound.enable = true;
   hardware.pulseaudio = {
     enable = true;
-    extraConfig = "set-default-sink alsa_output.pci-0000_1e_00.3.analog-stereo";
+    extraConfig = "set-default-sink alsa_output.usb-Razer_Razer_Barracuda_X-00.analog-stereo.monitor";
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
