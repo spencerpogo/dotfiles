@@ -3,6 +3,7 @@
 {
   programs.tmux = {
     enable = true;
+    prefix = "C-a";
     shell = config.home.sessionVariables.SHELL;
     # Must be (screen|tmux)(-256color)?
     terminal = "screen-256color";
