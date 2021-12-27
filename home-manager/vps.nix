@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
-# My VM used for pentesting/CTF playing running parrot linux (because
-#  that is what is cool these days *eyeroll*)
+# My VPS
 {
   imports = [
     ./modules/base.nix
