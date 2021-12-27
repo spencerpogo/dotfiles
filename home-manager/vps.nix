@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 # My VPS
 {
@@ -14,7 +14,7 @@
   };
 
   # different prefix from host machine to avoid conflict
-  programs.tmux.prefix = "C-b";
+  programs.tmux.prefix = lib.mkForce "C-b";
 
   # enable non-nixos
   targets.genericLinux.enable = true;
