@@ -19,6 +19,7 @@
     ./modules/flameshot.nix
     ./modules/fonts.nix
     ./modules/alacritty.nix
+    ./modules/ssh.nix
   ];
 
   home.sessionVariables = {
