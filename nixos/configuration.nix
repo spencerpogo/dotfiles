@@ -13,9 +13,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # enable iommu for vfio
-  boot.kernelParams = [ "amd_iommu=on" ];
-
   fileSystems."/boot" = {
     device = "/dev/disk/by-partuuid/11a82a3d-bf69-46a4-9441-b8e22e9eaac4";
     fsType = "vfat";
