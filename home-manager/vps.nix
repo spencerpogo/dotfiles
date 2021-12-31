@@ -2,11 +2,7 @@
 
 # My VPS
 {
-  imports = [
-    ./modules/base.nix
-    ./modules/cli.nix
-    ./modules/tmux.nix
-  ];
+  imports = [ ./modules/base.nix ./modules/cli.nix ./modules/tmux.nix ];
 
   home.sessionVariables = {
     EDITOR = "vim";
