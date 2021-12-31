@@ -147,9 +147,6 @@
 
   # List services that you want to enable:
 
-  # Enable the SSH agent to cut down on typing passwords
-  programs.ssh.startAgent = true;
-
   # Enable steam games
   programs.steam.enable = true;
 
