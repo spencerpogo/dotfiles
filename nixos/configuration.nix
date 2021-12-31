@@ -91,7 +91,7 @@
       };
       session = [{
         # name is purely cosmetic
-        name = "home-manager";
+        name = "i3";
         manage = "window";
         start = ''
           ${pkgs.runtimeShell} $HOME/.hm-xsession &
@@ -99,7 +99,7 @@
         '';
       }];
       # also cosmetic, but should match above
-      defaultSession = "none+home-manager";
+      defaultSession = "lightdm+i3";
     };
   };
 
