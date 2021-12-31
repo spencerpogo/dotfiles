@@ -13,6 +13,7 @@ in {
 
   programs.zsh = {
     enable = true;
+    defaultKeymap = "viins";
     history = {
       size = HIST_SIZE;
       save = HIST_SIZE;
