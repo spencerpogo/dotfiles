@@ -63,7 +63,7 @@
 
   environment.pathsToLink = [
     "/libexec" # links /libexec from derivations to /run/current-system/sw
-    "/share/zsh"
+    "/share/zsh" # zsh completions for commands
   ];
 
   # Enable DConf for gtk3 applications and firefox
