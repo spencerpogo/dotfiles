@@ -64,8 +64,10 @@
   #   keyMap = "us";
   # };
 
-  environment.pathsToLink =
-    [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
+  environment.pathsToLink = [
+    "/libexec" # links /libexec from derivations to /run/current-system/sw
+    "/share/zsh"
+  ];
 
   # Enable DConf for gtk3 applications and firefox
   programs.dconf.enable = true;
