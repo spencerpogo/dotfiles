@@ -3,7 +3,9 @@
 # my zsh config with powerlevel10k
 with lib;
 
-let HIST_SIZE = 32768; # 32**3
+let
+  HIST_SIZE = 32768; # 32**3
+  zshSrc = lib.cleanSource ../zsh;
 in {
   home.packages = with pkgs; [
     zsh-powerlevel10k
@@ -34,7 +36,7 @@ in {
     plugins = [
       {
         name = "p10k-config";
-        src = lib.cleanSource ../p10k-config;
+        src = zshSrc;
         file = "p10k.zsh";
       }
       {
@@ -54,7 +56,7 @@ in {
       }
       {
         name = "quick-nix-shell";
-        src = lib.cleanSource ../zsh-quick-nix-shell;
+        src = zshSrc;
         file = "zsh-quick-nix-shell.zsh";
       }
     ];
