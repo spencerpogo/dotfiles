@@ -84,11 +84,13 @@
     xkbOptions = "caps:escape_shifted_capslock";
 
     displayManager = {
+      # password is needed to unlock disk so don't ask again
       autoLogin = {
         enable = true;
         user = "spencer";
       };
       session = [{
+        # name is purely cosmetic
         name = "home-manager";
         manage = "window";
         start = ''
@@ -96,6 +98,7 @@
           waitPID=$!
         '';
       }];
+      # also cosmetic, but should match above
       defaultSession = "none+home-manager";
     };
   };
