@@ -99,7 +99,7 @@
         '';
       }];
       # also cosmetic, but should match above
-      defaultSession = "lightdm+i3";
+      defaultSession = "none+i3";
     };
   };
 
