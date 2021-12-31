@@ -116,32 +116,12 @@ in {
         "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui";
       };
 
-      assigns = builtins.listToAttrs [
-        {
-          name = ws0;
-          value = [{ class = "^discord$"; }];
-        }
-        {
-          name = ws2;
-          value = [{ class = "^Alacritty$"; }];
-        }
-        {
-          name = ws3;
-          value = [{ class = "^VSCodium$"; }];
-        }
-        {
-          name = ws4;
-          value = [{ class = "^zoom$"; }];
-        }
-        {
-          name = ws8;
-          value = [{ class = "^Steam$"; }];
-        }
-        {
-          name = ws9;
-          value = [ { class = "^csgo_linux64$"; } { class = "^factorio$"; } ];
-        }
-      ];
+      assigns.${ws0} = [{ class = "^discord$"; }];
+      assigns.${ws2} = [{ class = "^Alacritty$"; }];
+      assigns.${ws3} = [{ class = "^VSCodium$"; }];
+      assigns.${ws4} = [{ class = "^zoom$"; }];
+      assigns.${ws8} = [{ class = "^Steam$"; }];
+      assigns.${ws9} = [ { class = "^csgo_linux64$"; } { class = "^factorio$"; } ];
 
       startup = [
         # Setup monitors
