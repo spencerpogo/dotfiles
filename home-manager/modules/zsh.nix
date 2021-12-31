@@ -13,20 +13,6 @@ in {
 
   programs.zsh = {
     enable = true;
-    oh-my-zsh = {
-      # I have a mixed relationship with oh-my-zsh. On the one hand it slows
-      #  down startup quite a bit, but on the other hand it *just works*. It
-      #  has a lot of QoL fixes that are actively being maintainedm, such as
-      #  xterm title support, git aliases, and ls colors. 
-      # As long as I keep plugins light the couple seconds extra startup time is
-      #  well worth the time it would take to configure manually.
-      enable = true;
-      plugins = [ "git" "sudo" ];
-      extraConfig = ''
-        DISABLE_UPDATE_PROMPT="true"
-        COMPLETION_WAITING_DOTS="true"
-      '';
-    };
     history = {
       size = HIST_SIZE;
       save = HIST_SIZE;
