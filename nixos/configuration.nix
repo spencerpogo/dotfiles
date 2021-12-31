@@ -71,6 +71,13 @@
   # Needed for flameshot
   services.dbus.enable = true;
 
+  nix = {
+    package = pkgs.nixUnstable;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
   boot.initrd.kernelModules = [ "amdgpu" ];
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
