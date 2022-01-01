@@ -13,6 +13,9 @@
       extraConfig = "set -g @tmux_power_theme 'redwine'";
     }];
     extraConfig = ''
+      # Prevent delay after pressing esc
+      set -sg escape-time 20
+
       # Set new panes to open in current directory
       bind c new-window -c "#{pane_current_path}"
       bind '"' split-window -c "#{pane_current_path}"
