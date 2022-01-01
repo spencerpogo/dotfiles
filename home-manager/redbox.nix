@@ -20,6 +20,7 @@
     ./modules/fonts.nix
     ./modules/alacritty.nix
     ./modules/ssh.nix
+    ./modules/vim.nix
   ];
 
   home.sessionVariables = {
