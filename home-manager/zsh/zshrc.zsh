@@ -15,6 +15,8 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 # Change cursor shape for different vi modes.
+# https://unix.stackexchange.com/a/614203/284442
+# https://stackoverflow.com/a/42118416/9196137
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]] ||
      [[ $1 = 'block' ]]; then
