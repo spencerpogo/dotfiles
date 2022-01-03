@@ -207,7 +207,7 @@ in {
       workspace ${ws8} output ${rmonitor}
       workspace ${ws9} output ${rmonitor}
 
-      for_window [class="^Firefox$"] move to workspace ${ws1}
+      for_window [class="^Firefox$"] move --no-auto-back-and-forth to workspace ${ws1}
     '';
   };
 }
