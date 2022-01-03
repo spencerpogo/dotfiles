@@ -38,9 +38,10 @@
 
 ### NixOS
 
-Symlink `/etc/nixos/configuration.nix` to `nixos/configuration.nix` in this repo.
-Rebuild config with `sudo nixos-rebuild boot` or `sudo nixos-rebuild switch` (see the
-manpage for details).
+```sh
+sudo ln -s /path/to/dotfiles/flake.nix /etc/nixos/flake.nix
+sudo nixos-rebuild switch
+```
 
 ### Other linux
 
