@@ -56,5 +56,6 @@
     lazygit
     # video player
     mpv
+    spotify
   ];
 }

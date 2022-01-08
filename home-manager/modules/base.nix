@@ -14,6 +14,8 @@
       "obsidian"
       "discord"
       "zoom"
+      "spotify"
+      "spotify-unwrapped"
     ];
 
   programs.home-manager.enable = true;
