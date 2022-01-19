@@ -39,6 +39,7 @@
       haskell.haskell
       justusadam.language-haskell
       kamikillerto.vscode-colorize
+      redhat.java
     ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "better-toml";
