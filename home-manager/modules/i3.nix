@@ -121,8 +121,11 @@ in {
       assigns.${ws3} = [{ class = "^VSCodium$"; }];
       assigns.${ws4} = [{ class = "^zoom$"; }];
       assigns.${ws8} = [{ class = "^Steam$"; }];
-      assigns.${ws9} =
-        [ { class = "^csgo_linux64$"; } { class = "^factorio$"; } ];
+      assigns.${ws9} = [
+        { class = "^csgo_linux64$"; }
+        { class = "^factorio$"; }
+        { class = "^portal2_linux$"; }
+      ];
 
       startup = [
         # Setup monitors
