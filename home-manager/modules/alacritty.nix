@@ -18,10 +18,12 @@ in {
         thickness = 0.2;
       };
 
-      shell.program = if config.programs.tmux.enable then
-        "${pkgs.tmux}/bin/tmux"
-      else
-        config.home.sessionVariables.SHELL;
+      shell = if config.programs.tmux.enable then {
+        program = pkgs.runtimeShell;
+        args = [ "-c" "tmux attach || tmux new" ];
+      } else {
+        program = config.home.sessionVariables.SHELL;
+      };
 
       colors.selection = {
         text = "#ffffff";
