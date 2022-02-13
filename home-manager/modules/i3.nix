@@ -202,6 +202,16 @@ in {
           };
         };
       }];
+
+      colors = {
+        focused = {
+          background = "#ff7d79";
+          border = "#dc5c59";
+          childBorder = "#b34a46";
+          indicator = "#b34a46";
+          text = "#262626";
+        };
+      };
     };
     extraConfig = ''
       workspace ${ws0} output ${lmonitor}
