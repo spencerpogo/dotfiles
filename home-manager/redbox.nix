@@ -12,7 +12,10 @@
     };
   in [
     (self: super: {
-      review = import pkgsReview { overlays = []; config = super.config; };
+      review = import pkgsReview {
+        overlays = [ ];
+        config = super.config;
+      };
       discord = self.review.discord;
     })
   ];
