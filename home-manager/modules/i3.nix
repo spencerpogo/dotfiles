@@ -205,9 +205,9 @@ in {
 
       colors = {
         focused = {
-          background = "#ff7d79";
-          border = "#dc5c59";
-          childBorder = "#b34a46";
+          background = "#ee303a";
+          border = "#ff4f59";
+          childBorder = "#ff4f59";
           indicator = "#b34a46";
           text = "#262626";
         };
