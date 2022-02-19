@@ -1,9 +1,7 @@
 { lib, pkgs, ... }:
 
 {
-  # My desktop PC, running Pop! OS
-  # Rationale: it is nice to have apt in a pinch or in a time-sensitive situation where
-  #  I can't afford to waste time fighting with nix
+  # My desktop PC, running NixOS
 
   nixpkgs.overlays = let
     owner = "NixOS";
