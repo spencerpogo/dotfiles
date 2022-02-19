@@ -5,6 +5,20 @@
   # Rationale: it is nice to have apt in a pinch or in a time-sensitive situation where
   #  I can't afford to waste time fighting with nix
 
+  nixpkgs.overlays = let
+    owner = "NixOS";
+    branchname = "master";
+    pkgsReview = pkgs.fetchzip {
+      url = "https://github.com/${owner}/nixpkgs/archive/${branchname}.tar.gz";
+      sha256 = "sha256-zIbSNKTcPYWI918azMtZxD1kOu/wzfM8sMaTd10sVUc=";
+    };
+  in [
+    (self: super: {
+      review = import pkgsReview { overlays = []; config = super.config; };
+      discord = self.review.discord;
+    })
+  ];
+
   imports = [
     ./modules/base.nix
     ./modules/cli.nix
