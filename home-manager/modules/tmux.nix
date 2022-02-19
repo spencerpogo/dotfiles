@@ -9,10 +9,6 @@
     terminal = "screen-256color";
     keyMode = "vi";
     customPaneNavigationAndResize = true;
-    plugins = [{
-      plugin = pkgs.tmuxPlugins.power-theme;
-      extraConfig = "set -g @tmux_power_theme 'redwine'";
-    }];
     extraConfig = ''
       # Prevent delay after pressing esc
       set -sg escape-time 20
