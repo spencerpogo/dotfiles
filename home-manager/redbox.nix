@@ -69,5 +69,7 @@
     mpv
     # music
     spotify
+    # flex
+    neofetch
   ];
 }
