@@ -119,7 +119,7 @@ in {
       assigns.${ws0} = [{ class = "^discord$"; }];
       assigns.${ws2} = [{ class = "^Alacritty$"; }];
       assigns.${ws3} = [{ class = "^VSCodium$"; }];
-      assigns.${ws4} = [{ class = "^zoom$"; }];
+      assigns.${ws4} = [{ class = "^zoom$"; } { class = "^chromium-browser$"; }];
       assigns.${ws8} = [{ class = "^Steam$"; }];
       assigns.${ws9} = [
         { class = "^csgo_linux64$"; }
