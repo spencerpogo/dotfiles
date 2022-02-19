@@ -51,8 +51,6 @@
     ungoogled-chromium
     # chat
     discord
-    # gaming
-    # steam
     # meetings
     zoom-us
     # screen recording
@@ -69,6 +67,7 @@
     lazygit
     # video player
     mpv
+    # music
     spotify
   ];
 }
