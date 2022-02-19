@@ -20,8 +20,9 @@
   ];
 
   imports = [
-    ./modules/base.nix
-    ./modules/cli.nix
+    ./configs/base.nix
+    ./configs/cli.nix
+
     ./modules/rust.nix
     ./modules/python.nix
     ./modules/vscode.nix

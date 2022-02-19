@@ -4,8 +4,9 @@
 #  that is what is cool these days *eyeroll*)
 {
   imports = [
-    ./modules/base.nix
-    ./modules/cli.nix
+    ./configs/base.nix
+    ./configs/cli.nix
+
     ./modules/rust.nix
     ./modules/vscode.nix
     ./modules/firefox.nix
