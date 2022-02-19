@@ -92,3 +92,7 @@ dec2cmd () {
   local var=$(python -c 'import getpass;print(getpass.getpass("Enter pwd:"))')
   dec "$1" -k "$var" | eval "$2"
 }
+
+rfw () {
+  readlink -f $(which "$1")
+}
