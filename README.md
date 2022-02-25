@@ -49,10 +49,10 @@ sudo nixos-rebuild switch
 
 ### home-manager setup
 
-1. Install [home-manager](https://github.com/nix-community/home-manager).
-2. Clone this repository and edit `home-manager/home.nix` to enable/disable modules to
-   your liking. By default, it will install several GUI programs.
-3. Pick an existing profile from `home-manager/*.nix`, or create a new one.
+1. Install [home-manager](https://github.com/nix-community/home-manager) using the
+   **standalone installation**.
+2. Pick an existing profile from `home-manager/*.nix`, or create a new one to customize
+   the installed programs.
 4. At the top of `~/.config/nixpkgs/home.nix`, import your desired machine config from
    this repo using an absolute path. For example, to use the `redbox` profile after
    cloning the repository to `/home/scoder12/github/dotfiles`, write:
