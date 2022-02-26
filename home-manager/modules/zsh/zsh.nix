@@ -13,6 +13,8 @@ in {
     zsh-autosuggestions
   ];
 
+  programs.direnv.enableZshIntegration = true;
+
   programs.zsh = {
     enable = true;
     defaultKeymap = "viins";
