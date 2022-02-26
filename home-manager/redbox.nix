@@ -8,7 +8,7 @@
     branchname = "master";
     pkgsReview = pkgs.fetchzip {
       url = "https://github.com/${owner}/nixpkgs/archive/${branchname}.tar.gz";
-      sha256 = "sha256-zIbSNKTcPYWI918azMtZxD1kOu/wzfM8sMaTd10sVUc=";
+      sha256 = "sha256-dC/BcaPII4yxaGEDRLEPxd5dKZMmd8dUriH7STh9+tg=";
     };
   in [
     (self: super: {
