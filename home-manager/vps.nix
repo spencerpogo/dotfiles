@@ -12,6 +12,10 @@
   # different prefix from host machine to avoid conflict
   programs.tmux.prefix = lib.mkForce "C-b";
 
+  home.packages = [
+    lazygit
+  ];
+
   # enable non-nixos
   targets.genericLinux.enable = true;
 }
