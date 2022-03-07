@@ -166,8 +166,8 @@
 
   location = {
     provider = "manual";
-    latitude = "34.05";
-    longitude = "-118.24";
+    latitude = 34.05;
+    longitude = -118.24;
   };
   services.redshift = {
     enable = true;
