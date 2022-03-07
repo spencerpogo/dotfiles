@@ -74,5 +74,7 @@
     spotify
     # flex
     neofetch
+    # VMs
+    virt-manager
   ];
 }
