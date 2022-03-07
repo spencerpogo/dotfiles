@@ -22,6 +22,10 @@
     ./modules/vim.nix
   ];
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-13.6.9"
+  ];
+
   home.sessionVariables = {
     EDITOR = "vim";
     SHELL = "${pkgs.zsh}/bin/zsh";
