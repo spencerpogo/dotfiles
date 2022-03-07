@@ -5,9 +5,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur.url = "github:nix-community/nur";
   };
 
-  outputs = { self, nixpkgs, home-manager }:
+  outputs = { self, nixpkgs, home-manager, nur }:
     let
       system = "x86_64-linux";
       username = "spencer";
@@ -16,11 +17,15 @@
         inherit system;
         modules = [ ./redbox12/configuration.nix ];
       };
-      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-        inherit system username;
-        configuration = import ./home-manager/redbox.nix;
-        homeDirectory = "/home/${username}";
-        stateVersion = "21.11";
-      };
+      homeConfigurations.${username} =
+        home-manager.lib.homeManagerConfiguration {
+          inherit system username;
+          configuration = {
+            imports = [ ./home-manager/redbox.nix ];
+            nixpkgs.overlays = [ nur.overlay ];
+          };
+          homeDirectory = "/home/${username}";
+          stateVersion = "21.11";
+        };
     };
 }

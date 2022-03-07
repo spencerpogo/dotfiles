@@ -1,17 +1,10 @@
 { pkgs, ... }:
 
-# Privacy-focused firefox settings and extensions.
-let
-  # TODO: flakes/niv
-  nur = import (builtins.fetchTarball
-    "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-      inherit pkgs;
-    };
-in {
+{
   programs.firefox = {
     enable = true;
 
-    extensions = with nur.repos.rycee.firefox-addons; [
+    extensions = with pkgs.nur.repos.rycee.firefox-addons; [
       canvasblocker
       clearurls
       react-devtools
