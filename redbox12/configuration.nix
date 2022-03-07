@@ -157,6 +157,7 @@
   programs.steam.enable = true;
 
   virtualisation.virtualbox.host.enable = true;
+  virtualisation.libvirtd.enable = true;
   # virtualisation.virtualbox.host.enableExtensionPack = true;
 
   # Open ports in the firewall.
