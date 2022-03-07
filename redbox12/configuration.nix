@@ -78,7 +78,7 @@
     '';
   };
 
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.kernelModules = [ "amdgpu" ];
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
 
@@ -130,7 +130,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.spencer = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "vboxusers" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "vboxusers" "libvirtd" ]; # wheel = Enable ‘sudo’ for the user.
   };
 
   # List packages installed in system profile. To search, run:
@@ -157,7 +157,11 @@
   programs.steam.enable = true;
 
   virtualisation.virtualbox.host.enable = true;
-  virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd = {
+    qemu.package = pkgs.qemu_kvm;
+    qemu.runAsRoot = false;
+    enable = true;
+  };
   # virtualisation.virtualbox.host.enableExtensionPack = true;
 
   # Open ports in the firewall.
