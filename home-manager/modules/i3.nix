@@ -126,6 +126,7 @@ in {
         { class = "^csgo_linux64$"; }
         { class = "^factorio$"; }
         { class = "^portal2_linux$"; }
+        { class = "^Celeste"; }
       ];
 
       startup = [
