@@ -171,6 +171,7 @@
   };
   services.redshift = {
     enable = true;
+    temperature.night = 3000;
   };
 
   # Open ports in the firewall.
