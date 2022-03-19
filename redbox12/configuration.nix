@@ -162,6 +162,7 @@
     qemu.runAsRoot = false;
     enable = true;
   };
+  virtualisation.docker.enable = true;
   # virtualisation.virtualbox.host.enableExtensionPack = true;
 
   location = {
