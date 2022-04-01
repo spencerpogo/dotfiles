@@ -223,7 +223,7 @@ in {
       workspace ${ws9} output ${rmonitor}
 
       for_window [class="^Firefox$"] move --no-auto-back-and-forth to workspace ${ws1}
-      for_window [class="^spotify$"] move --no-auto-back-and-forth to workspace ${ws7}
+      for_window [class="^Spotify$"] move --no-auto-back-and-forth to workspace ${ws7}
     '';
   };
 }
