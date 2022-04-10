@@ -72,6 +72,7 @@ in {
       c = "copy";
       paste = "xclip -o -sel c";
       p = "paste";
+      pimg = "paste -t image/png";
       # Traversal
       ".." = "cd ..";
       "..." = "cd ../..";
