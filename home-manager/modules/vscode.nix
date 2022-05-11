@@ -25,7 +25,8 @@
       # python (essential)
       # too stupid to pick up on nix-installed black sadly
       ms-python.python
-      ms-vsliveshare.vsliveshare
+      # currently broken
+      #ms-vsliveshare.vsliveshare
       ms-toolsai.jupyter
       vscodevim.vim
       bbenoist.nix

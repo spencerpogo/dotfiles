@@ -4,7 +4,7 @@
 {
   programs.git = {
     enable = true;
-    userName = "Scoder12";
+    userName = "Spencer Pogorzelski";
     userEmail = "34356756+Scoder12@users.noreply.github.com";
     # TODO: Signing
   };
