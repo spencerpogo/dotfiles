@@ -222,6 +222,7 @@
       "javascript.preferences.importModuleSpecifierEnding" = "js";
       "editor.bracketPairColorization.enabled" = true;
       "colorize.languages" = [ "nix" ];
+      "editor.autoClosingBrackets" = "languageDefined";
     };
   };
 }
