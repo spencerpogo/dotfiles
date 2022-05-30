@@ -10,7 +10,8 @@
 
   outputs = { self, nixpkgs, home-manager, nur }:
     let
-      mkHome = { config, system, username }: home-manager.lib.homeManagerConfiguration {
+      mkHome = { config, system, username }:
+        home-manager.lib.homeManagerConfiguration {
           inherit system username;
           configuration = {
             imports = [ ./home-manager/redbox.nix ];
