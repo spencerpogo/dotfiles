@@ -22,9 +22,6 @@
     SHELL = "${pkgs.zsh}/bin/zsh";
   };
 
-  xsession.enable = true;
-  home.keyboard.options = [ "caps:escape_shifted_capslock" ];
-
   # enable non-nixos
   targets.genericLinux.enable = true;
 
