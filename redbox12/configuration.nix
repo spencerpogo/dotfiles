@@ -130,7 +130,8 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.spencer = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "vboxusers" "libvirtd" ]; # wheel = Enable ‘sudo’ for the user.
+    extraGroups =
+      [ "wheel" "vboxusers" "libvirtd" ]; # wheel = Enable ‘sudo’ for the user.
   };
 
   # List packages installed in system profile. To search, run:

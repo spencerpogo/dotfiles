@@ -22,9 +22,7 @@
     ./modules/vim.nix
   ];
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-13.6.9"
-  ];
+  nixpkgs.config.permittedInsecurePackages = [ "electron-13.6.9" ];
 
   home.sessionVariables = {
     EDITOR = "vim";
