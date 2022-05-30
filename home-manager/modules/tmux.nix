@@ -23,7 +23,7 @@
       bind \\ split-window -h -c "#{pane_current_path}"
 
       # quickly launch lazygit
-      bind g new-window -c "#{pane_current_path}" lazygit
+      bind g new-window -c "#{pane_current_path}" "${pkgs.lazygit}/bin/lazygit"
     '';
   };
 }

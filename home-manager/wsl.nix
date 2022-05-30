@@ -9,8 +9,6 @@
     SHELL = "${pkgs.zsh}/bin/zsh";
   };
 
-  home.packages = [ pkgs.lazygit ];
-
   # enable non-nixos
   targets.genericLinux.enable = true;
 }
