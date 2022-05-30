@@ -25,7 +25,7 @@
         system = "x86_64-linux";
         modules = [ ./redbox12/configuration.nix ];
       };
-      homeConfigurations.${username} = mkHome {
+      homeConfigurations.redbox12 = mkHome {
         config = ./home-manager/redbox.nix;
         system = "x86_64-linux";
         username = "spencer";
