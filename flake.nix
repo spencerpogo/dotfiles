@@ -22,7 +22,7 @@
         };
     in {
       nixosConfigurations.redbox12 = nixpkgs.lib.nixosSystem {
-        inherit system;
+        system = "x86_64-linux";
         modules = [ ./redbox12/configuration.nix ];
       };
       homeConfigurations.${username} = mkHome {
