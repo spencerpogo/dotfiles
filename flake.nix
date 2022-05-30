@@ -14,7 +14,7 @@
         home-manager.lib.homeManagerConfiguration {
           inherit system username;
           configuration = {
-            imports = [ ./home-manager/redbox.nix ];
+            imports = [ config ];
             nixpkgs.overlays = [ nur.overlay ];
           };
           homeDirectory = "/home/${username}";
