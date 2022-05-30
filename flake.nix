@@ -10,15 +10,7 @@
 
   outputs = { self, nixpkgs, home-manager, nur }:
     let
-      system = "x86_64-linux";
-      username = "spencer";
-    in {
-      nixosConfigurations.redbox12 = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [ ./redbox12/configuration.nix ];
-      };
-      homeConfigurations.${username} =
-        home-manager.lib.homeManagerConfiguration {
+      mkHome = { config, system, username }: home-manager.lib.homeManagerConfiguration {
           inherit system username;
           configuration = {
             imports = [ ./home-manager/redbox.nix ];
@@ -27,5 +19,20 @@
           homeDirectory = "/home/${username}";
           stateVersion = "21.11";
         };
+    in {
+      nixosConfigurations.redbox12 = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [ ./redbox12/configuration.nix ];
+      };
+      homeConfigurations.${username} = mkHome {
+        config = ./home-manager/redbox.nix;
+        system = "x86_64-linux";
+        username = "spencer";
+      };
+      homeConfigurations.parrot = mkHome {
+        config = ./home-manager/parrot.nix;
+        system = "x86_64-linux";
+        username = "user";
+      };
     };
 }
