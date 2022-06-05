@@ -98,3 +98,6 @@ it with nix.
   ([manual](https://nixos.org/manual/nix/stable/advanced-topics/cores-vs-jobs.html)).
   I use `--max-jobs 1 --cores 2` with `home-manager switch` and `nixos-rebuild switch`
   to avoid overselling my 6-core 12-thread machine
+- The Firefox User-Agent in `home-manager/modules/firefox.nix` is spoofed to look like
+  Win10. Be sure to check the [list](https://techblog.willshouse.com/2012/01/03/most-common-user-agents)
+  from time to time to makek sure it isn't being generated incorrectly and standing out
