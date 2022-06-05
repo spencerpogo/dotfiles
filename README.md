@@ -9,16 +9,15 @@
   - Don't use two tools for the same purpose
 - Try to keep tools in home-manager to essentials and use `nix-shell -p` for everything
   else
-  - try out new software instantly with no need to remember to remove
-  - save disk space
+  - can try out new software instantly with no need to remember to remove
+  - saves disk space
   - avoids bloating base dotfiles install
 - Use `home-manager` standalone rather than as a module
   - can update system and user independently
 - Shell: zsh
-  - oh-my-zsh because it has a lot of quality of life fixes and git plugin has good
-    aliases
+  - no framework, plugins are managed by nix
   - nerdfont complete powerlevel10k theme
-  - use `p` and `c` (shorthand for `paste` and `copy`) aliases heavily in pipes
+  - lots of custom aliases and functions
 - Terminal: alacritty
 - Editors:
   - VS Codium (open source, telemetry free VS Code) with vscode-vim extension
@@ -42,11 +41,11 @@
 
 ```sh
 sudo ln -s /path/to/dotfiles/flake.nix /etc/nixos/flake.nix
-sudo nixos-rebuild switch
+nixos-rebuild switch --use-remote-sudo
 ```
 
-You should be able to `sudo nix-channel --remove` all your channels now (list them with
-`sudo nix-channel --list`)
+Unless you use `nix-shell`, you should be able to `sudo nix-channel --remove` all your
+system channels now (list them with `sudo nix-channel --list`)
 
 ### Other linux
 
@@ -54,19 +53,17 @@ You should be able to `sudo nix-channel --remove` all your channels now (list th
 
 ### home-manager (flake)
 
-Refer to [the home-manager manual](https://nix-community.github.io/home-manager/index.html#sec-flakes-standalone).
-The flake URI is simply the path to this git repo.
-
-**Updating:** You can use the `nix flake update` (or `nix flake lock --update-input <input>`).
-Adding `--commit-lock-file` can be helpful.
+1. Choose or add a `homeConfiguration` flake output with the correct username
+2. Refer to [the home-manager manual](https://nix-community.github.io/home-manager/index.html#sec-flakes-standalone).
+   The flake URI is simply the path to this git repo.
 
 ### home-manager (non-flakes)
 
+Note: I use flakes rather than this method on all my systems now.
+
 1. Install [home-manager](https://github.com/nix-community/home-manager) using the
    **standalone installation**: [instructions in the home-manager manual](https://nix-community.github.io/home-manager/index.html#sec-install-standalone).
-1. Pick an existing profile from `home-manager/*.nix`, or create a new one to customize
-   the installed programs.
-1. At the top of `~/.config/nixpkgs/home.nix`, import your desired machine config from
+2. At the top of `~/.config/nixpkgs/home.nix`, import your desired machine config from
    this repo using an absolute path. For example, to use the `redbox` profile after
    cloning the repository to `/home/scoder12/github/dotfiles`, write:
 
@@ -88,11 +85,16 @@ Adding `--commit-lock-file` can be helpful.
 installation method) and the `home-manager` channel. Update `stateVersion` in
 `~/.config/nixpkgs/home.nix` when necessary to stay up-to-date with breaking changes.
 
-Note: Nix's libGL doesn't work very well, so on non-nixos
+Note: On non-NixOS, nix's libGL doesn't play nicely with system graphics drivers, so
 [install alacritty's dependencies](https://github.com/alacritty/alacritty/blob/master/INSTALL.md#dependencies)
-using the system package manager them `cargo install alacritty`
+using the system package manager then `cargo install alacritty`, rather than installing
+it with nix.
 
-### Misc tips
+### Important tips
 
 - Don't forget to `sudo nix-collect-garbage -d` often.
-- Keep your system up to date.
+- Keep your system up to date: `nix flake update --commit-lock-file`
+- Make sure to set `max-jobs` and `cores` when building
+  ([manual](https://nixos.org/manual/nix/stable/advanced-topics/cores-vs-jobs.html)).
+  I use `--max-jobs 1 --cores 2` with `home-manager switch` and `nixos-rebuild switch`
+  to avoid overselling my 6-core 12-thread machine
