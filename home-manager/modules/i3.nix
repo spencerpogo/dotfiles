@@ -7,6 +7,8 @@ let
   lmonitor = "DVI-D-0";
   rmonitor = "HDMI-A-0";
 
+  wallpaper = pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom.gnomeFilePath;
+
   ws0 = esc "0:"; # discord
   ws1 = esc "1:"; # firefox
   ws2 = esc "2:"; # terminals
@@ -133,21 +135,20 @@ in {
         # Setup monitors
         {
           command =
-            "xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --primary --mode 1920x1080 --pos 1440x0 --rotate normal --output DVI-D-0 --mode 1440x900 --pos 0x180 --rotate normal";
+            "xrandr --output ${rmonitor} --primary --mode 1920x1080 --pos 1440x0 --rotate normal"
+            + "--output ${lmonitor} --mode 1440x900 --pos 0x180 --rotate normal";
         }
         # Set background properly
         # its set by lightdm but glitches when i3 starts
         {
           always = true;
           command =
-            "${pkgs.feh}/bin/feh --bg-fill ${pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom.gnomeFilePath}";
+            "${pkgs.feh}/bin/feh --bg-fill ${wallpaper}";
         }
         { command = "${pkgs.flameshot}/bin/flameshot"; }
         { command = "${pkgs.discord}/bin/discord"; }
         { command = "${pkgs.firefox}/bin/firefox"; }
       ];
-
-      defaultWorkspace = "workspace number ${ws2}";
 
       window.hideEdgeBorders = "both";
 
