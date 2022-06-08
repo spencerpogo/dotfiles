@@ -7,7 +7,8 @@ let
   lmonitor = "DVI-D-0";
   rmonitor = "HDMI-A-0";
 
-  wallpaper = pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom.gnomeFilePath;
+  wallpaper =
+    pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom.gnomeFilePath;
 
   ws0 = esc "0:"; # discord
   ws1 = esc "1:"; # firefox
@@ -141,8 +142,7 @@ in {
         # its set by lightdm but glitches when i3 starts
         {
           always = true;
-          command =
-            "${pkgs.feh}/bin/feh --bg-fill ${wallpaper}";
+          command = "${pkgs.feh}/bin/feh --bg-fill ${wallpaper}";
         }
         { command = "${pkgs.flameshot}/bin/flameshot"; }
         { command = "${pkgs.discord}/bin/discord"; }

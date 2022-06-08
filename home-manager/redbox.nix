@@ -38,9 +38,7 @@
     # secondary browser, for school and WebGL stuff
     ungoogled-chromium
     # chat
-    (discord.override {
-      version = "0.0.18";
-    })
+    discord
     # meetings
     zoom-us
     # screen recording
