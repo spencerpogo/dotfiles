@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -8,14 +9,17 @@
     nur.url = "github:nix-community/nur";
   };
 
-  outputs = { self, nixpkgs, home-manager, nur }:
+  outputs = { self, nixpkgs, nixpkgs-master, home-manager, nur }:
     let
       mkHome = { config, system, username }:
         home-manager.lib.homeManagerConfiguration {
           inherit system username;
           configuration = {
             imports = [ config ];
-            nixpkgs.overlays = [ nur.overlay ];
+            nixpkgs.overlays = [
+              nur.overlay
+              (self: super: { inherit (nixpkgs-master) discord; })
+            ];
           };
           homeDirectory = "/home/${username}";
           stateVersion = "21.11";
