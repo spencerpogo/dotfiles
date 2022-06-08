@@ -223,6 +223,7 @@
       "editor.bracketPairColorization.enabled" = true;
       "colorize.languages" = [ "nix" ];
       "editor.autoClosingBrackets" = "beforeWhitespace";
+      "editor.inlayHints.enabled" = "offUnlessPressed";
     };
   };
 }
