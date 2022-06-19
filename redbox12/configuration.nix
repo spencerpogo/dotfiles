@@ -77,6 +77,11 @@
       experimental-features = nix-command flakes
     '';
   };
+  # Channel compat
+  # https://ayats.org/blog/channels-to-flakes/
+  environment.etc."nix/inputs/nixpkgs".source = inputs.nixpkgs.outPath;
+  nix.nixPath = ["nixpkgs=/etc/nix/inputs/nixpkgs"];
+  nix.registry = with lib; mapAttrs' (name: value: nameValuePair name {flake = value;}) inputs;
 
   boot.kernelModules = [ "amdgpu" ];
   hardware.opengl.driSupport = true;
