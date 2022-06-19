@@ -8,7 +8,7 @@
     nur.url = "github:nix-community/nur";
   };
 
-  outputs = { self, nixpkgs, home-manager, nur }:
+  outputs = { self, nixpkgs, home-manager, nur }@inputs:
     let
       mkHome = { config, system, username }:
         home-manager.lib.homeManagerConfiguration {
@@ -22,6 +22,7 @@
         };
     in {
       nixosConfigurations.redbox12 = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
         system = "x86_64-linux";
         modules = [ ./redbox12/configuration.nix ];
       };

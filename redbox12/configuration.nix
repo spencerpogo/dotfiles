@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   imports = [ # Include the results of the hardware scan.
@@ -80,8 +80,9 @@
   # Channel compat
   # https://ayats.org/blog/channels-to-flakes/
   environment.etc."nix/inputs/nixpkgs".source = inputs.nixpkgs.outPath;
-  nix.nixPath = ["nixpkgs=/etc/nix/inputs/nixpkgs"];
-  nix.registry = with lib; mapAttrs' (name: value: nameValuePair name {flake = value;}) inputs;
+  nix.nixPath = [ "nixpkgs=/etc/nix/inputs/nixpkgs" ];
+  nix.registry = with lib;
+    mapAttrs' (name: value: nameValuePair name { flake = value; }) inputs;
 
   boot.kernelModules = [ "amdgpu" ];
   hardware.opengl.driSupport = true;
