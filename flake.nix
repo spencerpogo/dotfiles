@@ -19,6 +19,7 @@
           };
           homeDirectory = "/home/${username}";
           stateVersion = "21.11";
+          pkgs = nixpkgs.legacyPackages.${system};
         };
     in {
       nixosConfigurations.redbox12 = nixpkgs.lib.nixosSystem {
