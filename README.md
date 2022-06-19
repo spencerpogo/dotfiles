@@ -44,8 +44,9 @@ sudo ln -s /path/to/dotfiles/flake.nix /etc/nixos/flake.nix
 nixos-rebuild switch --use-remote-sudo
 ```
 
-Unless you use `nix-shell`, you should be able to `sudo nix-channel --remove` all your
-system channels now (list them with `sudo nix-channel --list`)
+The NixOS config sets up `NIX_PATH` to use the nixpkgs version pinned in this flake, so
+you should `sudo nix-channel --remove` all your system channels now (list them with
+`sudo nix-channel --list`)
 
 ### Other linux
 
@@ -80,10 +81,6 @@ Note: I use flakes rather than this method on all my systems now.
 
 3. Rebuild home-manager config: `home-manager switch`. Repeat this step after any
    change to this repository.
-
-**Updating:** Make sure to update your system `nixpkgs` channel (may have to use `sudo` depending on
-installation method) and the `home-manager` channel. Update `stateVersion` in
-`~/.config/nixpkgs/home.nix` when necessary to stay up-to-date with breaking changes.
 
 Note: On non-NixOS, nix's libGL doesn't play nicely with system graphics drivers, so
 [install alacritty's dependencies](https://github.com/alacritty/alacritty/blob/master/INSTALL.md#dependencies)
