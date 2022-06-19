@@ -163,14 +163,12 @@
   # Enable steam games
   programs.steam.enable = true;
 
-  virtualisation.virtualbox.host.enable = true;
   virtualisation.libvirtd = {
     qemu.package = pkgs.qemu_kvm;
     qemu.runAsRoot = false;
     enable = true;
   };
   virtualisation.docker.enable = true;
-  # virtualisation.virtualbox.host.enableExtensionPack = true;
 
   location = {
     provider = "manual";
@@ -190,7 +188,6 @@
 
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
-      "Oracle_VM_VirtualBox_Extension_Pack"
       "steam"
       "steam-original"
       "steam-runtime"
