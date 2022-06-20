@@ -1,12 +1,15 @@
 { config, ... }: {
   programs.ssh = {
     enable = true;
-    matchBlocks = {
-      vps = {
-        user = "spencer";
-        hostname = "173.255.213.75";
-        identityFile = [ "${config.home.homeDirectory}/.ssh/id_ed25519" ];
+    matchBlocks = let
+      key = "${config.home.homeDirectory}/.ssh/id_ed25519";
+      mkHost = user: hostname: {
+        inherit user hostname;
+        identityFile = [ key ];
       };
+    in {
+      vps = mkHost "spencer" "173.255.213.75";
+      pwncollege = mkHost "hacker" "dojo.pwn.college";
     };
   };
 }
