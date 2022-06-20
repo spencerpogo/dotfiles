@@ -170,6 +170,8 @@
   };
   virtualisation.docker.enable = true;
 
+  programs.ssh.startAgent = true;
+
   location = {
     provider = "manual";
     latitude = 34.05;
