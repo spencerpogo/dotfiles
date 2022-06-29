@@ -12,14 +12,18 @@
     let
       mkHome = { config, system, username }:
         home-manager.lib.homeManagerConfiguration {
-          inherit system username;
-          configuration = {
-            imports = [ config ];
-            nixpkgs.overlays = [ nur.overlay ];
-          };
-          homeDirectory = "/home/${username}";
-          stateVersion = "21.11";
           pkgs = nixpkgs.legacyPackages.${system};
+          modules = [
+            {
+              home = {
+                inherit username;
+                homeDirectory = "/home/${username}";
+                stateVersion = "21.11";
+              };
+              nixpkgs.overlays = [ nur.overlay ];
+            }
+            config
+          ];
         };
     in {
       nixosConfigurations.redbox12 = nixpkgs.lib.nixosSystem {
