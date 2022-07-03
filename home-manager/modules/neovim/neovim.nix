@@ -10,8 +10,16 @@
           lua require("nvim-tree").setup()
         '';
       }
+      {
+        plugin = onedark-nvim;
+        config = ''
+          lua require("onedark").load()
+        '';
+      }
     ];
     extraConfig = ''
+      " truecolor
+      set termguicolors
       luafile ${./keys.lua}
     '';
   };
