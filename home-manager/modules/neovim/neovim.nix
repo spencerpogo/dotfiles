@@ -20,6 +20,8 @@
     extraConfig = ''
       " truecolor
       set termguicolors
+      " hybrid line numbers
+      set number relativenumber
       luafile ${./keys.lua}
     '';
   };
