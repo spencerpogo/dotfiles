@@ -20,7 +20,7 @@
     ./modules/alacritty.nix
     ./modules/ssh.nix
     ./modules/vim.nix
-    ./modules/neovim.nix
+    ./modules/neovim/neovim.nix
   ];
 
   nixpkgs.config.permittedInsecurePackages = [ "electron-13.6.9" ];
