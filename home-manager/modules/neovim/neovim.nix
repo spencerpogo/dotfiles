@@ -12,7 +12,7 @@
       }
     ];
     extraConfig = ''
-      luafile keys.lua
+      luafile ${./keys.lua}
     '';
   };
 }
