@@ -7,7 +7,9 @@
       {
         plugin = nvim-tree-lua;
         config = ''
-          lua require("nvim-tree").setup()
+          lua require("nvim-tree").setup({
+            open_on_setup = true,
+          })
         '';
       }
       {
