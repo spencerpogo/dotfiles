@@ -131,8 +131,10 @@
   sound.enable = true;
   hardware.pulseaudio = {
     enable = true;
-    extraConfig =
-      "set-default-sink alsa_output.usb-Razer_Razer_Barracuda_X-00.analog-stereo";
+    extraConfig = ''
+      set-default-sink alsa_output.usb-Razer_Razer_Barracuda_X-00.analog-stereo
+      set-default-source alsa_input.usb-Blue_Microphones_Yeti_Nano_2042SG00DZP8_888-000154040606-00.analog-stere
+    '';
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
