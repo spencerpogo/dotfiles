@@ -224,6 +224,7 @@
       "colorize.languages" = [ "nix" ];
       "editor.autoClosingBrackets" = "beforeWhitespace";
       "editor.inlayHints.enabled" = "offUnlessPressed";
+      "css.lint.unknownAtRules" = "warning";
     };
   };
 }
