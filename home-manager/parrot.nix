@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-
+{pkgs, ...}:
 # My VM used for pentesting/CTF playing running parrot linux (because
 #  that is what is cool these days *eyeroll*)
 {
@@ -30,7 +29,8 @@
   # https://github.com/nix-community/home-manager/issues/2143#issuecomment-869095788
   nixpkgs.overlays = [
     (self: super: {
-      alacritty = super.writeShellScriptBin "dummy-alacritty"
+      alacritty =
+        super.writeShellScriptBin "dummy-alacritty"
         "exec /usr/bin/env alacritty";
     })
   ];

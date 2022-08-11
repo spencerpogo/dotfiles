@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.firefox = {
     enable = true;
 
@@ -95,8 +93,7 @@
           "extensions.shield-recipe-client.api_url" = "";
           "extensions.shield-recipe-client.enabled" = false;
           "extensions.webservice.discoverURL" = "";
-          "general.useragent.override" =
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:${pkgs.firefox.version}) Gecko/20100101 Firefox/${pkgs.firefox.version}";
+          "general.useragent.override" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:${pkgs.firefox.version}) Gecko/20100101 Firefox/${pkgs.firefox.version}";
           "media.autoplay.default" = 0;
           "media.autoplay.enabled" = true;
           "media.eme.enabled" = false;

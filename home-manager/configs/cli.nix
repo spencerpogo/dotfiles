@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-
+{pkgs, ...}:
 # Minimal CLI setup: shells and a couple essential tools.
 {
   imports = [
@@ -10,7 +9,7 @@
   ];
 
   # Shell tools
-  home.packages = with pkgs; [ ripgrep nixfmt ];
+  home.packages = with pkgs; [ripgrep nixfmt];
 
   programs = {
     bat.enable = true;

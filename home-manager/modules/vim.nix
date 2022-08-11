@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   programs.vim = {
     enable = true;
     extraConfig = ''

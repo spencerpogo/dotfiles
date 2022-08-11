@@ -1,9 +1,11 @@
-{ config, lib, pkgs, ... }:
-
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 # my zsh config with powerlevel10k
-with lib;
-
-let
+with lib; let
   HIST_SIZE = 32768; # 32**3
   zshSrc = lib.cleanSource ../zsh;
 in {

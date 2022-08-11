@@ -1,8 +1,11 @@
-{ pkgs, lib, ... }:
-
+{
+  pkgs,
+  lib,
+  ...
+}:
 # My VPS
 {
-  imports = [ ./configs/base.nix ./configs/cli.nix ./modules/tmux.nix ];
+  imports = [./configs/base.nix ./configs/cli.nix ./modules/tmux.nix];
 
   home.sessionVariables = {
     EDITOR = "vim";

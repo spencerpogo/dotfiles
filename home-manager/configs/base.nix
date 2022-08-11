@@ -1,5 +1,8 @@
-{ lib, pkgs, ... }:
-
+{
+  lib,
+  pkgs,
+  ...
+}:
 # Shared configuration for all profiles.
 {
   nixpkgs.config.allowUnfreePredicate = pkg:

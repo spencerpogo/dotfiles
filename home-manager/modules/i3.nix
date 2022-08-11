@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   mod = "Mod4";
   esc = v: ''"${v}"'';
 
@@ -28,8 +31,7 @@ in {
     scriptPath = ".hm-xsession";
   };
 
-  home.packages =
-    [ pkgs.i3 pkgs.dmenu pkgs.i3lock pkgs.feh pkgs.xorg.xrandr pkgs.flameshot ];
+  home.packages = [pkgs.i3 pkgs.dmenu pkgs.i3lock pkgs.feh pkgs.xorg.xrandr pkgs.flameshot];
 
   programs.i3status-rust = {
     enable = true;
@@ -63,7 +65,7 @@ in {
           interval = 5;
           format = "{1m}";
         }
-        { block = "sound"; }
+        {block = "sound";}
         {
           block = "time";
           interval = 1;
@@ -119,24 +121,22 @@ in {
         "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui";
       };
 
-      assigns.${ws0} = [{ class = "^discord$"; }];
-      assigns.${ws2} = [{ class = "^Alacritty$"; }];
-      assigns.${ws3} = [{ class = "^VSCodium$"; }];
-      assigns.${ws4} =
-        [ { class = "^zoom$"; } { class = "^[cC]hromium-browser$"; } ];
-      assigns.${ws8} = [{ class = "^Steam$"; }];
+      assigns.${ws0} = [{class = "^discord$";}];
+      assigns.${ws2} = [{class = "^Alacritty$";}];
+      assigns.${ws3} = [{class = "^VSCodium$";}];
+      assigns.${ws4} = [{class = "^zoom$";} {class = "^[cC]hromium-browser$";}];
+      assigns.${ws8} = [{class = "^Steam$";}];
       assigns.${ws9} = [
-        { class = "^csgo_linux64$"; }
-        { class = "^factorio$"; }
-        { class = "^portal2_linux$"; }
-        { class = "^Celeste"; }
+        {class = "^csgo_linux64$";}
+        {class = "^factorio$";}
+        {class = "^portal2_linux$";}
+        {class = "^Celeste";}
       ];
 
       startup = [
         # Setup monitors
         {
-          command =
-            "xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --primary --mode 1920x1080 --pos 1440x0 --rotate normal --output DVI-D-0 --mode 1440x900 --pos 0x180 --rotate normal";
+          command = "xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --primary --mode 1920x1080 --pos 1440x0 --rotate normal --output DVI-D-0 --mode 1440x900 --pos 0x180 --rotate normal";
         }
         # Set background properly
         # its set by lightdm but glitches when i3 starts
@@ -144,66 +144,67 @@ in {
           always = true;
           command = "${pkgs.feh}/bin/feh --bg-fill ${wallpaper}";
         }
-        { command = "${pkgs.flameshot}/bin/flameshot"; }
-        { command = "${pkgs.discord}/bin/discord"; }
-        { command = "${pkgs.firefox}/bin/firefox"; }
+        {command = "${pkgs.flameshot}/bin/flameshot";}
+        {command = "${pkgs.discord}/bin/discord";}
+        {command = "${pkgs.firefox}/bin/firefox";}
       ];
 
       window.hideEdgeBorders = "both";
 
       workspaceAutoBackAndForth = true;
 
-      terminal = if config.programs.alacritty.enable then
-        "${config.programs.alacritty.package}/bin/alacritty"
-      else
-        "i3-sensible-terminal";
+      terminal =
+        if config.programs.alacritty.enable
+        then "${config.programs.alacritty.package}/bin/alacritty"
+        else "i3-sensible-terminal";
 
-      bars = [{
-        mode = "dock";
-        hiddenState = "hide";
-        position = "bottom";
-        workspaceButtons = true;
-        workspaceNumbers = false;
-        statusCommand =
-          "${config.programs.i3status-rust.package}/bin/i3status-rs ${config.xdg.configHome}/i3status-rust/config-bottom.toml";
-        fonts = {
-          # Monospace still makes fontwawesome fonts work
-          # putting fontawesome as the font face makes colons off-center
-          names = [ "monospace" ];
-          size = 10.0;
-        };
-        trayOutput = "primary";
-        colors = {
-          background = "#2e3440";
-          statusline = "#ffffff";
-          separator = "#666666";
-          focusedWorkspace = {
-            border = "#4c7899";
-            background = "#285577";
-            text = "#ffffff";
+      bars = [
+        {
+          mode = "dock";
+          hiddenState = "hide";
+          position = "bottom";
+          workspaceButtons = true;
+          workspaceNumbers = false;
+          statusCommand = "${config.programs.i3status-rust.package}/bin/i3status-rs ${config.xdg.configHome}/i3status-rust/config-bottom.toml";
+          fonts = {
+            # Monospace still makes fontwawesome fonts work
+            # putting fontawesome as the font face makes colons off-center
+            names = ["monospace"];
+            size = 10.0;
           };
-          activeWorkspace = {
-            border = "#333333";
-            background = "#5f676a";
-            text = "#ffffff";
+          trayOutput = "primary";
+          colors = {
+            background = "#2e3440";
+            statusline = "#ffffff";
+            separator = "#666666";
+            focusedWorkspace = {
+              border = "#4c7899";
+              background = "#285577";
+              text = "#ffffff";
+            };
+            activeWorkspace = {
+              border = "#333333";
+              background = "#5f676a";
+              text = "#ffffff";
+            };
+            inactiveWorkspace = {
+              border = "#333333";
+              background = "#222222";
+              text = "#888888";
+            };
+            urgentWorkspace = {
+              border = "#2f343a";
+              background = "#900000";
+              text = "#ffffff";
+            };
+            bindingMode = {
+              border = "#2f343a";
+              background = "#900000";
+              text = "#ffffff";
+            };
           };
-          inactiveWorkspace = {
-            border = "#333333";
-            background = "#222222";
-            text = "#888888";
-          };
-          urgentWorkspace = {
-            border = "#2f343a";
-            background = "#900000";
-            text = "#ffffff";
-          };
-          bindingMode = {
-            border = "#2f343a";
-            background = "#900000";
-            text = "#ffffff";
-          };
-        };
-      }];
+        }
+      ];
 
       colors = {
         focused = {
