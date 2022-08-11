@@ -9,7 +9,7 @@
   ];
 
   # Shell tools
-  home.packages = with pkgs; [ripgrep nixfmt];
+  home.packages = with pkgs; [ripgrep alejandra];
 
   programs = {
     bat.enable = true;

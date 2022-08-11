@@ -9,12 +9,6 @@ with lib; let
   HIST_SIZE = 32768; # 32**3
   zshSrc = lib.cleanSource ../zsh;
 in {
-  home.packages = with pkgs; [
-    zsh-powerlevel10k
-    zsh-fast-syntax-highlighting
-    zsh-autosuggestions
-  ];
-
   programs.direnv.enableZshIntegration = true;
 
   programs.zsh = {
@@ -86,7 +80,7 @@ in {
       bse = "base64 -w 0";
       bsd = "base64 -d";
       # Tasks
-      nf = "find . -type f -name '*.nix' -exec nixfmt {} \\;";
+      al = "alejandra .";
       # misc
       cmdv = "command -v";
       rf = "readlink -f";
