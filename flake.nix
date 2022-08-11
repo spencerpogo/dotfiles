@@ -23,8 +23,8 @@
     }: let
       pkgs-master = import nixpkgs-master {
         inherit system;
-        config.allowUnfreePredicate = pkg:
-          builtins.elem (lib.getName pkg) ["discord"];
+        # This is simpler than trying to use allowUnfreePredicate here
+        config.allowUnfree = true;
       };
     in
       home-manager.lib.homeManagerConfiguration {
