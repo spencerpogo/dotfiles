@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-master.url = "github:NixOS/nixpkgs";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -8,10 +9,16 @@
     nur.url = "github:nix-community/nur";
   };
 
-  outputs = { self, nixpkgs, home-manager, nur }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-master, home-manager, nur }@inputs:
     let
       mkHome = { config, system, username }:
-        home-manager.lib.homeManagerConfiguration {
+        let
+          pkgs-master = import nixpkgs-master {
+            inherit system;
+            config.allowUnfreePredicate = pkg:
+              builtins.elem (lib.getName pkg) [ "discord" ];
+          };
+        in home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
           modules = [
             {
@@ -20,7 +27,10 @@
                 homeDirectory = "/home/${username}";
                 stateVersion = "21.11";
               };
-              nixpkgs.overlays = [ nur.overlay ];
+              nixpkgs.overlays = [
+                nur.overlay
+                (self: super: { discord = pkgs-master.discord; })
+              ];
             }
             config
           ];
