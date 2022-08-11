@@ -155,9 +155,7 @@
         "editor.formatOnPaste" = false;
         "editor.formatOnType" = false;
       };
-      "[css]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
+      "[css]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
       "emmet.excludeLanguages" = [
         "markdown"
         "typescript"
