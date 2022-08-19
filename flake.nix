@@ -1,7 +1,6 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-master.url = "github:NixOS/nixpkgs";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,7 +11,6 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-master,
     home-manager,
     nur,
   } @ inputs: let
@@ -20,13 +18,7 @@
       config,
       system,
       username,
-    }: let
-      pkgs-master = import nixpkgs-master {
-        inherit system;
-        # This is simpler than trying to use allowUnfreePredicate here
-        config.allowUnfree = true;
-      };
-    in
+    }:
       home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
         modules = [
@@ -38,7 +30,6 @@
             };
             nixpkgs.overlays = [
               nur.overlay
-              (self: super: {discord = pkgs-master.discord;})
             ];
           }
           config
