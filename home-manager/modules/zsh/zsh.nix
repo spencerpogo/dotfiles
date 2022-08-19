@@ -5,7 +5,7 @@
   ...
 }:
 # my zsh config with powerlevel10k
-with lib; let
+let
   HIST_SIZE = 32768; # 32**3
   zshSrc = lib.cleanSource ../zsh;
 in {
