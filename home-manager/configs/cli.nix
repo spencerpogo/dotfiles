@@ -7,12 +7,4 @@
     ../modules/git.nix
     ../modules/direnv.nix
   ];
-
-  # Shell tools
-  home.packages = with pkgs; [ripgrep alejandra];
-
-  programs = {
-    bat.enable = true;
-    jq.enable = true;
-  };
 }

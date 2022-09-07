@@ -9,7 +9,7 @@
     ./configs/base.nix
     ./configs/cli.nix
 
-    ./modules/rust.nix
+    #./modules/rust.nix
     ./modules/python.nix
     ./modules/vscode.nix
     ./modules/firefox.nix
@@ -35,9 +35,7 @@
 
   home.packages = with pkgs; [
     # command-line color picker
-    xcolor
-    # note-taking
-    obsidian
+    # xcolor
     # secondary browser, for school and WebGL stuff
     ungoogled-chromium
     # chat
@@ -62,5 +60,7 @@
     neofetch
     # VMs
     virt-manager
+    # search
+    ripgrep
   ];
 }
