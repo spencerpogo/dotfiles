@@ -190,7 +190,7 @@
       "python.autoComplete.extraPaths" = ["." "/home/scoder12/.pyenv/versions/3.8.2/lib/python3.8"];
       "python.formatting.provider" = "black";
       "python.languageServer" = "Pylance";
-      "terminal.integrated.fontFamily" = "MesloLGS Nerd Font 12";
+      "terminal.integrated.fontFamily" = "FiraCode Nerd Font";
       "vim.handleKeys" = {
         "<C-a>" = false;
         "<C-c>" = false;
