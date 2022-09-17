@@ -1,8 +1,6 @@
 {pkgs, ...}:
 # VS Codium (not code) config
 {
-  home.packages = [pkgs.rls];
-
   programs.vscode = {
     enable = true;
     # no tracking for me thanks
