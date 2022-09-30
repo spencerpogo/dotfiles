@@ -147,7 +147,12 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.spencer = {
     isNormalUser = true;
-    extraGroups = ["wheel" "vboxusers" "libvirtd"]; # wheel = Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel" # wheel = Enable ‘sudo’ for the user.
+      "vboxusers"
+      "libvirtd"
+      "dialout" # dialout = access serial ports (/dev/ttyACM0, /dev/ttyS{0,1,2,3})
+    ];
   };
 
   # List packages installed in system profile. To search, run:
