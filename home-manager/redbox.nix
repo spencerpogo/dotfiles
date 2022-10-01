@@ -62,5 +62,7 @@
     virt-manager
     # search
     ripgrep
+    # steno
+    plover.dev
   ];
 }
