@@ -224,7 +224,7 @@ in {
       for_window [class="^Firefox$"] move --no-auto-back-and-forth to workspace ${ws1}
       for_window [class="^Spotify$"] move --no-auto-back-and-forth to workspace ${ws7}
 
-      exec --no-startup-id systemd-run --user -u start-firefox -p After=network-online.target -p Wants=network-online.target -p Type=exec firefox
+      exec --no-startup-id "until host example.com; do sleep 0.2; done; firefox & discord"
     '';
   };
 }
