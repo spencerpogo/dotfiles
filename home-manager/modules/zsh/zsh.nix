@@ -59,6 +59,11 @@ in {
         file = "zsh-quick-nix-shell.zsh";
       }
       {
+        name = "utils";
+        src = zshSrc;
+        file = "utils.zsh";
+      }
+      {
         name = "zshrc-misc";
         src = zshSrc;
         file = "zshrc.zsh";
