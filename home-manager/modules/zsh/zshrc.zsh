@@ -96,3 +96,17 @@ dec2cmd () {
 rfw () {
   readlink -f $(which "$1")
 }
+
+# glob function as a find shortcut
+glb () {
+  if [[ $# -lt 2 ]]; then
+    printf "Usage: %s <path> <pattern> [args...]\n" "$0" 2>/dev/null
+    return 1
+  fi
+  local glb_dir="$1"
+  shift
+  local glb_pat="$1"
+  shift
+  find "$glb_dir" -maxdepth 1 "$@" -name "$glb_pat"
+  return $?
+}
