@@ -23,10 +23,9 @@ ns() {
       # interactive shell exited successfully.
       # avoid user having to type "exit" again
       exit 0
-    else
-      # nix command failed, don't exit the shell
-      return $ret
     fi
+    # nix command failed, don't exit the shell
+    return $ret
   fi
 
   nix-shell -p "${pkgs[@]}" --run "$(printf "'%s' " "${cmd[@]}")"
