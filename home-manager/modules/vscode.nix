@@ -38,14 +38,9 @@
         justusadam.language-haskell
         kamikillerto.vscode-colorize
         redhat.java
+        bungcip.better-toml
       ])
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        {
-          name = "better-toml";
-          publisher = "bungcip";
-          version = "0.3.2";
-          sha256 = "08lhzhrn6p0xwi0hcyp6lj9bvpfj87vr99klzsiy8ji7621dzql3";
-        }
         {
           name = "andromeda";
           publisher = "EliverLara";
