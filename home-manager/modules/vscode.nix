@@ -44,8 +44,8 @@
         {
           name = "andromeda";
           publisher = "EliverLara";
-          version = "1.7.0";
-          sha256 = "1899w5frankzg4g5va1cjv34gw9cdaxb3wdxqgzp694nffhzxb26";
+          version = "1.7.1";
+          sha256 = "sha256-gCpL94MCMCDuSJ7O0ntOl/GDWrK+VDSIyGMkrW5bV8Y=";
         }
         {
           name = "discord-vscode";
