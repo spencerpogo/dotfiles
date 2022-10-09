@@ -144,7 +144,6 @@ in {
           always = true;
           command = "${pkgs.feh}/bin/feh --bg-fill ${wallpaper}";
         }
-        {command = "${pkgs.flameshot}/bin/flameshot";}
       ];
 
       window.hideEdgeBorders = "both";
