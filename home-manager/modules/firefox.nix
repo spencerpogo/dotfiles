@@ -9,6 +9,7 @@
       sponsorblock
       refined-github
       ublock-origin
+      return-youtube-dislikes
     ];
 
     profiles = {
