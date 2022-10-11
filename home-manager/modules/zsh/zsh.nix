@@ -70,6 +70,8 @@ in {
       }
     ];
     shellAliases = {
+      # fancy ls
+      ls = "${pkgs.exa}/bin/exa";
       # Clipboard
       c = "copy";
       paste = "xclip -o -sel c";
