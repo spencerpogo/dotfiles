@@ -213,6 +213,7 @@ in {
         };
       };
     };
+
     extraConfig = ''
       workspace ${ws0} output ${lmonitor}
       workspace ${ws1} output ${rmonitor}
