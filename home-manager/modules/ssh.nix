@@ -8,7 +8,7 @@
         identityFile = [key];
       };
     in {
-      vps = mkHost "spencer" "173.255.213.75";
+      vps = mkHost "spencer" "74.207.254.138";
       pwncollege = mkHost "hacker" "dojo.pwn.college";
     };
   };
