@@ -208,6 +208,7 @@
       "steam"
       "steam-original"
       "steam-runtime"
+      "steam-run"
     ];
 
   # This value determines the NixOS release from which the default
