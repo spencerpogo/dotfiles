@@ -63,6 +63,6 @@
     # search
     ripgrep
     # steno
-    plover.dev
+    # plover.dev
   ];
 }
