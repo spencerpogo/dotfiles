@@ -26,6 +26,7 @@
   ];
 
   nixpkgs.config.permittedInsecurePackages = ["electron-13.6.9"];
+  programs.command-not-found.enable = true;
 
   home.sessionVariables = {
     EDITOR = "vim";
