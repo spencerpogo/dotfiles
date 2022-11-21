@@ -97,7 +97,7 @@
 
   services.xserver = {
     enable = true;
-    videoDrivers = ["amdgpu"];
+    videoDrivers = ["amdgpu" "nvidia"];
 
     # Configure keymap in X11
     layout = "us";
@@ -209,6 +209,8 @@
       "steam-original"
       "steam-runtime"
       "steam-run"
+      "nvidia-x11"
+      "nvidia-settings"
     ];
 
   # This value determines the NixOS release from which the default
