@@ -94,6 +94,8 @@
   boot.kernelModules = ["amdgpu"];
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
+  # GT 730
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
 
   services.xserver = {
     enable = true;
