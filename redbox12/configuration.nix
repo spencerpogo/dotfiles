@@ -11,6 +11,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./vfio.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -96,6 +97,11 @@
   hardware.opengl.driSupport32Bit = true;
   # GT 730
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
+
+  specialisation."VFIO".configuration = {
+    system.nixos.tags = [ "with-vfio" ];
+    vfio.enable = true;
+  };
 
   services.xserver = {
     enable = true;
