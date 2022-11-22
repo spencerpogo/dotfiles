@@ -92,7 +92,7 @@
   nix.registry = with lib;
     mapAttrs' (name: value: nameValuePair name {flake = value;}) inputs;
 
-  boot.kernelModules = ["amdgpu"];
+  boot.kernelModules = ["amdgpu" "nbd"];
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
   # GT 730
@@ -159,6 +159,8 @@
       "wheel" # wheel = Enable ‘sudo’ for the user.
       "vboxusers"
       "libvirtd"
+      "kvm"
+      "input"
       "dialout" # dialout = access serial ports (/dev/ttyACM0, /dev/ttyS{0,1,2,3})
     ];
   };
@@ -187,9 +189,12 @@
   programs.steam.enable = true;
 
   virtualisation.libvirtd = {
-    qemu.package = pkgs.qemu_kvm;
-    qemu.runAsRoot = false;
     enable = true;
+    qemu = {
+      package = pkgs.qemu_kvm;
+      runAsRoot = false;
+      ovmf.enable = true;
+    };
   };
   virtualisation.docker.enable = true;
 
