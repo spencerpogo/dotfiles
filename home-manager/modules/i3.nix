@@ -131,6 +131,7 @@ in {
         {class = "^factorio$";}
         {class = "^portal2_linux$";}
         {class = "^Celeste";}
+        {class = "^GettingOverIt.x86_64$";}
       ];
 
       startup = [
