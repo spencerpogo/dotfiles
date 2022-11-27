@@ -11,7 +11,6 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./vfio.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -95,17 +94,10 @@
   boot.kernelModules = ["amdgpu" "nbd"];
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
-  # GT 730
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
-
-  specialisation."VFIO".configuration = {
-    system.nixos.tags = [ "with-vfio" ];
-    vfio.enable = true;
-  };
 
   services.xserver = {
     enable = true;
-    videoDrivers = ["amdgpu" "nvidia"];
+    videoDrivers = ["amdgpu"];
 
     # Configure keymap in X11
     layout = "us";
