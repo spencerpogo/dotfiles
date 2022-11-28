@@ -51,6 +51,11 @@
       system = "x86_64-linux";
       username = "spencer";
     };
+    homeConfigurations.crostini = mkHome {
+      config = ./home-manager/crostini.nix;
+      system = "x86_64-linux";
+      username = "user";
+    };
     homeConfigurations.parrot = mkHome {
       config = ./home-manager/parrot.nix;
       system = "x86_64-linux";
