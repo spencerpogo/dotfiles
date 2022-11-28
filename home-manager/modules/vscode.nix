@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{lib, pkgs, ...}:
 # VS Codium (not code) config
 {
   programs.vscode = {
@@ -14,7 +14,7 @@
         # Rust
         matklad.rust-analyzer
         # Code time tracking
-        WakaTime.vscode-wakatime
+        #WakaTime.vscode-wakatime
         # unfree microsoft python shit
         ms-python.vscode-pylance
         # I don't know why this is here I don't do C++
@@ -58,6 +58,12 @@
           publisher = "Prisma";
           version = "3.6.0";
           sha256 = "08rw0xnzmx3ssl73p3br82rysm13nw3vyy24lxga64n8xndsllk1";
+        }
+        {
+          name = "vscode-wakatime";
+          publisher = "WakaTime";
+          version = "22.0.1";
+          sha256 = "sha256-MU8xG2aAkn0eYzSXLYytU8geWLDhh0WKbDYP9bCHtOw=";
         }
         /*
         {
