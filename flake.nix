@@ -46,6 +46,11 @@
       system = "x86_64-linux";
       username = "spencer";
     };
+    homeConfigurations.vps = mkHome {
+      config = ./home-manager/vps.nix;
+      system = "x86_64-linux";
+      username = "spencer";
+    };
     homeConfigurations.parrot = mkHome {
       config = ./home-manager/parrot.nix;
       system = "x86_64-linux";
