@@ -39,6 +39,7 @@
         kamikillerto.vscode-colorize
         redhat.java
         bungcip.better-toml
+        usernamehw.errorlens
       ])
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
