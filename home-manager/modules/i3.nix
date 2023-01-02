@@ -114,6 +114,9 @@ in {
         "${mod}+Shift+k" = "move up";
         "${mod}+Shift+l" = "move right";
 
+        "${mod}+a" = "focus parent";
+        "${mod}+b" = "focus child";
+
         "${mod}+Shift+p" = "exec --no-startup-id ${pkgs.i3lock}/bin/i3lock";
 
         "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui";
@@ -157,9 +160,9 @@ in {
 
       bars = [
         {
+          position = "bottom";
           mode = "dock";
           hiddenState = "hide";
-          position = "bottom";
           workspaceButtons = true;
           workspaceNumbers = false;
           statusCommand = "${config.programs.i3status-rust.package}/bin/i3status-rs ${config.xdg.configHome}/i3status-rust/config-bottom.toml";
@@ -215,16 +218,12 @@ in {
     };
 
     extraConfig = ''
-      workspace ${ws0} output ${lmonitor}
-      workspace ${ws1} output ${rmonitor}
-      workspace ${ws2} output ${rmonitor} layout tabbed
-      workspace ${ws8} output ${rmonitor}
-      workspace ${ws9} output ${rmonitor}
-
-      for_window [class="^Firefox$"] move --no-auto-back-and-forth to workspace ${ws1}
+      #for_window [class="^[fF]irefox$"] move --no-auto-back-and-forth to workspace ${ws1}
       for_window [class="^Spotify$"] move --no-auto-back-and-forth to workspace ${ws7}
 
-      exec --no-startup-id "until host example.com; do sleep 0.2; done; firefox & discord"
+      #exec --no-startup-id "until host example.com; do sleep 0.2; done; firefox & discord"
     '';
   };
+
+  home.packages = [pkgs.i3-resurrect];
 }
