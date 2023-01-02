@@ -88,6 +88,7 @@ in {
       # misc
       cmdv = "command -v";
       rf = "readlink -f";
+      ls = "ls --color=tty";
     };
   };
 }
