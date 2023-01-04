@@ -7,8 +7,8 @@
   mod = "Mod4";
   esc = v: ''"${v}"'';
 
-  lmonitor = "DVI-D-0";
-  rmonitor = "HDMI-A-0";
+  outPrimary = "HDMI-A-0";
+  outSecondary = "DVI-D-0";
 
   wallpaper =
     pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom.gnomeFilePath;
@@ -217,13 +217,53 @@ in {
       };
     };
 
-    extraConfig = ''
+    extraConfig = let
+      i3r = "${pkgs.i3-resurrect}/bin/i3-resurrect";
+      i3r-restore = ws: "sleep 0.1; ${i3r} restore --numeric --workspace ${builtins.toString ws}";
+    in ''
       #for_window [class="^[fF]irefox$"] move --no-auto-back-and-forth to workspace ${ws1}
       for_window [class="^Spotify$"] move --no-auto-back-and-forth to workspace ${ws7}
 
-      #exec --no-startup-id "until host example.com; do sleep 0.2; done; firefox & discord"
+      workspace ${ws0} output ${outSecondary}
+      workspace ${ws1} output ${outPrimary}
+      workspace ${ws4} output ${outSecondary}
+
+      exec --no-startup-id "${i3r-restore 0}"
+      exec --no-startup-id "${i3r-restore 1}"
+      exec --no-startup-id "${i3r-restore 4}"
+      exec --no-startup-id "sleep 0.2; until host example.com; do sleep 0.2; done; firefox & discord"
     '';
   };
 
   home.packages = [pkgs.i3-resurrect];
+
+  systemd.user.services.i3-resurrect = {
+    Unit = {
+      Description = "Save i3 state with i3-resurrect";
+    };
+    Service = {
+      Type = "oneshot";
+      ExecStart = let
+        script = pkgs.writeShellScriptBin "i3r-save-start" ''
+          ${pkgs.coreutils}/bin/date > /home/spencer/start.txt
+        '';
+      in "${script}/bin/i3r-save-start";
+      RemainAfterExit = true;
+      ExecStop = let
+        script = pkgs.writeShellScriptBin "i3r-save-stop" ''
+          ${pkgs.coreutils}/bin/date > /home/spencer/stop.txt
+        '';
+      in "${script}/bin/i3r-save-stop";
+    };
+    Install.WantedBy = ["graphical-session.target"];
+  };
+
+  xdg.configFile."i3-resurrect/config.json".text = builtins.toJSON {
+    directory = "~/.i3/i3-resurrect/";
+    window_command_mappings = [
+      {class = "firefox";}
+    ];
+    window_swallow_criteria = {};
+    terminals = ["Alacritty"];
+  };
 }
