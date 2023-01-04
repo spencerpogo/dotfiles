@@ -68,5 +68,6 @@
     # steno
     # plover.dev
     mcfly
+    jq
   ];
 }
