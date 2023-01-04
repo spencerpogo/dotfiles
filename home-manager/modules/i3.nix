@@ -237,27 +237,6 @@ in {
 
   home.packages = [pkgs.i3-resurrect];
 
-  systemd.user.services.i3-resurrect = {
-    Unit = {
-      Description = "Save i3 state with i3-resurrect";
-    };
-    Service = {
-      Type = "oneshot";
-      ExecStart = let
-        script = pkgs.writeShellScriptBin "i3r-save-start" ''
-          ${pkgs.coreutils}/bin/date > /home/spencer/start.txt
-        '';
-      in "${script}/bin/i3r-save-start";
-      RemainAfterExit = true;
-      ExecStop = let
-        script = pkgs.writeShellScriptBin "i3r-save-stop" ''
-          ${pkgs.coreutils}/bin/date > /home/spencer/stop.txt
-        '';
-      in "${script}/bin/i3r-save-stop";
-    };
-    Install.WantedBy = ["graphical-session.target"];
-  };
-
   xdg.configFile."i3-resurrect/config.json".text = builtins.toJSON {
     directory = "~/.i3/i3-resurrect/";
     window_command_mappings = [
