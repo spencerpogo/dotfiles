@@ -165,6 +165,7 @@
     file
     fcitx
     psmisc # fuser, killall and pstree
+    lsof
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
