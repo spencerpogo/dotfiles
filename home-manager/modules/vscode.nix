@@ -1,4 +1,4 @@
-{lib, pkgs, ...}:
+{config, lib, pkgs, ...}:
 # VS Codium (not code) config
 {
   programs.vscode = {
@@ -165,7 +165,8 @@
       "editor.acceptSuggestionOnEnter" = "off";
       "editor.tabCompletion" = "on";
       "editor.snippetSuggestions" = "inline";
-      "editor.fontFamily" = "FiraCode Nerd Font";
+      "editor.fontFamily" = lib.mkIf config.fonts.fontconfig.enable "FiraCode Nerd Font";
+      "terminal.integrated.fontFamily" = lib.mkIf config.fonts.fontconfig.enable "FiraCode Nerd Font";
       "editor.fontLigatures" = true;
       "editor.formatOnSave" = true;
       "editor.formatOnType" = true;
@@ -190,7 +191,6 @@
       "python.autoComplete.extraPaths" = ["." "/home/scoder12/.pyenv/versions/3.8.2/lib/python3.8"];
       "python.formatting.provider" = "black";
       "python.languageServer" = "Pylance";
-      "terminal.integrated.fontFamily" = "FiraCode Nerd Font";
       "vim.handleKeys" = {
         "<C-a>" = false;
         "<C-c>" = false;
