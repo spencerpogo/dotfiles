@@ -35,8 +35,21 @@ in {
     enable = true;
     bars.bottom = {
       theme = "nord-dark";
-      icons = "awesome5";
+      settings.icons.name = "awesome5";
+      settings.icons.overrides = {
+        # idk why these aren't the default
+        music_prev = "玲";
+        music_next = "怜";
+      };
       blocks = [
+        {
+          block = "music";
+          buttons = ["prev" "play" "next"];
+          max_width = 50; # the marquee is annoying
+          dynamic_width = true;
+          marquee_interval = 1;
+          marquee_speed = 0.15;
+        }
         {
           block = "disk_space";
           path = "/";
