@@ -1,4 +1,9 @@
-{config, lib, pkgs, ...}:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 # VS Codium (not code) config
 {
   programs.vscode = {
