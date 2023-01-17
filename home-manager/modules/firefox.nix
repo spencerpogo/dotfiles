@@ -108,7 +108,9 @@
           "network.cookie.cookieBehavior" = 1;
           "network.dns.disablePrefetch" = true;
           "network.dns.disablePrefetchFromHTTPS" = true;
-          "network.http.referer.spoofSource" = true;
+          #"network.http.referer.spoofSource" = true; # send domain back as referrer (breaks google docs, google colab)
+          "network.http.referer.spoofSource" = false;
+          "network.http.referer.trimmingPolicy" = 2; # scheme, host, and port only
           "network.http.speculative-parallel-limit" = 0;
           "network.predictor.enable-prefetch" = false;
           "network.predictor.enabled" = false;
