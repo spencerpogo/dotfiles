@@ -233,6 +233,53 @@ in {
     extraConfig = let
       i3r = "${pkgs.i3-resurrect}/bin/i3-resurrect";
       i3r-restore = ws: "sleep 0.1; ${i3r} restore --numeric --workspace ${builtins.toString ws}";
+      focusSh = pkgs.writeShellScriptBin "focus.sh" ''
+        shouldmatchtitle () {
+          case "$1" in
+            discord | VSCodium)
+              return 0
+              ;;
+            *)
+              return 1
+              ;;
+          esac
+        }
+        main () {
+          local lastitle=
+          local windowprops
+          local title
+          local class
+          while true; do
+            if [ -n "$ZSH_VERSION" ]; then
+              windowprops=(''${(f)"$(${pkgs.xdotool}/bin/xdotool getwindowfocus getwindowname getwindowclassname)"})
+              title="''${windowprops[1]}"
+              class="''${windowprops[2]}"
+            else
+              readarray -t windowprops < <(${pkgs.xdotool}/bin/xdotool getwindowfocus getwindowname getwindowclassname)
+              title="''${windowprops[0]}"
+              class="''${windowprops[1]}"
+            fi
+            printf 'Title: %s\nClass: %s\n' "$title" "$class"
+            if [[ "$title" != "$lasttitle" ]]; then
+              num="$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused == true) | .num')"
+              cmd=("i3-resurrect" "save")
+              shouldmatchtitle "$class"
+              if [[ "$?" -eq 1 ]]; then
+                cmd+=("--swallow=class,instance,title")
+              fi
+              cmd+=("--numeric" "--workspace" "$num")
+              # print the command
+              printf '%s ' "''${cmd[@]}"
+              printf '\n'
+              # run the command
+              "''${cmd[@]}" &
+            fi
+            lasttitle="$title"
+            sleep 0.25
+          done
+        }
+        main
+      '';
     in ''
       #for_window [class="^[fF]irefox$"] move --no-auto-back-and-forth to workspace ${ws1}
       for_window [class="^Spotify$"] move --no-auto-back-and-forth to workspace ${ws7}
@@ -241,9 +288,8 @@ in {
       workspace ${ws1} output ${outPrimary}
       workspace ${ws4} output ${outSecondary}
 
-      exec --no-startup-id "${i3r-restore 0}"
-      exec --no-startup-id "${i3r-restore 1}"
-      exec --no-startup-id "${i3r-restore 4}"
+      exec --no-startup-id i3-msg 'workspace ${ws0}; exec "${i3r-restore 0}"; workspace ${ws1}; exec "${i3r-restore 1}"; workspace ${ws4}; exec "${i3r-restore 4}"'
+      exec --no-startup-id ${focusSh}/bin/focus.sh
       exec --no-startup-id "sleep 0.2; until host example.com; do sleep 0.2; done; firefox & discord"
     '';
   };
