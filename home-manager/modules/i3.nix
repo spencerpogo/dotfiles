@@ -135,7 +135,7 @@ in {
         "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui";
       };
 
-      assigns.${ws0} = [{class = "^discord$";}];
+      assigns.${ws0} = [{class = "^discord$";} {class = "^signal$";}];
       assigns.${ws2} = [{class = "^Alacritty$";}];
       assigns.${ws3} = [{class = "^VSCodium$";}];
       assigns.${ws4} = [{class = "^zoom$";} {class = "^[cC]hromium-browser$";}];
