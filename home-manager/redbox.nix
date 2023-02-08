@@ -43,6 +43,7 @@
     ungoogled-chromium
     # chat
     discord
+    signal-desktop
     # meetings
     zoom-us
     # screen recording
@@ -67,7 +68,9 @@
     ripgrep
     # steno
     # plover.dev
+    # shell hist
     mcfly
+    # json tool
     jq
   ];
 }
