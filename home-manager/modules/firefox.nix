@@ -2,20 +2,19 @@
   programs.firefox = {
     enable = true;
 
-    extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-      canvasblocker
-      clearurls
-      react-devtools
-      sponsorblock
-      refined-github
-      ublock-origin
-      return-youtube-dislikes
-    ];
-
     profiles = {
       main = {
         id = 0;
         isDefault = true;
+        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+          canvasblocker
+          clearurls
+          react-devtools
+          sponsorblock
+          refined-github
+          ublock-origin
+          return-youtube-dislikes
+        ];
         settings = {
           "dom.security.https_only_mode" = true;
           # Don't warn when closing multiple tabs
