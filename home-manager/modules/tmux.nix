@@ -22,6 +22,8 @@
       bind c new-window -c "#{pane_current_path}"
       bind '"' split-window -c "#{pane_current_path}"
       bind % split-window -h -c "#{pane_current_path}"
+      # ...with an escape hatch if we don't want to wait for direnv
+      bind v new-window
 
       # Better split binds
       bind - split-window -c "#{pane_current_path}"
