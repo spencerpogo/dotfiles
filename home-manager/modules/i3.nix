@@ -35,7 +35,7 @@ in {
     enable = true;
     bars.bottom = {
       theme = "nord-dark";
-      settings.icons.name = "awesome5";
+      settings.icons.icons = "awesome5";
       settings.icons.overrides = {
         # idk why these aren't the default
         music_prev = "玲";
@@ -44,27 +44,18 @@ in {
       blocks = [
         {
           block = "music";
-          buttons = ["prev" "play" "next"];
-          max_width = 50; # the marquee is annoying
-          dynamic_width = true;
-          marquee_interval = 1;
-          marquee_speed = 0.15;
         }
         {
           block = "disk_space";
           path = "/";
-          alias = "/";
           info_type = "available";
-          unit = "GB";
           interval = 15;
           warning = 20.0;
           alert = 10.0;
+          alert_unit = "GB";
         }
         {
           block = "memory";
-          display_type = "memory";
-          format_mem = "{mem_used_percents}";
-          format_swap = "{swap_used_percents}";
           interval = 5;
         }
         {
@@ -74,13 +65,13 @@ in {
         {
           block = "load";
           interval = 5;
-          format = "{1m}";
+          format = "$icon $1m.eng(w:4)";
         }
         {block = "sound";}
         {
           block = "time";
           interval = 1;
-          format = "%a %m/%d %r";
+          format = "$icon $timestamp.datetime(f:'%a %m/%d %r', l:en_US)";
         }
       ];
     };
