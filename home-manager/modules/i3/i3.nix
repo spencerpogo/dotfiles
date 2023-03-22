@@ -5,7 +5,6 @@
   ...
 }: let
   mod = "Mod4";
-  esc = v: ''"${v}"'';
 
   outPrimary = "HDMI-A-0";
   outSecondary = "DVI-D-0";
@@ -13,17 +12,12 @@
   wallpaper =
     pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom.gnomeFilePath;
 
-  ws0 = esc "0:"; # discord
-  ws1 = esc "1:"; # firefox
-  ws2 = esc "2:"; # terminals
-  ws3 = esc "3:"; # editor
-  ws4 = esc "4";
-  ws5 = esc "5";
-  ws6 = esc "6";
-  ws7 = esc "7";
-  ws8 = esc "8:"; # steam
-  ws9 = esc "9:"; # game
+  inherit (import ./workspaces.nix) ws0 ws1 ws2 ws3 ws4 ws5 ws6 ws7 ws8 ws9;
 in {
+  imports = [
+    ./startup.nix
+  ];
+
   # Start i3 from home-manager
   # https://discourse.nixos.org/t/opening-i3-from-home-manager-automatically/4849/8
   xsession = {
@@ -222,7 +216,10 @@ in {
     };
 
     extraConfig = ''
-      exec --no-startup-id "until host example.com; do sleep 0.2; done; firefox & discord"
+      workspace ${ws0} output ${outSecondary}
+      workspace ${ws1} output ${outPrimary}
+
+      exec --no-startup-id "touch /tmp/1234"
     '';
   };
 }
