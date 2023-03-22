@@ -5,6 +5,9 @@
     enable = true;
     userName = "Spencer Pogorzelski";
     userEmail = "34356756+Scoder12@users.noreply.github.com";
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
     # TODO: Signing
   };
 }
