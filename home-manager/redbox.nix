@@ -13,7 +13,7 @@
     ./modules/python.nix
     ./modules/vscode.nix
     ./modules/firefox.nix
-    ./modules/i3.nix
+    ./modules/i3/i3.nix
     ./modules/guiutils.nix
     ./modules/tmux.nix
     ./modules/gtk.nix
