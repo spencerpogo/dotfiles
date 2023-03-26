@@ -72,5 +72,7 @@
     mcfly
     # json tool
     jq
+    # flashcards
+    anki-bin
   ];
 }
