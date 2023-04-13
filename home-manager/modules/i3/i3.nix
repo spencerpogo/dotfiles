@@ -219,7 +219,6 @@ in {
       workspace ${ws0} output ${outSecondary}
       workspace ${ws1} output ${outPrimary}
 
-      exec --no-startup-id "touch /tmp/1234"
     '';
   };
 }
