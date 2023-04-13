@@ -219,6 +219,7 @@ in {
       workspace ${ws0} output ${outSecondary}
       workspace ${ws1} output ${outPrimary}
 
+      for_window [class="^Spotify$"] move --no-auto-back-and-forth to workspace ${ws7}
     '';
   };
 }
