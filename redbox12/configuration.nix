@@ -52,10 +52,8 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-  i18n.inputMethod = {
-    enabled = "fcitx";
-    fcitx.engines = [pkgs.fcitx-engines.libpinyin pkgs.fcitx-engines.cloudpinyin];
-  };
+  i18n.inputMethod.enabled = "fcitx5";
+  i18n.inputMethod.fcitx5.addons = [pkgs.fcitx5-chinese-addons];
 
   fonts.fonts = [pkgs.noto-fonts-cjk];
   # console = {
@@ -163,7 +161,6 @@
     curl
     wget
     file
-    fcitx
     psmisc # fuser, killall and pstree
     lsof
   ];
