@@ -175,6 +175,8 @@
   # Enable steam games
   programs.steam.enable = true;
 
+  services.udisks2.enable = true;
+
   virtualisation.libvirtd = {
     enable = true;
     qemu = {
