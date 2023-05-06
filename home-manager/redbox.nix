@@ -78,5 +78,7 @@
     anki-bin
     # nix code formatting
     alejandra
+    # ebooks
+    calibre
   ];
 }
