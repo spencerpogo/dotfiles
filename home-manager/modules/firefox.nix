@@ -80,7 +80,8 @@
           "dom.battery.enabled" = false;
           "dom.event.clipboardevents.enabled" = true;
           "dom.storage.enabled" = true;
-          "dom.webaudio.enabled" = false;
+          # Enable webaudio?
+          "dom.webaudio.enabled" = true;
           "experiments.activeExperiment" = false;
           "experiments.enabled" = false;
           "experiments.manifest.uri" = "";
@@ -98,8 +99,10 @@
           "media.autoplay.enabled" = true;
           "media.eme.enabled" = false;
           "media.gmp-widevinecdm.enabled" = false;
-          "media.navigator.enabled" = false;
-          "media.peerconnection.enabled" = false;
+          # Enable navigator media (microphone/camera)?
+          "media.navigator.enabled" = true;
+          # Enable WebRTC?
+          "media.peerconnection.enabled" = true;
           "media.video_stats.enabled" = false;
           "network.IDN_show_punycode" = true;
           "network.allow-experiments" = false;
