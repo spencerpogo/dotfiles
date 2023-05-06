@@ -52,9 +52,6 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-  i18n.inputMethod.enabled = "fcitx5";
-  i18n.inputMethod.fcitx5.addons = [pkgs.fcitx5-chinese-addons];
-
   fonts.fonts = [pkgs.noto-fonts-cjk];
   # console = {
   #   font = "Lat2-Terminus16";
