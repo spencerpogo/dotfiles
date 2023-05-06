@@ -84,7 +84,7 @@ in {
       bse = "base64 -w 0";
       bsd = "base64 -d";
       # Tasks
-      al = "alejandra .";
+      al = "alejandra -q .";
       dmesgtail = "sudo dmesg --color=always | tail";
       # misc
       cmdv = "command -v";

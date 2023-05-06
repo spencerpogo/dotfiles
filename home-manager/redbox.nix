@@ -74,5 +74,7 @@
     jq
     # flashcards
     anki-bin
+    # nix code formatting
+    alejandra
   ];
 }
