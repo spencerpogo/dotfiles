@@ -31,7 +31,7 @@
         ms-vsliveshare.vsliveshare
         ms-toolsai.jupyter
         vscodevim.vim
-        bbenoist.nix
+        jnoortheen.nix-ide
         dbaeumer.vscode-eslint
         eamodio.gitlens
         editorconfig.editorconfig
