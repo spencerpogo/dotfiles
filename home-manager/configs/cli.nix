@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 # Minimal CLI setup: shells and a couple essential tools.
 {
   imports = [

@@ -1,10 +1,11 @@
+{ config
+, pkgs
+, ...
+}:
+let
+  termfont = { family = "MesloLGS Nerd Font"; };
+in
 {
-  config,
-  pkgs,
-  ...
-}: let
-  termfont = {family = "MesloLGS Nerd Font";};
-in {
   programs.alacritty = {
     enable = true;
     settings = {
@@ -25,7 +26,7 @@ in {
         if config.programs.tmux.enable
         then {
           program = pkgs.runtimeShell;
-          args = ["-c" "tmux attach || tmux new"];
+          args = [ "-c" "tmux attach || tmux new" ];
         }
         else {
           program = config.home.sessionVariables.SHELL;

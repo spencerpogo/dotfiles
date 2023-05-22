@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 # My VM used for pentesting/CTF playing running parrot linux (because
 #  that is what is cool these days *eyeroll*)
 {
@@ -31,7 +31,7 @@
     (self: super: {
       alacritty =
         super.writeShellScriptBin "dummy-alacritty"
-        "exec /usr/bin/env alacritty";
+          "exec /usr/bin/env alacritty";
     })
   ];
 }

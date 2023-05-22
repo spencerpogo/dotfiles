@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   # enable nix managaing fonts (some GUI modules such as vscode and gnome-terminal need
   #  them)
   fonts.fontconfig.enable = true;

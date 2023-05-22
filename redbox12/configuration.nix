@@ -1,12 +1,11 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{
-  config,
-  pkgs,
-  lib,
-  inputs,
-  ...
+{ config
+, pkgs
+, lib
+, inputs
+, ...
 }: {
   imports = [
     # Include the results of the hardware scan.
@@ -30,7 +29,7 @@
   };
 
   # like /, swap partition is part of luks group
-  swapDevices = [{device = "/dev/disk/by-uuid/f0a3b235-96e1-4ad7-81ce-024e5e8f7cb1";}];
+  swapDevices = [{ device = "/dev/disk/by-uuid/f0a3b235-96e1-4ad7-81ce-024e5e8f7cb1"; }];
 
   networking.hostName = "redbox12"; # Define your hostname.
   networking.wireless.enable =
@@ -52,7 +51,7 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-  fonts.fonts = [pkgs.noto-fonts-cjk];
+  fonts.fonts = [ pkgs.noto-fonts-cjk ];
   # console = {
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";
@@ -84,15 +83,20 @@
     "home-manager=/etc/nix/inputs/home-manager"
   ];
   nix.registry = with lib;
-    mapAttrs' (name: value: nameValuePair name {flake = value;}) inputs;
+    mapAttrs' (name: value: nameValuePair name { flake = value; }) inputs;
 
-  boot.kernelModules = ["amdgpu" "nbd"];
+  nix.settings = {
+    daemonCPUSchedPolicy = "idle";
+    daemonIOSchedClass = "idle";
+  };
+
+  boot.kernelModules = [ "amdgpu" "nbd" ];
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
 
   services.xserver = {
     enable = true;
-    videoDrivers = ["amdgpu"];
+    videoDrivers = [ "amdgpu" ];
 
     # Configure keymap in X11
     layout = "us";
@@ -122,7 +126,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-  services.printing.drivers = [pkgs.gutenprint];
+  services.printing.drivers = [ pkgs.gutenprint ];
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
 

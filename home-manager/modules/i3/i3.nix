@@ -1,9 +1,9 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: let
+{ config
+, lib
+, pkgs
+, ...
+}:
+let
   mod = "Mod4";
 
   outPrimary = "HDMI-A-0";
@@ -13,7 +13,8 @@
     pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom.gnomeFilePath;
 
   inherit (import ./workspaces.nix) ws0 ws1 ws2 ws3 ws4 ws5 ws6 ws7 ws8 ws9;
-in {
+in
+{
   imports = [
     ./startup.nix
   ];
@@ -61,7 +62,7 @@ in {
           interval = 5;
           format = "$icon $1m.eng(w:4)";
         }
-        {block = "sound";}
+        { block = "sound"; }
         {
           block = "time";
           interval = 1;
@@ -120,18 +121,18 @@ in {
         "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui";
       };
 
-      assigns.${ws0} = [{class = "^discord$";} {class = "^signal$";}];
-      assigns.${ws2} = [{class = "^Alacritty$";}];
-      assigns.${ws3} = [{class = "^VSCodium$";}];
-      assigns.${ws4} = [{class = "^zoom$";} {class = "^[cC]hromium-browser$";}];
-      assigns.${ws8} = [{class = "^Steam$";}];
+      assigns.${ws0} = [{ class = "^discord$"; } { class = "^signal$"; }];
+      assigns.${ws2} = [{ class = "^Alacritty$"; }];
+      assigns.${ws3} = [{ class = "^VSCodium$"; }];
+      assigns.${ws4} = [{ class = "^zoom$"; } { class = "^[cC]hromium-browser$"; }];
+      assigns.${ws8} = [{ class = "^Steam$"; }];
       assigns.${ws9} = [
-        {class = "^csgo_linux64$";}
-        {class = "^factorio$";}
-        {class = "^portal2_linux$";}
-        {class = "^Celeste";}
-        {class = "^GettingOverIt.x86_64$";}
-        {class = "^hollow_knight.x86_64$";}
+        { class = "^csgo_linux64$"; }
+        { class = "^factorio$"; }
+        { class = "^portal2_linux$"; }
+        { class = "^Celeste"; }
+        { class = "^GettingOverIt.x86_64$"; }
+        { class = "^hollow_knight.x86_64$"; }
       ];
 
       startup = [
@@ -167,7 +168,7 @@ in {
           fonts = {
             # Monospace still makes fontwawesome fonts work
             # putting fontawesome as the font face makes colons off-center
-            names = ["monospace"];
+            names = [ "monospace" ];
             size = 10.0;
           };
           trayOutput = "primary";

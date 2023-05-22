@@ -1,9 +1,9 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: let
+{ config
+, pkgs
+, lib
+, ...
+}:
+let
   inherit (import ./workspaces.nix) ws0 ws1 ws2 ws3 ws4 ws5 ws6 ws7 ws8 ws9;
 
   filename = "i3-startup.sh";
@@ -18,6 +18,7 @@
     ${pkgs.discord}/bin/discord &
     ${pkgs.signal-desktop}/bin/signal-desktop &
   '';
-in {
+in
+{
   xsession.windowManager.i3.extraConfig = "exec --no-startup-id ${scriptPath}";
 }

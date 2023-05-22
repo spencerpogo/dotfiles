@@ -1,7 +1,6 @@
-{
-  lib,
-  pkgs,
-  ...
+{ lib
+, pkgs
+, ...
 }: {
   # My desktop PC, running NixOS
 
@@ -27,7 +26,7 @@
     ./modules/udiskie.nix
   ];
 
-  nixpkgs.config.permittedInsecurePackages = ["electron-13.6.9"];
+  nixpkgs.config.permittedInsecurePackages = [ "electron-13.6.9" ];
   programs.command-not-found.enable = true;
 
   home.sessionVariables = {

@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 # A basic bash configuration inspired by ubuntu defaults. I keep this light
 #  as most configuration is done in zsh.
 {

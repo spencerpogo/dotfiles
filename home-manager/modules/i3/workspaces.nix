@@ -1,6 +1,7 @@
 let
   esc = v: ''"${v}"'';
-in {
+in
+{
   ws0 = esc "0:"; # discord
   ws1 = esc "1:"; # firefox
   ws2 = esc "2:"; # terminals

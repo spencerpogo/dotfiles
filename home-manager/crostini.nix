@@ -1,11 +1,10 @@
-{
-  pkgs,
-  lib,
-  ...
+{ pkgs
+, lib
+, ...
 }:
 # crostini (chromebook)
 {
-  imports = [./configs/base.nix ./configs/cli.nix ./modules/tmux.nix ./modules/vscode.nix];
+  imports = [ ./configs/base.nix ./configs/cli.nix ./modules/tmux.nix ./modules/vscode.nix ];
 
   home.sessionVariables = {
     EDITOR = "vim";
@@ -13,7 +12,7 @@
   };
 
   nix.package = pkgs.nix;
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # enable non-nixos
   targets.genericLinux.enable = true;

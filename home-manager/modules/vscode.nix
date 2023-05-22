@@ -1,13 +1,13 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }:
 # VS Codium (not code) config
 {
   home.packages = [
     pkgs.rnix-lsp
+    pkgs.nixpkgs-fmt
   ];
 
   programs.vscode = {
@@ -115,7 +115,7 @@
       };
       "[rust]"."editor.tabSize" = 4;
       "[python]" = {
-        "gitlens.codeLens.symbolScopes" = ["!Module"];
+        "gitlens.codeLens.symbolScopes" = [ "!Module" ];
         "editor.wordBasedSuggestions" = false;
         "editor.tabSize" = 4;
       };
@@ -124,7 +124,7 @@
         "editor.formatOnPaste" = false;
         "editor.formatOnType" = false;
       };
-      "[css]" = {"editor.defaultFormatter" = "esbenp.prettier-vscode";};
+      "[css]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
       "emmet.excludeLanguages" = [
         "markdown"
         "typescript"
@@ -159,7 +159,7 @@
       "java.semanticHighlighting.enabled" = true;
       "keyboard.dispatch" = "keyCode";
       "python.analysis.logLevel" = "Trace";
-      "python.autoComplete.extraPaths" = ["." "/home/scoder12/.pyenv/versions/3.8.2/lib/python3.8"];
+      "python.autoComplete.extraPaths" = [ "." "/home/scoder12/.pyenv/versions/3.8.2/lib/python3.8" ];
       "python.formatting.provider" = "black";
       "python.languageServer" = "Pylance";
       "vim.handleKeys" = {
@@ -183,14 +183,14 @@
       "coboleditor.intellisense_include_unchanged" = false;
       "python.dataScience.sendSelectionToInteractiveWindow" = false;
       "workbench.editorAssociations"."*.ipynb" = "jupyter.notebook.ipynb";
-      "rust-analyzer.diagnostics.disabled" = ["unresolved-macro-call"];
+      "rust-analyzer.diagnostics.disabled" = [ "unresolved-macro-call" ];
       "rust-analyzer.inlayHints.maxLength" = 10;
       "typescript.preferences.importModuleSpecifier" = "relative";
       "javascript.preferences.importModuleSpecifier" = "relative";
       "typescriptreact.preferences.importModuleSpecifierEnding" = "js";
       "javascript.preferences.importModuleSpecifierEnding" = "js";
       "editor.bracketPairColorization.enabled" = true;
-      "colorize.languages" = ["nix"];
+      "colorize.languages" = [ "nix" ];
       "editor.autoClosingBrackets" = "beforeWhitespace";
       "editor.inlayHints.enabled" = "offUnlessPressed";
       "css.lint.unknownAtRules" = "ignore";
