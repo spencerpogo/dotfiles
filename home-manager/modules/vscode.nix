@@ -6,6 +6,10 @@
 }:
 # VS Codium (not code) config
 {
+  home.packages = [
+    pkgs.rnix-lsp
+  ];
+
   programs.vscode = {
     enable = true;
     # no tracking for me thanks
@@ -50,59 +54,21 @@
         {
           name = "andromeda";
           publisher = "EliverLara";
-          version = "1.7.1";
-          sha256 = "sha256-gCpL94MCMCDuSJ7O0ntOl/GDWrK+VDSIyGMkrW5bV8Y=";
+          version = "1.8.1";
+          sha256 = "sha256-O0WIewAExQTLlwstAglx1/6ukLntAqXxOEKRzw/5wKA=";
         }
         {
           name = "discord-vscode";
           publisher = "icrawl";
-          version = "5.6.3";
-          sha256 = "0z7niql0ax31mm03rkdknzm90s7ayqpz474cqx482iwdyi68ccfh";
-        }
-        {
-          name = "prisma";
-          publisher = "Prisma";
-          version = "3.6.0";
-          sha256 = "08rw0xnzmx3ssl73p3br82rysm13nw3vyy24lxga64n8xndsllk1";
+          version = "5.8.0";
+          sha256 = "sha256-IU/looiu6tluAp8u6MeSNCd7B8SSMZ6CEZ64mMsTNmU=";
         }
         {
           name = "vscode-wakatime";
           publisher = "WakaTime";
-          version = "22.0.1";
-          sha256 = "sha256-MU8xG2aAkn0eYzSXLYytU8geWLDhh0WKbDYP9bCHtOw=";
+          version = "24.0.10";
+          sha256 = "sha256-zcp32iOSI5EJnaxwNBn5z1NPU8OFLL4ezr5ZC2aJsgk=";
         }
-        /*
-        {
-          name = "import-sorter";
-          publisher = "mike-co";
-          version = "3.3.1";
-          sha256 = "0z6biw0a06as63nb0pbxpk5j3dxwk7n1v14f4dk7f9hh7j69qp2s";
-        }
-        {
-          name = "processing-formatter";
-          publisher = "millennIumAMbiguity";
-          version = "0.4.4";
-          sha256 = "0fksfpf9b8x4mbl2d69hpii1105751s62dfmg30bv48aiabh6278";
-        }
-        {
-          name = "LiveServer";
-          publisher = "ritwickdey";
-          version = "5.6.1";
-          sha256 = "077arf3hsn1yb8xdhlrax5gf93ljww78irv4gm8ffmsqvcr1kws0";
-        }
-        {
-          name = "language-pde";
-          publisher = "Tobiah";
-          version = "1.4.6";
-          sha256 = "1v2gwwllk269hba2mc22scfr0bizwndgg7zm9wsxffm52pwfjqp9";
-        }
-        {
-          name = "vscode-proto3";
-          publisher = "zxh404";
-          version = "0.5.4";
-          sha256 = "08dfl5h1k6s542qw5qx2czm1wb37ck9w2vpjz44kp2az352nmksb";
-        }
-        */
       ];
 
     keybindings = [
