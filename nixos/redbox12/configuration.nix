@@ -10,6 +10,10 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+
+    ./modules/dconf-dbus.nix
+    ./nix.nix
+    ./xserver.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -51,7 +55,6 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-  fonts.fonts = [ pkgs.noto-fonts-cjk ];
   # console = {
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";
@@ -62,62 +65,10 @@
     "/share/zsh" # zsh completions for commands
   ];
 
-  # Enable DConf for gtk3 applications and firefox
-  programs.dconf.enable = true;
-  # Needed for flameshot
-  services.dbus.enable = true;
-
-  nix = {
-    package = pkgs.nixUnstable;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-  };
-  # Channel compat
-  # https://ayats.org/blog/channels-to-flakes/
-  environment.etc."nix/inputs/nixpkgs".source = inputs.nixpkgs.outPath;
-  environment.etc."nix/inputs/home-manager".source =
-    inputs.home-manager.outPath;
-  nix.nixPath = [
-    "nixpkgs=/etc/nix/inputs/nixpkgs"
-    "home-manager=/etc/nix/inputs/home-manager"
-  ];
-  nix.registry = with lib;
-    mapAttrs' (name: value: nameValuePair name { flake = value; }) inputs;
-
   boot.kernelModules = [ "amdgpu" "nbd" ];
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
-
-  services.xserver = {
-    enable = true;
-    videoDrivers = [ "amdgpu" ];
-
-    # Configure keymap in X11
-    layout = "us";
-    xkbOptions = "caps:escape_shifted_capslock";
-
-    displayManager = {
-      # password is needed to unlock disk so don't ask again
-      autoLogin = {
-        enable = true;
-        user = "spencer";
-      };
-      session = [
-        {
-          # name is purely cosmetic
-          name = "i3";
-          manage = "window";
-          start = ''
-            ${pkgs.runtimeShell} $HOME/.hm-xsession &
-            waitPID=$!
-          '';
-        }
-      ];
-      # also cosmetic, but should match above
-      defaultSession = "none+i3";
-    };
-  };
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
