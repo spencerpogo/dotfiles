@@ -85,11 +85,6 @@
   nix.registry = with lib;
     mapAttrs' (name: value: nameValuePair name { flake = value; }) inputs;
 
-  nix.settings = {
-    daemonCPUSchedPolicy = "idle";
-    daemonIOSchedClass = "idle";
-  };
-
   boot.kernelModules = [ "amdgpu" "nbd" ];
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;

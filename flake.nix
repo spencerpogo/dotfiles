@@ -40,11 +40,6 @@
         };
     in
     {
-      nixosConfigurations.redbox12 = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        system = "x86_64-linux";
-        modules = [ ./redbox12/configuration.nix ];
-      };
       homeConfigurations.redbox12 = mkHome {
         config = ./home-manager/redbox.nix;
         system = "x86_64-linux";
@@ -64,6 +59,12 @@
         config = ./home-manager/parrot.nix;
         system = "x86_64-linux";
         username = "user";
+      };
+
+      nixosConfigurations.redbox12 = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        system = "x86_64-linux";
+        modules = [ ./nixos/redbox12/configuration.nix ];
       };
     };
 }
