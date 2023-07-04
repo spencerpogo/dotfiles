@@ -11,9 +11,9 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
-    ./modules/dconf-dbus.nix
-    ./nix.nix
-    ./xserver.nix
+    ../modules/dconf-dbus.nix
+    ../modules/nix.nix
+    ../modules/xserver.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
