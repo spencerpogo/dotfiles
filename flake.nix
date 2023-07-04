@@ -40,16 +40,6 @@
         };
     in
     {
-      homeConfigurations.redbox12 = mkHome {
-        config = ./home-manager/redbox.nix;
-        system = "x86_64-linux";
-        username = "spencer";
-      };
-      homeConfigurations.vps = mkHome {
-        config = ./home-manager/vps.nix;
-        system = "x86_64-linux";
-        username = "spencer";
-      };
       homeConfigurations.crostini = mkHome {
         config = ./home-manager/crostini.nix;
         system = "x86_64-linux";
@@ -59,6 +49,21 @@
         config = ./home-manager/parrot.nix;
         system = "x86_64-linux";
         username = "user";
+      };
+      homeConfigurations.redbox12 = mkHome {
+        config = ./home-manager/redbox.nix;
+        system = "x86_64-linux";
+        username = "spencer";
+      };
+      homeConfigurations.scuffedpad = mkHome {
+        config = ./home-manager/scuffedpad.nix;
+        system = "x86_64-linux";
+        username = "spencer";
+      };
+      homeConfigurations.vps = mkHome {
+        config = ./home-manager/vps.nix;
+        system = "x86_64-linux";
+        username = "spencer";
       };
 
       nixosConfigurations.redbox12 = nixpkgs.lib.nixosSystem {
