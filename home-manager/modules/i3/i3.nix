@@ -125,7 +125,6 @@ in
       assigns.${ws2} = [{ class = "^Alacritty$"; }];
       assigns.${ws3} = [{ class = "^VSCodium$"; }];
       assigns.${ws4} = [{ class = "^zoom$"; } { class = "^[cC]hromium-browser$"; }];
-      assigns.${ws8} = [{ class = "^Steam$"; }];
       assigns.${ws9} = [
         { class = "^csgo_linux64$"; }
         { class = "^factorio$"; }
@@ -221,6 +220,7 @@ in
       workspace ${ws1} output ${outPrimary}
 
       for_window [class="^Spotify$"] move --no-auto-back-and-forth to workspace ${ws7}
+      for_window [class="^steam$"] move --no-auto-back-and-forth to workspace ${ws8}
     '';
   };
 }
