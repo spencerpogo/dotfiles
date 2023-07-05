@@ -53,15 +53,20 @@
   };
 
   sound.enable = true;
+  sound.mediaKeys = {
+    enable = true;
+    volumeStep = "5%";
+  };
   hardware.pulseaudio.enable = true;
 
+  programs.light.enable = true;
   programs.ssh.startAgent = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.spencer = {
     isNormalUser = true;
     description = "spencer";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" ];
     packages = with pkgs; [ ];
   };
 

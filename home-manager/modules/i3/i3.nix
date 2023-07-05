@@ -119,6 +119,12 @@ in
         "${mod}+Shift+p" = "exec --no-startup-id ${pkgs.i3lock}/bin/i3lock";
 
         "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui";
+
+        "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume 0 +5%";
+        "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume 0 -5%";
+        "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute 0 toggle";
+        "XF86MonBrightnessUp" = "exec --no-startup-id light -A 30";
+        "XF86MonBrightnessDown" = "exec --no-startup-id light -U 30";
       };
 
       assigns.${ws0} = [{ class = "^discord$"; } { class = "^signal$"; }];
