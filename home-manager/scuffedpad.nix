@@ -55,5 +55,7 @@
     # plover.dev
     # json tool
     jq
+    # resource usage
+    htop
   ];
 }

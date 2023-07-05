@@ -71,5 +71,10 @@
         system = "x86_64-linux";
         modules = [ ./nixos/redbox12/configuration.nix ];
       };
+      nixosConfigurations.scuffedpad = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        system = "x86_64-linux";
+        modules = [ ./nixos/scuffedpad/configuration.nix ];
+      };
     };
 }
