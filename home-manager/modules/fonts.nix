@@ -10,6 +10,7 @@
         "FiraCode"
         # Terminal font
         "Meslo"
+        "NerdFontsSymbolsOnly"
       ];
     })
     pkgs.font-awesome_5
