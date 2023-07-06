@@ -30,7 +30,7 @@ in
     enable = true;
     bars.bottom = {
       theme = "nord-dark";
-      settings.icons.icons = "awesome5";
+      settings.icons.icons = "material-nf";
       settings.icons.overrides = {
         # idk why these aren't the default
         music_prev = "玲";
@@ -173,7 +173,7 @@ in
           fonts = {
             # Monospace still makes fontwawesome fonts work
             # putting fontawesome as the font face makes colons off-center
-            names = [ "monospace" ];
+            names = [ "DejaVu Sans Mono" ];
             size = 10.0;
           };
           trayOutput = "primary";
