@@ -229,4 +229,8 @@ in
       for_window [class="^steam$"] move --no-auto-back-and-forth to workspace ${ws8}
     '';
   };
+
+  home.activation.clearDmenuCacheAction = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    $DRY_RUN_CMD rm -f $HOME/.cache/dmenu_run
+  '';
 }
