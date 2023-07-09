@@ -79,5 +79,7 @@
     alejandra
     # ebooks
     calibre
+    # notes
+    obsidian
   ];
 }
