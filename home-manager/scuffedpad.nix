@@ -27,6 +27,8 @@
     BROWSER = "${pkgs.firefox}/bin/firefox";
   };
 
+  home.hasBattery = true;
+
   home.packages = with pkgs; [
     # secondary browser, for school and WebGL stuff
     ungoogled-chromium

@@ -16,6 +16,7 @@ let
 in
 {
   imports = [
+    ../hasBattery.nix
     ./startup.nix
   ];
 
@@ -63,6 +64,14 @@ in
           format = "$icon $1m.eng(w:4)";
         }
         { block = "sound"; }
+      ] ++ (if config.home.hasBattery then [
+        {
+          block = "battery";
+          format = "$icon  $percentage";
+          full_format = "$icon full";
+          empty_format = "$icon empty";
+        }
+      ] else [ ]) ++ [
         {
           block = "time";
           interval = 1;
