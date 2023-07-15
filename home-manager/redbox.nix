@@ -81,5 +81,11 @@
     calibre
     # notes
     obsidian
+    # nix searching
+    nix-index
+    # wrapping sqlite
+    rlwrap
+    # sqlite
+    sqlite
   ];
 }
