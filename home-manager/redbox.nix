@@ -43,7 +43,7 @@
     # secondary browser, for school and WebGL stuff
     ungoogled-chromium
     # chat
-    discord
+    (discord.override { withOpenASAR = true; withVencord = true; })
     signal-desktop
     # meetings
     zoom-us
