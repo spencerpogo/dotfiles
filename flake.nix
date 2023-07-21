@@ -33,6 +33,10 @@
               };
               nixpkgs.overlays = [
                 nur.overlay
+                (self: super: {
+                  discord =
+                    (super.discord.override { withOpenASAR = true; withVencord = true; });
+                })
               ];
             }
             config
