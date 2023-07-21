@@ -35,6 +35,12 @@
   # like /, swap partition is part of luks group
   swapDevices = [{ device = "/dev/disk/by-uuid/f0a3b235-96e1-4ad7-81ce-024e5e8f7cb1"; }];
 
+  # 2nd drive
+  fileSystems."/mnt/basement" = {
+    device = "/dev/disk/by-uuid/05534c5d-85d7-439a-8e82-1a186af3d0e5";
+    options = [ "defaults" "noatime" "nofail" ];
+  };
+
   networking.hostName = "redbox12"; # Define your hostname.
   networking.wireless.enable =
     false; # Enables wireless support via wpa_supplicant.
