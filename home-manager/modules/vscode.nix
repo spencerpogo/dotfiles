@@ -194,6 +194,7 @@
       "editor.autoClosingBrackets" = "beforeWhitespace";
       "editor.inlayHints.enabled" = "offUnlessPressed";
       "css.lint.unknownAtRules" = "ignore";
+      "svelte.enable-ts-plugin" = true;
     };
   };
 }
