@@ -43,7 +43,7 @@
 
   networking.hostName = "redbox12"; # Define your hostname.
   networking.wireless.enable =
-    false; # Enables wireless support via wpa_supplicant.
+    true; # Enables wireless support via wpa_supplicant.
 
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
