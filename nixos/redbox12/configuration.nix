@@ -116,6 +116,7 @@
     file
     psmisc # fuser, killall and pstree
     lsof
+    pciutils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
