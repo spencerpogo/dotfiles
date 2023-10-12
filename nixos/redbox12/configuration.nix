@@ -37,7 +37,12 @@
 
   # 2nd drive
   fileSystems."/mnt/basement" = {
-    device = "/dev/disk/by-uuid/05534c5d-85d7-439a-8e82-1a186af3d0e5";
+    device = "/dev/disk/by-partuuid/5217ae9d-3ae9-42af-80e7-0824676c720c";
+    fsType = "ntfs3";
+    options = [ "defaults" "noatime" "nofail" "force" ];
+  };
+  fileSystems."/mnt/cubby" = {
+    device = "/dev/disk/by-partuuid/41a7ec62-6f1f-4b81-961a-0eb5927d594c";
     options = [ "defaults" "noatime" "nofail" ];
   };
 
