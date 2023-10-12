@@ -38,7 +38,7 @@ in
       };
 
       colors.normal = {
-        black = "0x1f1f1f";
+        black = "0x3e3e3e";
         red = "0xf81118";
         green = "0x2dc55e";
         yellow = "0xecba0f";
