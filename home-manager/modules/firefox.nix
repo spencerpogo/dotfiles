@@ -95,7 +95,8 @@
           "extensions.shield-recipe-client.enabled" = false;
           "extensions.webservice.discoverURL" = "";
           "general.useragent.override" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:${pkgs.firefox.version}) Gecko/20100101 Firefox/${pkgs.firefox.version}";
-          "media.autoplay.default" = 0;
+          # 0: allow; 1: blockAudible; 2: Prompt; 5: blockAll
+          "media.autoplay.default" = 5;
           "media.autoplay.enabled" = true;
           "media.eme.enabled" = false;
           "media.gmp-widevinecdm.enabled" = false;
