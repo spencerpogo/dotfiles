@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -11,11 +12,31 @@
   outputs =
     { self
     , nixpkgs
+    , nixpkgs-master
     , home-manager
     , nur
     ,
     } @ inputs:
     let
+      overlays = system:
+        let
+          pkgs-master = nixpkgs-master.legacyPackages.${system};
+        in
+        [
+          nur.overlay
+          (self: super: {
+            discord =
+              (super.discord.override { withOpenASAR = true; withVencord = true; });
+            # Temp Overrides
+            python311 = super.python311.override {
+              packageOverrides = pyself: pysuper: {
+                # https://github.com/NixOS/nixpkgs/pull/262733
+                inherit (pkgs-master.python311Packages) pygls cmake-language-server jedi-language-server ruff-lsp;
+              };
+            };
+            python311Packages = self.python311.pkgs;
+          })
+        ];
       mkHome =
         { config
         , system
@@ -31,13 +52,7 @@
                 homeDirectory = "/home/${username}";
                 stateVersion = "21.11";
               };
-              nixpkgs.overlays = [
-                nur.overlay
-                (self: super: {
-                  discord =
-                    (super.discord.override { withOpenASAR = true; withVencord = true; });
-                })
-              ];
+              nixpkgs.overlays = (overlays system);
             }
             config
           ];
