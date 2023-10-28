@@ -65,8 +65,8 @@
         {
           name = "vscode-wakatime";
           publisher = "WakaTime";
-          version = "24.0.10";
-          sha256 = "sha256-zcp32iOSI5EJnaxwNBn5z1NPU8OFLL4ezr5ZC2aJsgk=";
+          version = "24.2.3";
+          sha256 = "sha256-0QqA/lnXveY8OgoNV3LAGp2EwI11DKFoVTIxYUVH4e8=";
         }
       ];
 
