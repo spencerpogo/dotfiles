@@ -25,8 +25,6 @@
         [
           nur.overlay
           (self: super: {
-            # Temp Override until NixOS/nixpkgs#264407 lands in nixos-unstable
-            vencord = pkgs-master.vencord;
             discord =
               (super.discord.override { withOpenASAR = true; withVencord = true; });
           })
