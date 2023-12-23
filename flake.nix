@@ -27,6 +27,10 @@
           (self: super: {
             discord =
               (super.discord.override { withOpenASAR = true; withVencord = true; });
+
+            electron_25-bin =
+              (super.electron_25-bin.overrideAttrs { meta.knownVulnerabilities = [ ]; });
+            electron_25 = self.electron_25-bin;
           })
         ];
       mkHome =
