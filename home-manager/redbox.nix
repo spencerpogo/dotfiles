@@ -81,7 +81,7 @@
     calibre
     # notes
     # disabled because I can't figure out how to allow insecure electron
-    # obsidian
+    obsidian
     # nix searching
     nix-index
     # wrapping sqlite
