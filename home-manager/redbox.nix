@@ -80,12 +80,15 @@
     # ebooks
     calibre
     # notes
-    obsidian
+    # disabled because I can't figure out how to allow insecure electron
+    # obsidian
     # nix searching
     nix-index
     # wrapping sqlite
     rlwrap
     # sqlite
     sqlite
+    # image viewer (used by i3 anyway)
+    feh
   ];
 }
