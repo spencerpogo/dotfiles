@@ -53,10 +53,9 @@
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
 
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
-  networking.useDHCP = false;
+  # Enable DHCP by default for non-configured interfaces
+  networking.useDHCP = true;
+  # Explicitly enable DHCP for main interface
   networking.interfaces.enp34s0.useDHCP = true;
   #networking.interfaces.wlo1.useDHCP = true;
 
