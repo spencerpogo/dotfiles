@@ -121,6 +121,7 @@
     psmisc # fuser, killall and pstree
     lsof
     pciutils
+    htop
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
