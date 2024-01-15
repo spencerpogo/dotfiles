@@ -13,6 +13,7 @@ let
       append_layout ${./workspace-0.jsonc}; \
       workspace number ${ws1}; \
       append_layout ${./workspace-1.jsonc}"
+    ${pkgs.obsidian}/bin/obsidian &
     until host example.com; do sleep 0.2; done
     ${config.programs.firefox.package}/bin/firefox &
     ${pkgs.discord}/bin/discord &
