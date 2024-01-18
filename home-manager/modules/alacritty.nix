@@ -9,12 +9,12 @@ in
   programs.alacritty = {
     enable = true;
     settings = {
-      fonts = {
+      font = {
         normal = termfont;
-        bold = termfont;
-        italic = termfont;
-        bold_italic = termfont;
-        size = "12";
+        # bold = termfont;
+        # italic = termfont;
+        # bold_italic = termfont;
+        size = 12.0;
       };
 
       cursor = {
