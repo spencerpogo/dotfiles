@@ -6,7 +6,6 @@
 # VS Codium (not code) config
 {
   home.packages = [
-    pkgs.rnix-lsp
     pkgs.nixpkgs-fmt
   ];
 
