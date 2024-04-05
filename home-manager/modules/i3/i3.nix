@@ -145,6 +145,7 @@ in
         { class = "^factorio$"; }
         { class = "^portal2_linux$"; }
         { class = "^Celeste"; }
+        { class = "^EverestSplash-linux$"; }
         { class = "^GettingOverIt.x86_64$"; }
         { class = "^hollow_knight.x86_64$"; }
       ];
