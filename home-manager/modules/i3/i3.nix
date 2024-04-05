@@ -238,6 +238,8 @@ in
       for_window [class="Spotify"] move --no-auto-back-and-forth to workspace ${ws7}
       for_window [class="steam"] move --no-auto-back-and-forth to workspace ${ws8}
       for_window [class="obsidian"] move --no-auto-back-and-forth to workspace ${ws3}
+      no_focus [window_role="alert"]
+      for_window [window_role="alert"] floating enable
     '';
   };
 
