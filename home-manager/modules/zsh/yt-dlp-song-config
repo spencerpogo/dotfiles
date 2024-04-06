@@ -1,0 +1,22 @@
+# yt-dlp config for downloading songs
+
+--extract-audio
+# don't output weird formats like opus.
+--audio-format "wav/mp3/flac"
+# don't bury the song in the "recent" sort of file managers
+--no-mtime
+
+# ffmpeg audio quality to use when converting the audio with --extract-audio.
+# 0 (best) and 10 (worst) for VBR or a specific bitrate like 128K (default 5)
+--audio-quality 0
+
+--embed-metadata
+# TODO: figure out how to increase thumbnail resolution
+--embed-thumbnail
+
+# Strip leading `.`s from the filename so that it will not be hidden on linux
+# Spotify local files seems to not import files otherwise
+--parse-metadata 'title:\.*(?P<clean_title>.+)'
+# output only the title in the filename (I usually make a new directory for each
+#  album/group of songs so stuff like artist isn't really needed)
+--output '%(clean_title)s.%(ext)s'

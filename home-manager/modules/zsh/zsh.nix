@@ -86,6 +86,8 @@ in
       # Tasks
       al = "alejandra -q .";
       dmesgtail = "sudo dmesg --color=always | tail";
+      # yt-dlp
+      yt-dlp-song = "yt-dlp --config-location ${./yt-dlp-song-config}";
       # misc
       cmdv = "command -v";
       rf = "readlink -f";
