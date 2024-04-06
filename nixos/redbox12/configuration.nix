@@ -78,7 +78,12 @@
   boot.kernelModules = [ "amdgpu" "nbd" ];
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
+  hardware.opengl.extraPackages = [ pkgs.intel-compute-runtime pkgs.rocmPackages.clr.icd ];
   services.xserver.videoDrivers = [ "amdgpu" ];
+
+  environment.variables = {
+    ROC_ENABLE_PRE_VEGA = "1";
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
