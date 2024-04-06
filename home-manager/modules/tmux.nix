@@ -28,8 +28,10 @@
       bind - split-window -c "#{pane_current_path}"
       bind \\ split-window -h -c "#{pane_current_path}"
 
-      # quickly launch lazygit
+      # g for git
       bind g new-window -c "#{pane_current_path}" "${pkgs.lazygit}/bin/lazygit"
+      # e for editor
+      bind e new-window -c "#{pane_current_path}" "codium ."
     '';
   };
 }
