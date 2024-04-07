@@ -137,6 +137,11 @@
   #   enableSSHSupport = true;
   # };
 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [
+    # TODO
+  ];
+
   # List services that you want to enable:
 
   # Enable steam games
