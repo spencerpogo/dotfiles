@@ -2,7 +2,8 @@
 
 --extract-audio
 # don't output weird formats like opus.
---audio-format "wav/mp3/flac"
+# Supported filetypes for thumbnail embedding are: mp3, mkv/mka, ogg/opus/flac, m4a/mp4/m4v/mov
+--audio-format "mp3/flac" # I would put ogg but it's not working rn
 # don't bury the song in the "recent" sort of file managers
 --no-mtime
 
