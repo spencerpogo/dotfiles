@@ -52,3 +52,10 @@ lsg () {
   find "${2:-.}" -maxdepth 1 -name "*$1*"
   return "$?"
 }
+
+pypr () {
+  local code="$1"
+  shift
+  python -c "print($code)" "$@"
+  return "$?"
+}
