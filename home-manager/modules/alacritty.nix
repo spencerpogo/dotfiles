@@ -14,7 +14,7 @@ in
         # bold = termfont;
         # italic = termfont;
         # bold_italic = termfont;
-        size = 12.0;
+        size = 11.5;
       };
 
       cursor = {
