@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
+    #nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,7 +12,7 @@
   outputs =
     { self
     , nixpkgs
-    , nixpkgs-master
+      #, nixpkgs-master
     , home-manager
     , nur
     ,
@@ -20,7 +20,7 @@
     let
       overlays = system:
         let
-          pkgs-master = nixpkgs-master.legacyPackages.${system};
+          pkgs-master = null; #nixpkgs-master.legacyPackages.${system};
         in
         [
           nur.overlay
