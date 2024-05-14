@@ -76,7 +76,7 @@
     # search
     ripgrep
     # steno
-    # plover.dev
+    plover.dev
     # shell hist
     mcfly
     # json tool
@@ -88,7 +88,6 @@
     # ebooks
     calibre
     # notes
-    # disabled because I can't figure out how to allow insecure electron
     obsidian
     # nix searching
     nix-index
@@ -98,5 +97,11 @@
     sqlite
     # image viewer (used by i3 anyway)
     feh
+    # youtube downloader
+    yt-dlp
+    # song metadata editor
+    easytag
+    # process management
+    htop
   ];
 }
