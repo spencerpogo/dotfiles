@@ -4,15 +4,12 @@
     enable = true;
 
     # Configure keymap in X11
-    layout = "us";
-    xkbOptions = "caps:escape_shifted_capslock";
+    xkb = {
+      layout = "us";
+      options = "caps:escape_shifted_capslock";
+    };
 
     displayManager = {
-      # password is needed to unlock disk so don't ask again
-      autoLogin = {
-        enable = true;
-        user = "spencer";
-      };
       session = [
         {
           # name is purely cosmetic
@@ -24,9 +21,18 @@
           '';
         }
       ];
-      # also cosmetic, but should match above
-      defaultSession = "none+i3";
     };
   };
+
+  services.displayManager = {
+    # password is needed to unlock disk so don't ask again
+    autoLogin = {
+      enable = true;
+      user = "spencer";
+    };
+    # also cosmetic, but should match above
+    defaultSession = "none+i3";
+  };
+
   fonts.packages = [ pkgs.noto-fonts-cjk ];
 }
