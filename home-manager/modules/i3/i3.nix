@@ -142,6 +142,7 @@ in
       assigns.${ws4} = [{ class = "^zoom$"; } { class = "^[cC]hromium-browser$"; }];
       assigns.${ws9} = [
         { class = "^csgo_linux64$"; }
+        { class = "^cs$"; }
         { class = "^factorio$"; }
         { class = "^portal2_linux$"; }
         { class = "^Celeste"; }
