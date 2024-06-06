@@ -20,7 +20,7 @@
     extensions =
       (with pkgs.vscode-extensions; [
         # Rust
-        matklad.rust-analyzer
+        rust-lang.rust-analyzer
         # Code time tracking
         #WakaTime.vscode-wakatime
         # unfree microsoft python shit
