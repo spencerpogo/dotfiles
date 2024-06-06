@@ -139,7 +139,25 @@
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = [
-    # TODO
+    pkgs.fuse
+    pkgs.glib
+    pkgs.libglvnd
+    pkgs.nss
+    pkgs.nspr
+    pkgs.expat
+    pkgs.freetype
+    pkgs.fontconfig.lib
+    pkgs.xorg.libX11
+    pkgs.xorg.libxcb
+    pkgs.xorg.libXcomposite
+    pkgs.xorg.libXcursor
+    pkgs.xorg.libXdamage
+    pkgs.xorg.libXfixes
+    pkgs.xorg.libXi
+    pkgs.xorg.libXrender
+    pkgs.xorg.libXtst
+    pkgs.alsa-lib
+    pkgs.dbus.lib
   ];
 
   # List services that you want to enable:
