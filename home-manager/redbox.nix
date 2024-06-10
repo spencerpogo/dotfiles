@@ -103,5 +103,7 @@
     easytag
     # process management
     htop
+    # media processing
+    ffmpeg
   ];
 }
