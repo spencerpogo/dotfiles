@@ -76,7 +76,7 @@
   ];
 
   boot.kernelModules = [ "amdgpu" "nbd" ];
-  hardware.opengl.extraPackages = [ pkgs.intel-compute-runtime pkgs.rocmPackages.clr.icd ];
+  hardware.graphics.extraPackages = [ pkgs.intel-compute-runtime pkgs.rocmPackages.clr.icd ];
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   environment.variables = {
