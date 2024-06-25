@@ -177,6 +177,8 @@
 
   programs.ssh.startAgent = true;
 
+  # XKCD: Coordinate Precision
+  # https://xkcd.com/2170/
   location = {
     provider = "manual";
     latitude = 34.05;
