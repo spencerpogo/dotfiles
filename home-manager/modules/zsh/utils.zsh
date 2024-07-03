@@ -54,8 +54,20 @@ lsg () {
 }
 
 pypr () {
-  local code="$1"
+  if [[ "$#" -lt 1 ]]; then
+    printf 'Usage: %s <expr> [args...]' "$0"
+    return 1
+  fi
+  local expr="$1"
   shift
-  python -c "print($code)" "$@"
+  python -c "print($expr)" "$@"
   return "$?"
+}
+
+nixbin () {
+  if [[ "$#" -lt 1 ]]; then
+    printf '%s: no binary specified' "$0"
+    return 1
+  fi
+  nix-locate --at-root "/bin/$1"
 }
