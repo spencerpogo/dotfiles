@@ -7,6 +7,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nur.url = "github:nix-community/nur";
+    plover-flake.url = "github:dnaq/plover-flake";
   };
 
   outputs =
@@ -15,6 +16,7 @@
       #, nixpkgs-master
     , home-manager
     , nur
+    , plover-flake
     ,
     } @ inputs:
     let
@@ -31,6 +33,8 @@
             electron_25-bin =
               (super.electron_25-bin.overrideAttrs { meta.knownVulnerabilities = [ ]; });
             electron_25 = self.electron_25-bin;
+
+            plover-from-flake = plover-flake.packages.${system}.plover;
           })
         ];
       mkHome =

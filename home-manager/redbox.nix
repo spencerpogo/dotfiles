@@ -105,5 +105,7 @@
     htop
     # media processing
     ffmpeg
+    # steno
+    (lib.hiPrio (plover-from-flake.with-plugins (ps: [ ps.plover_lapwing_aio ])))
   ];
 }
