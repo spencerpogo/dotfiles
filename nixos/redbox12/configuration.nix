@@ -49,15 +49,17 @@
   networking.hostName = "redbox12"; # Define your hostname.
   networking.wireless.enable =
     true; # Enables wireless support via wpa_supplicant.
+  # Open sockets that wpa_cli can talk to
+  networking.wireless.extraConfig = "ctrl_interface=DIR=/run/wpa_supplicant GROUP=wheel";
 
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
 
   # Enable DHCP by default for non-configured interfaces
   networking.useDHCP = true;
-  # Explicitly enable DHCP for main interface
+  # Explicitly enable DHCP for main interfaces
   networking.interfaces.enp34s0.useDHCP = true;
-  #networking.interfaces.wlo1.useDHCP = true;
+  networking.interfaces.wlo1.useDHCP = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
