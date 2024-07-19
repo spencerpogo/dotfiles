@@ -67,5 +67,5 @@ nixbin () {
     printf '%s: no binary specified' "$0"
     return 1
   fi
-  nix-locate --at-root "/bin/$1"
+  nix-locate --top-level --minimal --at-root --whole-name "/bin/$1"
 }
