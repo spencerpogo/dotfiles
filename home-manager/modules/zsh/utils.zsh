@@ -50,7 +50,6 @@ lsg () {
     return 1
   fi
   find "${2:-.}" -maxdepth 1 -name "*$1*"
-  return "$?"
 }
 
 pypr () {
@@ -61,7 +60,6 @@ pypr () {
   local expr="$1"
   shift
   python -c "print($expr)" "$@"
-  return "$?"
 }
 
 nixbin () {
