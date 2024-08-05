@@ -41,7 +41,7 @@
         { config
         , system
         , username
-        ,
+        , extraSpecialArgs ? { }
         }:
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
@@ -56,6 +56,7 @@
             }
             config
           ];
+          inherit extraSpecialArgs;
         };
     in
     {
@@ -74,6 +75,14 @@
         system = "x86_64-linux";
         username = "spencer";
       };
+      homeConfigurations.laptop = mkHome {
+        config = ./home-manager/laptop.nix;
+        system = "x86_64-linux";
+        username = "spencer";
+        extraSpecialArgs = {
+          system-nixos-config = self.nixosConfigurations.sppmit;
+        };
+      };
       homeConfigurations.scuffedpad = mkHome {
         config = ./home-manager/scuffedpad.nix;
         system = "x86_64-linux";
@@ -89,6 +98,11 @@
         specialArgs = { inherit inputs; };
         system = "x86_64-linux";
         modules = [ ./nixos/redbox12/configuration.nix ];
+      };
+      nixosConfigurations.sppmit = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        system = "x86_64-linux";
+        modules = [ ./nixos/laptop/configuration.nix ];
       };
       nixosConfigurations.scuffedpad = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
