@@ -25,11 +25,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1721804110,
-        "narHash": "sha256-i4jINRazBKPqlaS+qhlP+kV/UHEq3vs5itfpblqu4ZM=",
+        "lastModified": 1723015306,
+        "narHash": "sha256-jQnFEtH20/OsDPpx71ntZzGdRlpXhUENSQCGTjn//NA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "af70fc502a15d7e1e4c5a4c4fc8e06c2ec561e0c",
+        "rev": "b3d5ea65d88d67d4ec578ed11d4d2d51e3de525e",
         "type": "github"
       },
       "original": {
@@ -40,11 +40,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1721562059,
-        "narHash": "sha256-Tybxt65eyOARf285hMHIJ2uul8SULjFZbT9ZaEeUnP8=",
+        "lastModified": 1722813957,
+        "narHash": "sha256-IAoYyYnED7P8zrBFMnmp7ydaJfwTnwcnqxUElC1I26Y=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+        "rev": "cb9a96f23c491c081b38eab96d22fa958043c9fa",
         "type": "github"
       },
       "original": {
@@ -56,11 +56,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1721622093,
-        "narHash": "sha256-iQ+quy3A1EKeFyLyAtjhgSvZHH7r+xybXZkxMhasN4I=",
+        "lastModified": 1723019560,
+        "narHash": "sha256-O/kxmybNecC3Efr6ITOdtCzFv90/B2Iiedavj5aRWt0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "453402b94f39f968a7c27df28e060f69e4a50c3b",
+        "rev": "f5129fb42b9c262318130a97b47516946da3e7d7",
         "type": "github"
       },
       "original": {
@@ -72,11 +72,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1721843106,
-        "narHash": "sha256-hit3Wpb3587/a5yeAOAKmDsJxLrCNbusJWq/r1TyV5A=",
+        "lastModified": 1723176253,
+        "narHash": "sha256-I1zoablw1aHmq/hHTEn0QqoT48n8H081qH4sP31TeNM=",
         "owner": "nix-community",
         "repo": "nur",
-        "rev": "2cb5d10f9c40f92477b6fa2a8b73d541f9f88a75",
+        "rev": "19a63ed71b7edf323fe5f57ee3f2d9dd43dc5a1a",
         "type": "github"
       },
       "original": {
@@ -113,11 +113,11 @@
         "rtf-tokenize": "rtf-tokenize"
       },
       "locked": {
-        "lastModified": 1721705916,
-        "narHash": "sha256-Q+CZpiTv+NWO8IqOSD8rlwP0G+qKqAZ9kx/rJaidH7k=",
+        "lastModified": 1723088130,
+        "narHash": "sha256-B6vpwGgHWucADefC86mTqw7j4uak+KJhnK3EexUOOQk=",
         "owner": "dnaq",
         "repo": "plover-flake",
-        "rev": "442570cfe4ee594a0d374a7b2983442de9b5a1fb",
+        "rev": "0218c06967c7f567008e4c1b99948daffaddee0b",
         "type": "github"
       },
       "original": {
