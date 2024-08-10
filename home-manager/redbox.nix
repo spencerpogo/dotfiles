@@ -75,8 +75,6 @@
     virt-manager
     # search
     ripgrep
-    # steno
-    plover.dev
     # shell hist
     mcfly
     # json tool
@@ -106,6 +104,6 @@
     # media processing
     ffmpeg
     # steno
-    (lib.hiPrio (plover-from-flake.with-plugins (ps: [ ps.plover_lapwing_aio ])))
+    (plover-from-flake.with-plugins (ps: [ ps.plover-lapwing-aio ]))
   ];
 }
