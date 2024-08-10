@@ -28,7 +28,7 @@ ns() {
     return $ret
   fi
 
-  nix-shell -p "${pkgs[@]}" --run "$(printf "'%s' " "${cmd[@]}")"
+  nix-shell -p "${pkgs[@]}" --run "$(printf "%q " "${cmd[@]}")"
   return $?
 }
 
