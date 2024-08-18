@@ -4,7 +4,7 @@
   programs.git = {
     enable = true;
     userName = "Spencer Pogorzelski";
-    userEmail = "34356756+Scoder12@users.noreply.github.com";
+    userEmail = "34356756+spencerpogo@users.noreply.github.com";
     extraConfig = {
       init.defaultBranch = "main";
     };
