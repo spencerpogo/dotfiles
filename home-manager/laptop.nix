@@ -90,7 +90,7 @@
     # nix code formatting
     alejandra
     # ebooks
-    calibre
+    # calibre (broken rn: nixOS/nixpkgs#348845)
     # notes
     obsidian
     # nix searching
