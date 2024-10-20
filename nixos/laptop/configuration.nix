@@ -172,6 +172,7 @@
       "steam"
       "steam-original"
       "steam-runtime"
+      "steam-unwrapped"
       "steam-run"
       "nvidia-x11"
       "nvidia-settings"
