@@ -19,7 +19,7 @@ let
     "application/xhtml+xml" = browser;
     "application/x-extension-xhtml" = browser;
     "application/x-extension-xht" = browser;
-    "x-scheme-handler/sgnl" = [ "signal.desktop" ];
+    "x-scheme-handler/sgnl" = [ "signal-desktop.desktop" ];
     "x-scheme-handler/signalcaptcha" = [ "signal-desktop.desktop" ];
   };
 in
