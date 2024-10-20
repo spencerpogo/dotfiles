@@ -80,12 +80,13 @@
   services.printing.enable = true;
 
   # Enable sound.
-  hardware.pulseaudio.enable = true;
+  # plasma6 uses pipewire so have to choose that here
+  # hardware.pulseaudio.enable = true;
   # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+  };
 
   # Enable touchpad support (enabled by default in most desktopManager).
   services.libinput.enable = true;
