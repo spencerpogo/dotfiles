@@ -92,7 +92,6 @@ in
       cmdv = "command -v";
       rf = "readlink -f";
       ls = "ls --color=tty";
-      pkgsattr = "nix-build --no-out-link '<nixpkgs>' -A";
       gr = "grep";
       gri = "grep -i";
       proc = "ps -o args --no-headers -p";
