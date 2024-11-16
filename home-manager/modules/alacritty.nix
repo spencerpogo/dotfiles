@@ -22,7 +22,7 @@ in
         thickness = 0.2;
       };
 
-      shell =
+      terminal.shell =
         if config.programs.tmux.enable
         then {
           program = pkgs.runtimeShell;
