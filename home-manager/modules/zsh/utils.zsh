@@ -1,3 +1,5 @@
+_myfuncs=()
+
 copy () {
   # Command substitution removes trailing newlines, perfect for
   #  copying to clipboard
@@ -12,36 +14,39 @@ copy () {
   # copy the text to the clipboard
   printf "%s" "$text" | xclip -sel c
 }
+_myfuncs+=copy
 
 nsh () {
   nix-shell -p "$@" --run zsh
   return "$?"
 }
+_myfuncs+=nsh
 
 tc () { # transform clipboard
   paste | eval "$*" | copy
 }
+_myfuncs+=tc
 
 mkcd () {
   mkdir -p "$1"
   cd "$1"
 }
+_myfuncs+=mkcd
 
 ENC_ITS=100000
 enc () {
   openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter "$ENC_ITS" -salt -in "$1" -out "$1.enc"
 }
+_myfuncs+=enc
 dec () {
   openssl enc -d -aes-256-cbc -md sha512 -pbkdf2 -iter "$ENC_ITS" -salt -in "$@"
 }
-dec2cmd () {
-  local var=$(python -c 'import getpass;print(getpass.getpass("Enter pwd:"))')
-  dec "$1" -k "$var" | eval "$2"
-}
+_myfuncs+=dec
 
 rfw () {
   readlink -f $(which "$1")
 }
+_myfuncs+=rfw
 
 # "ls grep": quickly search for a pattern in a directory's files
 lsg () {
@@ -51,6 +56,7 @@ lsg () {
   fi
   find "${2:-.}" -maxdepth 1 -name "*$1*"
 }
+_myfuncs+=lsg
 
 pypr () {
   if [[ "$#" -lt 1 ]]; then
@@ -61,6 +67,7 @@ pypr () {
   shift
   python -c "print($expr)" "$@"
 }
+_myfuncs+=pypr
 
 nixbin () {
   if [[ "$#" -lt 1 ]]; then
@@ -69,3 +76,14 @@ nixbin () {
   fi
   nix-locate --top-level --minimal --at-root --whole-name "/bin/$1"
 }
+_myfuncs+=nixbin
+
+nixattr () {
+  nix-build --no-out-link '<nixpkgs>' -A "$@"
+}
+_myfuncs+=nixattr
+
+myfuncs () {
+  printf '%s\n' "$_myfuncs[@]" | sort
+}
+_myfuncs+=myfuncs
