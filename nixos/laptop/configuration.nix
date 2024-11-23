@@ -88,6 +88,9 @@
     pulse.enable = true;
   };
 
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = false; # try to save battery
+
   # Enable touchpad support (enabled by default in most desktopManager).
   services.libinput.enable = true;
 
