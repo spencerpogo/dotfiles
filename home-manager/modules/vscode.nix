@@ -171,6 +171,8 @@
         "<C-z>" = false;
         "<C-g>" = false;
         "<C-f>" = false;
+        "<C-k>" = false;
+        "<C-p>" = false;
       };
       "workbench.colorTheme" = "Andromeda Italic Bordered";
       "workbench.iconTheme" = "material-icon-theme";
