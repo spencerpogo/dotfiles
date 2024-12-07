@@ -25,7 +25,7 @@
           pkgs-master = null; #nixpkgs-master.legacyPackages.${system};
         in
         [
-          nur.overlay
+          nur.overlays.default
           (self: super: {
             discord =
               (super.discord.override { withOpenASAR = true; withVencord = true; });
