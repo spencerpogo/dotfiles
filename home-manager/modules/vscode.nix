@@ -52,8 +52,8 @@
         {
           name = "andromeda";
           publisher = "EliverLara";
-          version = "1.8.1";
-          sha256 = "sha256-O0WIewAExQTLlwstAglx1/6ukLntAqXxOEKRzw/5wKA=";
+          version = "1.8.2";
+          sha256 = "sha256-ur+zXuKluJ0DZS5/S4RaomibnJuFy4SE4tk9i+9+ORc=";
         }
         {
           name = "discord-vscode";
@@ -64,8 +64,8 @@
         {
           name = "vscode-wakatime";
           publisher = "WakaTime";
-          version = "24.2.3";
-          sha256 = "sha256-0QqA/lnXveY8OgoNV3LAGp2EwI11DKFoVTIxYUVH4e8=";
+          version = "24.6.0";
+          sha256 = "sha256-VyyF+AAZviKOtLWVvGMhGh9tyQMse+6nUc7X57zzUBI=";
         }
       ];
 
