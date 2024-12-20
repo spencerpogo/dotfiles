@@ -4,15 +4,9 @@
   fonts.fontconfig.enable = true;
 
   home.packages = [
-    (pkgs.nerdfonts.override {
-      fonts = [
-        # coding font with amazing ligatures for editor
-        "FiraCode"
-        # Terminal font
-        "Meslo"
-        "NerdFontsSymbolsOnly"
-      ];
-    })
+    pkgs.nerd-fonts.fira-code
+    pkgs.nerd-fonts.meslo-lg
+    pkgs.nerd-fonts.symbols-only
     pkgs.font-awesome_5
   ];
 }
