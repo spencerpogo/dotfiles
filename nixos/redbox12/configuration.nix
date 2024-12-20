@@ -92,7 +92,6 @@
   services.avahi.nssmdns4 = true;
 
   # Enable sound.
-  sound.enable = true;
   hardware.pulseaudio = {
     enable = true;
     extraConfig = ''
