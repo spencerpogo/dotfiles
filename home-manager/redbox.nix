@@ -63,6 +63,8 @@
     gcc
     # seriously?
     unzip
+    # more unzip
+    p7zip
     # reverse engineering
     ghidra-bin
     # video player
