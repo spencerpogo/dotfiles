@@ -34,5 +34,5 @@
     defaultSession = "none+i3";
   };
 
-  fonts.packages = [ pkgs.noto-fonts-cjk ];
+  fonts.packages = [ pkgs.noto-fonts-cjk-sans ];
 }
