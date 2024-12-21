@@ -184,7 +184,7 @@ in
           fonts = {
             # Monospace still makes fontwawesome fonts work
             # putting fontawesome as the font face makes colons off-center
-            names = [ "DejaVu Sans Mono" ];
+            names = [ "MesloLGS Nerd Font" ];
             size = 10.0;
           };
           trayOutput = "primary";
