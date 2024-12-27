@@ -7,7 +7,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nur.url = "github:nix-community/nur";
-    plover-flake.url = "github:dnaq/plover-flake";
+    plover-flake = {
+      url = "github:dnaq/plover-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
