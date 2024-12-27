@@ -60,7 +60,7 @@ _myfuncs+=lsg
 
 pypr () {
   if [[ "$#" -lt 1 ]]; then
-    printf 'Usage: %s <expr> [args...]' "$0"
+    printf 'Usage: %s <expr> [args...]' "$0" >&2
     return 1
   fi
   local expr="$1"
@@ -68,6 +68,16 @@ pypr () {
   python -c "print($expr)" "$@"
 }
 _myfuncs+=pypr
+
+timedelta () {
+  if [[ "$#" -lt 1 ]]; then
+    printf "Usage: %s <args>" "$0" >&2
+    return 1
+  fi
+  python -c 'import sys; from datetime import timedelta;'\
+'print(eval("timedelta(" + sys.argv[1] + ")"))' "$1"
+}
+_myfuncs+=timedelta
 
 nixbin () {
   if [[ "$#" -lt 1 ]]; then
