@@ -33,7 +33,7 @@ in
         };
 
       colors.selection = {
-        text = "#ffffff";
+        text = "#d0d0d0";
         background = "#48b9c7";
       };
 

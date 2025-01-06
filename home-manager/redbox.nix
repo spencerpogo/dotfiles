@@ -16,6 +16,7 @@
     ./modules/fcitx5.nix
     ./modules/i3/i3.nix
     ./modules/guiutils.nix
+    ./modules/kitty.nix
     ./modules/tmux.nix
     ./modules/gtk.nix
     ./modules/flameshot.nix
