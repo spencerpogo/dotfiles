@@ -138,6 +138,11 @@
   programs.dconf.enable = true;
   services.dbus.enable = true;
 
+  services.udev.extraRules = ''
+    # 0d28:0204 DAPLink
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0d28", ATTR{idProduct}=="0204", MODE:="666"
+  '';
+
   nix = {
     package = pkgs.nixVersions.latest;
     extraOptions = ''
