@@ -7,7 +7,7 @@
 # VS Codium (not code) config
 {
   home.packages = [
-    pkgs.nixpkgs-fmt
+    pkgs.nixfmt-rfc-style
   ];
 
   programs.vscode = {
