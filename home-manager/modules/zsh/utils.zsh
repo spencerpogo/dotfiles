@@ -75,7 +75,7 @@ timedelta () {
     return 1
   fi
   python -c 'import sys; from datetime import timedelta;'\
-'print(eval("timedelta(" + sys.argv[1] + ")"))' "$1"
+'print(eval("timedelta(" + sys.argv[1] + ")"))' "$@"
 }
 _myfuncs+=timedelta
 
@@ -92,6 +92,11 @@ nixattr () {
   nix-build --no-out-link '<nixpkgs>' -A "$@"
 }
 _myfuncs+=nixattr
+
+cdd () {
+  cd "$(dirname "$@")"
+}
+_myfuncs+=cdd
 
 myfuncs () {
   printf '%s\n' "$_myfuncs[@]" | sort
