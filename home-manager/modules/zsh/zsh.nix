@@ -70,6 +70,7 @@ in
       }
     ];
     shellAliases = {
+      myaliases = "grep alias ~/.zshrc";
       # Clipboard
       c = "copy";
       paste = "xclip -o -sel c";
@@ -80,7 +81,7 @@ in
       "..." = "cd ../..";
       "...." = "cd ../../..";
       # Text mainpulation
-      sl = "tr -d \\n";
+      oneline = "tr -d \\n";
       tjson = "jq -Rr tojson";
       bse = "base64 -w 0";
       bsd = "base64 -d";
