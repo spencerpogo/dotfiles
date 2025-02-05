@@ -1,9 +1,12 @@
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }:
 let
-  termfont = { family = "MesloLGS Nerd Font"; };
+  termfont = {
+    family = "MesloLGS Nerd Font";
+  };
 in
 {
   programs.alacritty = {
@@ -23,14 +26,18 @@ in
       };
 
       terminal.shell =
-        if config.programs.tmux.enable
-        then {
-          program = pkgs.runtimeShell;
-          args = [ "-c" "tmux attach || tmux new" ];
-        }
-        else {
-          program = config.home.sessionVariables.SHELL;
-        };
+        if config.programs.tmux.enable then
+          {
+            program = pkgs.runtimeShell;
+            args = [
+              "-c"
+              "tmux attach || tmux new"
+            ];
+          }
+        else
+          {
+            program = config.home.sessionVariables.SHELL;
+          };
 
       colors.selection = {
         text = "#ffffff";

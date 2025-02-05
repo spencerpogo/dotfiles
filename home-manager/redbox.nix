@@ -1,8 +1,10 @@
-{ config
-, lib
-, pkgs
-, ...
-}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   # My desktop PC, running NixOS
 
   imports = [
@@ -31,8 +33,13 @@
   nixpkgs.config.permittedInsecurePackages = [ "electron-13.6.9" ];
   nixpkgs.overlays = [
     (self: super: {
-      discord =
-        (super.discord.override { withOpenASAR = true; withVencord = true; vencord = "${config.home.homeDirectory}/github/vencord/dist"; });
+      discord = (
+        super.discord.override {
+          withOpenASAR = true;
+          withVencord = true;
+          vencord = "${config.home.homeDirectory}/github/vencord/dist";
+        }
+      );
     })
   ];
   programs.command-not-found.enable = true;

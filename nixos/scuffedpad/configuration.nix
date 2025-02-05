@@ -5,15 +5,14 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
 
-      ../modules/dconf-dbus.nix
-      ../modules/nix.nix
-      ../modules/xserver.nix
-    ];
+    ../modules/dconf-dbus.nix
+    ../modules/nix.nix
+    ../modules/xserver.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -66,7 +65,11 @@
   users.users.spencer = {
     isNormalUser = true;
     description = "spencer";
-    extraGroups = [ "networkmanager" "wheel" "video" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "video"
+    ];
     packages = with pkgs; [ ];
   };
 

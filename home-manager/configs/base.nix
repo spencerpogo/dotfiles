@@ -1,10 +1,12 @@
-{ lib
-, pkgs
-, ...
+{
+  lib,
+  pkgs,
+  ...
 }:
 # Shared configuration for all profiles.
 {
-  nixpkgs.config.allowUnfreePredicate = pkg:
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
     builtins.elem (lib.getName pkg) [
       "vscode-extension-MS-python-vscode-pylance"
       "vscode-extension-ms-vscode-cpptools"

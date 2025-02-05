@@ -23,6 +23,7 @@
     ./modules/flameshot.nix
     ./modules/fonts.nix
     ./modules/alacritty.nix
+    ./modules/kitty.nix
     ./modules/ssh.nix
     ./modules/vim.nix
     ./modules/neovim/neovim.nix

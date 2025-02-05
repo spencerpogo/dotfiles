@@ -1,7 +1,8 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 # my zsh config with powerlevel10k
 let

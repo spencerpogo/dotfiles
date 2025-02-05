@@ -1,10 +1,22 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }:
 let
-  inherit (import ./workspaces.nix) ws0 ws1 ws2 ws3 ws4 ws5 ws6 ws7 ws8 ws9;
+  inherit (import ./workspaces.nix)
+    ws0
+    ws1
+    ws2
+    ws3
+    ws4
+    ws5
+    ws6
+    ws7
+    ws8
+    ws9
+    ;
 
   filename = "i3-startup.sh";
   createScriptPath = script: "${pkgs.writeShellScriptBin filename script}/bin/${filename}";

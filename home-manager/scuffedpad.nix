@@ -1,7 +1,9 @@
-{ lib
-, pkgs
-, ...
-}: {
+{
+  lib,
+  pkgs,
+  ...
+}:
+{
   imports = [
     ./configs/base.nix
     ./configs/cli.nix

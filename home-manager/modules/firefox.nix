@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # enable smooth scrolling
   home.sessionVariables.MOZ_USE_XINPUT2 = "1";
 
@@ -58,8 +59,7 @@
           "browser.disableResetPrompt" = true;
           "browser.fixup.alternate.enabled" = false;
           "browser.newtab.preload" = false;
-          "browser.newtabpage.activity-stream.section.highlights.includePocket" =
-            false;
+          "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
           "browser.newtabpage.enhanced" = false;
           "browser.newtabpage.introShown" = true;
           "browser.safebrowsing.appRepURL" = "";
@@ -104,7 +104,8 @@
           "extensions.shield-recipe-client.api_url" = "";
           "extensions.shield-recipe-client.enabled" = false;
           "extensions.webservice.discoverURL" = "";
-          "general.useragent.override" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:${pkgs.firefox.version}) Gecko/20100101 Firefox/${pkgs.firefox.version}";
+          "general.useragent.override" =
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:${pkgs.firefox.version}) Gecko/20100101 Firefox/${pkgs.firefox.version}";
           "media.eme.enabled" = false;
           "media.gmp-widevinecdm.enabled" = false;
           # Enable navigator media (microphone/camera)?
@@ -132,8 +133,7 @@
           "privacy.trackingprotection.pbmode.enabled" = true;
           "privacy.usercontext.about_newtab_segregation.enabled" = true;
           "security.ssl.disable_session_identifiers" = true;
-          "services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsoredTopSite" =
-            false;
+          "services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsoredTopSite" = false;
           "signon.autofillForms" = false;
           "toolkit.telemetry.archive.enabled" = false;
           "toolkit.telemetry.bhrPing.enabled" = false;

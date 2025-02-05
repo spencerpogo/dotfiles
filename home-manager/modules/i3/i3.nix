@@ -1,7 +1,8 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 let
   mod = "Mod4";
@@ -9,10 +10,21 @@ let
   outPrimary = "HDMI-A-0";
   outSecondary = "DVI-D-0";
 
-  wallpaper =
-    pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom.gnomeFilePath;
+  wallpaper = pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom.gnomeFilePath;
 
-  inherit (import ./workspaces.nix) ws0 ws1 ws2 ws3 ws4 ws5 ws6 ws7 ws8 ws9 ws-icons;
+  inherit (import ./workspaces.nix)
+    ws0
+    ws1
+    ws2
+    ws3
+    ws4
+    ws5
+    ws6
+    ws7
+    ws8
+    ws9
+    ws-icons
+    ;
 in
 {
   imports = [
@@ -37,47 +49,55 @@ in
         music_prev = "玲";
         music_next = "怜";
       };
-      blocks = [
-        {
-          block = "music";
-        }
-        {
-          block = "disk_space";
-          path = "/";
-          info_type = "available";
-          interval = 15;
-          warning = 20.0;
-          alert = 10.0;
-          alert_unit = "GB";
-        }
-        {
-          block = "memory";
-          interval = 5;
-        }
-        {
-          block = "cpu";
-          interval = 5;
-        }
-        {
-          block = "load";
-          interval = 5;
-          format = "$icon $1m.eng(w:4)";
-        }
-        { block = "sound"; }
-      ] ++ (if config.home.hasBattery then [
-        {
-          block = "battery";
-          format = "$icon  $percentage";
-          full_format = "$icon full";
-          empty_format = "$icon empty";
-        }
-      ] else [ ]) ++ [
-        {
-          block = "time";
-          interval = 1;
-          format = "$icon $timestamp.datetime(f:'%a %m/%d %r', l:en_US)";
-        }
-      ];
+      blocks =
+        [
+          {
+            block = "music";
+          }
+          {
+            block = "disk_space";
+            path = "/";
+            info_type = "available";
+            interval = 15;
+            warning = 20.0;
+            alert = 10.0;
+            alert_unit = "GB";
+          }
+          {
+            block = "memory";
+            interval = 5;
+          }
+          {
+            block = "cpu";
+            interval = 5;
+          }
+          {
+            block = "load";
+            interval = 5;
+            format = "$icon $1m.eng(w:4)";
+          }
+          { block = "sound"; }
+        ]
+        ++ (
+          if config.home.hasBattery then
+            [
+              {
+                block = "battery";
+                format = "$icon  $percentage";
+                full_format = "$icon full";
+                empty_format = "$icon empty";
+              }
+            ]
+          else
+            [ ]
+        )
+        ++ [
+          {
+            block = "time";
+            interval = 1;
+            format = "$icon $timestamp.datetime(f:'%a %m/%d %r', l:en_US)";
+          }
+        ];
     };
   };
 
@@ -136,11 +156,17 @@ in
         "XF86MonBrightnessDown" = "exec --no-startup-id light -U 30";
       };
 
-      assigns.${ws0} = [{ class = "^discord$"; } { class = "^signal$"; }];
-      assigns.${ws2} = [{ class = "^Alacritty$"; }];
-      assigns.${ws3} = [{ class = "^VSCodium$"; }];
-      assigns.${ws4} = [{ class = "^zoom$"; } { class = "^[cC]hromium-browser$"; }];
-      assigns.${ws5} = [{ class = "^anki$"; }];
+      assigns.${ws0} = [
+        { class = "^discord$"; }
+        { class = "^signal$"; }
+      ];
+      assigns.${ws2} = [ { class = "^Alacritty$"; } ];
+      assigns.${ws3} = [ { class = "^VSCodium$"; } ];
+      assigns.${ws4} = [
+        { class = "^zoom$"; }
+        { class = "^[cC]hromium-browser$"; }
+      ];
+      assigns.${ws5} = [ { class = "^anki$"; } ];
       assigns.${ws9} = [
         { class = "^csgo_linux64$"; }
         { class = "^cs$"; }
@@ -170,9 +196,10 @@ in
       workspaceAutoBackAndForth = true;
 
       terminal =
-        if config.programs.alacritty.enable
-        then "${config.programs.alacritty.package}/bin/alacritty"
-        else "i3-sensible-terminal";
+        if config.programs.alacritty.enable then
+          "${config.programs.alacritty.package}/bin/alacritty"
+        else
+          "i3-sensible-terminal";
 
       bars = [
         {

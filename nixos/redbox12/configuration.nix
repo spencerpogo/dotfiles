@@ -1,12 +1,14 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{ config
-, pkgs
-, lib
-, inputs
-, ...
-}: {
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
+{
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -33,22 +35,30 @@
   };
 
   # like /, swap partition is part of luks group
-  swapDevices = [{ device = "/dev/disk/by-uuid/f0a3b235-96e1-4ad7-81ce-024e5e8f7cb1"; }];
+  swapDevices = [ { device = "/dev/disk/by-uuid/f0a3b235-96e1-4ad7-81ce-024e5e8f7cb1"; } ];
 
   # 2nd drive
   fileSystems."/mnt/basement" = {
     device = "/dev/disk/by-partuuid/5217ae9d-3ae9-42af-80e7-0824676c720c";
     fsType = "ntfs3";
-    options = [ "defaults" "noatime" "nofail" "force" ];
+    options = [
+      "defaults"
+      "noatime"
+      "nofail"
+      "force"
+    ];
   };
   fileSystems."/mnt/cubby" = {
     device = "/dev/disk/by-partuuid/41a7ec62-6f1f-4b81-961a-0eb5927d594c";
-    options = [ "defaults" "noatime" "nofail" ];
+    options = [
+      "defaults"
+      "noatime"
+      "nofail"
+    ];
   };
 
   networking.hostName = "redbox12"; # Define your hostname.
-  networking.wireless.enable =
-    true; # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
   # Open sockets that wpa_cli can talk to
   networking.wireless.extraConfig = "ctrl_interface=DIR=/run/wpa_supplicant GROUP=wheel";
 
@@ -77,8 +87,14 @@
     "/share/zsh" # zsh completions for commands
   ];
 
-  boot.kernelModules = [ "amdgpu" "nbd" ];
-  hardware.graphics.extraPackages = [ pkgs.intel-compute-runtime pkgs.rocmPackages.clr.icd ];
+  boot.kernelModules = [
+    "amdgpu"
+    "nbd"
+  ];
+  hardware.graphics.extraPackages = [
+    pkgs.intel-compute-runtime
+    pkgs.rocmPackages.clr.icd
+  ];
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   environment.variables = {
@@ -193,7 +209,8 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  nixpkgs.config.allowUnfreePredicate = pkg:
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
     builtins.elem (lib.getName pkg) [
       "steam"
       "steam-original"

@@ -14,37 +14,42 @@
   };
 
   outputs =
-    { self
-    , nixpkgs
+    {
+      self,
+      nixpkgs,
       #, nixpkgs-master
-    , home-manager
-    , nur
-    , plover-flake
-    ,
-    } @ inputs:
+      home-manager,
+      nur,
+      plover-flake,
+    }@inputs:
     let
-      overlays = system:
+      overlays =
+        system:
         let
-          pkgs-master = null; #nixpkgs-master.legacyPackages.${system};
+          pkgs-master = null; # nixpkgs-master.legacyPackages.${system};
         in
         [
           nur.overlays.default
           (self: super: {
-            discord =
-              (super.discord.override { withOpenASAR = true; withVencord = true; });
+            discord = (
+              super.discord.override {
+                withOpenASAR = true;
+                withVencord = true;
+              }
+            );
 
-            electron_25-bin =
-              (super.electron_25-bin.overrideAttrs { meta.knownVulnerabilities = [ ]; });
+            electron_25-bin = (super.electron_25-bin.overrideAttrs { meta.knownVulnerabilities = [ ]; });
             electron_25 = self.electron_25-bin;
 
             plover-from-flake = plover-flake.packages.${system}.plover;
           })
         ];
       mkHome =
-        { config
-        , system
-        , username
-        , extraSpecialArgs ? { }
+        {
+          config,
+          system,
+          username,
+          extraSpecialArgs ? { },
         }:
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};

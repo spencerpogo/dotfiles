@@ -1,7 +1,8 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 # VS Codium (not code) config
 {
@@ -122,7 +123,9 @@
         "editor.formatOnPaste" = false;
         "editor.formatOnType" = false;
       };
-      "[css]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
+      "[css]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
       "emmet.excludeLanguages" = [
         "markdown"
         "typescript"
@@ -157,7 +160,10 @@
       "java.semanticHighlighting.enabled" = true;
       "keyboard.dispatch" = "keyCode";
       "python.analysis.logLevel" = "Trace";
-      "python.autoComplete.extraPaths" = [ "." "/home/scoder12/.pyenv/versions/3.8.2/lib/python3.8" ];
+      "python.autoComplete.extraPaths" = [
+        "."
+        "/home/scoder12/.pyenv/versions/3.8.2/lib/python3.8"
+      ];
       "python.formatting.provider" = "black";
       "python.languageServer" = "Pylance";
       "vim.handleKeys" = {
