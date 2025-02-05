@@ -2,14 +2,19 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, inputs, pkgs, ... }:
+{
+  config,
+  lib,
+  inputs,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -155,14 +160,12 @@
   # Channel compat
   # https://ayats.org/blog/channels-to-flakes/
   environment.etc."nix/inputs/nixpkgs".source = inputs.nixpkgs.outPath;
-  environment.etc."nix/inputs/home-manager".source =
-    inputs.home-manager.outPath;
+  environment.etc."nix/inputs/home-manager".source = inputs.home-manager.outPath;
   nix.nixPath = [
     "nixpkgs=/etc/nix/inputs/nixpkgs"
     "home-manager=/etc/nix/inputs/home-manager"
   ];
-  nix.registry = with lib;
-    mapAttrs' (name: value: nameValuePair name { flake = value; }) inputs;
+  nix.registry = with lib; mapAttrs' (name: value: nameValuePair name { flake = value; }) inputs;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
@@ -178,7 +181,8 @@
   # accidentally delete configuration.nix.
   # system.copySystemConfiguration = true;
 
-  nixpkgs.config.allowUnfreePredicate = pkg:
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
     builtins.elem (lib.getName pkg) [
       "steam"
       "steam-original"
@@ -188,7 +192,6 @@
       "nvidia-x11"
       "nvidia-settings"
     ];
-
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
@@ -210,4 +213,3 @@
   system.stateVersion = "24.11"; # Did you read the comment?
 
 }
-
