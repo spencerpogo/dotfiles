@@ -84,7 +84,7 @@
     # music
     spotify
     # flex
-    neofetch
+    fastfetch
     # VMs
     virt-manager
     # search

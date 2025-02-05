@@ -52,7 +52,7 @@
     # music
     spotify
     # flex
-    neofetch
+    fastfetch
     # search
     ripgrep
     # steno
