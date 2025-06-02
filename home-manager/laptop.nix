@@ -59,6 +59,12 @@
 
   programs.zsh.initExtra = "eval \"$(${pkgs.mcfly}/bin/mcfly init zsh)\"";
 
+  # broken temporarily
+  # programs.plover = {
+  #   enable = true;
+  #   package = pkgs.plover-from-flake.withPlugins (ps: with ps; [ plover-lapwing-aio ]);
+  # };
+
   home.packages = with pkgs; [
     # command-line color picker
     # xcolor
@@ -117,7 +123,5 @@
     htop
     # media processing
     ffmpeg
-    # steno
-    (plover-from-flake.with-plugins (ps: [ ps.plover-lapwing-aio ]))
   ];
 }

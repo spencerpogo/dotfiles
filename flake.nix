@@ -40,8 +40,6 @@
 
             electron_25-bin = (super.electron_25-bin.overrideAttrs { meta.knownVulnerabilities = [ ]; });
             electron_25 = self.electron_25-bin;
-
-            plover-from-flake = plover-flake.packages.${system}.plover;
           })
         ];
       mkHome =
@@ -62,6 +60,7 @@
               };
               nixpkgs.overlays = (overlays system);
             }
+            plover-flake.homeManagerModules.plover
             config
           ];
           inherit extraSpecialArgs;

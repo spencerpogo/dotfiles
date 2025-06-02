@@ -20,18 +20,22 @@ in
       save = HIST_SIZE;
       ignoreSpace = true;
     };
-    initExtraFirst = ''
-      # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-      # Initialization code that may require console input (password prompts, [y/n]
-      # confirmations, etc.) must go above this block; everything else may go below.
-      if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
-        source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
-      fi
+    initContent =
+      let
+        initExtraFirst = lib.mkOrder 500 ''
+          # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+          # Initialization code that may require console input (password prompts, [y/n]
+          # confirmations, etc.) must go above this block; everything else may go below.
+          if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
+            source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
+          fi
 
-      # Autosuggestions
-      ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=80
-      ZSH_AUTOSUGGEST_STRATEGY=(history)
-    '';
+          # Autosuggestions
+          ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=80
+          ZSH_AUTOSUGGEST_STRATEGY=(history)
+        '';
+      in
+      lib.mkMerge [ initExtraFirst ];
     plugins = [
       {
         name = "p10k-config";

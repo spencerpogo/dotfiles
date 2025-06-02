@@ -55,7 +55,7 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the Plasma 5 Desktop Environment.
+  # Enable the Plasma 6 Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.xserver.displayManager.session = [
     {
@@ -75,7 +75,7 @@
     };
     defaultSession = "hm-plasma";
   };
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";

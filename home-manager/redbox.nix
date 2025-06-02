@@ -113,6 +113,6 @@
     # media processing
     ffmpeg
     # steno
-    (plover-from-flake.with-plugins (ps: [ ps.plover-lapwing-aio ]))
+    (plover-from-flake.withPlugins (ps: [ ps.plover-lapwing-aio ]))
   ];
 }
