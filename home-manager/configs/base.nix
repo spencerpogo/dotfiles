@@ -20,6 +20,7 @@
       "zoom"
       "spotify"
       "spotify-unwrapped"
+      "slack"
     ];
 
   programs.home-manager.enable = true;

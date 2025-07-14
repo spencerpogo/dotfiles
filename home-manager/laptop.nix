@@ -123,5 +123,7 @@
     htop
     # media processing
     ffmpeg
+    # chat
+    slack
   ];
 }
