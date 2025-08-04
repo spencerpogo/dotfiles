@@ -8,6 +8,12 @@
     extraConfig = {
       init.defaultBranch = "main";
     };
+    aliases = {
+      sw = "switch";
+      br = "branch";
+      f = "fetch";
+      co = "checkout";
+    };
     # TODO: Signing
   };
 }
