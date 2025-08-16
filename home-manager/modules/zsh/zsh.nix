@@ -74,7 +74,16 @@ in
       }
     ];
     shellAliases = {
+      cmdv = "command -v";
+      rf = "readlink -f";
+      ls = "ls --color=tty";
+      gr = "grep";
+      gri = "grep -i";
+      proc = "ps -o args --no-headers -p";
       myaliases = "grep alias ~/.zshrc";
+      g = "git";
+      cg = "cargo";
+
       # Clipboard
       c = "copy";
       paste = "xclip -o -sel c";
@@ -94,13 +103,6 @@ in
       dmesgtail = "sudo dmesg --color=always | tail";
       # yt-dlp
       yt-dlp-song = "yt-dlp --config-location ${./yt-dlp-song-config}";
-      # misc
-      cmdv = "command -v";
-      rf = "readlink -f";
-      ls = "ls --color=tty";
-      gr = "grep";
-      gri = "grep -i";
-      proc = "ps -o args --no-headers -p";
     };
   };
 }
