@@ -84,7 +84,7 @@ nixbin () {
     printf '%s: no binary specified' "$0"
     return 1
   fi
-  nix-locate --top-level --minimal --at-root --whole-name "/bin/$1"
+  nix-locate --minimal --at-root --whole-name "/bin/$1"
 }
 _myfuncs+=nixbin
 
