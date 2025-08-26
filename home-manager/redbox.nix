@@ -50,8 +50,6 @@
     BROWSER = "${pkgs.firefox}/bin/firefox";
   };
 
-  programs.zsh.initExtra = "eval \"$(${pkgs.mcfly}/bin/mcfly init zsh)\"";
-
   home.packages = with pkgs; [
     # command-line color picker
     # xcolor
@@ -84,8 +82,6 @@
     virt-manager
     # search
     ripgrep
-    # shell hist
-    mcfly
     # json tool
     jq
     # flashcards

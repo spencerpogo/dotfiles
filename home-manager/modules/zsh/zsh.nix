@@ -12,6 +12,8 @@ in
 {
   programs.direnv.enableZshIntegration = true;
 
+  home.packages = [ pkgs.mcfly ];
+
   programs.zsh = {
     enable = true;
     defaultKeymap = "viins";
@@ -22,7 +24,7 @@ in
     };
     initContent =
       let
-        initExtraFirst = lib.mkOrder 500 ''
+        initExtraFirst = lib.mkOrder 100 ''
           # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
           # Initialization code that may require console input (password prompts, [y/n]
           # confirmations, etc.) must go above this block; everything else may go below.
@@ -34,8 +36,12 @@ in
           ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=80
           ZSH_AUTOSUGGEST_STRATEGY=(history)
         '';
+        initExtra = lib.mkOrder 2000 ''
+          eval "$(${pkgs.mcfly}/bin/mcfly init zsh)"
+        '';
       in
       lib.mkMerge [ initExtraFirst ];
+
     plugins = [
       {
         name = "p10k-config";

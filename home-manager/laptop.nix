@@ -57,8 +57,6 @@
     BROWSER = "${pkgs.firefox}/bin/firefox";
   };
 
-  programs.zsh.initExtra = "eval \"$(${pkgs.mcfly}/bin/mcfly init zsh)\"";
-
   # broken temporarily
   # programs.plover = {
   #   enable = true;
@@ -95,8 +93,6 @@
     virt-manager
     # search
     ripgrep
-    # shell hist
-    mcfly
     # json tool
     jq
     # flashcards
