@@ -83,6 +83,9 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.printing.drivers = [ pkgs.gutenprint ];
+  services.avahi.enable = true;
+  services.avahi.nssmdns4 = true;
 
   # Enable sound.
   # plasma6 uses pipewire so have to choose that here
