@@ -129,6 +129,11 @@
     wget
   ];
 
+  environment.pathsToLink = [
+    "/libexec" # links /libexec from derivations to /run/current-system/sw
+    "/share/zsh" # zsh completions for commands
+  ];
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

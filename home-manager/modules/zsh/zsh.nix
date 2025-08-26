@@ -22,6 +22,8 @@ in
       save = HIST_SIZE;
       ignoreSpace = true;
     };
+    enableCompletion = true;
+
     initContent =
       let
         initExtraFirst = lib.mkOrder 100 ''
