@@ -4,9 +4,11 @@
   ...
 }:
 {
-  programs.tmux = {
-    enable = true;
+  programs.tmux = let
     prefix = "C-a";
+  in {
+    enable = true;
+    inherit prefix;
     shell = config.home.sessionVariables.SHELL;
     # Must be (screen|tmux)(-256color)?
     terminal = "screen-256color";
@@ -34,6 +36,9 @@
       bind g new-window -c "#{pane_current_path}" "${pkgs.lazygit}/bin/lazygit"
       # e for editor
       bind e new-window -c "#{pane_current_path}" "codium ."
+
+      # work around nix-community/home-manager#7771
+      bind ${prefix} send-prefix
     '';
   };
 }
