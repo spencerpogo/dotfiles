@@ -49,55 +49,54 @@ in
         music_prev = "玲";
         music_next = "怜";
       };
-      blocks =
-        [
-          {
-            block = "music";
-          }
-          {
-            block = "disk_space";
-            path = "/";
-            info_type = "available";
-            interval = 15;
-            warning = 20.0;
-            alert = 10.0;
-            alert_unit = "GB";
-          }
-          {
-            block = "memory";
-            interval = 5;
-          }
-          {
-            block = "cpu";
-            interval = 5;
-          }
-          {
-            block = "load";
-            interval = 5;
-            format = "$icon $1m.eng(w:4)";
-          }
-          { block = "sound"; }
-        ]
-        ++ (
-          if config.home.hasBattery then
-            [
-              {
-                block = "battery";
-                format = "$icon  $percentage";
-                full_format = "$icon full";
-                empty_format = "$icon empty";
-              }
-            ]
-          else
-            [ ]
-        )
-        ++ [
-          {
-            block = "time";
-            interval = 1;
-            format = "$icon $timestamp.datetime(f:'%a %m/%d %r', l:en_US)";
-          }
-        ];
+      blocks = [
+        {
+          block = "music";
+        }
+        {
+          block = "disk_space";
+          path = "/";
+          info_type = "available";
+          interval = 15;
+          warning = 20.0;
+          alert = 10.0;
+          alert_unit = "GB";
+        }
+        {
+          block = "memory";
+          interval = 5;
+        }
+        {
+          block = "cpu";
+          interval = 5;
+        }
+        {
+          block = "load";
+          interval = 5;
+          format = "$icon $1m.eng(w:4)";
+        }
+        { block = "sound"; }
+      ]
+      ++ (
+        if config.home.hasBattery then
+          [
+            {
+              block = "battery";
+              format = "$icon  $percentage";
+              full_format = "$icon full";
+              empty_format = "$icon empty";
+            }
+          ]
+        else
+          [ ]
+      )
+      ++ [
+        {
+          block = "time";
+          interval = 1;
+          format = "$icon $timestamp.datetime(f:'%a %m/%d %r', l:en_US)";
+        }
+      ];
     };
   };
 
