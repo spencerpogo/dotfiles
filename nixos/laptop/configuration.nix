@@ -105,6 +105,8 @@
   # Enable touchpad support (enabled by default in most desktopManager).
   services.libinput.enable = true;
 
+  users.groups.plugdev = {};
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.spencer = {
     isNormalUser = true;
@@ -112,6 +114,7 @@
       "wheel" # Enable ‘sudo’ for the user.
       "input"
       "dialout"
+      "plugdev"
     ];
   };
 
@@ -157,6 +160,10 @@
   services.udev.extraRules = ''
     # 0d28:0204 DAPLink
     SUBSYSTEM=="usb", ATTR{idVendor}=="0d28", ATTR{idProduct}=="0204", MODE:="666"
+    # 1d50:608c fx2lafw logic analyzer
+    SUBSYSTEM=="usb", ATTR{idVendor}=="1d50", ATTR{idProduct}=="608c", MODE:="0660", GROUP="plugdev"
+    # 0403:6010 FTDI FT2232
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0403", ATTR{idProduct}=="6010", MODE="0660", GROUP="plugdev"
   '';
 
   nix = {
