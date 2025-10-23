@@ -23,13 +23,10 @@
         # better colors
         set -ag terminal-overrides ",alacritty:RGB"
 
-        # Set new panes to open in current directory
-        bind c new-window -c "#{pane_current_path}"
+        # Set split panes to open in current directory
+        # ...but not for new-window (c), we can break-pane if we want that behavior
         bind '"' split-window -c "#{pane_current_path}"
         bind % split-window -h -c "#{pane_current_path}"
-        # ...with an escape hatch if we don't want to wait for direnv
-        bind v new-window
-
         # Better split binds
         bind - split-window -c "#{pane_current_path}"
         bind \\ split-window -h -c "#{pane_current_path}"
