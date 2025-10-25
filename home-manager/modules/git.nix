@@ -1,19 +1,19 @@
 { pkgs, ... }:
-# Basic git info
 {
   programs.git = {
     enable = true;
-    userName = "Spencer Pogorzelski";
-    userEmail = "34356756+spencerpogo@users.noreply.github.com";
-    extraConfig = {
+    settings = {
       init.defaultBranch = "main";
+
+      alias = {
+        sw = "switch";
+        br = "branch";
+        f = "fetch";
+        co = "checkout";
+      };
+
+      user.name = "Spencer Pogorzelski";
+      user.email = "34356756+spencerpogo@users.noreply.github.com";
     };
-    aliases = {
-      sw = "switch";
-      br = "branch";
-      f = "fetch";
-      co = "checkout";
-    };
-    # TODO: Signing
   };
 }
