@@ -6,7 +6,7 @@
 
     matchBlocks.pwncollege = {
       user = "hacker";
-      hostname = "pwn.college";
+      hostname = "dojo.pwn.college";
       identityFile = "~/.ssh/id_ed25519";
     };
 
