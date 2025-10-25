@@ -2,17 +2,25 @@
 {
   programs.ssh = {
     enable = true;
-    matchBlocks =
-      let
-        key = "${config.home.homeDirectory}/.ssh/id_ed25519";
-        mkHost = user: hostname: {
-          inherit user hostname;
-          identityFile = [ key ];
-        };
-      in
-      {
-        vps = mkHost "spencer" "74.207.254.138";
-        pwncollege = mkHost "hacker" "dojo.pwn.college";
-      };
+    enableDefaultConfig = false;
+
+    matchBlocks.pwncollege = {
+      user = "hacker";
+      hostname = "pwn.college";
+      identityFile = "~/.ssh/id_ed25519";
+    };
+
+    matchBlocks."*" = {
+      forwardAgent = false;
+      addKeysToAgent = "no";
+      compression = false;
+      serverAliveInterval = 0;
+      serverAliveCountMax = 3;
+      hashKnownHosts = false;
+      userKnownHostsFile = "~/.ssh/known_hosts";
+      controlMaster = "no";
+      controlPath = "~/.ssh/master-%r@%n:%p";
+      controlPersist = "no";
+    };
   };
 }
