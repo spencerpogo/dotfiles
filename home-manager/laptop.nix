@@ -90,7 +90,7 @@
     # flex
     fastfetch
     # VMs
-    virt-manager
+    # virt-manager
     # search
     ripgrep
     # json tool
