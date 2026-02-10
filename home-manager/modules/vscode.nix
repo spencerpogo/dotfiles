@@ -49,6 +49,7 @@
           redhat.java
           bungcip.better-toml
           usernamehw.errorlens
+          ms-vscode-remote.remote-containers
         ])
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
