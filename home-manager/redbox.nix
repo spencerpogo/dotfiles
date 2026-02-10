@@ -1,8 +1,7 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }:
 {
   # My desktop PC, running NixOS
@@ -102,13 +101,9 @@
     feh
     # youtube downloader
     yt-dlp
-    # song metadata editor
-    easytag
     # process management
     htop
     # media processing
     ffmpeg
-    # steno
-    (plover-from-flake.withPlugins (ps: [ ps.plover-lapwing-aio ]))
   ];
 }
