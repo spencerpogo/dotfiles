@@ -42,7 +42,10 @@ in
           eval "$(${pkgs.mcfly}/bin/mcfly init zsh)"
         '';
       in
-      lib.mkMerge [ initExtraFirst ];
+      lib.mkMerge [
+        initExtraFirst
+        initExtra
+      ];
 
     plugins = [
       {
