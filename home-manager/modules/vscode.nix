@@ -7,13 +7,12 @@
 # VS Codium (not code) config
 {
   home.packages = [
-    pkgs.nixfmt-rfc-style
+    pkgs.nixfmt
   ];
 
-  programs.vscode = {
+  # no tracking for me thanks
+  programs.vscodium = {
     enable = true;
-    # no tracking for me thanks
-    package = pkgs.vscodium;
 
     profiles.default = {
       # a couple of extensions
