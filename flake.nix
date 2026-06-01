@@ -1,6 +1,8 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nix-darwin.url = "github:nix-darwin/nix-darwin/master";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     #nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -17,6 +19,7 @@
     {
       self,
       nixpkgs,
+      nix-darwin,
       #, nixpkgs-master
       home-manager,
       nur,
@@ -100,6 +103,20 @@
         system = "x86_64-linux";
         username = "spencer";
       };
+      homeConfigurations.zr-laptop = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+          modules = [
+            {
+              home = {
+                username = "spencerpogo";
+                homeDirectory = "/Users/spencerpogo";
+                stateVersion = "21.11";
+              };
+              nixpkgs.overlays = (overlays "aarch64-darwin");
+            }
+            ./home-manager/zr-laptop.nix
+          ];
+        };
 
       nixosConfigurations.redbox12 = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
@@ -115,6 +132,11 @@
         specialArgs = { inherit inputs; };
         system = "x86_64-linux";
         modules = [ ./nixos/scuffedpad/configuration.nix ];
+      };
+
+      darwinConfigurations."spencerpogo-laptop" = nix-darwin.lib.darwinSystem {
+        specialArgs = { inherit inputs; };
+        modules = [ ./nix-darwin/zr-laptop/configuration.nix ];
       };
     };
 }
