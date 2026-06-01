@@ -46,7 +46,7 @@
           justusadam.language-haskell
           kamikillerto.vscode-colorize
           redhat.java
-          bungcip.better-toml
+          tamasfe.even-better-toml
           usernamehw.errorlens
           ms-vscode-remote.remote-containers
         ])
