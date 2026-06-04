@@ -107,19 +107,19 @@
         username = "spencer";
       };
       homeConfigurations.zr-laptop = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-          modules = [
-            {
-              home = {
-                username = "spencerpogo";
-                homeDirectory = "/Users/spencerpogo";
-                stateVersion = "21.11";
-              };
-              nixpkgs.overlays = (overlays "aarch64-darwin");
-            }
-            ./home-manager/zr-laptop.nix
-          ];
-        };
+        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+        modules = [
+          {
+            home = {
+              username = "spencerpogo";
+              homeDirectory = "/Users/spencerpogo";
+              stateVersion = "21.11";
+            };
+            nixpkgs.overlays = (overlays "aarch64-darwin");
+          }
+          ./home-manager/zr-laptop.nix
+        ];
+      };
 
       nixosConfigurations.redbox12 = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
