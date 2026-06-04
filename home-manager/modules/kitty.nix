@@ -1,13 +1,15 @@
 {
+  lib,
   config,
   pkgs,
   ...
 }:
 
 let
+  tmuxBin = "${lib.getBin pkgs.tmux}/bin/tmux";
   shellConfig =
     if config.programs.tmux.enable then
-      "${pkgs.runtimeShell} -c \"tmux attach || tmux new\""
+      "${pkgs.runtimeShell} -c \"${tmuxBin} attach || ${tmuxBin} new\""
     else
       config.home.sessionVariables.SHELL;
 in
@@ -26,7 +28,10 @@ in
       shell ${shellConfig}
 
       # tighter line height (like alacritty)
-      modify_font cell_height 90%
+      # needed on linux but looks broken on darwin
+      ${lib.optionalString (!pkgs.stdenv.isDarwin) "modify_font cell_height 90%"}
+
+      ${lib.optionalString pkgs.stdenv.isDarwin "macos_option_as_alt yes"}
     '';
   };
 }

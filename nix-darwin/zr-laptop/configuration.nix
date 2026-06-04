@@ -1,4 +1,9 @@
-{ lib, pkgs, inputs, ... }:
+{
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -16,6 +21,10 @@
   ];
 
   programs.nix-index.enable = true;
+
+  fonts.packages = [
+    pkgs.nerd-fonts.meslo-lg
+  ];
 
   nix.extraOptions = ''
     experimental-features = nix-command flakes
