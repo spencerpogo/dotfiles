@@ -18,6 +18,7 @@
       "steam-runtime"
       "obsidian"
       "discord"
+      "discord-unwrapped"
       "zoom"
       "spotify"
       "spotify-unwrapped"
