@@ -99,6 +99,11 @@
     pulse.enable = true;
   };
 
+  # hardware.amdgpu.opencl.enable = true;
+  hardware.graphics.extraPackages = with pkgs; [
+    pocl
+  ];
+
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false; # try to save battery
 
