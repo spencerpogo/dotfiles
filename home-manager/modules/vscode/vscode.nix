@@ -7,13 +7,12 @@
 # VS Codium (not code) config
 {
   home.packages = [
-    pkgs.nixfmt-rfc-style
+    pkgs.nixfmt
   ];
 
-  programs.vscode = {
+  # use vscodium open-source fork
+  programs.vscodium = {
     enable = true;
-    # no tracking for me thanks
-    package = pkgs.vscodium;
 
     profiles.default = {
       # a couple of extensions
@@ -24,10 +23,9 @@
           # Rust
           rust-lang.rust-analyzer
           # Code time tracking
-          #WakaTime.vscode-wakatime
+          wakatime.vscode-wakatime
           # unfree microsoft python shit
           ms-python.vscode-pylance
-          # I don't know why this is here I don't do C++
           ms-vscode.cpptools
           # python (essential)
           # too stupid to pick up on nix-installed black sadly
@@ -54,20 +52,8 @@
           {
             name = "andromeda";
             publisher = "EliverLara";
-            version = "1.8.2";
-            sha256 = "sha256-ur+zXuKluJ0DZS5/S4RaomibnJuFy4SE4tk9i+9+ORc=";
-          }
-          {
-            name = "discord-vscode";
-            publisher = "icrawl";
-            version = "5.8.0";
-            sha256 = "sha256-IU/looiu6tluAp8u6MeSNCd7B8SSMZ6CEZ64mMsTNmU=";
-          }
-          {
-            name = "vscode-wakatime";
-            publisher = "WakaTime";
-            version = "24.6.0";
-            sha256 = "sha256-VyyF+AAZviKOtLWVvGMhGh9tyQMse+6nUc7X57zzUBI=";
+            version = "1.10.0";
+            sha256 = "sha256-W84m9b3Dzq2LjUpa/0hzSWbVokaxI4IDEaCySWDF9Uk=";
           }
         ];
 
