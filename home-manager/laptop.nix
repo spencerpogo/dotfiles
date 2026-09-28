@@ -121,5 +121,9 @@
     ffmpeg
     # chat
     slack
+    # AI
+    claude-code
+    codex
+    antigravity-cli
   ];
 }
