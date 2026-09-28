@@ -29,9 +29,9 @@ in
 
       # tighter line height (like alacritty)
       # needed on linux but looks broken on darwin
-      ${lib.optionalString (!pkgs.stdenv.isDarwin) "modify_font cell_height 90%"}
+      ${lib.optionalString (!pkgs.stdenv.hostPlatform.isDarwin) "modify_font cell_height 90%"}
 
-      ${lib.optionalString pkgs.stdenv.isDarwin "macos_option_as_alt yes"}
+      ${lib.optionalString pkgs.stdenv.hostPlatform.isDarwin "macos_option_as_alt yes"}
     '';
   };
 }
