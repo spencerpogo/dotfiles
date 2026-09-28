@@ -9,7 +9,7 @@
     ./configs/cli.nix
 
     ./modules/python.nix
-    ./modules/vscode.nix
+    ./modules/vscode/vscode.nix
     ./modules/firefox.nix
     ./modules/i3/i3.nix
     ./modules/guiutils.nix

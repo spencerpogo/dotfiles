@@ -12,7 +12,7 @@
 
     ./modules/rust.nix
     ./modules/python.nix
-    ./modules/vscode.nix
+    ./modules/vscode/vscode.nix
     ./modules/firefox.nix
     ./modules/fcitx5.nix
     ./modules/i3/i3.nix

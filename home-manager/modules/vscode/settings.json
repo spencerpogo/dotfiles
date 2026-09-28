@@ -1,0 +1,122 @@
+{
+  "[c]": {
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.wordBasedSuggestions": "off",
+    "gitlens.codeLens.symbolScopes": ["!Module"]
+  },
+  "[rust]": {
+    "editor.tabSize": 4
+  },
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "coboleditor.enable_tabstop": false,
+  "coboleditor.format_on_return": "uppercase",
+  "coboleditor.intellisense_include_unchanged": false,
+  "coboleditor.intellisense_include_uppercase": true,
+  "colorize.languages": ["nix"],
+  "css.lint.unknownAtRules": "ignore",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.autoClosingBrackets": "beforeWhitespace",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.maxTokenizationLineLength": 200,
+  "editor.snippetSuggestions": "inline",
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "emmet.excludeLanguages": [
+    "markdown",
+    "typescript",
+    "typescriptreact",
+    "javascript",
+    "javascriptreact"
+  ],
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.next": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/__pycache__": true
+  },
+  "git.enableSmartCommit": true,
+  "gitlens.codeLens.enabled": false,
+  "go.formatTool": "goimports",
+  "go.lintOnSave": "workspace",
+  "java.semanticHighlighting.enabled": true,
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "keyboard.dispatch": "keyCode",
+  "python.analysis.logLevel": "Trace",
+  "python.autoComplete.extraPaths": [
+    ".",
+    "/home/scoder12/.pyenv/versions/3.8.2/lib/python3.8"
+  ],
+  "python.dataScience.sendSelectionToInteractiveWindow": false,
+  "python.formatting.provider": "black",
+  "python.languageServer": "Pylance",
+  "rust-analyzer.diagnostics.disabled": ["unresolved-macro-call"],
+  "rust-analyzer.inlayHints.maxLength": 10,
+  "svelte.enable-ts-plugin": true,
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescriptreact.preferences.importModuleSpecifierEnding": "js",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-c>": false,
+    "<C-f>": false,
+    "<C-g>": false,
+    "<C-k>": false,
+    "<C-n>": false,
+    "<C-o>": false,
+    "<C-p>": false,
+    "<C-s>": false,
+    "<C-v>": false,
+    "<C-x>": false,
+    "<C-z>": false
+  },
+  "workbench.colorTheme": "Andromeda Italic Bordered",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "workbench.iconTheme": "material-icon-theme"
+}
