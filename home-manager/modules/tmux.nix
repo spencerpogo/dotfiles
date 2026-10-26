@@ -23,6 +23,10 @@
         # better colors
         set -ag terminal-overrides ",alacritty:RGB"
 
+        # tmux 3.8 themes replace the terminal's green with a built-in shade.
+        # Use the terminal palette, as older tmux versions did.
+        set -s theme terminal
+
         # Set split panes to open in current directory
         # ...but not for new-window (c), we can break-pane if we want that behavior
         bind '"' split-window -c "#{pane_current_path}"
