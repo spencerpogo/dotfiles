@@ -4,23 +4,25 @@
     enable = true;
     enableDefaultConfig = false;
 
-    matchBlocks.pwncollege = {
-      user = "hacker";
-      hostname = "dojo.pwn.college";
-      identityFile = "~/.ssh/id_ed25519";
-    };
+    settings = {
+      "pwncollege" = {
+        User = "hacker";
+        HostName = "dojo.pwn.college";
+        IdentityFile = "~/.ssh/id_ed25519";
+      };
 
-    matchBlocks."*" = {
-      forwardAgent = false;
-      addKeysToAgent = "no";
-      compression = false;
-      serverAliveInterval = 0;
-      serverAliveCountMax = 3;
-      hashKnownHosts = false;
-      userKnownHostsFile = "~/.ssh/known_hosts";
-      controlMaster = "no";
-      controlPath = "~/.ssh/master-%r@%n:%p";
-      controlPersist = "no";
+      "*" = {
+        ForwardAgent = false;
+        AddKeysToAgent = "no";
+        Compression = false;
+        ServerAliveInterval = 0;
+        ServerAliveCountMax = 3;
+        HashKnownHosts = false;
+        UserKnownHostsFile = "~/.ssh/known_hosts";
+        ControlMaster = "no";
+        ControlPath = "~/.ssh/master-%r@%n:%p";
+        ControlPersist = "no";
+      };
     };
   };
 }
