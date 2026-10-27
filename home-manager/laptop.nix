@@ -9,27 +9,19 @@
   # my laptop, running NixOS
 
   imports = [
-    ./configs/base.nix
-    ./configs/cli.nix
+    ./configs/desktop.nix
 
     ./modules/rust.nix
-    ./modules/python.nix
-    ./modules/vscode/vscode.nix
-    ./modules/firefox.nix
     ./modules/fcitx5.nix
-    ./modules/guiutils.nix
-    ./modules/tmux.nix
-    # ./modules/gtk.nix
-    ./modules/flameshot.nix
-    ./modules/fonts.nix
-    ./modules/alacritty.nix
     ./modules/kitty.nix
-    ./modules/ssh.nix
-    ./modules/vim.nix
-    ./modules/neovim/neovim.nix
     ./modules/udiskie.nix
     ./modules/xdg.nix
   ];
+
+  programs.zsh.shellAliases = {
+    paste = "wl-paste";
+    pimg = "paste --type image/png";
+  };
 
   nixpkgs.config.permittedInsecurePackages = [ "electron-13.6.9" ];
   nixpkgs.overlays = [
@@ -45,17 +37,11 @@
   ];
   programs.command-not-found.enable = true;
 
-  xsession = {
-    enable = true;
-    scriptPath = ".hm-xsession";
-    windowManager.command = "startplasma-x11";
-  };
-
-  home.sessionVariables = {
-    EDITOR = "vim";
-    SHELL = "${pkgs.zsh}/bin/zsh";
-    BROWSER = "${pkgs.firefox}/bin/firefox";
-  };
+  # Plasma sources these before starting the Wayland session and imports the
+  # resulting environment into its user services and D-Bus activation.
+  xdg.configFile."plasma-workspace/env/10-home-manager.sh".text = ''
+    . "${config.home.profileDirectory}/etc/profile.d/hm-session-vars.sh"
+  '';
 
   # broken temporarily
   # programs.plover = {
@@ -64,37 +50,9 @@
   # };
 
   home.packages = with pkgs; [
-    # command-line color picker
-    # xcolor
-    # secondary browser, for school and WebGL stuff
-    ungoogled-chromium
-    # chat
-    discord
-    signal-desktop
-    # meetings
-    zoom-us
-    # screen recording
-    obs-studio
-    # volume
-    pavucontrol
-    # compile
-    gcc
-    # seriously?
-    unzip
+    wl-clipboard
     # reverse engineering
     ghidra-bin
-    # video player
-    mpv
-    # music
-    spotify
-    # flex
-    fastfetch
-    # VMs
-    # virt-manager
-    # search
-    ripgrep
-    # json tool
-    jq
     # flashcards
     anki-bin
     # nix code formatting
@@ -109,14 +67,12 @@
     rlwrap
     # sqlite
     sqlite
-    # image viewer (used by i3 anyway)
-    feh
+    # image viewer
+    imv
     # youtube downloader
     yt-dlp
     # song metadata editor
     easytag
-    # process management
-    htop
     # media processing
     ffmpeg
     # chat

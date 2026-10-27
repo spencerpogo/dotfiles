@@ -26,14 +26,14 @@
 ## Repo organization
 
 - `home-manager/`
-  - Modules in `modules/*.nix` Machines in `*.nix`:
-    - Each machine can enable/disable modules based on situation, whether it is GUI,
-      etc.
-    - Modules are for a specific tool that needs configuring or a set of similar tools
-    - if it fits in 1 line or package doesn't need to be configured it doesn't need it's
-      own module, it can be put in the machine config
-    - Modules are sometimes interdependent, e.g. i3 terminal is set to alacritty if that
-      module is enabled
+  - `modules/` holds configuration for individual tools.
+  - `configs/cli.nix` and `configs/desktop.nix` group the modules shared by
+    multiple machines. Desktop includes CLI, which includes the base config.
+  - Machine files in `home-manager/*.nix` import a profile and add their own
+    programs and hardware-specific settings. A new machine can start with a
+    profile instead of copying another machine's full import list.
+  - Modules can use enabled programs when useful; for example, i3 selects
+    Alacritty as its terminal when Alacritty is enabled.
 
 ## Installation
 

@@ -12,7 +12,11 @@ copy () {
     text=$(<&0)
   fi
   # copy the text to the clipboard
-  printf "%s" "$text" | xclip -sel c
+  if [[ -n "$WAYLAND_DISPLAY" ]] && command -v wl-copy >/dev/null; then
+    printf "%s" "$text" | wl-copy
+  else
+    printf "%s" "$text" | xclip -sel c
+  fi
 }
 _myfuncs+=copy
 
@@ -23,7 +27,11 @@ nsh () {
 _myfuncs+=nsh
 
 tc () { # transform clipboard
-  paste | eval "$*" | copy
+  if [[ -n "$WAYLAND_DISPLAY" ]]; then
+    wl-paste | eval "$*" | copy
+  else
+    xclip -o -sel c | eval "$*" | copy
+  fi
 }
 _myfuncs+=tc
 

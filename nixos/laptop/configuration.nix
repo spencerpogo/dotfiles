@@ -52,32 +52,18 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Enable the Plasma 6 Desktop Environment.
   services.displayManager.sddm.enable = true;
-  services.xserver.displayManager.session = [
-    {
-      # name is purely cosmetic
-      name = "hm-plasma";
-      manage = "desktop";
-      start = ''
-        ${pkgs.runtimeShell} $HOME/.hm-xsession &
-        waitPID=$!
-      '';
-    }
-  ];
   services.displayManager = {
     autoLogin = {
       enable = true;
       user = "spencer";
     };
-    defaultSession = "hm-plasma";
+    defaultSession = "plasma";
   };
   services.desktopManager.plasma6.enable = true;
 
-  # Configure keymap in X11
+  # Configure the login screen keymap.
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.options = "caps:escape_shifted_capslock";
 
