@@ -25,6 +25,7 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-partuuid/11a82a3d-bf69-46a4-9441-b8e22e9eaac4";
     fsType = "vfat";
+    options = [ "umask=0077" ];
   };
 
   boot.initrd.luks.devices = {
